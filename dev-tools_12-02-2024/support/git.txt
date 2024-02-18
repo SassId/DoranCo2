@@ -1,0 +1,44 @@
+# ---------------
+# CONFIGURATION
+# ---------------
+
+# Afficher la version de Git installée sur le système.
+git -v
+
+# Configurer le nom d'utilisateur et son email (obligatoire)
+git config --global user.name "John Doe"
+git config --global user.email "johndoe@gmail.com"
+
+# Configurer Git pour qu'il colore la sortie dans la console
+git config --global color.ui true
+
+# ---------------
+# INITIALISATION
+# ---------------
+
+# Créer un nouveau dépôt GIT dans le repertoire actuel
+git init
+
+# Afficher l'état de suivi des fichiers
+git status
+
+# ---------------
+# COMMIT
+# ---------------
+
+# Ajouter un fichier spécifique ou tous les fichiers modifiés à la staging area
+git add <nom_du_fichier>
+git add .
+
+# Enregistrer les modifications qui sont présentes dans la staging area en créant un nouveau commit.
+git commit -m "un message"
+
+# Afficher l'historique des commit
+git log
+
+# ---------------
+# REMOTE
+# ---------------
+
+# Cloner un dépôt Git distant en créant une copie locale du projet.
+git clone <url>
