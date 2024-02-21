@@ -1,0 +1,56 @@
+score=0
+echo "Bienvenue dans le Quizz des Animaux en Japonais"
+echo "1ère Question : "
+echo "Comment dit-on Tigre ? "
+echo "1- Tora"
+echo "2- Rato"
+echo "3- Gingyo"
+read 
+if [ $REPLY -eq 1 ]
+then
+    echo "Bonne réponse!"
+    ((score++))
+    else
+    echo "Mauvaise réponse!"
+fi  
+echo "2ème Question"
+echo "Comment dit-on Girafe ?"
+echo "1- Rinki"
+echo "2- Kirin"
+echo "3- Tori"
+read
+if [ $REPLY -eq 2 ]
+then
+    echo "Bonne réponse!"
+    ((score++))
+    else
+    echo "Mauvaise réponse!"
+fi
+echo "On arrive déjà à la 3ème Dernière Question"
+echo "Vous êtes prêts?"
+echo "Comment dit-on Lion ?"
+echo "1- Roori"
+echo "2- Akuma"
+echo "3- Lion"
+read
+if [ $REPLY -eq 3 ]
+then
+    echo "Bonne réponse!"
+    ((score++))
+    else
+    echo "Mauvaise réponse!"
+fi
+echo "Le Quizz est à présent terminé"
+echo "Votre Score est de $score points"
+if [ $score -eq 3 ]
+then
+    echo "Félicitations vous êtes le meilleur"
+    elif [ $score -eq 2 ] 
+    then    
+        echo "Bravo, vous vous êtes bien débrouillé"
+    elif [ $score -eq 1 ] 
+    then
+        echo "C'est pas si mal"
+    else 
+        echo "Désolé, vous pourrez retenter votre chance la semaine prochaine!"
+fi

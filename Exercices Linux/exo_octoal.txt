@@ -1,0 +1,24 @@
+Voici 20 suites de permissions en base octale :
+
+755 rwxr-xr-x
+644 rw-r--r--
+777 rwxrwxrwx
+664 rw-rw-r--
+600 rw-------
+777 rwxrwxrwx
+750 rwxr-x---
+720 rwx-w----
+555 r-xr-xr-x
+644 rw-r--r--
+666 rw-rw-rw-
+740 rwxr-----
+710 rwx--x---
+673 rw-rwx-wx
+600 rw-------
+777 rwxrwxrwx
+644 rw-r--r--
+750 rwxr-x---
+777 rwxrwxrwx
+644 rw-r--r--
+
+Trouver la suite rwx pour chaque lignes ci dessus.
