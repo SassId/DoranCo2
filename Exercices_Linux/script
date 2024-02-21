@@ -67,14 +67,14 @@ i=$(( $i + 1 ))
 done
 '
 
-<<comment 
+
 #break an infinite loop
-i=1
-while [ $i -eq 1 ]
-do
-	echo "repeat"
-	break
-done
-comment
+# i=1
+# while [ $i -eq 1 ]
+# do
+# 	echo "repeat"
+# 	break
+# done
+
 
 
