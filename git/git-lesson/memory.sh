@@ -91,5 +91,23 @@ git restore --staged file_name | git restore --staged .
 # Creates a new commit in the timeline that's actually an old commit:
 git revert commit_id
 
+# --------------------------------------- #
+#                  REMOTE                 #
+# --------------------------------------- #
+
+# Establish a connexion to a remote repo by assigning a name and url:
+git remote add alias url # alias is a name you choose to record the url you enter
+
+# Sends the local repo to the remote repo by linking the local branch to the remote branch
+git push -u alias branch_name
+
+# Sends local repo to remote repo
+git push
+
+# Collect the remote main branch before pushing your modifications:
+git pull
+
+
+
 
 
