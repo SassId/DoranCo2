@@ -1,0 +1,37 @@
+1. Créez un dossier "Dashboard".
+
+2. Initalisez un dépôt git.
+
+3. Créez un index.html avec un doctype et un h1 de votre choix.
+
+4. Créez un commit pour sauvegarder ces changements.
+
+5. Créez une branche "api".
+
+6. Switcher sur cette brancheet créez un fichier app.js et .
+
+7. Écrivez une fonction :
+
+function foo(name){
+  console.log("Bienvenue", name)
+}
+
+8. Faites un commit de ces changements.
+
+9. Retournez sur la branche principale.
+
+10. Modifier le h1.
+
+11. Mettre à jour le dernier commit avec les nouvelles modifications.
+
+12. Fusionner la branche main avec la branche api.
+
+13. Retournez sur la branche api et modifiez le h1.
+
+14. Faites un commit de ces changements.
+
+15. Retournez sur la branche principale.
+
+16. Fusionner la branche api avec la branche principale.
+
+17. Supprimez la branche api.

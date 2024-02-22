@@ -1,0 +1,21 @@
+Exercice Commit
+
+1. Créer un dossier 'portfolio' sur votre ordinateur
+
+2. Créer un fichier 'index.html' dans ce dossier, avec un titre 'Bienvenue sur mon Portfolio'
+
+3. Initialisez un dépôt avec Git dans ce dossier.
+
+4. Vérifiez le statut du dépôt avec la commande correspondante.
+
+5. Ajoutez les changements dans la zone de transit (staging area).
+
+6. Créez un commit avec la commande nécessaire, et ajoutez-y le message "Mise en place du portfolio".
+
+7. Regardez l'historique de vos commits avec la commande correspondante.
+
+8. Créez un fichier 'style.css' dans le dossier 'portfolio'.
+
+9. Ajoutez ce fichier dans la zone de transit.
+
+10. Corriger le dernier commit pour le mettre à jour avec les dernières modifications.
