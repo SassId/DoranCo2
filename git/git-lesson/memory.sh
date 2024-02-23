@@ -69,6 +69,9 @@ git branch branch_name
 # Changes branches:
 git switch branch_name
 
+# Creates and moves to a new branch:
+git switch -c branch_name
+
 #Collects modifications on the current branch:
 git merge branch_name
 
@@ -77,6 +80,7 @@ git branch -m old_name new_name
 
 # Deletes a branch:
 git branch -d branch_name  
+
 
 # --------------------------------------- #
 #                 RESTORE                 #
