@@ -1,0 +1,37 @@
+1. Créez un dossier "Agence Web".
+sur le Desktop, avec gitbash : mkdir Agence Web
+
+2. Créez un index.html avec du contenu.
+cd Agence Web
+touch index.html
+
+3. Initialisez le dépôt local et faites un commit.
+git init
+
+4. Créez un dépot distant sur Github.
+Repositories, New
+
+5. Liez le dépôt distant et le dépôt local.
+git add index.html
+git branch -M main
+git commit -m "first commit"
+git remote add origin url_du_repo_github
+
+6. Envoyez le code de votre dépôt local sur votre dépôt distant.
+git push -u origin main
+
+7. Créez une branche "Services".
+git branch Services
+
+8. Switchez sur la branche et ajoutez-y une page services.html avec du contenu.
+git switch Services
+touch Services.html
+
+9. Faites un commit de ces changements.
+git add .\Services.html
+git commit -m "added Services.html"
+
+10. Envoyez cette branche sur Github.
+git push - u origin Services
+
+11. Intégrez les changements de cette branche à la branche principale à l'aide d'une "pull request".

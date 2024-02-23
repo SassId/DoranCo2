@@ -106,6 +106,7 @@ git clone url
 git remote add alias url # alias is a name you choose to record the url you enter
 
 # Sends the local repo to the remote repo by linking the local branch to the remote branch
+# Sends a local new branch to the remote repo 
 git push -u alias branch_name
 
 # Sends local repo to remote repo
