@@ -127,3 +127,4 @@ git pull alias branch_name
 # you can specify in it the names of all folders and files you want
 # to ignore from your git adds and git commits
 .gitignore
+ 
