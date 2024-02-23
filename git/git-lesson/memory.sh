@@ -99,6 +99,9 @@ git revert commit_id
 #                  REMOTE                 #
 # --------------------------------------- #
 
+# Clones a remote repository into local
+git clone url
+
 # Establish a connexion to a remote repo by assigning a name and url:
 git remote add alias url # alias is a name you choose to record the url you enter
 
@@ -108,10 +111,18 @@ git push -u alias branch_name
 # Sends local repo to remote repo
 git push
 
-# Collect the remote main branch before pushing your modifications:
+# Collects the remote upper branch before pushing your modifications:
 git pull
 
+#Collects a specific remote branch (not yet linked to the working one)
+git pull alias branch_name
+
+# --------------------------------------- #
+#                .GITIGNORE               #
+# --------------------------------------- #
 
 
-
-
+# After creating a .gitignore file at the base of the repository, 
+# you can specify in it the names of all folders and files you want
+# to ignore from your git adds and git commits
+.gitignore
