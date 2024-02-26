@@ -15,11 +15,16 @@
   <body>
     <div>
       <h1>TABLES</h1>
+      <!-- Tables are written inside the <table> </table> tags -->
+      <!-- For every row we create a <tr> </tr> tag -->
+      <!-- Table Headings are nested inside the rows and place between the <th></th> tags -->
+      <!-- Then come the Table Date (each cell) between the <td></td> tags -->
       <table>
         <!-- We use the <caption> </caption> tags to indicate the table title -->
         <caption>
           My fancy table
         </caption>
+        <!-- Indicate the table head -->
         <thead>
           <tr>
             <th>HT</th>
@@ -27,11 +32,14 @@
             <th>TTC</th>
           </tr>
         </thead>
+        <!-- Indicates the table foot which is placed here but automatically displayed at the bottom
+        by the browser -->
         <tfoot>
           <th>HT</th>
           <th>TVA</th>
           <th>TTC</th>
         </tfoot>
+        <!-- Indicates the table body -->
         <tbody>
           <tr>
             <td>116</td>
@@ -46,7 +54,5 @@
         </tbody>
       </table>
     </div>
-   
   </body>
 </html>
-
