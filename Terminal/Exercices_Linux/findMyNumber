@@ -1,0 +1,33 @@
+# random_number=$((1 + RANDOM % 100))
+# echo "What's the magic number?"
+# read
+# while [ $REPLY -ne $random_number ]
+# do
+#     echo "try again"
+#     if [ $REPLY -lt $random_number ]
+#     then
+#         echo "you're too low"
+#     else
+#         echo "you're too high"
+#     fi
+#     read
+# done
+# echo "Congratulations!"
+
+#creates a random number between 1 and 100
+# random_number=$((1 + RANDOM % 100));
+
+random_number=$((1 + RANDOM % 100));
+echo "What's the magic number?";
+read;
+while [ $REPLY -ne $random_number ];
+do
+    echo "try again"
+    if [ $REPLY -lt $random_number ]; then
+        echo "you're too low"
+    else
+        echo "you're too high"
+    fi
+    read
+done
+echo "Congratulations!"
