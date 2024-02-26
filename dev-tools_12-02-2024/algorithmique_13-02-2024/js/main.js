@@ -528,6 +528,17 @@
 /*  ------------------------------------------------------------
                             LES OBJETS
     ------------------------------------------------------------ */
+    
+// Tout est objet en javascript
+// window est un objet global qui contient toute les variables globales de javascript (document, console, fetch, alert, prompt, confirm)
+
+/* 
+    Les objets sont des variables qui peuvent contenir plusieurs valeurs sous forme de paires clé/valeur
+    Les objets sont déclarés avec des accolades {}
+    Les paires clé/valeur sont séparées par une virgule
+    Les valeurs peuvent être de n'importe quel type de données (string, number, tableau, fonction, objet)
+    Les objets peuvent contenir des fonctions qui sont appelées méthodes
+*/
 
 // Tout est objet en javascript
 // window est un objet global qui contient toute les variables globales de javascript (document, console, fetch, alert, prompt, confirm)
