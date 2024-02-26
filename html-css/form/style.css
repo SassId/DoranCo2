@@ -1,0 +1,12 @@
+th, td {
+    border: solid 1px;
+    padding: 5px 10px;
+}
+table {
+    border-collapse: collapse;
+}
+
+h1 {
+    color: red;
+    text-align: center;
+}

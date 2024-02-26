@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms Exercices</title>
+    <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+    <div>
+        <h1>Table and Form Practice</h1>
+    </div>
+    <div>
+        <table>
+            <caption>New Case</caption>
+            <form>
+            <tr>
+                <td><label for="nickname"></label>Nickname:</td>
+                <td><input type="text" id="nickname" autofocus></td>
+            </tr>
+            <tr>
+                <td><label for="password">Password:</label></td>
+                <td><input type="password" id="password"></td>
+            </tr>
+            <tr>
+                <td><label for="email">E-Mail:</label></td>
+                <td><input type="email" id="email" required></td>
+            </tr>
+            <tr>
+                <td><label for="date">Date</label></td>
+                <td><input type="date" id="date"></td>
+            </tr>
+            <tr>
+                <td><label for="aboutYou">Tells us about you:</label></td>
+                <td><textarea id="aboutYou" ></textarea></td>
+            </tr>
+            <tr>
+                <td><span>Gender:</span></td>
+                <td><input type="radio" id="gender" value="M" name="gender">
+                    <label for="gender">Male</label>
+                    <input type="radio" id="female" value="F" name="gender">
+                    <label for="female">Female</label>
+                    <input type="radio" id="nonBinary" value="NB" name="gender">
+                    <label for="nonBinary">Non Binary</label></td>
+            </tr>
+            <tr>
+                <td>Sport:</td>
+                <td><input type="checkbox" id="karate" value="karate">
+                    <label for="karate">Karate</label>
+                    <input type="checkbox" id="tennis" value="tennis">
+                    <label for="tennis">Tennis</label></td>
+            </tr>
+            <tr>
+                <td>Upload your picture</td>
+                <td><input type="file"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" value="Send" name="save">
+                                <input type="reset" value="Reset" name="reset"></td>
+            </tr>
+                    </table>
+                </form>
+    </div>
+</body>
+</html>

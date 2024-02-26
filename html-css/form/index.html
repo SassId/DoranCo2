@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+</head>
+<body>
+    <div>
+        <h1>Forms</h1>
+    </div>
+    <div>
+        <form>
+            <div>
+                <!-- A Form is created within the <form></form> tags -->
+                <!-- To link up the label and the input we assign the input an
+                "id" attribute that has to be the same value as the label's "for" attribute -->
+                <label for="name">First Name:</label>
+                <input type="text" id="name">
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password">
+            </div>
+            <div>
+                <label for="email">E-Mail:</label>
+                <input type="email" id="email">
+            </div>
+            <div>
+                <label for="date">Date:</label>
+                <input type="date">
+            </div>
+            <div>
+                <label for="comments">Comments</label>
+                <textarea id="comments"> </textarea>
+            </div>
+            <div>
+                <label for="transportation">Transportation:</label>
+                <select id="transportation">
+                    <option value="car">Car</option>
+                    <option value="motorbike">Motorbike</option>
+                </select>
+            </div>
+            <div>
+                <span>What sport do you practice?</span>
+                <label for="soccer">Soccer</label>
+                <input type="checkbox" id="soccer" value="soccer">
+                <label for="climbing">Climbing</label>
+                <input type="checkbox" id="climbing" value="climbing">
+            </div>
+            <div>
+                <span>Gender:</span>
+                <!-- The radio inputs must have the "name" attribute with the same value 
+                in order to have only one choice accepted (sent to the server)  -->
+                <label for="male">Male</label>
+                <input type="radio" id="male" value="M" name="gender">
+                <label for="female">Female</label>
+                <input type="radio" id="female" value="F" name="gender">
+                <label for="non-binary">Non Binary</label>
+                <input type="radio" id="non-binary" value="NB" name="gender">
+            </div>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    
+</body>
+</html>
