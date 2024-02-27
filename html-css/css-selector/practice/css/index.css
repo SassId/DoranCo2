@@ -1,9 +1,20 @@
+body {
+    font-size: 20px;
+    font-family: Helvetica, sans-serif;
+}
+
 h1 {
   color: rgb(44, 178, 240);
+  font-weight: normal;
+}
+h1:hover {
+    color: pink;
 }
 
 h2 {
   color: rgb(31, 194, 31);
+  text-decoration: underline;
+  text-align: center;
 }
 
 p {
@@ -30,3 +41,25 @@ p {
   font-style: italic;
 }
 
+.right-aligned {
+    text-align: right;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.no-underline {
+    text-decoration: none;
+}
+
+/* .centered { */
+    /* display: flex; */
+    /* margin: 0 auto; */
+    /* justify-content: center; */
+/* } */
+
+.centered {
+    display: table;
+    margin: auto;
+}
