@@ -18,7 +18,7 @@
                 <td><label for="nickname"></label>Nickname:</td>
                 <!-- uses the autofocus attribute to have to selected field automatically enter the 
                 desired field everytime the page is reloaded -->
-                <td><input type="text" id="nickname" placeholder="Mr Big Citrouille"></td>
+                <td><input type="text" id="nickname" placeholder="Mr Big Citrouille" autofocus ></td>
             </tr>
             <tr>
                 <td><label for="password">Password:</label></td>
@@ -50,15 +50,15 @@
                     <label for="nonBinary">Non Binary</label></td>
             </tr>
             <tr>
-                <td>Sport:</td>
+                <td><label for="upload">Upload your picture</label></td>
                 <td><input type="checkbox" id="karate" value="karate">
                     <label for="karate">Karate</label>
-                    <input type="checkbox" id="tennis" value="tennis">
-                    <label for="tennis">Tennis</label></td>
+                    <input type="checkbox" id="tennis" value="tennis"></td>
             </tr>
             <tr>
                 <td>Upload your picture</td>
-                <td><input type="file"></td>
+                <td><input type="file" id="upload">
+                    <label for="upload"></label></td>
             </tr>
             <tr>
                 <td colspan="2"><input type="submit" value="Send" name="save">
