@@ -8,4 +8,42 @@ body {
     /* Changes font weight */
     /* The most common are normal and bold */
     font-weight: bold;
+
+    /* Changes the font style */
+    /* The most common are normal and italic */
+    font-style: oblique;
+
+    /* Changes the text alignment */
+    /* The most common are left, center, right */
+    text-align: center
 }
+
+h1{
+    font-size: 50px;
+}
+ 
+p{
+    /* Changes font case */
+    /* The most common are lowercase, uppercase, capitalize */
+    text-transform: uppercase;
+    color: #555;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    /* Changes the decoration of the text */
+    text-decoration: none;
+}
+a:visited {
+    color: green;
+}
+
+a:hover {
+    color: red;
+    font-size: 30px;
+}
+
+
