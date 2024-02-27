@@ -3,6 +3,13 @@
     color: green;
 } */
 
+div{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
 h1{
     color: red;
     text-shadow: 10px 10px gray ;
@@ -10,10 +17,19 @@ h1{
     border-radius: 40% 0 ;
     padding: 20px;
     text-align: center;
+    /* width: 400px; */
 }
 /* The tag selector is used to style all element of that particular type */
 p{
     color: blue;
+}
+
+h2{
+    transition: transform 2s;
+    text-decoration: underline;
+}
+h2:hover{
+    transform: rotate(360deg);
 }
 
 /* The class selector is used to mark one or many elements that we want styled similarly */
@@ -28,9 +44,9 @@ leave them for javascript */
 } */
 
 /* we can select several elements at the same time by seperating them with a comma */
-h2, .text-in-orange{
+/* h2, .text-in-orange{
     /* font-style: italic; */
-}
+/* } */ */
 
 /* the descendant selector is used to target specific elements inside a parent element */
 .paragraphs h2{
@@ -39,4 +55,16 @@ h2, .text-in-orange{
 
 .text-in-italic{
     font-size: it;
+}
+
+.in-gray{
+    color: rgb(150, 150, 150);
+}
+
+.bigger{
+    display: block;
+    transition: transform 2s;
+}
+.bigger:hover{
+    transform: scale(2);
 }
