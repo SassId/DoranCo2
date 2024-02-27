@@ -1,0 +1,31 @@
+h1{
+    color: rgb(44, 178, 240);
+}
+
+h2{
+    color: rgb(31, 194, 31);
+}
+
+p{
+    color: orange;
+}
+
+ol{
+    color: rgb(247, 123, 216);
+}
+
+.in-gray{
+    color: gray;
+}
+
+.in-purple{
+    color: purple;
+}
+
+.in-blue{
+    color: blue;
+}
+
+.italic{
+    font-style: italic;
+}
