@@ -16,6 +16,8 @@
             <form>
             <tr>
                 <td><label for="nickname"></label>Nickname:</td>
+                <!-- uses the autofocus attribute to have to selected field automatically enter the 
+                desired field everytime the page is reloaded -->
                 <td><input type="text" id="nickname" autofocus></td>
             </tr>
             <tr>
@@ -24,6 +26,8 @@
             </tr>
             <tr>
                 <td><label for="email">E-Mail:</label></td>
+                <!-- uses the required attribute to make the selected field required before submitting
+                the form -->
                 <td><input type="email" id="email" required></td>
             </tr>
             <tr>
@@ -36,6 +40,8 @@
             </tr>
             <tr>
                 <td><span>Gender:</span></td>
+                <!-- uses the name attribute assigned to the same value to make the radio have only one 
+                possible value -->
                 <td><input type="radio" id="gender" value="M" name="gender">
                     <label for="gender">Male</label>
                     <input type="radio" id="female" value="F" name="gender">

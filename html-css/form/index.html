@@ -15,8 +15,9 @@
                 <!-- A Form is created within the <form></form> tags -->
                 <!-- To link up the label and the input we assign the input an
                 "id" attribute that has to be the same value as the label's "for" attribute -->
+                <!-- we use the placeholder attribute to prefill the field with an example -->
                 <label for="name">First Name:</label>
-                <input type="text" id="name">
+                <input type="text" id="name" placeholder="John Doe">
             </div>
             <div>
                 <label for="password">Password:</label>
@@ -24,11 +25,11 @@
             </div>
             <div>
                 <label for="email">E-Mail:</label>
-                <input type="email" id="email">
+                <input type="email" id="email" placeholder="john.doe@gmail.com">
             </div>
             <div>
                 <label for="date">Date:</label>
-                <input type="date">
+                <input type="date" id="date">
             </div>
             <div>
                 <label for="comments">Comments</label>
@@ -39,6 +40,10 @@
                 <select id="transportation">
                     <option value="car">Car</option>
                     <option value="motorbike">Motorbike</option>
+                    <option value="jetski">Jetski</option>
+                    <option value="spaceship">Space Ship</option>
+                    <!-- we use the selected attribute to pre pick the desired option -->
+                    <option value="chocobo" selected>Chocobo</option>
                 </select>
             </div>
             <div>
