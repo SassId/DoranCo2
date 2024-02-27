@@ -1,9 +1,14 @@
 td{
-    border: solid 2px blue;
+    border: solid 2px rgb(74, 153, 78);
     padding: 20px 50px;
 }
 
-table{
+/* table{
     border-collapse: collapse;
     
+} */
+
+body{
+    display: block;
+    margin: auto;
 }
