@@ -6,8 +6,7 @@ It resets the browser's default margins, paddings and box sizing behaviour */
   box-sizing: border-box; /*set the box to the coder chosen value */
 }
 
-body {
-}
+
 
 h1 {
   background-color: rgb(37, 209, 37);
