@@ -1,58 +1,129 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-
 
 header {
-    background-color: rgb(8, 8, 56);
-}
-
-h1 {
-    margin: 50px;
-}
-
-a {
-    color: red;
-    text-decoration: none;
-}
-
-a:hover {
-    color: gray;
+  background-color: rgb(8, 8, 56);
+  padding: 50px;
 }
 
 .doranco-logo {
-    width: 100px;
-    margin: 20px 100px;
+  width: 100px;
+  /* margin: 20px 100px; */
 }
 
+main {
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+h1 {
+    margin-bottom: 100px;
+}
+
+/* COMPONENTS */
+
+.button {
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    background-color: #9b0517;
+    border-radius: 5px;
+    font-weight: lighter;
+    font-size: small;
+}
+
+.button:hover {
+    color: gray;
+    transition: 0.3s;
+}
+
+/* .button:visited {
+    color: gray;
+} */
+
+/* SECTION #1: HERO SECTION */
+
 .hero {
-    width: 90%;
-    min-height: 429px;
-    margin: 20px auto;
-    background-image: url("https://www.doranco.fr/Files/image_site_doranco/site_dedie_alternance_doranco.jpg") ;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    color: #fff;
-    text-align: center;
-    font-weight: bold;
-    
-   
+  min-height: 429px;
+  margin: 60px auto;
+  padding: 80px 10px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.658), transparent), url("../img/hero-bckgrnd.bmp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top left;
+  color: #fff;
+  font-weight: bold;
+}
+
+.title {
+  font-size: 33px;
 }
 
 .uppercase {
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
+
+/* SECTION #2: QUI SOMMES-NOUS ? */
 
 .about-us {
-    text-align: center;
-    margin: auto;
+  margin: auto;
+  min-height: 300px;
+  /* border: solid; */
+  padding: 10px;
 }
 
-.spaced-p {
-    margin-top: 10px;
+.about-us p {
+  margin-top: 10px;
 }
+.about-us a {
+  color: #9b0517;
+  text-decoration: none;
+}
+
+.about-us a:hover {
+  color: gray;
+  transition: 1s;
+}
+
+/* */
+.sub-hero {
+  min-height: 429px;
+  margin: 60px auto;
+  padding: 80px 10px;
+  /* border: solid black; */
+  background-image: url("../img/sub-hero-bckgrnd.bmp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background-position: center; */
+  color: white;
+  font-size: x-large;
+  /* text-align: left; */
+}
+
+.sub-hero a {
+    display: block;
+}
+
+.text-banner {
+  color: white;
+  background-color: #ddceb3;
+  padding: 17px;
+}
+
+.rows {
+  min-height: 429px;
+  margin: 60px auto;
+  padding: 80px 10px;
+}
+/*! to force an image to be contained fully into the parent box:
+.container-x img {
+    widht: 100%;
+    height: 100%; 
+    object-fit: cover;
+    object-position: top left;
+*/
