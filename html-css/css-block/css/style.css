@@ -1,0 +1,34 @@
+/* Resets the browser's default margins, paddings and box sizing behaviour */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*set the box to the coder chosen value */
+}
+
+
+body {
+
+}
+
+.container {
+    background-color: rgb(75, 168, 245);
+    height: 300px;
+    width: 300px;
+    margin: 50px auto ;
+    /* {margin: auto} allows to center a block only in width  */
+    padding: 20px;
+    border: 20px solid black;
+    
+}
+
+h1 {
+    background-color: rgb(37, 209, 37);
+    color: white;
+    width: 500px;
+    text-align: center;
+    margin: auto ;
+}
+
+.container p {
+    color: white;
+}
