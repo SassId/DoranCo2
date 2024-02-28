@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding 0;
+    box-sizing: border-box;
+}
+
+body {
+}
+
+header {
+    background-color: rgb(8, 8, 56);
+}
+
+h1 {
+    margin: 50px;
+}
+
+a {
+    color: red;
+    text-decoration: none;
+}
+
+a:hover {
+    color: gray;
+}
+
+.doranco-logo {
+    width: 100px;
+    margin: 20px 100px;
+}
+
+.hero {
+    width: 90%;
+    min-height: 429px;
+    margin: 20px auto;
+    background-image: url("https://www.doranco.fr/Files/image_site_doranco/site_dedie_alternance_doranco.jpg") ;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    margin-top: ;
+   
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.about-us {
+    text-align: center;
+    margin: auto;
+}
+
+.spaced-p {
+    margin-top: 10px;
+}

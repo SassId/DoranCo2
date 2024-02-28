@@ -1,34 +1,55 @@
-/* Resets the browser's default margins, paddings and box sizing behaviour */
+/* * is the Universal Selector:
+It resets the browser's default margins, paddings and box sizing behaviour */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; /*set the box to the coder chosen value */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /*set the box to the coder chosen value */
 }
-
 
 body {
-
-}
-
-.container {
-    background-color: rgb(75, 168, 245);
-    height: 300px;
-    width: 300px;
-    margin: 50px auto ;
-    /* {margin: auto} allows to center a block only in width  */
-    padding: 20px;
-    border: 20px solid black;
-    
 }
 
 h1 {
-    background-color: rgb(37, 209, 37);
-    color: white;
-    width: 500px;
-    text-align: center;
-    margin: auto ;
+  background-color: rgb(37, 209, 37);
+  color: white;
+  width: 500px;
+  text-align: center;
+  margin: auto;
+}
+
+.container {
+  /* block element have a default display value of block */
+  display: block;
+  background-color: rgb(75, 168, 245);
+  height: 300px;
+  min-height: 300px; /*!use this propriety to set a minimum value to the box so that the contained
+    /*!elements are never going out of the box */
+  width: 300px;
+  margin: 50px auto;
+  /* {margin: auto} allows to center a block only in width  */
+  padding: 20px;
+  border: 20px solid black;
 }
 
 .container p {
-    color: white;
+  color: white;
+}
+
+.spaced-p {
+  margin-top: 20px;
+}
+
+.circle {
+  width: 200px;
+  height: 200px;
+  background-color: #f07070;
+  margin: 50px auto;
+  border-radius: 50%; /** 50% or more creates a circle */
+  box-shadow: 10px 10px 10px #00000054; /** x axis, y axix, blur */
+  /*!remember you can set the opacity of the color in the color picker*/
+}
+
+.circle p {
+  color: white;
+  padding: 50px;
 }
