@@ -5,11 +5,82 @@
 }
 
 body {
-    
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
 }
 
 header {
-    background-color: aqua;
+    background-color: rgb(31, 161, 248);
     padding: 20px;
     text-align: center;
+    color: white;
+}
+
+footer {
+    background-color: #333;
+}
+
+/* COMPONENTS: */
+h1 {
+    margin: 10px;
+}
+
+h2 {
+    color: rgb(31, 161, 248);
+    text-align: center;
+    margin: 20px;
+}
+
+P {
+    margin: 20px;
+}
+
+/* MAIN SECTION: */
+
+main {
+    width: 800px;
+    border: 1px solid gray;
+    border-radius: 20px;
+    margin: 30px auto;
+    padding: 10px;
+    box-shadow: ;
+}
+
+main img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px gray;
+    margin: auto;
+}
+
+/* SECTION #1: MAIN CHARACTERS */
+
+.characters {
+    margin: 40px;
+}
+
+.characters ul {
+    display: table;
+    margin: auto;
+}
+
+/* SECTION #2: HERO SECTION */
+
+.hero {
+    min-height: 435px;
+    color: #f0f0f0;
+    text-transform: uppercase;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.788), transparent), url("../img/claymore-trio.bmp");
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px gray;
+    text-align: center;
+}
+.hero p {
+    display: block;
+    
+    margin: 100px auto;
+    
 }
