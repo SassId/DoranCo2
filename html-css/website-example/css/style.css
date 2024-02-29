@@ -35,7 +35,9 @@ h1 {
     border-radius: 5px;
     font-weight: lighter;
     font-size: small;
-}
+    text-transform: capitalize;
+
+  }
 
 .button:hover {
     color: gray;
@@ -90,13 +92,14 @@ h1 {
   transition: 1s;
 }
 
-/* */
+/* SECTION #3: SUB HERO */
+
 .sub-hero {
   min-height: 429px;
   margin: 60px auto;
   padding: 80px 10px;
   /* border: solid black; */
-  background-image: url("../img/sub-hero-bckgrnd.bmp");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.658), transparent), url("../img/sub-hero-bckgrnd.bmp");
   background-size: cover;
   background-repeat: no-repeat;
   /* background-position: center; */
@@ -107,6 +110,14 @@ h1 {
 
 .sub-hero a {
     display: block;
+    margin-bottom: 10px;
+}
+.continue {
+  width: 25%;
+}
+
+.conventionee {
+  width: 30%;
 }
 
 .text-banner {
@@ -115,11 +126,17 @@ h1 {
   padding: 17px;
 }
 
+/* SECTION #4: GRID AND ROWS */
+
 .rows {
   min-height: 429px;
   margin: 60px auto;
   padding: 80px 10px;
 }
+
+/* SECTION #5: LAST HERO */
+
+
 /*! to force an image to be contained fully into the parent box:
 .container-x img {
     widht: 100%;
