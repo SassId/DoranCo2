@@ -4,26 +4,44 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #f0f0f0;
+    background-color: #810606;
     color: #333;
 }
 
 header {
-    background-color: rgb(31, 161, 248);
+    background-color: rgb(3, 67, 110);
     padding: 20px;
     text-align: center;
     color: white;
+    /* position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; */ 
 }
 
-footer {
-    background-color: #333;
+header p {
+    color: rgb(243, 203, 100);
+    
 }
+
 
 /* COMPONENTS: */
 h1 {
     margin: 10px;
+    text-shadow: 10px 10px 5px black;
+    animation: shadow-swing 3s ease 1s infinite;
+}
+
+@keyframes shadow-swing {
+    0% { text-shadow: -10px 10px 5px black}
+    50% { text-shadow: 0px 10px 5px black}
+    0% { text-shadow: 10px 10px 5px black}
 }
 
 h2 {
@@ -40,11 +58,11 @@ P {
 
 main {
     width: 800px;
-    border: 1px solid gray;
     border-radius: 20px;
     margin: 30px auto;
     padding: 10px;
-    box-shadow: ;
+    box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.39);
+    background-color: #f0f0f0;
 }
 
 main img {
@@ -52,7 +70,7 @@ main img {
     width: 100%;
     object-fit: cover;
     border-radius: 10px;
-    box-shadow: 5px 5px 5px gray;
+    box-shadow: 5px 5px 5px rgba(128, 128, 128, 0.5);
     margin: auto;
 }
 
@@ -71,16 +89,55 @@ main img {
 
 .hero {
     min-height: 435px;
+    padding-top: 180px;
     color: #f0f0f0;
     text-transform: uppercase;
     background-image:linear-gradient(rgba(0, 0, 0, 0.788), transparent), url("../img/claymore-trio.bmp");
     border-radius: 10px;
-    box-shadow: 5px 5px 5px gray;
+    box-shadow: 5px 5px 5px rgba(128, 128, 128, 0.5);
     text-align: center;
 }
-.hero p {
+
+.hero h3 {
+    animation: pulse 5s ease-in-out 0.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1);}
+    50% { transform: scale(1.5);}
+    100% { transform: scale(1);}
+}
+
+/* SECTION #3: SKILLS */
+
+.skills {
+    margin: 40px;
+}
+
+.skills ol {
+    list-style-type: upper-roman;
+}
+
+/* FOOTER */
+
+footer {
+    background-color: rgb(3, 67, 110);
+    padding: 20px;
+}
+footer a {
+    text-decoration: none;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+    color: #333;
+    /* padding: 10px 2px; */
     display: block;
-    
-    margin: 100px auto;
-    
+    width: 100px;
+    margin: auto;
+    padding: 5px ;
+}
+
+footer a:hover {
+    color: #e12e2d;
 }
