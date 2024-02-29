@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+}
+
+.container {
+    background-color: rgb(77, 248, 77);
+    margin: 50px;
+    height: 500px;
+
+    /* The declaration {display:flex} allows us to control the elements that are direct children */
+    display: flex;
+
+    /* This delaration allows us to choose the direction of the axis */
+    /* row | column */
+    flex-direction: row;
+
+    /* This declaration allows us to align the boxes horizontally */
+    /*flex-start | center | flex-end | */
+    /* space-between | space-around | space-evenly */
+    justify-content: center;
+
+    /* This declaration allows us to align the elements in the secondary axis */
+    /* flex-start | center | flex-end */
+    align-items: flex-start;
+
+    /* This declaration allows us to put a gap in between each child */
+    gap: 10px;
+
+    /* This declaration allows us to let elements adapts to the space available in the containing box and creates new lines if needed */
+    flex-wrap: wrap;
+
+
+
+
+
+
+}
+
+.item {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(247, 128, 50);
+    /* margin-bottom: 20px; */
+}
