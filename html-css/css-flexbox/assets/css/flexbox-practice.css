@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+}
+
+/* HEADER: */
+header {
+    background-color: orange;
+    padding: 30px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    text-transform: capitalize;
+}   
+
+nav a:hover {
+    text-decoration: underline;
+}
