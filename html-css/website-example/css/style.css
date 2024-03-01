@@ -4,36 +4,20 @@
   box-sizing: border-box;
 }
 
+/* HEADER: */
+
 header {
   background-color: rgb(8, 8, 56);
-  padding: 20px;
+  padding: 50px;
 }
 
 .top-part {
-  display: flex; 
-  justify-content: space-between;
-  align-items: flex-start ;
-  flex-shrink: 2;
-}
-
-.top-part input {
-  min-width: 162px;
-}
-
-.top-right {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.doranco-logo {
-  max-width: 200px;
 
 }
 
-.mycommunity-logo {
-  max-width: 100px;
-}
+/* MAIN SECTION: */
 
 main {
   text-align: center;
@@ -42,7 +26,7 @@ main {
   font-family: "Roboto Condensed", sans-serif;
 }
 
-h1 { 
+h1 {
     margin-bottom: 100px;
 }
 
@@ -116,6 +100,8 @@ h1 {
 /* SECTION #3: SUB HERO */
 
 .sub-hero {
+  display: flex;
+  align-items: center;
   min-height: 429px;
   margin: 60px auto;
   padding: 80px 10px;
