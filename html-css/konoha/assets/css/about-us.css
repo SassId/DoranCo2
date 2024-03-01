@@ -8,6 +8,17 @@ html {
     scroll-behavior: smooth;
 }
 
-main {
-    margin-top: 125px;
-  }
+  h1 {
+    text-transform: capitalize;
+    text-align: center;
+}
+
+/* SECTION #1: */
+
+.bio {
+    margin: 20px;
+}
+
+.bio p {
+    margin: 20px;
+}
