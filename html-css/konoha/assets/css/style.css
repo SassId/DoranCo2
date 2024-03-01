@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Ojuju:wght@200..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -9,33 +11,45 @@ html {
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 18px;
+  font-family: "Roboto Condensed", "Nunito Sans", sans-serif;
+  font-size: 20px;
   color: #333;
 }
 
 /* COMPONENTS */
+
+main {
+  margin-top: 125px;
+}
+
+h1 {
+  font-family: "Ojuju", sans-serif;
+  font-size: 80px;
+}
+
+h2 {
+  font-family: "Ojuju", sans-serif;
+  font-size: 40px;
+}
 
 a {
   text-decoration: none;
 }
 a:hover {
   color: #ff6600;
+  transform: scale(1.2);
 }
 
-/* a:visited {
-    color: rgb(223, 11, 11);
-} */
-
 .button {
-    background-color: rgb(5, 168, 243);
-    padding: 5px 20px;
-    border-radius: 10px;
-    color: white;
+  background-color: rgb(5, 168, 243);
+  padding: 5px 20px;
+  border-radius: 10px;
+  color: white;
+  text-transform: capitalize;
 }
 
 .button:hover {
-    color: #ff6600;
+  color: #ff6600;
 }
 
 .up {
@@ -55,8 +69,6 @@ a:hover {
 .up:hover {
   color: #ff6600;
 }
-
-
 
 /* HEADER: */
 
@@ -85,5 +97,24 @@ header a {
 
 nav {
   display: flex;
+  flex-wrap: wrap;
   gap: 100px;
+}
+
+@media screen and (max-width: 600px) {
+  header {
+    flex-direction: column;
+    padding: 30px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  nav {
+    flex-direction: column;
+  }
+
+  .up {
+    padding: 10px;
+    font-size: 15px;
+  }
 }

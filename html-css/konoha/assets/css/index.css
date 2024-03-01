@@ -8,10 +8,6 @@ html {
   scroll-behavior: smooth;
 }
 
-main {
-  margin-top: 125px;
-}
-
 /* SECTION #1: HERO SECTION: */
 
 .hero {
@@ -19,9 +15,10 @@ main {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  height: 400px;
+  gap: 30px;
+  min-height: 400px;
   background-color: #c99981;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.589), transparent),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.801), transparent),
     url("../img/konoha-bckgrnd.jpg");
   background-size: cover;
   background-position: center;
@@ -32,6 +29,12 @@ main {
 
 /* SECTION #2: EXPLORE */
 
+.explore img {
+    width: 250px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
 .explore {
   min-height: 100px;
   margin: 20px;
@@ -41,4 +44,16 @@ main {
   align-items: center;
   text-align: center;
   gap: 10px;
+}
+
+.pics {
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+@media  and (max-width: 600px) {
+    header
 }
