@@ -19,7 +19,7 @@ body {
 /* COMPONENTS */
 
 main {
-  margin-top: 189px;
+  margin-top: 125px;
 }
 
 h1 {
@@ -102,6 +102,10 @@ nav {
 }
 
 @media screen and (max-width: 600px) {
+  main {
+    margin-top: 189px;
+  }
+
   header {
     flex-direction: column;
     padding: 30px;
@@ -109,8 +113,13 @@ nav {
 }
 
 @media screen and (max-width: 400px) {
+    main {
+        margin-top: 277px;
+      }
+
   nav {
     flex-direction: column;
+    gap: 20px;
   }
 
   .up {
