@@ -120,6 +120,7 @@ h1 {
 .sub-hero a {
     display: block;
     margin-bottom: 10px;
+    width: fit-content;
 }
 .continue {
   width: 25%;
