@@ -6,12 +6,33 @@
 
 header {
   background-color: rgb(8, 8, 56);
-  padding: 50px;
+  padding: 20px;
+}
+
+.top-part {
+  display: flex; 
+  justify-content: space-between;
+  align-items: flex-start ;
+  flex-shrink: 2;
+}
+
+.top-part input {
+  min-width: 162px;
+}
+
+.top-right {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .doranco-logo {
-  width: 100px;
-  /* margin: 20px 100px; */
+  max-width: 200px;
+
+}
+
+.mycommunity-logo {
+  max-width: 100px;
 }
 
 main {
