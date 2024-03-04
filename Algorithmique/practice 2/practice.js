@@ -215,7 +215,7 @@
 // *****
 // let numberr = prompt('pick a number between 1 and 10')
 // let star = '*'
-// while (numberr >= 1 || numberr <=10) {
+// while (numberr < 1 || numberr > 10) {
 //     numberr = prompt('i said between 1 and 10!')
 // }
 // for (let i = 0; i <= numberr; i++) {
