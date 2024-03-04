@@ -215,7 +215,7 @@
 // *****
 // let numberr = prompt('pick a number between 1 and 10')
 // let star = '*'
-// while (numberr < 1 || numberr > 10) {
+// while (numberr < 1 || numberr >10) {
 //     numberr = prompt('i said between 1 and 10!')
 // }
 // for (let i = 0; i <= numberr; i++) {
@@ -291,14 +291,27 @@
         Afficher le tableau
 */
 
-let cityLab = ["Paris", "Berlin", "Rome", "Moscou", "London", "Madrid"]
-console.log(cityLab)
-let last = cityLab.pop()
-console.log(cityLab)
-let newLength = cityLab.unshift ("Vienna")
-console.log(cityLab)
-cityLab[3] = "Algiers"
-console.log(cityLab)
+// let cityLab = ["Paris", "Berlin", "Rome", "Moscou", "London", "Madrid"]
+// console.log(cityLab)
+// let last = cityLab.pop()
+// console.log(cityLab)
+// let newLength = cityLab.unshift ("Vienna")
+// console.log(cityLab)
+// cityLab[3] = "Algiers"
+// console.log(cityLab)
+
+//  Another Method: 
+// let cityLab = ["Paris", "Berlin", "Rome", "Moscou", "London", "Madrid"];
+// console.log(cityLab)
+// function reorganiseArray() {
+//     cityLab.pop();
+//     cityLab.unshift("Vienna");
+//     cityLab[3]= "Algiers"
+//     console.log(cityLab)
+// }
+// reorganiseArray()
+
+
 
 /*
     Créer une fonction permettant de :
@@ -307,13 +320,57 @@ console.log(cityLab)
         Afficher le tableau dans la console
         Retourner le tableau
 */
+// let testlower = "lower"
+// let testupper = "upper"
+// console.log(testlower.toLowerCase())
+// console.log(testupper.toUpperCase())
 
+// let firstName = prompt("enter your first name")
+// let lastName = prompt("enter your last name")
+// let age = prompt("enter your age")
+// function classifier(firstName, lastName, age) {
+//     let array= []
+//     firstName = firstName.toLowerCase();
+//     lastName = lastName.toUppercase()
+//     array.push(firstName, lastName, age)
+//     return array
+// }
+// let user= classifier(firstName, lastName, age)
+// console.log(user)
+
+// let firstName = prompt('Quel est votre prénom ?');
+// let lastName = prompt('Quel est votre nom ?');
+// let ageUser = prompt('Quel est votre age ?');
+
+// function userArray(firstName, lastName, age) {
+//     let infos = [];
+    
+//     infos.push(firstName.toLowerCase(), lastName.toUpperCase(), age)
+//     return infos
+// }
+// const array = userArray(firstName, lastName, ageUser)
+// console.log(array)
 /*
     Créer une fonction meteo qui prend en parametre la saison et la temperature
         degré s'accorde avec temperature ("s" au pluriel / sans au singulier)
         l'article s'accorde avec la saison ("au" printemps)
         Affiche Nous sommes en hiver et il fait -1 degré
 */
+// function meteoTeller(season, temperature) {
+//     let degre = "degres";
+//     let article = "en ";
+//     if (temperature >= -1 && temperature <= 1) {
+//         degre = "degre";
+//     }
+//     if (season == "printemps") {
+//         article = "au "
+//     } else {
+//         // article = "en"
+//     }
+//     return document.write("Nous sommes " + article + season + " et il fait " + temperature + " degre")
+// }
+// meteoTeller("hiver", 18);
+
 
 /* 
     Créer un objet sangoku
