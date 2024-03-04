@@ -57,17 +57,19 @@ if (age >= 18) {
 // Else, "I didn't get your answer"
 
 
-const pet = prompt('what\s your pet animal ?')
-switch (pet) {
-    case "dog":
-        console.log("you're a good person")
-        break; 
-    case "cat":
-        console.log("how bizarre")
-        break; 
-    case "goldfish":
-        console.log("i'm not talking to you anymore")
-        break;
-    default:
-        console.log("i didn't get your answer")
-}
+// const pet = prompt('what\s your pet animal ?')
+// switch (pet) {
+//     case "dog":
+//         console.log("you're a good person")
+//         break; 
+//     case "cat":
+//         console.log("how bizarre")
+//         break; 
+//     case "goldfish":
+//         console.log("i'm not talking to you anymore")
+//         break;
+//     default:
+//         console.log("i didn't get your answer")
+// }
+
+
