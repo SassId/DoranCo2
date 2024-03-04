@@ -2,8 +2,9 @@
 
 //* Loops are code structures allowing us to execute instructions multiples times
 
-const wholeNumber = prompt("pick a number between 1 and 10");
-let star = "*";
+//? Method with if statement
+// const wholeNumber = prompt("pick a number between 1 and 10");
+// let star = "*";
 // if (wholeNumber > 0 && wholeNumber <= 10) {
 //   for (let i = 0; i < wholeNumber; i++) {
 //     console.log(star);
@@ -14,25 +15,26 @@ let star = "*";
 //   wholeNumber = prompt("pick a number between 1 and 10");
 // }
 
-// do {
-//     let number = prompt('pick a number between 1 and 10')
-    
-// } while (number < 1 || number > 10 ); 
-// for (let i = )
+//? Method with while statement:
+// let number = prompt('pick a number between 1 and 10');
+// let star = '*';
 
-// let number = prompt('pick a number between 1 and 10')
 // while (number < 1 || number > 10) {
 //     number = prompt('pick a number between 1 and 10')
 // }
 // for (let i = 0; i < number; i++) {
-//      star = star = '*'
 //     console.log(star)
+//     star = star + '*'
 // }
 
+//? Method with do while statement:
 let number;
+let star = '*'
+
 do {
-    number = promp('pick a number between 1 and 10')
-
+    number = prompt('pick a number between 1 and 10')
 } while (number < 1 || number > 10);
-
-
+for (let i = 0; i < number; i++) {
+    console.log(star)
+    star = star + '*'
+}
