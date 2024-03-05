@@ -68,17 +68,17 @@ console.log(animals);
 //todo Returns the length of the array
 
 const cities = ['Paris', 'Berlin', 'Rome', 'Moscow', 'London', 'Madrid']
-console.log(cities);
+// console.log(cities);
 cities.splice(5, 1)
-console.log(cities);
+// console.log(cities);
 cities.unshift('Vienna')
-console.log(cities);
+// console.log(cities);
 cities.splice(3, 1, 'Algiers')
-console.log(cities);
+// console.log(cities);
 console.log(cities.length)
 
 function organizer(x) {
-    
+
 
 }
 
