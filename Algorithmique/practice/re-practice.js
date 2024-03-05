@@ -83,9 +83,10 @@
 
 //! Écrire un algorithme qui demande un nombre entier non nul de départ, et qui calcule la somme des entiers jusqu’à ce nombre. Par exemple, si l’on entre 5, le programme doit calculer : 1 + 2 + 3 + 4 + 5 = 15.
 let number = prompt('enter a whole positive number');
-for (let i = 0; i <= number; i++) {
-     number = number + i
-    console.log(number)
+let add = 0
+for (let i = 0; i < number; i++) {
+     add = add + i
+    console.log(add)
     
 }
 
