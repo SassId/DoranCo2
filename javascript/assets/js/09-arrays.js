@@ -26,8 +26,11 @@ const months = [
   "december",
 ];
 
+
+// To access a value of the array we use its digital index (starting with 0)
 console.log(months[0], months[11]); 
 
+// To use or access the whole array, we use the .length propriety
 for (let i = 0; i < months.length; i++) {
     console.log(months[i]);
 }
