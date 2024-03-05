@@ -141,7 +141,7 @@
 let marrakech = 1000000;
 let agadir = 500000;
 let i = 0
-while (agadir < marrakech) {
+while (agadir < marrakech) {g
     marrakech = marrakech + 50000;
     agadir = agadir + (agadir * 0.08)
     i++
