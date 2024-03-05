@@ -16,8 +16,6 @@ const so = animals.push('dolphin', 'wolf')
 console.log(so);
 
 //? Deletes the last element of the array
-console.log(animals);
-
 animals.pop()
 console.log(animals);
 // Returns the deleted element
@@ -57,3 +55,31 @@ console.log(animals);
 // Replaces an element in a specific position
 animals.splice(4, 1, 'eagle')
 console.log(animals);
+
+// Deletes an element in a specific position
+animals.splice(0, 1)
+console.log(animals);
+
+//todo Declares an array (Paris, Berlin, Rome, Moscow, London, Madrid)
+//todo Creates a function that takes an array as a parameter
+//todo Deletes Madrid
+//todo Adds Vienna at the begining
+//todo Replaces Rome with Algiers
+//todo Returns the length of the array
+
+const cities = ['Paris', 'Berlin', 'Rome', 'Moscow', 'London', 'Madrid']
+console.log(cities);
+cities.splice(5, 1)
+console.log(cities);
+cities.unshift('Vienna')
+console.log(cities);
+cities.splice(3, 1, 'Algiers')
+console.log(cities);
+console.log(cities.length)
+
+function organizer(x) {
+    
+
+}
+
+//! All theses methods actually modify the source array
