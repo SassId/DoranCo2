@@ -1,5 +1,3 @@
-/* ----------------------- FUNCTIONS - ARRAYS -----------------------*/
-
 const animals = ["turtle", "gorilla", "fox", "shark", "lion", "tiger"];
 console.log(animals);
 
@@ -66,30 +64,3 @@ console.log(animals);
 // Deletes an element in a specific position
 animals.splice(6, 1)
 console.log(animals);
-
-//todo Declares an array (Paris, Berlin, Rome, Moscow, London, Madrid)
-//todo Creates a function that takes an array as a parameter
-//todo Deletes Madrid
-//todo Adds Vienna at the begining
-//todo Replaces Rome with Algiers
-//todo Returns the length of the array
-
-const cities = ['Paris', 'Berlin', 'Rome', 'Moscow', 'London', 'Madrid']
-// console.log(cities);
-cities.splice(5, 1)
-// console.log(cities);
-cities.unshift('Vienna')
-// console.log(cities);
-cities.splice(3, 1, 'Algiers')
-// console.log(cities);
-console.log(cities.length)
-
-function organizer(array) {
-    array.splice(5,1)
-    array.unshift('Vienna')
-    array.splice(3,1,'Algiers')
-    return array.length
-}
-organizer(cities)
-
-//! All theses methods actually modify the source array
