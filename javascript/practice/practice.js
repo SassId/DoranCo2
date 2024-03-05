@@ -64,3 +64,5 @@ console.log(animals);
 // Deletes an element in a specific position
 animals.splice(6, 1)
 console.log(animals);
+
+test
