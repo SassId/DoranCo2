@@ -57,18 +57,18 @@
 // console.log("bingo!");
 
 //? Method #2: Do While
-const secretNumber = 55;
-let yourNumber;
+// const secretNumber = 55;
+// let yourNumber;
 
-do {
-    yourNumber = prompt("guess my secret number")
-    if (yourNumber < secretNumber) {
-        console.log("try higher");
-    } else {
-        console.log("try lower");
-    }
-} while (yourNumber != secretNumber)
-console.log("bingo");
+// do {
+//     yourNumber = prompt("guess my secret number")
+//     if (yourNumber < secretNumber) {
+//         console.log("try higher");
+//     } else {
+//         console.log("try lower");
+//     }
+// } while (yourNumber != secretNumber)
+// console.log("bingo");
 
 //? Method with if statement
 // const wholeNumber = prompt("pick a number between 1 and 10");
