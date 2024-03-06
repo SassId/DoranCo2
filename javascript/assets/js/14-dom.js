@@ -7,15 +7,39 @@
 //                    JS SELECTORS METHODS
 // -----------------------------------------------------------
 
-
-const mainTitle=  document.getElementById('main-title')
-mainTitle.style.color = "red"
-mainTitle.style.fontFamily = "Arial"
+//? The getElementById() Method:
+const mainTitle = document.getElementById("main-title");
+mainTitle.style.color = "red";
+mainTitle.style.fontFamily = "Arial";
 console.log(mainTitle);
 
-const paragraphs = document.getElementsByTagName('p')
+// ? The getElementsByTagName() Method:
+// This methods returns a HTMLCollection on which we can iterate (like an array) with the for statement
+const paragraphs = document.getElementsByTagName("p");
 for (let i = 0; i < paragraphs.length; i++) {
-    paragraphs[i].style.color = "blue"
+  paragraphs[i].style.color = "blue";
 }
 
-console.log(paragraphs);
+//? The getElementsByClassName() Method:
+// This methods returns a HTMLCollection on which we can iterate (like an array) with the for statement
+
+const borderElements = document.getElementsByClassName("border");
+borderElements[0].style.color = "green";
+console.log(borderElements);
+
+const purpleBack = document.getElementsByClassName("title");
+for (let i = 0; i < purpleBack.length; i++) {
+  purpleBack[i].style.backgroundColor = "purple";
+  purpleBack[i].style.color = "orange"
+  purpleBack[i].style.width = "180px"
+  purpleBack[i].style.textAlign = "center"
+}
+
+
+//? The querySelector() Method:
+
+const parag = document.querySelector('#first-p')
+console.log(parag);
+parag.style.fontSize = "large";
+
+
