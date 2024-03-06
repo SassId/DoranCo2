@@ -2,7 +2,7 @@
 
 //* Objects are complex data structures allowing us to stores severals values and functions together
 
-//! Suntax:
+//! Syntax:
 
 const person = {
   firstName: "Roo", // inside an object, variable are called properties themselves called keys
