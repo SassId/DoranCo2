@@ -138,30 +138,66 @@
     Ecrire un algorithme permettant de déterminer dans combien d’années la population de la ville Agadir dépassera celle de la ville Marrakech.
 */
 
-let marrakech = 1000000;
-let agadir = 500000;
-let i = 0
-while (agadir < marrakech) {g
-    marrakech = marrakech + 50000;
-    agadir = agadir + (agadir * 0.08)
-    i++
-    console.log(i);
-    console.log(marrakech, agadir);
+// let marrakech = 1000000;
+// let agadir = 500000;
+// let i = 0
+// while (agadir < marrakech) {
+//     marrakech = marrakech + 50000;
+//     agadir = agadir + (agadir * 0.08)
+//     i++
+//     console.log(i);
+//     console.log(marrakech, agadir);
 
-}
+// }
 
 // Ecrire un algorithme qui calcule la somme des valeurs d'un tableau.
 // chiffres = [10, 15, 20, 15, 14, 8]
 
+// const chiffres = [10, 15, 20, 15, 14, 8];
+// let somme = 0
+// for (let i = 0; i < chiffres.length; i++) {
+//     somme = somme + chiffres[i]
+// }
+// console.log(somme);
+
+
+
 // Algorithme Somme et Moyenne des Notes
+
+// const chiffres = [10, 15, 20, 15, 14, 8];
+// let somme = 0
+// for (const index of chiffres) {
+//     somme = somme + index
+// }
+// console.log(somme);
+// const moyenne = somme / chiffres.length
+// console.log(moyenne);
 
 /* ---------------------------  Nouveaux Exercices d'Algorithmique --------------------------- */
 
 // Écrire un programme qui affiche les nombres de 1 à 10 avec la boucle for.
+// for (let i = 1; i <= 10; i++) {
+//     console.log(i);
+// }
 
 // Écrire un programme qui utilise une boucle while pour afficher les nombres de 1 à 5.
+// let i = 1
+// while (i <= 5) {
+//     // i = 1;
+//     console.log(i);
+//     i++
+// }
 
 // Écrire un programme qui affiche tous les nombres pairs entre 0 et 100 inclus en utilisant une boucle for.
+// for (i = 0; i <= 100; i = i + 2) {
+//     console.log(i)
+// }
+
+// for (i = 0; i <= 100; i++) {
+//     if (i % 2 == 0) {
+//         console.log(i);
+//     }
+// }
 
 // Écrire un programme qui demande à l'utilisateur de saisir un nombre entier compris entre 1 et 10.
 // Si la réponse n'est pas entre 1 et 10, afficher que le message devait être compris entre 1 et 10
@@ -172,12 +208,39 @@ while (agadir < marrakech) {g
 // ****
 // *****
 
+// let number;
+// let star = '*';
+// do {
+//     number = prompt('pick a number')
+// } while (number < 1 || number > 10);
+
+// for (i = 0; i <= number; i++) {
+//     console.log(star);
+//     star = star + '*'
+// }
+
 // Ecrire le code permettant de récuperer le sexe de l'utilisateur puis afficher avec switch:
 /*
     'homme' => Afficher dans un alert 'Vous êtes un homme'
     'femme' => Afficher dans un alert 'Vous êtes une femme'
     Autre chose => Afficher dans un alert 'Vous n'êtes ni un homme ni une femme'
 */
+
+// let gender = prompt("enter your gender: M , F or NB")
+// switch (gender) {
+//     case "M":
+//         console.log("you are a man");
+//         break;
+//     case "F":
+//         console.log("you're a woman");
+//         break
+//     case "NB":
+//         console.log("you're non binary");
+//         break
+//     default:
+//         console.log("you're something else");
+//         break;
+// }
 
 // Ecrire le code permettant de recuperer l'animal preferé de  l'utilisateur (if, else if, else)
 /*
@@ -186,6 +249,37 @@ while (agadir < marrakech) {g
     Si il rentre "dauphin" ou "otarie" => "Vous aimez les animaux marins !"
     Sinon => je ne connais pas cet animal
 */
+
+// let favAnimal = prompt("what's your favorite animal")
+// if (favAnimal == "cat" || favAnimal == "dog") {
+//     console.log("you like pet animals");
+// } else if (favAnimal == "lion" || favAnimal == "tiger") {
+//     console.log("you like wild animals"); 
+// } else if (favAnimal == "dolphin" || favAnimal == "shark") {
+//     console.log("you like aquatic animals");
+// } else {
+//     console.log("you like fantasy animals");
+// }
+
+
+// let favAnimal = prompt("what's your favorite animal")
+// switch (favAnimal) {
+//     case "cat":
+//     case "dog":
+//         console.log("you like pet animals");    
+//         break;
+//     case "lion":
+//     case "tiger":
+//         console.log("you like wild animals");
+//         break;
+//     case "dolphin":
+//     case "shark":
+//         console.log("you like aquatic animals");
+//         break;
+//     default:
+//         console.log("you like fantasy animals");
+//         break;
+// }
 
 // Écrire une fonction appelée "calculerMoyenne" qui prend trois nombres en entrée et retourne la moyenne de ces nombres.
 
