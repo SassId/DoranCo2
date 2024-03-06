@@ -57,9 +57,6 @@ const divide = function (x,y) {return x/y}
 //todo Creates Function Multiply
 const multiply = function (x,y) {return x*y}
 
-function (){
-    console.log('coucou');
-}
 
 
 
