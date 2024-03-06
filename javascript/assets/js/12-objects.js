@@ -56,6 +56,7 @@ console.log(car.options[0]);
 
 //todo displays description
 // console.log(car.description());
+
 const carMessage = car.description()
 console.log(carMessage);
 
