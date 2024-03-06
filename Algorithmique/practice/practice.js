@@ -104,7 +104,7 @@ let i = g * h;
 */
 
 /*
-    Créer une fonction permettant de :
+    Créer une fonction permetFtant de :
         Recuperer le nom, le prenom et l'age de l'utilisateur
         Stocker ces informations dans un tableau -> Le nom doit être en MAJUSCULES -> Le prenom doit etre en MINUSCULES
         Afficher le tableau dans la console

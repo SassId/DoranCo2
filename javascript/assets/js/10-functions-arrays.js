@@ -29,43 +29,66 @@ animals.unshift("pigeon", "cheetah");
 console.log(animals);
 
 // Returns the length of the modified array
-const unshifted = animals.unshift()
+const unshifted = animals.unshift();
 console.log(unshifted);
 
 //! Returns the length of the modified array plus the () values.
 //! Why?
-const stillUnshifted = animals.unshift("pigeon", "cheetah")
+const stillUnshifted = animals.unshift("pigeon", "cheetah");
 console.log(stillUnshifted);
 
 //? Removes the first element of the array:
-animals.shift()
+animals.shift();
 console.log(animals);
 
 // Returns the first element of the modified array
-const shifted = animals.shift()
+const shifted = animals.shift();
 console.log(shifted);
 
 //? Inverts the order of the array:
-animals.reverse()
+animals.reverse();
 console.log(animals);
 
 // Returns the orginal array
-const reversed = animals.reverse()
+const reversed = animals.reverse();
 console.log(reversed);
 
 //? Modifies, Adds or Deletes an element of the array
 
 // Add an element in a specific position
-animals.splice(5,0,"raccoon")
+animals.splice(5, 0, "raccoon");
 console.log(animals);
 
 // Replaces an element in a specific position
-animals.splice(3, 1, "platypus")
+animals.splice(3, 1, "platypus");
 console.log(animals);
 
 // Deletes an element in a specific position
-animals.splice(6, 1)
+animals.splice(6, 1);
 console.log(animals);
+
+//* For  (... of...) {} allows us to go through all the elements of an iterable object (i.e an array)
+
+//todo Creates a for loop to display all the element of the animals array
+for (let i = 0; i < animals.length; i++) {
+  console.log(animals[i]);
+}
+
+//todo Creates a for of loop to display all the element of the animals array
+for (const animal of animals) {
+  console.log(animal);
+}
+
+//* ForEach(){} is a Js method allowing us to iterate the elements of an array
+// const test = function(){
+//     console.log("yo!");
+
+// }
+// animals.forEach()
+
+animals.forEach(function(animal){
+    console.log(animal);
+})
 
 //todo Declares an array (Paris, Berlin, Rome, Moscow, London, Madrid)
 //todo Creates a function that takes an array as a parameter
@@ -74,22 +97,37 @@ console.log(animals);
 //todo Replaces Rome with Algiers
 //todo Returns the length of the array
 
-const cities = ['Paris', 'Berlin', 'Rome', 'Moscow', 'London', 'Madrid']
-// console.log(cities);
-cities.splice(5, 1)
-// console.log(cities);
-cities.unshift('Vienna')
-// console.log(cities);
-cities.splice(3, 1, 'Algiers')
-// console.log(cities);
-console.log(cities.length)
+// const cities = ['Paris', 'Berlin', 'Rome', 'Moscow', 'London', 'Madrid']
+// // console.log(cities);
+// cities.splice(5, 1)
+// // console.log(cities);
+// cities.unshift('Vienna')
+// // console.log(cities);
+// cities.splice(3, 1, 'Algiers')
+// // console.log(cities);
+// console.log(cities.length)
 
-function organizer(array) {
-    array.splice(5,1)
-    array.unshift('Vienna')
-    array.splice(3,1,'Algiers')
-    return array.length
-}
-organizer(cities)
+// //? Method #1
+// function organizer(array) {
+//     array.splice(5,1)
+//     array.unshift('Vienna')
+//     array.splice(3,1,'Algiers')
+//     return array.length
+// }
+// const display = organizer(cities)
+// console.log(display);
+
+// //? Method #2:
+// const organizer = (array) => {
+//     console.log(cities);
+//     array.pop()
+//     array.unshift('Vienna')
+//     array.splice(3,1,'Algiers')
+//     console.log(array);
+//     return array.length
+// }
+// organizer(cities)
+// const display = organizer(cities)
+// console.log(display);
 
 //! All theses methods actually modify the source array
