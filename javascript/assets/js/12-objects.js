@@ -5,8 +5,8 @@
 //! Suntax:
 
 const person = {
-  firstName: "Roo", // inside an object, variable are called properties
-  lastName: "Rogers",
+  firstName: "Roo", // inside an object, variable are called properties themselves called keys
+  lastName: "Rogers", // 
   age: 221,
   education: ["algorithmics", "html", "git", "javascript"],
   job: {
@@ -39,7 +39,7 @@ const car = {
   color: "red",
   options: ["heated seats", "electical windows"],
   engine: {
-    cylinder: "ecoboost",
+    cylinder: "303",
     horsePower: 300,
   },
   description: function () {
@@ -47,8 +47,17 @@ const car = {
   },
 };
 
-console.log(car.description());
 
 //todo displays model
+console.log(car.model);
+
 //todo displays first option
+console.log(car.options[0]);
+
 //todo displays description
+// console.log(car.description());
+const carMessage = car.description()
+console.log(carMessage);
+
+
+
