@@ -25,6 +25,7 @@ console.log(person.job.name);
 console.log("i'm studying " + person.education[3].toUpperCase() + " right now");
 console.log(person.getIdentity());
 
+
 //todo Creates an object named "car" with these properties:
 //todo model : audi
 //todo year : 2020
@@ -60,5 +61,11 @@ console.log(car.options[0]);
 const carMessage = car.description()
 console.log(carMessage);
 
+//! we can also access an object's property like so:
+console.log(car['model'])
+
+// Goes through the whole object:
+for (let key in car)
+console.log(car[key]);
 
 
