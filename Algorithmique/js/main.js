@@ -1,26 +1,26 @@
-// /* ------------------------------------------------------------
-//                         LES COMMENTAIRES
-//     ------------------------------------------------------------ */
+/* ------------------------------------------------------------
+                         LES COMMENTAIRES
+     ------------------------------------------------------------ */
 
-// /*
-//     Un commentaire est un texte qui ne sera pas exécuté par le navigateur
-//     Il permet de documenter le code, de le rendre plus lisible
-//     Il permet de désactiver une partie du code pour faire des tests
-// */
+/*
+    Un commentaire est un texte qui ne sera pas exécuté par le navigateur
+    Il permet de documenter le code, de le rendre plus lisible
+    Il permet de désactiver une partie du code pour faire des tests
+*/
 
-// // Un commentaire sur une ligne en Javascript
+// Un commentaire sur une ligne en Javascript
 
-// /*
-//     Un commentaire multiligne
-//     en Javascript
-// */
+/*
+    Un commentaire multiligne
+    en Javascript
+*/
 
-// /*  ------------------------------------------------------------
-//                             L'AFFICHAGE
-//     ------------------------------------------------------------ */
+/*  ------------------------------------------------------------
+                            L'AFFICHAGE
+    ------------------------------------------------------------ */
 
-// // Afficher un message dans la console de debbugage du navigateur
-// // On utilise la fonction console.log()
+// Afficher un message dans la console de debbugage du navigateur
+// On utilise la fonction console.log()
 // console.log('Hello, world!');
 
 // // Afficher une boite de dialogue avec champs à remplir
@@ -516,7 +516,7 @@
 //     [12, 24, 7],
 // ];
 
-// // Pour accéder à une note du tableau
+// Pour accéder à une note du tableau
 // console.log(notes[1][2]);
 
 // Pour faire la liste de tous les éléments d'un tableau on peut directement utiliser la boucle suivante:

@@ -1,10 +1,9 @@
 /* --------------------------- Exercices d'Algorithmique --------------------------- */
 
 // Algorithme de bienvenue qui affiche le nom et l'âge de l'utilisateur
-// const name = prompt('enter your name'); 
+// const name = prompt('enter your name');
 // const age = prompt('enter your age');
 // console.log(`Hello, ${name}, so you're ${age} years old, right?`)
-
 
 // Ecrire un algorithme qui demande à l'utilisateur son prénom et son nom et qui affiche ensuite la phrase
 // "Bonjour prénom votre nom est nom"
@@ -30,12 +29,11 @@
 // console.log(`the full price is ${priceWithTax}`)
 
 // Écrire un algorithme qui calcule la moyenne de trois nombres a, b et c. Le résultat sera stocké dans une variable m. Puis l'afficher
-// const a = 15; 
-// const b = 19; 
+// const a = 15;
+// const b = 19;
 // const c = 17.5;
 // const m = (a+b+c)/3
 // console.log(m)
-
 
 // Ecrire un algorithme qui demande à l'utilisateur son age. Il indique ensuite à l'utilisateur quel film il peut aller voir.
 // "Action Man" si moins de 13 ans
@@ -50,10 +48,9 @@
 //     console.log('you can watch Evil Dead')
 // }
 
-
 // Écrire un algorithme qui renvoie le max de deux nombres x et y. Le résultat sera stocké dans une variable max.
 // const x = 100;
-// const y = 999; 
+// const y = 999;
 // if (x > y) {
 //     const max = x
 // } else {
@@ -61,13 +58,12 @@
 // }
 // console.log(max)
 
-
 // Écrire un algorithme qui stocke dans une variable max le maximum de trois variables a, b et c données.
-// const x = 444; 
-// const y = 555; 
-// const z = 999; 
+// const x = 444;
+// const y = 555;
+// const z = 999;
 // if (x > y && x > z) {
-//     const max = x 
+//     const max = x
 // } else if (y > x && y > z) {
 //     max = y
 // } else {
@@ -81,30 +77,78 @@
 //     console.log(`9 x ${i} = ${multiplication}`)
 // }
 
-// Écrire un algorithme qui demande un nombre entier non nul de départ, et qui calcule la somme des entiers jusqu’à ce nombre. Par exemple, si l’on entre 5, le programme doit calculer : 1 + 2 + 3 + 4 + 5 = 15.
+//! Écrire un algorithme qui demande un nombre entier non nul de départ, et qui calcule la somme des entiers jusqu’à ce nombre. Par exemple, si l’on entre 5, le programme doit calculer : 1 + 2 + 3 + 4 + 5 = 15.
 // let number = prompt('enter a whole positive number');
-// for (let i = 0; i <= number; i++) {
-//      number = number + i
-//     console.log(number) 
+// let add = 0
+// for (let i = 0; i < number; i++) {
+//      add = add + i
+//     console.log(add)
+
 // }
 
-
 // Ecrire un algorithme qui demande à l'utilisateur un nombre compris entre 0 et 10 jusqu'à ce que la réponse soit bonne.
+// const magicNumber = 545;
+// let yourguess;
 
+// do {
+//     yourguess = prompt('guess my number');
+
+// } while (yourguess != 545);
+// console.log('bingo!');
 
 // Ecrire un algorithme qui fait deviner un chiffre à l'utilisateur en lui indiquant si il est au dessus ou au dessous de la bonne valeur
+// const magicNumber = 35;
+// let yourguess;
+// do {
+//     yourguess = prompt('guess my number');
+//     if (yourguess < 35) {
+//         console.log('try higher');
+//     } else {
+//         console.log('try lower');
+//     }
+// } while (yourguess != 35);
+// console.log('bravo!');
 
 // Écrire une fonction qui calcule la perimètre d'un carré et l'afficher
 
-// Algorithme qui calcule et affiche le carre d'un nombre
+// const square = function (x) {
+//     return x * 4
+// }
+// carre = square(5)
+// console.log(carre);
 
-// Ecrivez un algorithme qui génère un chiffre aléatoire entre 0 et 5. Demandez ensuite à l'utilisateur de deviner ce chiffre avec des indices ("plus grand", "plus petit"). La fonction a utiliser est ALEATOIRE(nbre)
+// const square = (x) => {return x * 4}
+// carre = square(5)
+// console.log(carre);
+
+// const square = x => x * 4
+// carre = square(4);
+// console.log(carre);
+
+// Algorithme qui calcule et affiche le carre d'un nombre
+// const power = x => x * x
+// powerNumber = power(5)
+// console.log(powerNumber);
+
+//! Ecrivez un algorithme qui génère un chiffre aléatoire entre 0 et 5. Demandez ensuite à l'utilisateur de deviner ce chiffre avec des indices ("plus grand", "plus petit"). La fonction a utiliser est ALEATOIRE(nbre)
 
 /*
     La population de la ville Marrakech est de 1, 000, 000 d’habitants et elle augmente de 50, 000 habitants par an.
     Celle de la ville Agadir est de 500, 000 habitants et elle augmente de 8% par an.
     Ecrire un algorithme permettant de déterminer dans combien d’années la population de la ville Agadir dépassera celle de la ville Marrakech.
 */
+
+let marrakech = 1000000;
+let agadir = 500000;
+let i = 0
+while (agadir < marrakech) {g
+    marrakech = marrakech + 50000;
+    agadir = agadir + (agadir * 0.08)
+    i++
+    console.log(i);
+    console.log(marrakech, agadir);
+
+}
 
 // Ecrire un algorithme qui calcule la somme des valeurs d'un tableau.
 // chiffres = [10, 15, 20, 15, 14, 8]
