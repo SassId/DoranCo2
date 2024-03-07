@@ -5,6 +5,8 @@
 
 //! Most elements are already accessed in the 14-dom.js file
 
+// addEventListener() allows to "listen" to a user's input and then triggers a reaction
+
 console.log(mainTitle);
 mainTitle.addEventListener('click', function(){
     // Accesses the first h2 and make the font-size 50px
@@ -24,3 +26,8 @@ mainTitle.addEventListener('mouseover', function(){
 })
 
 
+const targetDiv = document.querySelector('#div1')
+targetDiv.addEventListener('click', function(e){
+console.log(e.target); // targets the specific html tag inside the parent
+e.target.style.color = "black"
+})
