@@ -4,9 +4,25 @@
 //todo Targets the clicked element
 //todo Changes its font size to 28px
 
-const narutoList = document.querySelector('#naruto-list');
+const narutoList = document.querySelector("#naruto-list");
 console.log(narutoList);
 
-narutoList.addEventListener('click', function(e){
-    e.target.style.fontSize = '28px'
-})
+narutoList.addEventListener("click", function (e) {
+  if (e.target.style.fontSize == "16px") {
+    e.target.style.fontSize = "28px";
+  } else if (e.target.style.fontSize == "28px") {
+    e.target.style.fontSize = "38px";
+    e.target.style.color = 'red'
+  } else {
+    e.target.style.fontSize = "16px";
+    e.target.style.color = 'black'
+
+  }
+});
+
+// narutoList.addEventListener("dblclick", function (e) {
+//   e.target.style.fontSize = "16px";
+// });
+// narutoList.addEventListener('click', function(e){
+//     e.target.style.fontSize = '16px'
+// })
