@@ -35,29 +35,58 @@ for (let i = 0; i < purpleBack.length; i++) {
   purpleBack[i].style.textAlign = "center";
 }
 
-//! These Selectors are the newest ones:
+//! These Selectors are the newest ones and allow to use the "for of" and forEach functions.
 
 //? The querySelector() Method:
 const parag = document.querySelector("#first-p");
 console.log(parag);
 parag.style.fontSize = "large";
+parag.style.color = "rgb(20, 214, 20)";
 
 //? The querySelectorAll() Method:
 
-const allParagraphs = document.querySelectorAll('p')
-allParagraphs.forEach(function(paragraph){
-    paragraph.style.textDecoration = 'underline'
-})
+const allParagraphs = document.querySelectorAll("p");
+allParagraphs.forEach(function (paragraph) {
+  paragraph.style.textDecoration = "underline";
+});
 
 // const allParagraphs = document.querySelectorAll('p')
 // for (const paragraph of allParagraphs) {
 //   paragraph.style.textDecoration = "underline";
 // }
 
-//todo Select all class txt-upper elements and make them all uppercase
-
-const uppercase = document.querySelectorAll('.txt-uppercase')
+//todo Select all class txt-upper elements and make them all uppercase:
+const uppercase = document.querySelectorAll(".txt-uppercase");
 console.log(uppercase);
-uppercase.forEach(function(text){
-    text.style.textTransform = 'uppercase'
-})
+uppercase.forEach(function (text) {
+  text.style.textTransform = "uppercase";
+});
+
+// Changes the content of class border h2:
+// const newContent = document.querySelector('.border')
+// newContent.textContent = 'Something'
+
+//* A few properties about the DOM elements:
+// The style property allows to change the style
+//
+
+// The classList property allow to act on the class of the element:
+// The add() method is used to add a class
+parag.classList.add("inGreen");
+
+// The remove() method is used to remove a class
+// parag.classList.remove("inGreen")
+
+const secondParagh = document.querySelector("#second-paragraph");
+console.log(secondParagh);
+secondParagh.classList.remove("txt-uppercase");
+
+// Checks if an element contains a class:
+// The contains() method returns a boolean thus you need to store it in a variable to display its value
+const notSoEasyH2 = document.querySelector("#not-so-easy-h2");
+console.log(notSoEasyH2);
+const isTitle = notSoEasyH2.classList.contains("title");
+console.log(isTitle);
+
+// Changes content of an element:
+notSoEasyH2.textContent = "Not so easy peasy, right?"

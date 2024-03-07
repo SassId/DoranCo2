@@ -1,0 +1,9 @@
+* {
+    margin: 0
+    padding 0;
+    box-sizing: border-box;
+}
+
+.inGreen {
+    color: rgb(20, 214, 20);
+}
