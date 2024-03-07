@@ -8,8 +8,8 @@ const narutoList = document.querySelector("#naruto-list");
 console.log(narutoList);
 
 narutoList.addEventListener("click", function (e) {
-    console.log(e.target.style.fontSize);
-  if (e.target.style.fontSize == '' || e.target.style.fontSize == "16px") {
+  console.log(e.target.style.fontSize);
+  if (e.target.style.fontSize == "" || e.target.style.fontSize == "16px") {
     e.target.style.fontSize = "28px";
   } else if (e.target.style.fontSize == "28px") {
     e.target.style.fontSize = "38px";
@@ -20,7 +20,6 @@ narutoList.addEventListener("click", function (e) {
   }
 });
 
-
 // narutoList.addEventListener("dblclick", function (e) {
 //   e.target.style.fontSize = "16px";
 // });
@@ -28,12 +27,13 @@ narutoList.addEventListener("click", function (e) {
 //     e.target.style.fontSize = '16px'
 // })
 
-narutoList.addEventListener('dblclick', (event) => {
-    // event.target
-    const newH2 = document.createElement('h2');
-    newH2.textContent = event.target.textContent;
-    const firstDiv = document.querySelector("#first-div");
-    firstDiv.prepend(newH2);
-    event.target.remove()
-})
-
+narutoList.addEventListener("dblclick", (event) => {
+  const newH2 = document.createElement("h2");
+  newH2.textContent = event.target.textContent;
+  const firstDiv = document.querySelector("#first-div");
+  firstDiv.prepend(newH2);
+  event.target.style.color = "blue";
+  event.target.remove();
+  const level2Title = document.querySelector("h2");
+  level2Title.style.color = "blue";
+});
