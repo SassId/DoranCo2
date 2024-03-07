@@ -282,12 +282,35 @@
 // }
 
 // Écrire une fonction appelée "calculerMoyenne" qui prend trois nombres en entrée et retourne la moyenne de ces nombres.
+// function calculerMoyenne(x,y,z){
+//     return (x+y+z) / 3
+// }
+
+// const moyenne = function (x,y,z) {return (x+y+z) / 3}
+
+// const moyenne = (x,y,z) => {return (x+y+z) / 3}
 
 // Ecrire une fonction prenant un parametre et qui verifie si 'utilisateur est majeur
 /*
     si majeur retourner true
     sinon retourne false
 */
+
+// const isLegal = function(age) {
+//     if (age < 18) {
+//         return false
+//     } else {
+//         return true
+//     };
+// }
+
+// const LegalOrNot = isLegal(34)
+// console.log(LegalOrNot);
+
+// const age = prompt("how old are you?")
+// const LegalOrNot = isLegal(age)
+// console.log(LegalOrNot);
+
 
 // Declarer un tableau contenant (Paris, Berlin, Rome, Moscou, Londres, Madrid)
 /*
@@ -298,6 +321,15 @@
         Afficher le tableau
 */
 
+// const cities = ['Paris', 'Berlin', 'Rome', 'Moscow', 'London', 'Madrid'];
+// const organize = function(array) {
+//     array.pop();
+//     array.unshift('Vienna');
+//     array.splice(3,1,'Algiers')
+//     console.log(array);
+// }
+// organize(cities)
+
 /*
     Créer une fonction permettant de :
         Recuperer le nom, le prenom et l'age de l'utilisateur
@@ -306,12 +338,33 @@
         Retourner le tableau
 */
 
+// const firstName = prompt('enter your first name'); 
+// const lastName = prompt('enter your last name');
+// const age = prompt('enter your age')
+// const makeArray = (firstName, lastName, age) => {
+//     const array = [firstName, lastName, age];
+//     array[1].toUpperCase();
+//     array[0].toLowerCase();
+//     console.log(array);
+//     return array 
+// }
+// makeArray(firstName, lastName, age);
+// console.log(array); //! won't display even though array is returned, why?!
+
 /*
     Créer une fonction meteo qui prend en parametre la saison et la temperature
         degré s'accorde avec temperature ("s" au pluriel / sans au singulier)
         l'article s'accorde avec la saison ("au" printemps)
         Affiche Nous sommes en hiver et il fait -1 degré
 */
+
+let article = "en"
+let finMot
+const meteo = (season, temperature) => {
+    if (season == 'printemps') {
+        let art
+    }
+}
 
 /* 
     Créer un objet sangoku
