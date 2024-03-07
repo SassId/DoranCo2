@@ -66,20 +66,17 @@ uppercase.forEach(function (text) {
 // With for of method:
 // for (const element of uppercase) {
 //   element.style.textTransform = "uppercase"
-  
 // }
 
-
-
-// Changes the content of class border h2:
+//? Changes the content of class border h2:
 // const newContent = document.querySelector('.border')
 // newContent.textContent = 'Something'
 
 //* A few properties about the DOM elements:
-// The style property allows to change the style
+//? The style property allows to change the style
 //
 
-// The classList property allow to act on the class of the element:
+//? The classList property allow to act on the class of the element:
 // The add() method is used to add a class
 parag.classList.add("inGreen");
 
@@ -90,14 +87,14 @@ const secondParagh = document.querySelector("#second-paragraph");
 console.log(secondParagh);
 secondParagh.classList.remove("txt-uppercase");
 
-// Checks if an element contains a class:
+//? Checks if an element contains a class:
 // The contains() method returns a boolean thus you need to store it in a variable to display its value
 const notSoEasyH2 = document.querySelector("#not-so-easy-h2");
 console.log(notSoEasyH2);
 const isTitle = notSoEasyH2.classList.contains("title");
 console.log(isTitle);
 
-// Changes content of an element:
+//? Retrieves and/or Changes content of an element:
 notSoEasyH2.textContent = "Not so hard..."
 
 // Another method:
@@ -105,3 +102,17 @@ notSoEasyH2.innerHTML = "check <em>this</em>" //* this one also interprets html
 
 // Yet another method:
 notSoEasyH2.innerText = "aaaaa" //! too old to be reliable with present applications
+
+//? Adds an attribute:
+const lastParagraph = document.querySelector('#last-p')
+
+// The .title method:
+lastParagraph.title = "i'm a paragraph"
+
+// The setAttribute()  method:
+lastParagraph.setAttribute("title", "i'm a paragraph")
+console.log(lastParagraph);
+
+//? Removes an attribute:
+// lastParagraph.removeAttribute("title")
+console.log(lastParagraph);
