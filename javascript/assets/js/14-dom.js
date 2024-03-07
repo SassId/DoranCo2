@@ -116,3 +116,22 @@ console.log(lastParagraph);
 //? Removes an attribute:
 // lastParagraph.removeAttribute("title")
 console.log(lastParagraph);
+
+
+// -----------------------------------------------------------
+//                      CREATING ELEMENTS
+// -----------------------------------------------------------
+
+
+//* Creates a new element:
+const newParagraph = document.createElement('p')
+newParagraph.classList.add('new-paragraph')
+newParagraph.textContent = "I was created in JS"
+console.log(newParagraph);
+
+//* append() adds a new element at the end of the parent:
+const divOne = document.querySelector("#div1")
+divOne.append(newParagraph)
+
+//* prepend() creates a new element at the start of the parent:
+divOne.prepend(newParagraph)

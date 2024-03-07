@@ -17,7 +17,7 @@ mainTitle.addEventListener('click', function(){
 
 mainTitle.addEventListener('dblclick', function(){
     const cssPropertiesH2 = document.querySelector('#css-properties');
-    cssPropertiesH2.style.fontSize = '100px'
+    cssPropertiesH2.style.fontSize = '30px'
 })
 
 mainTitle.addEventListener('mouseover', function(){
