@@ -135,3 +135,5 @@ divOne.append(newParagraph)
 
 //* prepend() creates a new element at the start of the parent:
 divOne.prepend(newParagraph)
+
+//* remove() removes the element

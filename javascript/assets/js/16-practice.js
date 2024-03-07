@@ -28,5 +28,12 @@ narutoList.addEventListener("click", function (e) {
 //     e.target.style.fontSize = '16px'
 // })
 
-
+narutoList.addEventListener('dblclick', (event) => {
+    // event.target
+    const newH2 = document.createElement('h2');
+    newH2.textContent = event.target.textContent;
+    const firstDiv = document.querySelector("#first-div");
+    firstDiv.prepend(newH2);
+    event.target.remove()
+})
 
