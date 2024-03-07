@@ -37,3 +37,5 @@ narutoList.addEventListener("dblclick", (event) => {
   const level2Title = document.querySelector("h2");
   level2Title.style.color = "blue";
 });
+
+//todo Create a to do list (everytime you dbl click a element, it get lined through)
