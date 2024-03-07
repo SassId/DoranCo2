@@ -56,11 +56,20 @@ allParagraphs.forEach(function (paragraph) {
 // }
 
 //todo Select all class txt-upper elements and make them all uppercase:
+// With forEach method:
 const uppercase = document.querySelectorAll(".txt-uppercase");
 console.log(uppercase);
 uppercase.forEach(function (text) {
   text.style.textTransform = "uppercase";
 });
+
+// With for of method:
+// for (const element of uppercase) {
+//   element.style.textTransform = "uppercase"
+  
+// }
+
+
 
 // Changes the content of class border h2:
 // const newContent = document.querySelector('.border')
@@ -89,4 +98,10 @@ const isTitle = notSoEasyH2.classList.contains("title");
 console.log(isTitle);
 
 // Changes content of an element:
-notSoEasyH2.textContent = "Not so easy peasy, right?"
+notSoEasyH2.textContent = "Not so hard..."
+
+// Another method:
+notSoEasyH2.innerHTML = "check <em>this</em>" //* this one also interprets html
+
+// Yet another method:
+notSoEasyH2.innerText = "aaaaa" //! too old to be reliable with present applications
