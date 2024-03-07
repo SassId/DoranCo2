@@ -98,10 +98,10 @@ console.log(isTitle);
 notSoEasyH2.textContent = "Not so hard..."
 
 // Another method:
-notSoEasyH2.innerHTML = "check <em>this</em>" //* this one also interprets html
+// notSoEasyH2.innerHTML = "check <em>this</em>" //* this one also interprets html
 
 // Yet another method:
-notSoEasyH2.innerText = "aaaaa" //! too old to be reliable with present applications
+// notSoEasyH2.innerText = "aaaaa" //! too old to be reliable with present applications
 
 //? Adds an attribute:
 const lastParagraph = document.querySelector('#last-p')
