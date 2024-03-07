@@ -8,17 +8,18 @@ const narutoList = document.querySelector("#naruto-list");
 console.log(narutoList);
 
 narutoList.addEventListener("click", function (e) {
-  if (e.target.style.fontSize == "16px") {
+    console.log(e.target.style.fontSize);
+  if (e.target.style.fontSize == '' || e.target.style.fontSize == "16px") {
     e.target.style.fontSize = "28px";
   } else if (e.target.style.fontSize == "28px") {
     e.target.style.fontSize = "38px";
-    e.target.style.color = 'red'
+    e.target.style.color = "red";
   } else {
     e.target.style.fontSize = "16px";
-    e.target.style.color = 'black'
-
+    e.target.style.color = "black";
   }
 });
+
 
 // narutoList.addEventListener("dblclick", function (e) {
 //   e.target.style.fontSize = "16px";
@@ -26,3 +27,8 @@ narutoList.addEventListener("click", function (e) {
 // narutoList.addEventListener('click', function(e){
 //     e.target.style.fontSize = '16px'
 // })
+
+const narutoH1 = document.querySelector('#naruto-h1')
+narutoH1.addEventListener('dblclick', (event) => {
+    event.target.style.transform.scale = '2'
+})
