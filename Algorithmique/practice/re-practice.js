@@ -345,11 +345,10 @@ const makeArray = (firstName, lastName, age) => {
     const array = [firstName, lastName, age];
     array[1].toUpperCase();
     array[0].toLowerCase();
-    console.log(array);
     return array 
 }
-makeArray(firstName, lastName, age);
-console.log(array); //! won't display even though array is returned, why?!
+const array = makeArray(firstName, lastName, age);
+console.log(array);
 
 /*
     Créer une fonction meteo qui prend en parametre la saison et la temperature
