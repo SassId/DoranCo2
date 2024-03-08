@@ -6,8 +6,8 @@
 
 const narutoList = document.querySelector("#naruto-list");
 console.log(narutoList);
-narutoList.style.backgroundColor = 'blue'
-narutoList.style.padding = "50px"
+narutoList.style.backgroundColor = "blue";
+narutoList.style.padding = "50px";
 
 narutoList.addEventListener("click", function (e) {
   console.log(e.target.style.fontSize);
@@ -41,9 +41,12 @@ narutoList.addEventListener("dblclick", (event) => {
 });
 
 //todo Create a to do list (everytime you dbl click a element, it gets lined through)
-const toDoList = document.querySelector('#to-do-list')
+const toDoList = document.querySelector("#to-do-list");
 console.log(toDoList);
-toDoList.addEventListener('dblclick', (event) => {
-  event.target.style.textDecoration = lineThrough;
-  
-})
+toDoList.addEventListener("click", (event) => {
+  if (event.target.style.textDecoration == "line-through") {
+    event.target.style.textDecoration = "none";
+  } else {
+    event.target.style.textDecoration = "line-through";
+  }
+});
