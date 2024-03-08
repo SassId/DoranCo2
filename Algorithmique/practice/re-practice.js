@@ -338,18 +338,18 @@
         Retourner le tableau
 */
 
-// const firstName = prompt('enter your first name'); 
-// const lastName = prompt('enter your last name');
-// const age = prompt('enter your age')
-// const makeArray = (firstName, lastName, age) => {
-//     const array = [firstName, lastName, age];
-//     array[1].toUpperCase();
-//     array[0].toLowerCase();
-//     console.log(array);
-//     return array 
-// }
-// makeArray(firstName, lastName, age);
-// console.log(array); //! won't display even though array is returned, why?!
+const firstName = prompt('enter your first name'); 
+const lastName = prompt('enter your last name');
+const age = prompt('enter your age')
+const makeArray = (firstName, lastName, age) => {
+    const array = [firstName, lastName, age];
+    array[1].toUpperCase();
+    array[0].toLowerCase();
+    console.log(array);
+    return array 
+}
+makeArray(firstName, lastName, age);
+console.log(array); //! won't display even though array is returned, why?!
 
 /*
     Créer une fonction meteo qui prend en parametre la saison et la temperature
@@ -358,13 +358,13 @@
         Affiche Nous sommes en hiver et il fait -1 degré
 */
 
-let article = "en"
-let finMot
-const meteo = (season, temperature) => {
-    if (season == 'printemps') {
-        let art
-    }
-}
+// let article = "en"
+// let finMot
+// const meteo = (season, temperature) => {
+//     if (season == 'printemps') {
+//         let art
+//     }
+// }
 
 /* 
     Créer un objet sangoku
