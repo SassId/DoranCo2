@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To Do List Exercice</title>
-    <script src="../assets/js/17-to-do-list.js" defer>
-        
-    </script>
-</head>
-<body>
-    <h1> ToDo List</h1>
-    <div>
-        <input type="text" id="text-input">
-        <input type="submit" value="submit" id="submit-input">
+    <script src="../assets/js/17-to-do-list.js" defer></script>
+    <link rel="stylesheet" href="../assets/css/to-do-list.css" />
+  </head>
+  <body>
+    <div class="main-part">
+      <h1>ToDo List</h1>
+      <div class="input-elements">
+        <input type="text" id="text-input" autofocus />
+        <input type="submit" value="Submit" id="submit-input" class="buttons" />
+        <!-- <input type="reset" value="Reset" id="reset-input" class="buttons"> -->
+      </div>
+      <div>
+        <ul id="my-list"></ul>
+      </div>
     </div>
-    <div>
-        <ul id="my-list">
-
-        </ul>
-    </div>
-</body>
+  </body>
 </html>

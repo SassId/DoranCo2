@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*:focus {
+    outline: none;
+}
+
+.main-part {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
+  margin: 100px auto;
+  padding: 20px;
+  /* border: 1px solid red; */
+  border-radius: 20px;
+  box-shadow: 10px 10px 30px rgba(0, 89, 255, 0.158);
+}
+
+/* COMPONENTS */
+
+h1 {
+  /* border: solid; */
+  width: fit-content;
+  margin: 50px;
+  font-size: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.buttons {
+  background-color: rgb(43, 41, 41);
+  border-radius: 5px;
+  color: #fff;
+  padding: 10px;
+  width: 100px;
+}
+
+.input-elements {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+#text-input {
+  border-radius: 5px;
+  padding: 10px;
+  width: 300px;
+}
+
+#text-input:focus {
+  border: solid 1px red;
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.123); ;
+}
+
+#submit-input:active {
+    color: blue;
+
+}
+
+#my-list {
+  margin: 20px;
+}
