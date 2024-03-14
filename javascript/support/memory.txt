@@ -1,3 +1,9 @@
 https://roadmap.sh/
 
+https://github.com/euZebe/clean-code-javascript-fr
+
+https://github.com/LeBezout/clean-code-fr?tab=readme-ov-file
+
+https://fr.javascript.info/
+
 https://flexboxfroggy.com

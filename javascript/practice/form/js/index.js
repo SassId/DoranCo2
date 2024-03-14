@@ -10,15 +10,11 @@ submitButton.addEventListener("click", (event) => {
   const passwordInput = document.querySelector("#password");
   const confirmPassword = document.querySelector("#confirm-password");
 
-  if (nameInput.value == "") {
-    if (errorMessage1) {
-      errorMessage1.remove;
-    }
+  if (nameInput.value == " ") {
     const errorMessage1 = document.createElement("p");
     errorMessage1.textContent = "Please enter your name";
     errorMessage1.classList.add("error-message");
     errorMessage1.setAttribute("id", "PlsEnterName");
-
     nameInput.parentElement.append(errorMessage1);
   }
 });

@@ -52,6 +52,14 @@ main {
   background-color: rgba(77, 202, 251, 0.563);
 }
 
+#reset-button {
+    margin: 10px auto;
+    width: 100px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgba(77, 202, 251, 0.563);
+  }
+
 .error-message {
   color: red;
   font-style: italic;
