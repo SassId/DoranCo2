@@ -1,0 +1,25 @@
+= La méthode des scénarios 
+
+
+== Introduction
+
+La méthode des scénarios est un outil qui aide à mieux comprendre et à s'adapter à la complexité des contextes politique, socioculturel, économique et technologique. 
+
+=== ...
+
+Elle permet:
+[%step]
+* d'identifier des questions importantes, 
+* d'élaborer, 
+* d'explorer des stratégies cohérentes 
+
+=== ...
+
+avec les différentes poissibilités de prévision du futur, caractérisées par l'incertitude et le non-connu. 
+
+Elle offre une vision plus claire et permet la participation d'un grand nombre de parties prenantes.
+
+== La méthodologie et les conseils 
+
+
+La méthode des scénarios est basée sur des données factuelles et des options de déroulement du futur. Elle nécessite que les parties prenantes puissent remettre en cause leurs visions actuelles du monde, donc leurs schémas mentaux, pour pouvoir se projeter dans le futur et ainsi envisager toutes les incertitudes et possibilités liées aux environnements extérieurs de l'entreprise. 

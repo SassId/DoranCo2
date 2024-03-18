@@ -1,0 +1,121 @@
+= Les Innovation Games
+
+== Introduction
+
+Les Innovation Games sont une série de jeux et de techniques de facilitation utilisés pour:
+[%step]
+* stimuler la créativité, 
+* générer des idées, 
+* recueillir des informations
+
+=== ...
+[%step]
+* favoriser la collaboration dans divers contextes, y compris:
+[%step]
+*le développement de produits, 
+* la résolution de problèmes
+* la prise de décision. 
+
+=== ...
+
+Ces jeux sont conçus pour:
+[%step]
+* encourager la participation active des participants
+* favoriser des discussions ouvertes et productives. 
+
+
+== Principes fondamentaux des Innovation Games :
+
+=== Engagement des participants : 
+
+Encourager la participation active des participants grâce à des activités ludiques et interactives.
+
+=== Génération d'idées créatives : 
+
+Stimuler la créativité en utilisant des techniques de jeu pour explorer de nouvelles perspectives et générer des idées innovantes.
+
+=== Collecte d'informations précieuses : 
+
+Utiliser les jeux comme des outils de recherche pour recueillir des informations précieuses auprès:
+[%step]
+* des parties prenantes, 
+* des clients
+* des utilisateurs finaux.
+
+=== Facilitation de la collaboration : 
+
+Favoriser la collaboration et la communication entre les membres de l'équipe en encourageant la participation et la contribution de chacun.
+
+== Prise de décision éclairée : 
+
+Utiliser les résultats des jeux pour faciliter la prise de décision en fournissant des données tangibles et des perspectives multiples.
+
+== Types d'Innovation Games :
+
+=== Buy a Feature : 
+
+Les participants disposent d'un budget fictif et doivent acheter les fonctionnalités ou les idées qu'ils considèrent comme les plus importantes.
+
+=== Speed Boat : 
+
+Les participants identifient les "ancres" ou les obstacles qui ralentissent leur progression vers un objectif ou une solution, puis proposent des solutions pour les surmonter.
+
+=== Product Box : 
+
+Les participants créent une "boîte" imaginaire pour un produit ou une fonctionnalité, en incluant des éléments tels que le nom, la description, les avantages et les caractéristiques.
+
+=== Remember the Future : 
+
+Les participants imaginent un avenir où un produit ou un service est déjà développé et utilisé, puis réfléchissent à ce que cela signifie pour eux et comment cela pourrait être réalisé.
+
+=== Prune the Product Tree : 
+
+Les participants examinent un "arbre" représentant un produit ou un service et éliminent les parties qui ne sont pas essentielles ou qui n'apportent pas de valeur.
+
+== Applications des Innovation Games :
+
+=== Développement de produits et de services : 
+
+Pour générer des idées, recueillir des commentaires des utilisateurs et valider des concepts.
+
+=== Planification stratégique : 
+
+[%step]
+* pour explorer de nouvelles stratégies, 
+* pour identifier des opportunités
+* pour aligner les équipes sur des objectifs communs.
+
+
+=== Amélioration des processus : 
+
+[%step]
+* pour identifier les obstacles, 
+* pour proposer des améliorations 
+* pour encourager l'innovation dans les processus organisationnels.
+
+=== Formation et facilitation : 
+
+[%step]
+* pour animer des ateliers
+* pour animer des réunions 
+*pour animer des sessions de brainstorming 
+
+=== ...
+
+de manière ludique et interactive.
+
+== Outils et ressources pour les Innovation Games :
+
+=== ...
+
+Le livre "Innovation Games: Creating Breakthrough Products Through Collaborative Play" par Luke Hohmann, qui présente une variété de jeux et de techniques.
+
+
+=== ...
+
+Des outils et des plateformes en ligne pour faciliter la conduite des jeux à distance, tels que:
+[%step]
+* Miro, 
+* MURAL 
+* Stormboard.
+

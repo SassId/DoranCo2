@@ -1,0 +1,87 @@
+= Le Story Mapping
+
+== Introduction
+
+Le Story Mapping est une technique de visualisation et de planification largement utilisée dans le développement logiciel et la gestion de projet agile. 
+
+
+=== ....
+
+Elle permet de représenter les fonctionnalités d'un produit ou d'un système sous forme de cartographie visuelle.
+
+=== ...
+
+Cela facilite ainsi la compréhension de l'ensemble du parcours utilisateur et des différentes couches de fonctionnalités. 
+
+
+
+== Principes fondamentaux du Story Mapping :
+
+
+=== Hiérarchie des fonctionnalités : 
+
+Organiser les fonctionnalités en une hiérarchie logique, avec les fonctionnalités essentielles en haut et les détails plus spécifiques en bas.
+
+=== Compréhension du parcours utilisateur : 
+
+Représenter le flux de travail ou le parcours utilisateur complet, de haut en bas, afin de visualiser l'expérience utilisateur dans son ensemble.
+
+=== Focus sur la valeur ajoutée : 
+
+Mettre en évidence les fonctionnalités qui apportent le plus de valeur à l'utilisateur ou au client, en les plaçant au centre de la carte.
+
+=== Itérations et priorisation : 
+
+Faciliter la planification itérative en permettant de prioriser les fonctionnalités en fonction des besoins et des objectifs du projet.
+
+== Étapes pour créer un Story Map :
+
+=== Identification des fonctionnalités : 
+
+Brainstorming et identification des fonctionnalités principales du produit ou du système.
+
+=== Organisation hiérarchique : 
+
+Classer les fonctionnalités par niveaux de priorité ou de complexité, en les plaçant sur l'axe horizontal de la carte.
+
+=== Création du parcours utilisateur : 
+
+Organiser les fonctionnalités sur l'axe vertical pour représenter le parcours utilisateur complet, de la découverte à l'achèvement des tâches.
+
+=== Définition des scénarios : 
+
+Définir des scénarios d'utilisation ou des cas d'utilisation pour chaque fonctionnalité, en mettant en évidence les interactions entre les différentes parties du système.
+
+=== Itération et ajustement : 
+
+Réviser et ajuster le Story Map en fonction des retours d'information des parties prenantes et des évolutions du projet.
+
+== Avantages du Story Mapping :
+
+=== Compréhension globale du projet : 
+
+Permet de visualiser l'ensemble du projet ou du produit dans son contexte global.
+
+=== Priorisation des fonctionnalités : 
+
+Facilite la priorisation des fonctionnalités en fonction de leur importance et de leur valeur ajoutée pour l'utilisateur.
+
+=== Communication efficace : 
+
+Fournit un outil visuel puissant pour communiquer avec les parties prenantes et aligner les attentes.
+
+=== Planification itérative : 
+
+Permet de planifier et d'exécuter le développement de manière itérative, en se concentrant sur les fonctionnalités les plus importantes en premier.
+
+== Outils populaires pour le Story Mapping :
+
+=== Post-it et tableau blanc : 
+
+Pour une approche manuelle et collaborative.
+
+=== Outils de gestion de projet : 
+
+Tels que Jira, Trello, ou Miro, qui offrent des fonctionnalités spécifiques pour créer et gérer des Story Maps en ligne.
+
+

@@ -1,0 +1,25 @@
+= La matrice des compétences professionnelles
+
+
+== Intrudction
+
+La matrice des compétences professionnelles, inspirée des matrices marketing d'aide à la décision, est construire sur deux axes:
+
+=== ...
+
+Sur un axe, les compétences méteir et les compétences transversales;
+
+Sur l'autre axe, les compétences en cours d'acquisition et les compétences totalement maîtrisées.
+
+=== ...
+
+Cette matrice met en perspective l'ensemble des compétences potentiellement requises dans la fonction, représentées par des cercles de taille proportionnelle à leur utilité, avec ses propres compétences, représentées par des cercles d'une autre couleur et de taille proportionenlle à son activité actuelle. 
+
+=== Objectifs 
+
+Faire le point en milieu de carrière sur ses compétences professionnelles acquises par rapport aux compétences demandées.
+
+Valaider que ses compétences professionnelles sont toujours en phase avec l'évolution de son métier et les nouvelles compétences requises.
+
+Prendre du recul avec une vue d'ensemble de ses compétences professionnelles et se percevoir de manière plus objective.
+

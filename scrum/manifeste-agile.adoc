@@ -1,0 +1,52 @@
+= Le manifeste agile
+
+
+== Introduction
+
+Le manifeste agile est un document fondateur dans le domaine du développement logiciel et de la gestion de projet. 
+
+=== ..
+
+Il a été rédigé en 2001 par un groupe de professionnels du développement logiciel qui cherchaient des méthodes plus flexibles et adaptatives pour gérer les projets informatiques.
+
+=== ...
+
+Le Manifeste Agile se compose de quatre valeurs fondamentales et de douze principes. Voici un résumé de ces éléments :
+
+== Les quatre valeurs fondamentales du Manifeste Agile :
+
+Les individus et leurs interactions plus que les processus et les outils.
+
+Des logiciels opérationnels plus qu'une documentation exhaustive.
+
+La collaboration avec le client plus que la négociation contractuelle.
+
+L'adaptation au changement plus que le suivi d'un plan prédéfini.
+
+
+== Les douze principes du Manifeste Agile :
+
+La satisfaction du client en livrant rapidement et régulièrement des fonctionnalités à grande valeur ajoutée.
+
+Accueillir positivement les changements de besoins, même tard dans le projet.
+
+Livrer fréquemment un logiciel opérationnel, avec des cycles de livraison courts.
+
+Travailler en étroite collaboration avec les clients tout au long du projet.
+
+Construire des projets autour de personnes motivées, en leur donnant l'environnement et le soutien dont elles ont besoin, et en leur faisant confiance pour accomplir le travail.
+
+Favoriser la communication face à face, car c'est le moyen le plus efficace et le plus efficient de transmettre de l'information au sein d'une équipe de développement.
+
+Mesurer l'avancement du projet principalement par la livraison de logiciel opérationnel et fonctionnel.
+
+Maintenir un rythme de développement soutenable, en veillant à ce que les développeurs puissent maintenir un rythme constant indéfiniment.
+
+Accorder une attention constante à l'excellence technique et à une bonne conception pour améliorer l'agilité.
+
+Simplicité, c'est-à-dire l'art de maximiser la quantité de travail non accompli, est essentielle.
+
+Les meilleures architectures, spécifications et conceptions émergent d'équipes auto-organisées.
+
+À intervalles réguliers, l'équipe réfléchit aux moyens de devenir plus efficace, puis ajuste et affine son comportement en conséquence.
+

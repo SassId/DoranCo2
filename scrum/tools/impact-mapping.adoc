@@ -1,0 +1,109 @@
+= L'Impact Mapping 
+
+== Introduction
+
+L'Impact Mapping est une technique de planification stratégique utilisée pour définir les objectifs d'un projet et les actions nécessaires pour les atteindre. 
+
+=== ...
+
+Cette approche a été développée par Gojko Adzic et est largement utilisée dans le domaine du développement logiciel et de la gestion de projet. 
+
+
+== Principes fondamentaux de l'Impact Mapping :
+
+=== Centré sur les objectifs : 
+
+L'Impact Mapping se concentre sur les objectifs métier ou les résultats souhaités plutôt que sur les fonctionnalités ou les solutions techniques.
+
+=== Visualisation des impacts : 
+
+Utilisation de cartes ou de graphiques pour représenter visuellement:
+[%step]
+* les objectifs stratégiques, 
+* les acteurs impliqués 
+* les actions nécessaires.
+
+=== Alignement stratégique : 
+
+Alignement des actions du projet sur les objectifs stratégiques de l'organisation afin de maximiser la valeur ajoutée.
+
+=== Itératif et incrémental : 
+
+Approche itérative pour affiner et ajuster les objectifs et les actions en fonction des retours d'information et de l'apprentissage continu.
+
+== Éléments de l'Impact Mapping :
+
+=== Objectifs métier : 
+
+Les résultats tangibles que l'organisation souhaite atteindre, tels que 
+[%step]
+* l'augmentation des ventes, 
+* la réduction des coûts 
+* l'amélioration de la satisfaction client.
+
+=== Acteurs : 
+
+Les parties prenantes ou les utilisateurs concernés par le projet, y compris:
+[%step]
+ * les clients, 
+ * les utilisateurs finaux, 
+ * les partenaires, 
+ * etc.
+
+=== Impacts : 
+
+Les changements comportementaux attendus chez les acteurs qui contribueront à la réalisation des objectifs.
+
+=== Actions : 
+
+Les initiatives spécifiques ou les fonctionnalités à mettre en œuvre pour:
+[%step]
+* influencer les comportements des acteurs 
+* atteindre les objectifs.
+
+== Processus de création d'une carte d'Impact Mapping :
+
+=== Définir les objectifs : 
+
+Identifier les objectifs métier à atteindre pour le projet.
+
+=== Identifier les acteurs : 
+
+Déterminer les acteurs qui peuvent contribuer à la réalisation de ces objectifs.
+
+=== Cartographier les impacts : 
+
+Définir les impacts attendus chez chaque acteur qui contribueront à la réalisation des objectifs.
+
+=== Proposer des actions : 
+
+Identifier les actions spécifiques à entreprendre pour provoquer les impacts souhaités chez les acteurs.
+
+=== Vérification et ajustement : 
+
+Réviser et affiner la carte d'Impact Mapping en fonction des retours d'information et de l'évolution des objectifs.
+
+== Avantages de l'Impact Mapping :
+
+=== Alignement stratégique : 
+
+Assure que les actions du projet sont alignées sur les objectifs métier de l'organisation.
+
+=== Clarté et visibilité : 
+
+Fournit une vue d'ensemble claire des objectifs, des acteurs et des actions nécessaires.
+
+=== Orientation vers la valeur : 
+
+Met l'accent sur la création de valeur pour les parties prenantes et les utilisateurs finaux.
+
+=== Flexibilité : 
+
+Permet d'ajuster les objectifs et les actions en fonction de l'évolution des besoins et des priorités.
+
+
+
+
+
+
+

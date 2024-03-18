@@ -1,0 +1,79 @@
+= Les méthodes agiles 
+
+
+Les méthodes agiles ont révolutionné l'organisation des projets de développement informatiques. 
+
+
+
+Les programmeurs sont décomposés en composants. Les composants sont développeés par des crums (équipes mêlées) au cours de cycles courts (sprints) qui traitent des besoins, de leur codage, des tests et des mises en production. La notion d'agile a été ensuite étendue au management.
+
+Les méthodes agiles cherchent à éviter les effets silos et tunnets des méthodes classiques de développement. Les méthodes agiles proposent une organisation et une gouvernance des projets en équipes mêlée (scrum) avec des utilisateurs, des personnes de la maîtrise d'ouvrage, des personnes de la maîtrise d'oeubre, le tout piloté par un chef de produit (product owner) qui s'assure de la réalisation des développements informatiques.
+
+== Contexte
+
+
+Développés à paritr de la fin des années 1970 pour la conception des logiciels, les méthodes promeuvent l'amélioration continue et la rapidité d'exécution. Les plus connues sont Scrum, XP ou encore RAD. 
+
+
+== Les principes des approches agiles :
+
+Les principes des approches agiles:
+
+- le scrum (le fonctionnement mêlé) pour signifier qu'il faut créer des équipes mêlant développeurs et utilisateurs selon différentes itérations en fonction des objectifs;
+
+- le build & run qui associe les moments de programmation aux temps de déploiement ou encore la décomposition en composants élémentaires pouvant être conçus et testés unitairement. 
+
+== Comment l'utiliser 
+
+
+1) Les Besoins des utilisaetuers : la formalisation des besoins conduits à la définition de spécifications fonctionelles.
+
+2) Codage et intégration : Les spécifications fonctionnelles sont traduires en code dont les programmes sont intégrés les uns avec les autres avec une visée application.
+
+3) Mise en production : les programmes sont déployés pour les tests dans les environnements informatiques. 
+
+
+4) Tests des utilisaetuers et corrections : les utilisaeteurs testent l'application en situation réelles et font des retours immédiats sur les corrections à apporter. 
+
+
+== Méthodologie et conseils 
+
+Les méthodes agiles privilégies des cycles courts de trois à quatre semaines pour la réalisation de composants qui, associés les uns avec les autres, constitueront l'applicatif. 
+
+=== ...
+
+De cette façon, les parties prenantes ne perdent ni la motivation, ni les conniassances entre la conception et les premiers tests.
+
+=== ...
+
+Les besoins émis et formalisés par les utilisateurs en équipe mêlée (scrum ) sont très vite codés poiur avoir des bouts d'applicatif à tester et à mettre en production pour être confrontés aux besoins des utilisateurs, et ainsi faire l'objet d'adaptations et de corrections jusqu'à la version jugée finale. 
+
+
+=== L'agilité en méthoide
+
+Elle tient en douze principes généraux;
+
+* Satisfaire le client en priorité 
+* Accueilir le client en priorité 
+* Accueillir favorablement les demandes de changement 
+
+=== ...
+
+* Livrer le plus souvent possible des versions opérationelles 
+* Coopération entre le client et l'équipe projet 
+* Construction des projets autour d'individus motivés 
+
+=== ...
+
+* Avance à un rythme soutenable et constant 
+* Donner la prioriété à l'excelsence technique et à la conception 
+* Faoire simple 
+
+
+=== ...
+
+* Reponsabiliter les équipes 
+* Ajuster son comportement et les processus
+
+
+

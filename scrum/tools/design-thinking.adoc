@@ -1,0 +1,105 @@
+= Le Design Thinking
+
+== Introduction
+
+Le Design Thinking est une méthode de résolution de problèmes centrée sur l'humain, axée sur la créativité et la collaboration. 
+
+=== ...
+
+Cette approche est largement utilisée:
+[%step]
+* dans le domaine de la conception de produits, 
+* dans le domaine de la conception de services 
+* ans la résolution de problèmes complexes dans divers domaines. 
+
+== Principes fondamentaux du Design Thinking :
+
+
+== Centré sur l'humain : 
+
+Placer les besoins, les désirs et les comportements des utilisateurs au centre du processus de conception.
+
+== Empathie : 
+
+Comprendre profondément les utilisateurs en se mettant à leur place, en observant et en écoutant activement leurs besoins et leurs expériences.
+
+== Collaboration multidisciplinaire : 
+
+Travailler en équipe avec des personnes ayant des compétences et des perspectives différentes pour générer des idées innovantes.
+
+== Pensée itérative : 
+
+Adopter une approche expérimentale et itérative, en testant et en améliorant continuellement les idées.
+
+== Focus sur la faisabilité : 
+
+Considérer à la fois:
+[%step]
+* les besoins des utilisateurs
+* les contraintes techniques, économiques et organisationnelles 
+
+=== ...
+
+lors de la génération de solutions.
+
+
+
+== Phases du processus de Design Thinking :
+
+=== Empathie : 
+
+Comprendre les utilisateurs, leurs besoins et leurs défis en observant, en écoutant et en interagissant avec eux.
+
+=== Définition du problème : 
+
+Définir clairement le problème à résoudre en se basant sur les insights recueillis lors de la phase d'empathie.
+
+=== Idéation : 
+
+Générer un grand nombre d'idées potentielles, sans jugement, en encourageant la créativité et en utilisant des techniques telles que:
+[%step]
+* le brainstorming
+* le mind mapping.
+
+=== Prototypage : 
+
+Créer des prototypes rapides et basiques des solutions les plus prometteuses pour les tester auprès des utilisateurs.
+
+=== Test : 
+
+Tester les prototypes avec les utilisateurs pour recueillir des feedbacks, identifier les points faibles et affiner les solutions.
+
+== Outils et techniques utilisés dans le Design Thinking :
+
+=== Entretiens avec les utilisateurs : 
+
+Pour comprendre leurs besoins et leurs expériences.
+
+=== Persona et scénarios : Pour créer des représentations fictives des utilisateurs cibles et décrire leurs interactions avec le produit ou le service.
+
+
+=== Brainstorming : 
+
+Pour générer un grand nombre d'idées rapidement, sans autocensure.
+
+=== Cartes d'empathie : Pour synthétiser les informations sur les utilisateurs et favoriser l'empathie.
+
+
+=== Prototypage rapide : 
+
+Utilisation de matériaux simples pour créer des prototypes afin de tester des idées rapidement et à moindre coût.
+
+== Applications du Design Thinking :
+
+[%step]
+* Conception de produits et de services innovants.
+
+* Résolution de problèmes complexes dans divers domaines, y compris:
+[%step]
+* la santé, 
+* l'éducation, 
+*l'entreprise, etc.
+
+* Développement de nouvelles initiatives et stratégies dans les organisations.
+
+=== ...
