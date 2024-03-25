@@ -14,7 +14,7 @@ a {
 
 /** Declares a variable inside css to store and reuse specific values */
 :root {
-  --main-color: rgb(253, 209, 150);
+  --main-color: #68614177;
   --gapx: 10px;
   --second-color: rgb(236, 236, 236);
 }
@@ -28,6 +28,9 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  border: solid blue;
+  z-index: 10;
 }
 
 ul,
@@ -38,8 +41,9 @@ section {
 /* *Targets a specific element using their lineage */
 header + section {
   width: 100vw;
-  height: 92vh; /* value chosen in reference of the header's height of 8vh to have the addition of both take all screen's height */
-  background: var(--second-color);
+  height: 100vh; /* value chosen in reference of the header's height of 8vh to have the addition of both take all screen's height */
+  background: url(../img/background.jpg) 0 0 no-repeat green; /* this is the full info rule with position (x-axis y-axis) attachment*/
+  background-size: cover;
 }
 
 nav {
@@ -47,12 +51,44 @@ nav {
 }
 
 li {
-    display: block;
-    width: 100px;
-    text-align: center;
+  display: block;
+  width: 100px;
+  text-align: center;
 }
 
 /* *this selector uses the element's attribute to targe it specifically */
 a[href="index.html"] {
   color: rgb(50, 160, 250);
+  font-size: large;
 }
+
+main {
+  background: var(--second-color);
+}
+
+section {
+  flex-wrap: wrap;
+  align-items: center;
+  min-height: 100vh;
+  border: solid red;
+  position: relative;
+  padding-top: 400px;
+}
+
+article {
+  min-width: 320px; /* this allows us to prevent flex wrap behavior beyond that limit*/
+  flex: 1; /* this allows to divide available space evenly no matter the number of inside boxes*/
+  border: 1px solid white;
+  min-height: 60vh;
+}
+ 
+
+/* *Uses nth-child() pseudo selector to target a specific element */
+main>section:nth-child(2)>article:nth-child(3) {
+  flex: 2; /* make that element bigger while still scaled evenly with others brother elements*/
+  border: solid 1px black;
+  min-height: 30vh;
+  align-self: flex-start;
+  
+}
+
