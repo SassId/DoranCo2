@@ -19,6 +19,7 @@ a {
   --second-color: rgb(236, 236, 236);
 }
 
+/* HEADER */
 header {
   width: 100vw;
   min-height: 8vh;
@@ -49,4 +50,9 @@ li {
     display: block;
     width: 100px;
     text-align: center;
+}
+
+/* *this selector uses the element's attribute to targe it specifically */
+a[href="index.html"] {
+  color: rgb(50, 160, 250);
 }
