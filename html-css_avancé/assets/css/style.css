@@ -1,0 +1,52 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  max-width: 100%; /*use this rule to have all browser apply the full width available (in case they don't recognize the width: 100vw */
+}
+
+/* GENERAL */
+a {
+  text-decoration: none;
+}
+
+/** Declares a variable inside css to store and reuse specific values */
+:root {
+  --main-color: rgb(253, 209, 150);
+  --gapx: 10px;
+  --second-color: rgb(236, 236, 236);
+}
+
+header {
+  width: 100vw;
+  min-height: 8vh;
+  background: var(--main-color);
+  padding: var(--gapx);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul,
+section {
+  display: flex;
+}
+
+/* *Targets a specific element using their lineage */
+header + section {
+  width: 100vw;
+  height: 92vh; /* value chosen in reference of the header's height of 8vh to have the addition of both take all screen's height */
+  background: var(--second-color);
+}
+
+nav {
+  width: 500px;
+}
+
+li {
+    display: block;
+    width: 100px;
+    text-align: center;
+}
