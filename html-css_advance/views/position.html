@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Positionning</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    section {
+      width: 80%;
+      height: 500px;
+      background: grey;
+      margin: 10% auto;
+      display: flex;
+      position: relative;
+    }
+
+    article {
+      width: 33.33%;
+      height: 500px;
+    }
+
+    section > article:first-child {
+        background: orange;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    section > article:nth-child(2) {
+        background: blue;
+        position: fixed;
+        top: 0;
+        right: 0;
+    }
+    
+    section > article:last-child {
+        background: greenyellow;
+        position: relative;
+        /*! there is no right propriety for relative */
+        top: 0;
+        left: 0;
+    }
+
+  </style>
+  <body>
+    <section>
+      <article>Absolute</article>
+      <article>Fixed</article>
+      <article>Relative</article>
+    </section>
+  </body>
+</html>

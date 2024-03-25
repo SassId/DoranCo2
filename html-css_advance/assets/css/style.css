@@ -10,6 +10,8 @@
 /* GENERAL */
 a {
   text-decoration: none;
+  color: white;
+  font-size: 2rem;
 }
 
 /** Declares a variable inside css to store and reuse specific values */
@@ -29,7 +31,7 @@ header {
   justify-content: space-between;
   align-items: center;
   position: fixed;
-  border: solid blue;
+  /* border: solid blue; */
   z-index: 10;
 }
 
@@ -54,12 +56,13 @@ li {
   display: block;
   width: 100px;
   text-align: center;
+  /* font-size: 100px ; */
 }
 
 /* *this selector uses the element's attribute to targe it specifically */
 a[href="index.html"] {
-  color: rgb(50, 160, 250);
-  font-size: large;
+  color: white;
+  font-size: 2rem;
 }
 
 main {
@@ -72,7 +75,7 @@ section {
   min-height: 100vh;
   border: solid red;
   position: relative;
-  padding-top: 400px;
+  /* padding-top: 400px; */
 }
 
 article {
