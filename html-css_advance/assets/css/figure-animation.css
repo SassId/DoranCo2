@@ -15,10 +15,12 @@ a {
 section {
     width: 80%;
     margin: 5% auto;
+    display: flex;
+    gap: 20px;
     /* border: solid; */
 }
 
-figure {
+figure, article {
     width: 300px;
     height: 375px;
     position: relative;
@@ -27,7 +29,7 @@ figure {
     border-radius: 20px;
   }
 
-figure:hover > figcaption {
+figure:hover > figcaption, article:hover > div {
     top: 0;
 }
 
@@ -36,7 +38,7 @@ max-width: 100%; /*insure the img is shortened if bigger than the parent*/
 min-width: 100%; /*insure the img is made bigger if smaller than the parent*/
 }
 
-figcaption {
+figcaption, div {
     width: 300px;
     height: 375px;
     background: rgba(0, 0, 0, 0.7);
@@ -47,3 +49,4 @@ figcaption {
     left: 0;
     transition: 500ms;
 }
+
