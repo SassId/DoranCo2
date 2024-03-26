@@ -1,0 +1,82 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  max-width: 100%; /*use this rule to have all browser apply the full width available (in case they don't recognize the width: 100vw */
+}
+
+/* GENERAL */
+
+/** Declares a variable inside css to store and reuse specific values */
+:root {
+  --main-color: #68614177;
+  --gapx: 10px;
+  --second-color: rgb(236, 236, 236);
+}
+
+section {
+  display: flex;
+}
+
+/* *this selector uses the element's attribute to target it specifically */
+a[href="index.html"] {
+  color: white;
+  font-size: 2rem;
+}
+
+main {
+  background: var(--second-color);
+}
+
+section {
+  flex-wrap: wrap;
+  align-items: center;
+  min-height: 100vh;
+  /* border: solid red; */
+  position: relative;
+  /* padding-top: 400px; */
+}
+
+article {
+  min-width: 320px; /* this allows us to prevent flex wrap behavior beyond that limit*/
+  flex: 1; /* this allows to divide available space evenly no matter the number of inside boxes*/
+  border: 1px solid white;
+  min-height: 60vh;
+}
+
+/* *Uses nth-child() pseudo selector to target a specific element */
+main > section:nth-child(2) > article:nth-child(3) {
+  flex: 2; /* makes that element bigger while still scaled evenly with others brother elements*/
+  border: solid 1px black;
+  min-height: 30vh;
+  align-self: flex-start;
+}
+
+@media screen and (min-width: 1024px) {
+  header + section {
+    width: 100vw;
+    height: 100vh; /* value chosen in reference of the header's height of 8vh to have the addition of both take all screen's height */
+    background: url(../img/background.jpg) 0 0 no-repeat green; /* this is the full info rule with position (x-axis y-axis) attachment*/
+    background-size: cover;
+  }
+}
+
+@media screen and (min-width: 980px) and (max-width: 1023px) {
+  header + section {
+    width: 100vw;
+    height: 100vh; /* value chosen in reference of the header's height of 8vh to have the addition of both take all screen's height */
+    background: url(../img/background.jpg) 0 0 no-repeat green; /* this is the full info rule with position (x-axis y-axis) attachment*/
+    background-size: cover;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 979px) {
+  header + section {
+    width: 100vw;
+    height: 100vh; /* value chosen in reference of the header's height of 8vh to have the addition of both take all screen's height */
+    background: url(../img/background-portrait.jpg) -100 0 no-repeat green; /* this is the full info rule with position (x-axis y-axis) attachment*/
+    background-size: cover;
+  }
+}

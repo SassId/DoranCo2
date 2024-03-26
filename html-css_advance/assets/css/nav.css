@@ -17,7 +17,7 @@ header {
   justify-content: space-between;
   padding: 0 10px;
   align-items: center;
-  min-height: 8vh;
+  min-height: 12vh;
   width: 100%;
   text-transform: capitalize;
 }
