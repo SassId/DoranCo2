@@ -59,7 +59,7 @@ li {
   /* font-size: 100px ; */
 }
 
-/* *this selector uses the element's attribute to targe it specifically */
+/* *this selector uses the element's attribute to target it specifically */
 a[href="index.html"] {
   color: white;
   font-size: 2rem;
@@ -88,7 +88,7 @@ article {
 
 /* *Uses nth-child() pseudo selector to target a specific element */
 main>section:nth-child(2)>article:nth-child(3) {
-  flex: 2; /* make that element bigger while still scaled evenly with others brother elements*/
+  flex: 2; /* makes that element bigger while still scaled evenly with others brother elements*/
   border: solid 1px black;
   min-height: 30vh;
   align-self: flex-start;

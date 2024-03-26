@@ -1,0 +1,49 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+/* GENERAL */
+a {
+    text-decoration: none;
+}
+
+/* MAIN */
+section {
+    width: 80%;
+    margin: 5% auto;
+    /* border: solid; */
+}
+
+figure {
+    width: 300px;
+    height: 375px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden; /**this allows to render everything that's out of the element's frame invisible */
+    border-radius: 20px;
+  }
+
+figure:hover > figcaption {
+    top: 0;
+}
+
+figure>img {
+max-width: 100%; /*insure the img is shortened if bigger than the parent*/
+min-width: 100%; /*insure the img is made bigger if smaller than the parent*/
+}
+
+figcaption {
+    width: 300px;
+    height: 375px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    position: absolute;
+    top: 375px;
+    left: 0;
+    transition: 500ms;
+}
