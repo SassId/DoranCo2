@@ -19,6 +19,7 @@ header {
   align-items: center;
   min-height: 8vh;
   width: 100%;
+  text-transform: capitalize;
 }
 
 ul {
@@ -26,37 +27,58 @@ ul {
   display: flex;
 }
 
-li > a, header > a {
-    color: white;
+li > a,
+header > a {
+  color: white;
 }
 
 li {
-    display: block;
-    width: 100px;
-    text-align: center;
+  display: block;
+  width: 100px;
+  text-align: center;
 }
 
 /* MEDIA QUERY */
-@media screen and (min-width:769px) {
-    header > a:nth-child(2), ul > li:first-child {
-        display: none;
-    }
+@media screen and (min-width: 769px) {
+  header > a:nth-child(2),
+  ul > li:first-child {
+    display: none;
+  }
 }
 
-@media screen and (max-width:768px) {
-    #mobile {
-        position: fixed;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        background: orange;
-        width: 100%;
-        height: 100vh;
-        top: 0;
-        right: 0;
-    }
+@media screen and (max-width: 768px) {
+  #mobile {
+    position: fixed;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background: black;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    z-index: 10;
 
-    ul > li:first-child > a {
-        color: rgb(110, 9, 141);
-    }
+  }
+
+  ul > li:first-child > a {
+    color: white;
+  }
+
+  /* ! this css method is to be used only for practice purposes as it is not automatically refreshed if you send the page link with the menu unfold */
+
+  #mobile:not(:target) { /*this indicated the rules to apply when the selector is not targeted (clicked)*/
+    right: -100%;
+    transition: right 1.5s;
+  }
+
+  #mobile:target {
+    right: 0;
+    transition: 0.5s;
+  }
+
+  header > a:nth-child(2) {
+    position: absolute;
+    right: 20px;
+  }
+
 }

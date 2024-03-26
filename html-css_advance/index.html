@@ -10,26 +10,29 @@
       content="Bienvenue sur le cours de HTML CSS avancé"
     />
     <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/nav.css">
     <!-- google fonts -->
     <!-- google analytics -->
   </head>
   <body>
     <header>
-      <a href="index.html">logo</a>
+      <a href="../index.html">Logo</a>
+      <a href="#mobile" aria-label="open navigation">
+          <img src="./assets/img/icons8-menu-carré-2-50.png" alt="menu icon">
+      </a>
       <nav>
-        <ul>
-          <li><a href="#france">France</a></li>
-          <li><a href="">page</a></li>
-          <li><a href="">page</a></li>
-          <li><a href="">page</a></li>
-          <li><a href="">page</a></li>
-        </ul>
+          <ul id="mobile">
+              <li><a href="#" aria-label="close navigation">Close X</a></li>
+              <li><a href="">page</a></li>
+              <li><a href="">page</a></li>
+              <li><a href="">page</a></li>
+              <li><a href="">page</a></li>
+          </ul>
       </nav>
-    </header>
+  </header>
     <section></section>
     <main>
       <section>
-        <article></article>
         <article></article>
         <article></article>
       </section>

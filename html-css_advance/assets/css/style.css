@@ -8,11 +8,6 @@
 }
 
 /* GENERAL */
-a {
-  text-decoration: none;
-  color: white;
-  font-size: 2rem;
-}
 
 /** Declares a variable inside css to store and reuse specific values */
 :root {
@@ -21,21 +16,9 @@ a {
   --second-color: rgb(236, 236, 236);
 }
 
-/* HEADER */
-header {
-  width: 100vw;
-  min-height: 8vh;
-  background: var(--main-color);
-  padding: var(--gapx);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  /* border: solid blue; */
-  z-index: 10;
-}
 
-ul,
+
+
 section {
   display: flex;
 }
@@ -48,16 +31,8 @@ header + section {
   background-size: cover;
 }
 
-nav {
-  width: 500px;
-}
 
-li {
-  display: block;
-  width: 100px;
-  text-align: center;
-  /* font-size: 100px ; */
-}
+
 
 /* *this selector uses the element's attribute to target it specifically */
 a[href="index.html"] {
@@ -73,7 +48,7 @@ section {
   flex-wrap: wrap;
   align-items: center;
   min-height: 100vh;
-  border: solid red;
+  /* border: solid red; */
   position: relative;
   /* padding-top: 400px; */
 }
