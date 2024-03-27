@@ -5,11 +5,41 @@
 // *MAIN
 // we call the mixin with @include
 main {
-    @include assa();
-    @extend %ablo;
+  @include assa();
+  @extend %ablo;
+  // background: transparentize($orange, 0.7) //! we obtain 30% of transparency
+  background: lighten($orange, 20%);
+  background: darken($orange, 20%);
 }
 
 // we call the placeholder with @extend
 p {
-    @extend %ablo;
+  @extend %ablo;
+}
+
+header {
+  width: percentage(1980px, 1980px);
+  background: lighten($orange, 20%);
+  min-height: $value * 4;
+
+  nav {
+    @include nav();
+
+    ul {
+      list-style: none;
+      li {
+        @include li();
+
+        a {
+          text-decoration: none;
+          color: white;
+
+          &:hover {
+            //! the & takes the element right above it
+            color: red;
+          }
+        }
+      }
+    }
+  }
 }

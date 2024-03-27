@@ -88,8 +88,28 @@ main, p {
   width: 400px; }
 
 main {
-  width: 100%;
+  width: 20.7575757576%;
   height: 800px;
-  background: #ff4b01; }
+  background: #ff9367;
+  background: #9a2d00; }
+
+header {
+  width: 100%;
+  background: #ff9367;
+  min-height: 40px; }
+  header nav {
+    width: 50.5050505051%;
+    background: #ff4b01;
+    height: 40px; }
+    header nav ul {
+      list-style: none; }
+      header nav ul li {
+        display: inline-block;
+        width: 100px; }
+        header nav ul li a {
+          text-decoration: none;
+          color: white; }
+          header nav ul li a:hover {
+            color: red; }
 
 /*# sourceMappingURL=style.css.map */
