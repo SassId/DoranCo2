@@ -1,0 +1,20 @@
+//* Directives
+
+// creates a block of reusable rules called a mixin 
+// we use only one mixin per element (same logical as the id)
+@mixin assa() {
+  width: 100%;
+  height: $value * 80;
+  background: $orange;
+}
+
+// creates a block of reusable rules called a placeholder (same logical as .class)
+//! we can't use variables in placeholders
+%ablo { 
+    color: blue;
+    width: 400px;
+}
+
+
+// Fonctions
+// Conditions

@@ -1,0 +1,15 @@
+@import "reset";
+@import "base";
+@import "layout";
+
+// *MAIN
+// we call the mixin with @include
+main {
+    @include assa();
+    @extend %ablo;
+}
+
+// we call the placeholder with @extend
+p {
+    @extend %ablo;
+}
