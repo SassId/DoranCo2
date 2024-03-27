@@ -4,6 +4,7 @@
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  user-select: none; /* prevents user from selecting text (and thus copy/paste */
 }
 
 /* GENERAL */

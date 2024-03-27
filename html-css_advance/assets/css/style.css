@@ -16,6 +16,11 @@
   --second-color: rgb(236, 236, 236);
 }
 
+/* *Sets the onscreen text selection style */
+::selection {
+  background: rgb(173, 30, 240);
+  color: orange;
+}
 
 
 

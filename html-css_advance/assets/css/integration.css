@@ -18,19 +18,7 @@
 
 section {
   display: flex;
-}
-
-/* *this selector uses the element's attribute to target it specifically */
-a[href="index.html"] {
-  color: white;
-  font-size: 2rem;
-}
-
-main {
-  background: var(--second-color);
-}
-
-section {
+  border: 1px solid red;
   flex-wrap: wrap;
   align-items: center;
   min-height: 100vh;
@@ -39,12 +27,25 @@ section {
   /* padding-top: 400px; */
 }
 
-article {
-  min-width: 320px; /* this allows us to prevent flex wrap behavior beyond that limit*/
-  flex: 1; /* this allows to divide available space evenly no matter the number of inside boxes*/
-  border: 1px solid white;
-  min-height: 60vh;
+/* *this selector uses the element's attribute to target it specifically */
+a[href="index.html"] {
+  color: white;
+  font-size: 2rem;
 }
+ /* MAIN */
+main {
+  background: var(--second-color);
+}
+
+
+/* article { */
+  /* min-width: 320px; */
+   /* this allows us to prevent flex wrap behavior beyond that limit*/
+  /* flex: 1;  */
+  /* this allows to divide available space evenly no matter the number of inside boxes*/
+  /* border: 1px solid white;
+  min-height: 60vh;
+} */
 
 /* *Uses nth-child() pseudo selector to target a specific element */
 main > section:nth-child(2) > article:nth-child(3) {
@@ -52,6 +53,41 @@ main > section:nth-child(2) > article:nth-child(3) {
   border: solid 1px black;
   min-height: 30vh;
   align-self: flex-start;
+}
+
+figure,
+article {
+  min-width: 300px;
+  height: 375px;
+  flex: 1;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden; /**this allows to render everything that's out of the element's frame invisible */
+  border-radius: 20px;
+  border: 1px solid blue;
+}
+
+figure:hover > figcaption,
+article:hover > div {
+  top: 0;
+}
+
+figure > img {
+  max-width: 100%; /*insure the img is shortened if bigger than the parent*/
+  min-width: 100%; /*insure the img is made bigger if smaller than the parent*/
+}
+
+figcaption,
+div {
+  width: 100%;
+  height: 375px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px;
+  position: absolute;
+  top: 375px;
+  left: 0;
+  transition: 500ms;
 }
 
 @media screen and (orientation: portrait) {
