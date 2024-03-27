@@ -54,29 +54,16 @@ main > section:nth-child(2) > article:nth-child(3) {
   align-self: flex-start;
 }
 
-@media screen and (min-width: 1024px) {
-  header + section {
-    width: 100vw;
-    height: 100vh; /* value chosen in reference of the header's height of 8vh to have the addition of both take all screen's height */
-    background: url(../img/background.jpg) 0 0 no-repeat green; /* this is the full info rule with position (x-axis y-axis) attachment*/
+@media screen and (orientation: portrait) {
+  header+section {
+    background: url(../img/background-portrait.jpg) center center no-repeat fixed;
     background-size: cover;
   }
 }
 
-@media screen and (min-width: 980px) and (max-width: 1023px) {
-  header + section {
-    width: 100vw;
-    height: 100vh; /* value chosen in reference of the header's height of 8vh to have the addition of both take all screen's height */
-    background: url(../img/background.jpg) 0 0 no-repeat green; /* this is the full info rule with position (x-axis y-axis) attachment*/
-    background-size: cover;
-  }
-}
-
-@media screen and (min-width: 480px) and (max-width: 979px) {
-  header + section {
-    width: 100vw;
-    height: 100vh; /* value chosen in reference of the header's height of 8vh to have the addition of both take all screen's height */
-    background: url(../img/background-portrait.jpg) -100 0 no-repeat green; /* this is the full info rule with position (x-axis y-axis) attachment*/
-    background-size: cover;
+@media screen and (orientation:landscape) {
+  header+section {
+    background: url(../img/background.jpg) center bottom no-repeat fixed;
+    background-size: cover
   }
 }
