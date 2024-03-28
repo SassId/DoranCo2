@@ -37,12 +37,20 @@
 
 //* Conditions
 @mixin responsive-for($media) {
-  @if $media == comp {
+  @if $media == computer {
     @media screen and ($morethan : $laptop) {@content;}
   }
 
   @else if $media == tablet {
-    @media screen and ($morethan: ($tablet + 1)) and ($lessthan : ($laptop - 1)) {@content}
+    @media screen and ($morethan: ($tablet + 1)) and ($lessthan : ($laptop - 1)) {@content;}
+  }
+
+  @else if $media == tabnphone {
+    @media screen and ($morethan : $phone) and ($lessthan : $tablet) {@content;}
+  }
+
+  @else if $media == smartphone {
+    @media screen and ($lessthan : ($phone - 1)) {@content;}
   }
   
 }
