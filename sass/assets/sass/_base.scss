@@ -20,19 +20,29 @@
   
 }
 
+
 // creates a block of reusable rules called a placeholder (same logical as .class)
 //! we can't use variables in placeholders
 %ablo { 
-    color: blue;
-    width: 400px;
+  color: blue;
+  width: 400px;
 }
 
 
 //* Fonctions
 @function percentage($value, $number) {
-  @return ($value / $number) * 100%
+  @return ($value / $number) * 100%;
 }
 
 
+//* Conditions
+@mixin responsive-for($media) {
+  @if $media == comp {
+    @media screen and ($morethan : $laptop) {@content;}
+  }
 
-// Conditions
+  @else if $media == tablet {
+    @media screen and ($morethan: ($tablet + 1)) and ($lessthan : ($laptop - 1)) {@content}
+  }
+  
+}
