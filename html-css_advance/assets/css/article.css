@@ -1,0 +1,117 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+/* GENERAL */
+
+/* MAIN */
+main {
+  background: rgba(58, 13, 110, 0.301);
+}
+
+header {
+  width: 100vw;
+  min-height: 10vh;
+  background: beige;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    149deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(140, 15, 209, 1) 15%,
+    rgba(204, 8, 231, 1) 63%,
+    rgba(104, 0, 255, 1) 100%
+  );
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+article {
+  min-width: 280px;
+  flex: 1;
+  filter: drop-shadow(
+    0px 5px 10px rgb(138, 4, 201)
+  ); /* similar effect to box shadow*/
+  padding: 10px;
+}
+
+/* ! all the properties not specified will be the same as the main header, so we need to specify them */
+article :is(header, footer)  {
+  background: black;
+  min-height: 5vh;
+  display: inherit; /* puts the value back to initial state*/
+  padding: 10px 0 15px 0;
+  /* margin: auto; */
+}
+
+article :is(p, a, h2) {
+  /*! we need the space before :is*/ /*equals to article > p, a*/
+  color: white;
+}
+
+h2 {
+  text-decoration: underline wavy white;
+  text-align: center;
+}
+
+article > a {
+  text-decoration: none;
+  height: 40px;
+  background: rgb(2, 26, 104);
+  display: block;
+  text-align: center;
+  line-height: 40px;
+  /* border: 1px solid goldenrod; */
+}
+
+article > footer {
+    margin-top: 2vh;
+}
+
+figure {
+  width: 100vw;
+  /* filter: grayscale(1); makes the image black and white */
+  transform: 0.8s linear;
+}
+
+figure:hover {
+  filter: grayscale(0);
+}
+
+figure > img {
+  max-width: 100%;
+  min-width: 100%;
+}
+
+article > p {
+  text-align: center;
+  margin: 10px 0;
+}
+
+audio {
+  width: 100vw;
+}
+
+ul {
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+    list-style: none;
+    width: 100px;
+    position: relative;
+}
+
+li {
+    display: inline-block;
+    position: absolute;
+}
+
