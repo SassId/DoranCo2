@@ -21,6 +21,25 @@
 //     }
 // }
 
+//* use break to quit a loop
+//* use continue to jump to the first instruction of the block code to iterate
+
+ for (let i = 0; i < 10; i++) {
+    console.log('a');
+    if (i === 5) {
+        break
+    }
+}
+
+for (let i = 0; i < 10; i++) {
+    console.log('a');
+        if (i === 5) {
+            continue
+        }
+    console.log('b ');
+}
+
+
 //! "While" statement:
 // Creates a loop that displays all numbers from 10 to 20 by 2:
 
