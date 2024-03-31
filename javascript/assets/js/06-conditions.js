@@ -1,6 +1,6 @@
-/* ----------------------- CONDITIONAL INSTRUCTIONS -----------------------*/
+//*  ----------------------- CONDITIONAL INSTRUCTIONS -----------------------
 
-// The Comparison Operators (==, ===, !=, !==, >, >=, <, <=)
+//? The Comparison Operators (==, ===, !=, !==, >, >=, <, <=)
 
 // const age = prompt('how old are you?'); 
 // if (age >= 18) {
@@ -73,3 +73,7 @@ if (age >= 18) {
 // }
 
 
+//? Ternary Operator :
+let number = 5;
+const result = number > 10 ? "yes" : "no" // <condition> ? <true case> : <false case>
+console.log(result);
