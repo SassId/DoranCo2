@@ -81,7 +81,7 @@
 // const display = helloYou("Bob")
 // console.log(display);
 
-//* also simplified as below when there's only 1 parameter and 1 operation:
+//* also simplified as below (when there's only 1 parameter and 1 operation?)
 // const arrow = x => x*2;  // it returns the same things it calculates
 // const result = arrow(45)
 // console.log(result);
