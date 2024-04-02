@@ -93,6 +93,12 @@ container = centered block -->
       </nav>
     </header>
 
+    <section>
+        <h1>Savanah's <sup>Secrets</sup></h1> <!-- sup for exposant-->
+        <p>You'll never forget your trip with us..!</p>
+        <a href="#main">Book Now </a>
+    </section>
+
     <section class="slide">
       <div id="carouselExampleCaptions" class="carousel slide">
         <div class="carousel-indicators">
@@ -119,26 +125,33 @@ container = centered block -->
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="assets/img/zebras.jpg" class="d-block w-100" alt="two zebras" />
+            <img
+              src="assets/img/zebras.jpg"
+              class="d-block w-100"
+              alt="two zebras"
+            />
             <div class="carousel-caption d-none d-md-block">
-              <h5> Stripes on stripes</h5>
-              <p>
-                 A perfect pair of zebras in harmony.
-                
-              </p>
+              <h5>Stripes on stripes</h5>
+              <p>A perfect pair of zebras in harmony.</p>
             </div>
           </div>
           <div class="carousel-item">
-            <img src="assets/img/tigers.jpg" class="d-block w-100" alt="two tigers" />
+            <img
+              src="assets/img/tigers.jpg"
+              class="d-block w-100"
+              alt="two tigers"
+            />
             <div class="carousel-caption d-none d-md-block">
               <h5>Dynamic duo</h5>
-              <p>
-                Two fierce tigers strike a pose in the wild.
-              </p>
+              <p>Two fierce tigers strike a pose in the wild.</p>
             </div>
           </div>
           <div class="carousel-item">
-            <img src="assets/img/parrots.jpg" class="d-block w-100" alt="two parrots" />
+            <img
+              src="assets/img/parrots.jpg"
+              class="d-block w-100"
+              alt="two parrots"
+            />
             <div class="carousel-caption d-none d-md-block">
               <h5>Colorful Companions</h5>
               <p>
@@ -168,13 +181,115 @@ container = centered block -->
       </div>
     </section>
 
-    <main>
-      <section>
-        <article></article>
-        <article></article>
-        <article></article>
-        <article></article>
+    <main class="container-fluid" id="main">
+      <!-- always centered for all screen sizes-->
+      <section class="row">
+        <h2>Best Spots in 2024</h2>
+        <article class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+          <figure>
+            <img
+              src="assets/img/lion-serengeti.jpg"
+              alt="lion in the serengeti"
+              class="img-fluid"
+            />
+            <!-- makes the images responsive (you can also write class="w-100")-->
+          </figure>
+          <h3>Serengeti</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, animi
+            architecto, similique deleniti voluptates delectus in non asperiores
+            nulla assumenda facere consequatur itaque. Aliquam in magni
+            eligendi. Quasi, molestiae veritatis.
+          </p>
+        </article>
+        <article class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+          <figure>
+            <img
+              src="assets/img/lion-serengeti.jpg"
+              alt="lion in the serengeti"
+              class="img-fluid"
+            />
+            <!-- makes the images responsive (you can also write class="w-100")-->
+          </figure>
+          <h3>Serengeti</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, animi
+            architecto, similique deleniti voluptates delectus in non asperiores
+            nulla assumenda facere consequatur itaque. Aliquam in magni
+            eligendi. Quasi, molestiae veritatis.
+          </p>
+        </article>
+        <article class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+          <figure>
+            <img
+              src="assets/img/lion-serengeti.jpg"
+              alt="lion in the serengeti"
+              class="img-fluid"
+            />
+            <!-- makes the images responsive (you can also write class="w-100")-->
+          </figure>
+          <h3>Serengeti</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, animi
+            architecto, similique deleniti voluptates delectus in non asperiores
+            nulla assumenda facere consequatur itaque. Aliquam in magni
+            eligendi. Quasi, molestiae veritatis.
+          </p>
+        </article>
+        <article class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+          <figure>
+            <img
+              src="assets/img/lion-serengeti.jpg"
+              alt="lion in the serengeti"
+              class="img-fluid"
+            />
+            <!-- makes the images responsive (you can also write class="w-100")-->
+          </figure>
+          <h3>Serengeti</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, animi
+            architecto, similique deleniti voluptates delectus in non asperiores
+            nulla assumenda facere consequatur itaque. Aliquam in magni
+            eligendi. Quasi, molestiae veritatis.
+          </p>
+        </article>
+      </section>
+
+      <section class="row">
+        <article class="col-lg-3 col-md-12"></article>
+        <div class="card col-6">
+          <img
+            src="assets/img/lion-serengeti.jpg"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+        <article class="col-lg-3 col-md-12"></article>
       </section>
     </main>
+
+    <div class="alert alert-warning alert-dismissible fade show fixit" role="alert">
+      <strong>Holy guacamole!</strong> You should check in on some of those
+      fields below.
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
+
+    <video autoplay muted loop id="video-in-the-back">
+        <source src="assets/video/elephant.mp4" type="video/mp4">
+    </video>
+
   </body>
 </html>

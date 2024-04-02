@@ -1,2 +1,93 @@
+body {
+    background-color: rgb(0, 0, 0);
+}
+
 .bg-body-april {background: black;}
 
+main {
+    background: #d1c764;
+    min-height: 400px;
+}
+
+article {
+    border: 1px solid black;
+    min-height: 400px;
+}
+
+.row > h2 {
+    text-align: center;
+}
+
+article > h3 {
+    text-align: center;
+}
+
+.fixit {
+    position: fixed;
+    bottom: 25vh;
+    left: 10vw;
+    width: 80%;
+    height: 50vh;
+    background: white;
+    color: black;
+    border: 5px solid red;
+    z-index: 10;
+}
+
+header + section {
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;    
+    /* justify-content: center; */
+    padding: 20px;
+    background: rgb(40,152,232);
+    background: linear-gradient(121deg, rgba(40,152,232,1) 0%, rgba(110,236,240,0) 66%, rgba(35,232,157,0) 73%, rgba(191,242,62,0) 100%); 
+    
+
+}
+
+header + section > p {
+    width: 30%;
+    color: white;
+    text-shadow: 1px 1px 5px black;
+}
+
+header + section > a {
+    text-decoration: none;
+    display: block;
+    border: 2px double orange;
+    background: transparent;
+    border-radius: 0 10px 0 10px;
+    text-align: center;
+    width: 200px;
+    padding-inline: 15px;
+    color: white;
+    transition: 0.5s linear;
+}
+
+header + section > a:hover {
+    width: 270px;
+   border-radius: 10px 0 10px 0;
+
+}
+
+
+h1 {
+    font-size: 6rem;
+    color: white;
+    text-shadow: 1px 1px 5px black;
+
+}
+
+sup {
+    color: orangered;
+}
+
+#video-in-the-back {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    z-index: -1;
+}
