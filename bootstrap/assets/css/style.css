@@ -91,3 +91,28 @@ sup {
     background-size: cover;
     z-index: -1;
 }
+
+/* .bi-telephone-fill {
+    color: black;
+
+} */
+
+.phone {
+    text-decoration: none;
+}
+
+@media screen and (min-width:480px) {
+    .phone > span::after {
+        content: " : 0655555555 ";
+        color: red;
+    }
+}
+
+@media screen and (max-width:479px) {
+    .phone > span::after {
+        content: "Contact";
+        color: red;
+
+    }
+}
+
