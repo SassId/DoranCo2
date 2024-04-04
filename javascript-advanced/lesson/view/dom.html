@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Javascript - DOM</title>
+        <link rel="stylesheet" href="../assets/css/dom.css" />
+        <script src="../js/lesson/18-dom.js" defer></script>
+    </head>
+    <body>
+        <div>
+            <h1>La manipulation du dom en Javascript</h1>
+            <h2 id="subtitle" class="subtitle">Quelques propriétés css</h2>
+            <div class="container">
+                <p id="element-by-id">
+                    La méthode javascript getElementById() de l'objet Document
+                    permet de sélectionner une balise ayant un attribut id (je
+                    précise que la valeur de l'id doit être unique dans votre
+                    page HTML).
+                </p>
+                <p>
+                    La méthode javascript getElementsByTagName() de l'objet
+                    Document ou Element permet de sélectionner une balise par
+                    son nom (tagName).
+                </p>
+                <p class="element-by-class">
+                    La méthode Javascript getElementsByClassName() de l'objet
+                    Document ou Element permet de sélectionner une balise par un
+                    identifiant de class CSS contenu dans l'attribut HTML
+                    (class).
+                </p>
+                <p class="p">
+                    La méthode Javascript querySelector() de l'objet Document ou
+                    Element permet de sélectionner une balise grâce à un
+                    sélecteur CSS.
+                </p>
+                <p class="element-by-class">
+                    La méthode Javascript querySelectorAll() de l'objet Document
+                    ou Element permet de sélectionner une balise grâce à un
+                    sélecteur CSS.
+                </p>
+            </div>
+        </div>
+    </body>
+</html>

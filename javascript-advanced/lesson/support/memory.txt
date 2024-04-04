@@ -1,0 +1,14 @@
+http://cheatsheets.shecodes.io/
+
+https://quickref.me/javascript.html
+
+https://jgthms.com/javascript-in-14-minutes/
+
+https://fr.javascript.info/
+
+https://roadmap.sh/
+
+https://github.com/euZebe/clean-code-javascript-fr
+
+https://github.com/LeBezout/clean-code-fr?tab=readme-ov-file
+

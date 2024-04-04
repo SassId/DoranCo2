@@ -1,0 +1,49 @@
+Module 1 : Introduction à JavaScript
+
+    Introduction à JavaScript et son rôle dans le développement web
+    Les différents types de données et variables en JavaScript
+    Les opérateurs et les expressions
+    Les structures de contrôle de base (if/else, switch/case, boucles for/while)
+
+Module 2 : Fonctions et événements en JavaScript
+
+    Les fonctions et leur utilisation en JavaScript
+    Les fonctions anonymes et les fermetures (closures)
+    Les événements et leur manipulation en JavaScript
+
+Module 3 : Les tableaux et les objets
+
+    Les tableaux et leur utilisation en JavaScript
+    Les objets et leur manipulation en JavaScript
+    Les prototypes et l'héritage en JavaScript
+
+Module 4 : Manipulation du DOM et gestion des formulaires
+
+    Le Document Object Model (DOM) et sa manipulation en JavaScript
+    La gestion des événements du DOM
+    La validation des formulaires en JavaScript
+
+Module 5 : ES6 (Javascript moderne)
+
+    Les fonctions fléchées
+    Les méthodes pour tableaux (map, filter, sort,reduce)
+    Déstructuration et décomposition
+    Les modules Javascript
+
+Module 6 : Les requêtes HTTP et les API
+
+    Les requêtes HTTP et leur manipulation en JavaScript
+    Les API et leur utilisation en JavaScript
+    L'utilisation des Promises pour gérer les appels asynchrones
+
+Module 7 : Gestion des erreurs et débogage
+
+    La gestion des erreurs et des exceptions en JavaScript
+    Les outils de débogage en JavaScript (console, breakpoints)
+    Les bonnes pratiques pour éviter les erreurs courantes
+
+Module 8 : Les frameworks et bibliothèques JavaScript
+
+    Les frameworks JavaScript (Angular, React, Vue.js)
+    Les bibliothèques JavaScript (jQuery, Lodash, Moment.js)
+    Les avantages et les inconvénients de l'utilisation de ces outils
