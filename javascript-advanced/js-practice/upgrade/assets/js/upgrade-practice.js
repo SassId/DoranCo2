@@ -183,7 +183,7 @@ button.addEventListener("click", () => {
   // this targets the future paragraph with the future set id
   const appear = document.getElementById("appear");
   // this checks if the div doesn't exist and it that case, will run the rest of the code in order to create it
-  if (!appear) {
+  if (!appear) { // same as if (appear == null) same as (appear == false)
     const element = document.createElement("p");
     element.id = "appear";
     element.textContent = "Appear now!";
