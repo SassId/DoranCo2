@@ -180,7 +180,7 @@ button.addEventListener("click", function () {
 
 //*  Modifier le code pour afficher un message dans une balise <p> en bas de la balise qui a l'id user-container au lieu de la console
 button.addEventListener("click", () => {
-  // this targets the future div with the future set class
+  // this targets the future paragraph with the future set id
   const appear = document.getElementById("appear");
   // this checks if the div doesn't exist and it that case, will run the rest of the code in order to create it
   if (!appear) {
