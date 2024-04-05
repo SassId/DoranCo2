@@ -180,15 +180,16 @@ button.addEventListener("click", function () {
 
 //*  Modifier le code pour afficher un message dans une balise <p> en bas de la balise qui a l'id user-container au lieu de la console
 button.addEventListener("click", () => {
+  const newContent = document.getElementById("user-container");
   // this targets the future paragraph with the future set id
   const appear = document.getElementById("appear");
   // this checks if the div doesn't exist and it that case, will run the rest of the code in order to create it
-  if (!appear) { // same as if (appear == null) same as (appear == false)
+  if (!appear) {
+    // same as if (appear == null) same as (appear == false)
     const element = document.createElement("p");
     element.id = "appear";
     element.textContent = "Appear now!";
 
-    const newContent = document.getElementById("user-container");
     newContent.append(element);
   }
 
@@ -223,12 +224,15 @@ function displayInfo(array) {
 }
 
 //* Créer une fonction qui prend un tableau de noms et crée une liste déroulante (select, option) dans le DOM dans la div qui a l'id user-container
+const newContent = document.getElementById("user-container");
 
+const dropDownMenu = document.createElement("select");
 function makeDropDownList(array) {
-  const dropDownMenu = document.createElement("select");
-  for (element of array) {
+  console.log(dropDownMenu);
+  for (let element of array) {
     const dropDownItem = document.createElement("option");
-    dropDownItem.textContent = element;
+    dropDownItem.textContent = `${element.firstName} ${element.lastName}`;
+    dropDownItem.value = element.lastName;
 
     dropDownMenu.append(dropDownItem);
   }
@@ -236,4 +240,20 @@ function makeDropDownList(array) {
   newContent.append(dropDownMenu);
 }
 
-makeDropDownList(acteurs);
+makeDropDownList(actors);
+
+dropDownMenu.id = "select";
+const select = document.getElementById("select");
+select.addEventListener("change", (e) => {
+  for (let element of actors) {
+    if (element.lastName == e.target.value) {
+      const card = document.createElement("div");
+      const title = document.createElement("h3");
+      title.textContent = `${element.firstName} ${element.lastName}`;
+      const description = document.createElement("p");
+      description.textContent = `${element.description}`;
+      card.append(title, description);
+      newContent.append(card);
+    }
+  }
+});
