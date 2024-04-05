@@ -175,7 +175,8 @@ for (let element of actors) {
 //*  Cibler le bouton dans la page HTML et ajouter un écouteur d'événement pour afficher un message dans la console
 const button = document.querySelector('#action');
 button.addEventListener("click", function(){
-    displayInfo(actors)
+    // displayInfo(actors)
+    
 })
 
 
