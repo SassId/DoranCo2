@@ -215,8 +215,8 @@ function makeDropDownList(array) {
     const dropDownMenu = document.createElement('select');
     for (element of array){
         const dropDownItem = document.createElement('option');
-        dropDownItem.textContent = element;
-        
+        dropDownItem.textContent = element
+
         dropDownMenu.append(dropDownItem)
     }
 
@@ -225,3 +225,6 @@ function makeDropDownList(array) {
 }
 
 makeDropDownList(acteurs)
+ererzr
+ererzrerer
+array
