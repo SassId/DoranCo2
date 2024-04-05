@@ -112,12 +112,13 @@ nav {
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
     main {
-        margin-top: 277px;
+        margin-top: px;
       }
 
   nav {
+    display: none;
     flex-direction: column;
     gap: 20px;
   }
@@ -126,4 +127,8 @@ nav {
     padding: 10px;
     font-size: 15px;
   }
+}
+
+nav.active {
+  display: flex;
 }
