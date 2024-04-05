@@ -207,9 +207,7 @@ function displayInfo(array) {
 
     console.log(newDiv);
 }
-
-
-
+displayInfo(actors)
 
 //* Créer une fonction qui prend un tableau de noms et crée une liste déroulante (select, option) dans le DOM dans la div qui a l'id user-container
 
