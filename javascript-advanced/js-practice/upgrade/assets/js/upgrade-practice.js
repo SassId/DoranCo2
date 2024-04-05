@@ -244,10 +244,16 @@ makeDropDownList(actors);
 
 dropDownMenu.id = "select";
 const select = document.getElementById("select");
+
 select.addEventListener("change", (e) => {
+    const card = document.getElementById('card');
+    console.log(card);
+    if (card) {card.remove()}
+
   for (let element of actors) {
     if (element.lastName == e.target.value) {
       const card = document.createElement("div");
+      card.id = "card"
       const title = document.createElement("h3");
       title.textContent = `${element.firstName} ${element.lastName}`;
       const description = document.createElement("p");
