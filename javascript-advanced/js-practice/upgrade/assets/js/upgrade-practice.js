@@ -243,9 +243,9 @@ function makeDropDownList(array) {
 makeDropDownList(actors);
 
 dropDownMenu.id = "select";
-const select = document.getElementById("select");
+const actorInfo = document.getElementById("select");
 
-select.addEventListener("change", (e) => {
+actorInfo.addEventListener("change", (e) => {
     const card = document.getElementById('card');
     console.log(card);
     if (card) {card.remove()}
