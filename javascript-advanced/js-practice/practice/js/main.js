@@ -28,8 +28,9 @@ console.log(text.trim());
 // ? Substring Method:
 console.log(text.substring(0,10));
 
-// ? Sclice Method:
+// ? Sclice Method: indice not included
 console.log(text.slice(0,10));
+
 // Mettre la chaine de caractères en majuscules et l'afficher en console
 console.log(text.toUpperCase());
 
@@ -38,9 +39,10 @@ console.log(text.toLowerCase());
 
 // Remplacer "chaine de caractère" par "string" dans la phrase et l'afficher en console
 // ? Part-text method:
-console.log(text.replace("Je suis une chaîne de caractères", " I am a string"));
+console.log(text.replace("chaîne de caractères", "string"));
 // Afficher la chaine de caractères en console en remplaçant chaque espace par un underscore
 console.log(text.replace(/ /g, "_"));
+console.log(text.replaceAll(' ', '_'));
 
 // Transformer la chaine de caractères en tableau contenant chaque mots et l'afficher en console
 // ? Split Method:
