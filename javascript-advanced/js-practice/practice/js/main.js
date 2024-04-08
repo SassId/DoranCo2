@@ -173,7 +173,7 @@ newSeries.forEach((element) => {
 // La carte doit contenir un titre h3, un paragraphe pour le genre, un paragraphe pour le synopsis, un paragraphe pour le nombre de saisons et un paragraphe pour la note IMDb
 function createSerieCard(obj) {
   const card = document.createElement("div");
-  card.classList = "card";
+  card.classList = "card"; // card.classList.add('card')
   const title = document.createElement("h3");
   title.textContent = obj.title;
   const genre = document.createElement("p");
@@ -251,8 +251,8 @@ newSeries.forEach((element) => {
   const listItem = document.createElement("li");
   listItem.textContent = element.title;
   popSeries.append(listItem);
-  const popSeriesDiv = document.getElementById('popular');
-  popSeriesDiv.append(popSeries)
+  const popSeriesDiv = document.getElementById("popular");
+  popSeriesDiv.append(popSeries);
 });
 
 // TODO EXERCICE
@@ -304,7 +304,34 @@ const mustWatchSeries = [
 // Avec un element option avec le titre de chaque série dans le tableau mustWatchSeries
 // Ajouter le select à la section #must-watch
 
+const mustWatchSelect = document.createElement("select");
+mustWatchSelect.classList = "select-series";
+mustWatchSelect.id = "must-watch-select";
+
+
+mustWatchSeries.forEach((element) => {
+    const mustWatchOption = document.createElement("option");
+    mustWatchOption.textContent = element.title;
+    mustWatchSelect.append(mustWatchOption);
+    // créer une value pour le dernier  exercice
+});
+
+/
+const mustWatchDiv = document.getElementById("must-watch");
+mustWatchDiv.append(mustWatchSelect);
+
 // TODO EXERCICE
 // Ajouter un écouteur d'événements 'change' sur le select
-// Lorsque l'utilisateur sélectionne une série, afficher une card avec la fonction déjà créé pour cette série dans la section #must-watch
+// Lorsque l'utilisateur sélectionne une série, afficher une card avec la fonction déjà créée pour cette série dans la section #must-watch
 // Si une carte est déjà affichée, la remplacer par la nouvelle série sélectionnée
+
+const mustWatchSelection = document.getElementById("must-watch-select");
+
+mustWatchSelection.addEventListener("change", (e) => {
+  mustWatchSeries.forEach((element) => {
+    if (e.target.value == element.title) {
+      const card = createSerieCard(element);
+      mustWatchDiv.append(card);
+    }
+  });
+});
