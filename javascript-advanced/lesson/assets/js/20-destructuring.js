@@ -38,3 +38,45 @@ const fruits = [
 ]
 
 console.log(fruits[0], fruits[fruits.length - 1]);
+
+const [x,,,,y] = fruits //! you have to know and count the number of items inside the array
+console.log(x,y);
+
+//*  Create an array with countries names and extract the last element in a variable:
+
+const countries =  ['france', 'united kingdom', 'kenya', 'spain', 'japan' ]
+const [france,,,,japan] = countries
+console.log(france, japan);
+
+
+const avengers =  {
+    name: 'Tony Stark',
+    alias: 'Iron Man',
+    age: 40,
+    isAlive: true,
+    powers: ['Powered Armor', 'Wealth', 'Genius Level Intellect']
+}
+
+// * Créer displayAvenger qui prend en parametre un objet
+    // *si l'avenger est vivant, retourne: je suis -alias- expert en -liste des pouvoir-
+    // * appeler la fonction en lui passant notre objet avenger
+
+    
+    // function displayAvenger(objet){
+    //     const {name: avengerName, alias, age, isAlive, powers: [power1, power2, power3]} = objet
+    //     if(isAlive) {
+    //         console.log(`I am ${avengerName}, expert in ${power1}, ${power2} and ${power3}`);
+    //         // console.log(`I am ${avengerName}, expert in ${powers.join(', ')}`); another method
+    //     }
+    // }
+
+    function displayAvenger({name: avengerName, alias, age, isAlive, powers: [power1, power2, power3]}){
+ 
+        if(isAlive) {
+            console.log(`I am ${avengerName}, expert in ${power1}, ${power2} and ${power3}`);
+            // console.log(`I am ${avengerName}, expert in ${powers.join(', ')}`); another method
+        }
+    }
+
+    displayAvenger(avengers)
+
