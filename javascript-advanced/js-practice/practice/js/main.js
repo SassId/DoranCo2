@@ -306,17 +306,17 @@ const mustWatchSeries = [
 
 const mustWatchSelect = document.createElement("select");
 mustWatchSelect.classList = "select-series";
-mustWatchSelect.id = "must-watch-select";
+
 
 
 mustWatchSeries.forEach((element) => {
     const mustWatchOption = document.createElement("option");
     mustWatchOption.textContent = element.title;
+    mustWatchOption.value = element.title;
     mustWatchSelect.append(mustWatchOption);
-    // créer une value pour le dernier  exercice
-});
+    
+})
 
-/
 const mustWatchDiv = document.getElementById("must-watch");
 mustWatchDiv.append(mustWatchSelect);
 
@@ -325,12 +325,19 @@ mustWatchDiv.append(mustWatchSelect);
 // Lorsque l'utilisateur sélectionne une série, afficher une card avec la fonction déjà créée pour cette série dans la section #must-watch
 // Si une carte est déjà affichée, la remplacer par la nouvelle série sélectionnée
 
+mustWatchSelect.id = "must-watch-select";
 const mustWatchSelection = document.getElementById("must-watch-select");
 
 mustWatchSelection.addEventListener("change", (e) => {
+ const specificCard = document.getElementById('specific-card');
+ console.log(specificCard);
+  if (specificCard) {
+    specificCard.remove()
+  }
   mustWatchSeries.forEach((element) => {
     if (e.target.value == element.title) {
       const card = createSerieCard(element);
+      card.id = 'specific-card'
       mustWatchDiv.append(card);
     }
   });
