@@ -140,12 +140,14 @@ const newSeries = [
 ];
 
 //* Afficher en console le titre de chaque série dans le tableau newSeries
+
 for (let element of newSeries) {
   console.log(element.title);
 }
 
 //? Or
 newSeries.forEach((element) => {
+  const { title } = element;
   console.log(element.title);
 });
 
@@ -158,8 +160,11 @@ newSeries.forEach((element) => {
 
 // Afficher en console le titre des séries qui ont moins de 3 saisons et une note IMDb supérieure à 8.5
 newSeries.forEach((element) => {
-  if (element.seasons < 3 && element.imdbRating > 8.5) {
-    console.log(element.title);
+  // Destructurer l'objet pour extraire seaons et imdbRating et la renommer "note"
+  const { seasons, imdbRating: note, title } = element;
+
+  if (seasons < 3 && note > 8.5) {
+    console.log(title);
   }
 });
 
@@ -172,18 +177,20 @@ newSeries.forEach((element) => {
 // La card sera une div avec une classe 'card' et contiendra les informations de la série
 // La carte doit contenir un titre h3, un paragraphe pour le genre, un paragraphe pour le synopsis, un paragraphe pour le nombre de saisons et un paragraphe pour la note IMDb
 function createSerieCard(obj) {
+  // Destructurer l'objet dans la fontion pour créer des variables 'genre', 'synopsis'
+  const {title: seriesTitle, genre: seriesGenre, synopsis: seriesSynopsis, seasons: seriesSeasons, imdbRating: seriesRating} = obj
   const card = document.createElement("div");
   card.classList = "card"; // card.classList.add('card')
   const title = document.createElement("h3");
-  title.textContent = obj.title;
+  title.textContent = seriesTitle;
   const genre = document.createElement("p");
-  genre.textContent = obj.genre;
+  genre.textContent = seriesGenre;
   const synopsis = document.createElement("p");
-  synopsis.textContent = obj.synopsis;
+  synopsis.textContent = seriesSynopsis;
   const seasons = document.createElement("p");
-  seasons.textContent = `Number of Seasons: ${obj.seasons}`;
+  seasons.textContent = `Number of Seasons: ${seriesSeasons}`;
   const rating = document.createElement("p");
-  rating.textContent = obj.imdbRating;
+  rating.textContent = seriesRating;
 
   card.append(title, genre, synopsis, seasons, rating);
   return card;
@@ -307,15 +314,12 @@ const mustWatchSeries = [
 const mustWatchSelect = document.createElement("select");
 mustWatchSelect.classList = "select-series";
 
-
-
 mustWatchSeries.forEach((element) => {
-    const mustWatchOption = document.createElement("option");
-    mustWatchOption.textContent = element.title;
-    mustWatchOption.value = element.title;
-    mustWatchSelect.append(mustWatchOption);
-    
-})
+  const mustWatchOption = document.createElement("option");
+  mustWatchOption.textContent = element.title;
+  mustWatchOption.value = element.title;
+  mustWatchSelect.append(mustWatchOption);
+});
 
 const mustWatchDiv = document.getElementById("must-watch");
 mustWatchDiv.append(mustWatchSelect);
@@ -329,15 +333,15 @@ mustWatchSelect.id = "must-watch-select";
 const mustWatchSelection = document.getElementById("must-watch-select");
 
 mustWatchSelection.addEventListener("change", (e) => {
- const specificCard = document.getElementById('specific-card');
- console.log(specificCard);
+  const specificCard = document.getElementById("specific-card");
+  console.log(specificCard);
   if (specificCard) {
-    specificCard.remove()
+    specificCard.remove();
   }
   mustWatchSeries.forEach((element) => {
     if (e.target.value == element.title) {
       const card = createSerieCard(element);
-      card.id = 'specific-card'
+      card.id = "specific-card";
       mustWatchDiv.append(card);
     }
   });
