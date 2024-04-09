@@ -1,5 +1,5 @@
 import {newSeries, popularSeries, mustWatchSeries} from './data/data.js'
-
+import {createSerieCard} from './utils/createSerieCard.js'
 
 // TODO EXERCICE :
 
@@ -138,25 +138,7 @@ newSeries.forEach((element) => {
 // Créer une fonction createSerieCard() qui prend un objet série en paramètre et retourne une card HTML avec les informations de la série
 // La card sera une div avec une classe 'card' et contiendra les informations de la série
 // La carte doit contenir un titre h3, un paragraphe pour le genre, un paragraphe pour le synopsis, un paragraphe pour le nombre de saisons et un paragraphe pour la note IMDb
-function createSerieCard(obj) {
-  // Destructurer l'objet dans la fontion pour créer des variables 'genre', 'synopsis'
-  const {title: seriesTitle, genre: seriesGenre, synopsis: seriesSynopsis, seasons: seriesSeasons, imdbRating: seriesRating} = obj
-  const card = document.createElement("div");
-  card.classList = "card"; // card.classList.add('card')
-  const title = document.createElement("h3");
-  title.textContent = seriesTitle;
-  const genre = document.createElement("p");
-  genre.textContent = seriesGenre;
-  const synopsis = document.createElement("p");
-  synopsis.textContent = seriesSynopsis;
-  const seasons = document.createElement("p");
-  seasons.textContent = `Number of Seasons: ${seriesSeasons}`;
-  const rating = document.createElement("p");
-  rating.textContent = seriesRating;
 
-  card.append(title, genre, synopsis, seasons, rating);
-  return card;
-}
 
 // Pour chaque série dans le tableau newSeries, créer une carte et l'ajouter à la section #new-series
 newSeries.forEach((serie) => {
