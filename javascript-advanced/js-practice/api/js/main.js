@@ -1,3 +1,5 @@
+import { displayPosts } from "./displayPosts.js";
+
 //* ------------------------ AJAX ------------------------ */
 
 /*
@@ -34,27 +36,10 @@ fetch("https://jsonplaceholder.typicode.com/posts")
   .then((posts) => {
     console.log(posts);
     // section.id = 'section'
-    const fragment = document.createDocumentFragment();
-
-    posts.forEach((post) => {
-      const { title, body } = post;
-
-      const section = document.createElement("div");
-
-      const sectiontitle = document.createElement("h2");
-      sectiontitle.textContent = title;
-
-      const sectionContent = document.createElement("p");
-      sectionContent.textContent = body;
-
-      section.append(sectiontitle, sectionContent);
-
-      fragment.append(section);
-    });
-
-    document.body.append(fragment);
+    displayPosts(posts)
 
   })
   .catch((error) => {
     console.log(error);
   });
+
