@@ -1144,6 +1144,7 @@ fetch('/js/data.json')
     });
 
 // Creer une requete fetch avec le lien fourni
+
 fetch('https://jsonplaceholder.typicode.com/users')
     .then((response) => {
         return response.json();
