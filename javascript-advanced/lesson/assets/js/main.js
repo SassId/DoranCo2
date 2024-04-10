@@ -1,5 +1,7 @@
 /*
     --00-- COMMENTS
+    --00-- CONSOLE
+    --00-- USE STRICT
     --01-- DISPLAY
     --02-- VARIABLES
     --03-- CONCATENATION
@@ -26,6 +28,14 @@
     --24-- AJAX
 */
 
+// INSTALLER L'EXTENSION BETTER COMMENTS (VSCode)
+// Cela permet de colorer les commentaires en fonction de leur type
+// Commentaires normal
+// ? Commentaire interrogation
+// * Commentaire important
+// ! Commentaire alerte
+// TODO: A faire plus tard
+
 /* --------------------------- 00 - COMMENTS --------------------------- */
 
 // ? Un commentaire sur une ligne en Javascript
@@ -34,6 +44,65 @@
     Un commentaire multiligne
     en Javascript
 */
+
+/* --------------------------- 00 - CONSOLE --------------------------- */
+
+/*
+    ? La console est un outil de débogage qui permet d'afficher des messages, des erreurs, des avertissements, des objets, des tableaux, etc.
+*/
+
+// Afficher un message
+console.log('Hello World !');
+
+// Afficher un message d'erreur
+console.error('Une erreur est survenue !');
+
+// Afficher un message d'avertissement
+console.warn('Attention !');
+
+// Afficher un message d'information
+console.info('Information !');
+
+// Afficher un objet sous forme de tableau
+console.table({ name: 'John', age: 30 });
+
+// Afficher un tableau
+console.table(['Apple', 'Banana', 'Cherry']);
+
+// Effacer la console
+// console.clear();
+
+/* --------------------------- 00 - USE STRICT --------------------------- */
+
+/*
+    Le mode strict de JavaScript est une version limitée et plus sécurisée de JavaScript.
+    Il empêche également l'utilisation de certaines fonctionnalités dangereuses de JavaScript.
+    Par exemple, le mode strict élimine les erreurs silencieuses souvent ignorées par les navigateurs.
+    Exemple : l'utilisation de variables non déclarées, l'utilisation de mots réservés, etc.
+*/
+
+// Pour activer le mode strict, il suffit d'ajouter la ligne suivante au début de votre fichier JavaScript.
+('use strict');
+
+// Exemple d'erreur silencieuse, oubli de déclarer la variable
+message = 'Hello World !';
+console.log(message);
+
+// Exemple d'erreur silencieuse, utilisation de mots réservés
+var let = 'Hello World !';
+console.log(let);
+
+// Liste de mots réservés en JavaScript
+
+// break       case        catch       class       const
+// continue    debugger    default     delete      do
+// else        enum        export      extends     false
+// finally     for         function    if          implements
+// import      in          instanceof  interface   let
+// new         null        package     private     protected
+// public      return      static      super       switch
+// this        throw       true        try         typeof
+// var         void        while       with        yield
 
 /* --------------------------- 01 - DISPLAY --------------------------- */
 
@@ -51,12 +120,6 @@ console.log('Hello World!');
 
 // Inserer du code HTML dans ma page
 document.write('<h1>Un h1 en JS</h1>');
-
-// BETTER COMMENTS (extension VSCode)
-// ? NB: Les noms de variables sont sensibles à la casse
-// * Message important
-// ! Attention à la sensibilité à la casse
-// TODO: A faire plus tard
 
 /* --------------------------- 02 - VARIABLES --------------------------- */
 
