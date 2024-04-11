@@ -525,10 +525,6 @@ avengers.forEach((avenger) => {
 // Affichez: 'ALIAS peut voler'
 
 for (let avenger of avengers) {
-<<<<<<< HEAD:javascript-advanced/js-practice/evaluation SassId/assets/js/main.js
-  const {capacites: {vol}} = avenger
-  
-=======
   const {
     alias,
     capacites: { vol },
@@ -539,7 +535,6 @@ for (let avenger of avengers) {
     console.log(flyingAvengers);
     console.log(`The Avengers who can fly are: ${alias}`);
   }
->>>>>>> 5d34428ab852f203def9747023f0e27e217e45b9:javascript-advanced/js-practice/evaluation/assets/js/main.js
 }
 
 console.log(
