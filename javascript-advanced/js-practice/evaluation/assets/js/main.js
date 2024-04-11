@@ -525,13 +525,19 @@ avengers.forEach((avenger) => {
 // Affichez: 'ALIAS peut voler'
 
 for (let avenger of avengers) {
+
   const {
     alias,
     capacites: { vol },
   } = avenger;
+
+  console.log(vol);
+
   if (vol) {
-    let flyingAvengers = [ ]
-    flyingAvengers.push(avenger)
+    let list = [];
+    list.push(avenger);
+    const flyingAvengers = list.join(", ");
+
     console.log(flyingAvengers);
     console.log(`The Avengers who can fly are: ${alias}`);
   }
