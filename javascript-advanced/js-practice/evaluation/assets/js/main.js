@@ -505,7 +505,7 @@ const avengers = [
 
 // Affichez la liste des films dans lesquels chaque super-héros est apparu.
 // Affichez: 'ALIAS est apparu dans les films suivants: films'
-("------------------------- Films dans lesquels chaque super-héros est apparu: -------------------------");
+// ("------------------------- Films dans lesquels chaque super-héros est apparu: -------------------------");
 
 avengers.forEach((avenger) => {
   const { alias, films: movies } = avenger;
@@ -524,68 +524,139 @@ avengers.forEach((avenger) => {
 // Affichez la liste des super-héros qui ont des capacités de vol.
 // Affichez: 'ALIAS peut voler'
 
-for (let avenger of avengers) {
+let listCanFly = [];
 
+for (let avenger of avengers) {
   const {
     alias,
+    films: movies,
     capacites: { vol },
   } = avenger;
 
-  console.log(vol);
-
   if (vol) {
-    let list = [];
-    list.push(avenger);
-    const flyingAvengers = list.join(", ");
+    console.log(`${alias} can fly`);
+    listCanFly.push(alias);
+    // console.log(listCanFly);
+    const flyingAvengers = listCanFly.join(", ");
 
-    console.log(flyingAvengers);
-    console.log(`The Avengers who can fly are: ${alias}`);
+    // console.log(flyingAvengers);
+    console.log(`The Avengers who can fly are: ${flyingAvengers}`);
   }
 }
 
-console.log(
-  "------------------------- Avengers qui peuvent voler: -------------------------"
-);
+// console.log(
+//   "------------------------- Avengers qui peuvent voler: -------------------------"
+// );
 
 // ---------------------------------- Exercice 12 ----------------------------------
 
 // Affichez la liste des super-héros qui ont des capacités de télékinésie.
 // Affichez: 'ALIAS a des capacités de télékinésie'
-console.log(
-  "------------------------- Avengers avec des capacités de télékinésie: -------------------------"
-);
+
+const listTelekinesis = [];
+
+for (let avenger of avengers) {
+  const {
+    alias,
+    capacites: { telekinesie },
+  } = avenger;
+
+  if (telekinesie) {
+    console.log(`${alias} has telekinetic abilities`);
+    listTelekinesis.push(alias);
+    // console.log(listTelekinesis);
+    const telekinesistAvengers = listTelekinesis.join(", ");
+
+    console.log(telekinesistAvengers);
+    console.log(
+      `The Avengers who can use telekinesis are: ${telekinesistAvengers}`
+    );
+  }
+}
+
+// console.log(
+//   "------------------------- Avengers avec des capacités de télékinésie: -------------------------"
+// );
 
 // ---------------------------------- Exercice 13 ----------------------------------
 
 // Affichez la liste des super-héros qui n'ont pas d'équipement.
 // Affichez: 'ALIAS n'a pas d'équipement'
-console.log(
-  "------------------------- Avengers sans équipement: -------------------------"
-);
+
+const listNoEquipment = [];
+
+avengers.forEach((avenger) => {
+  const { alias, equipement } = avenger;
+
+  if (equipement == "Aucun" || !equipement) {
+    console.log(`${alias} has no equipment`);
+    listNoEquipment.push(alias);
+    // console.log(listNoEquipment);
+    const noEquipmentAvengers = listNoEquipment.join(", ");
+    console.log(
+      `The Avengers who have no equipment are: ${noEquipmentAvengers}`
+    );
+  }
+});
+
+// console.log(
+//   "------------------------- Avengers sans équipement: -------------------------"
+// );
 
 // ---------------------------------- Exercice 14 ----------------------------------
 
 // Affichez la liste des super-héros qui ont joué dans plus de 5 films.
 // Affichez: 'ALIAS a joué dans plus de 5 films'
-console.log(
-  "------------------------- Avengers qui ont joué dans plus de 5 films: -------------------------"
-);
+
+const moreThan5Movies = [];
+
+avengers.forEach((avenger) => {
+  const { alias, films: movies } = avenger;
+
+  if (movies.length > 5) {
+    console.log(`${alias} starred in more than 5 movies`);
+    moreThan5Movies.push(alias);
+    const AvengersWith5Movies = moreThan5Movies.join(", ");
+    // console.log(AvengersWith5Movies);
+    console.log(
+      `The Avengers who starred in more than 5 movies are: ${AvengersWith5Movies}`
+    );
+  }
+});
+
+// console.log(
+//   "------------------------- Avengers qui ont joué dans plus de 5 films: -------------------------"
+// );
 
 // ---------------------------------- Exercice 15 ----------------------------------
 
 // Pour chaque super-héros, destructurer les propriétés suivantes: alias, description, capacites, films.
 // Affichez : 'Nom: alias, Description: description, Films: films'
-console.log(
-  "------------------------- Destructuration des propriétés suivantes: -------------------------"
-);
+
+avengers.forEach((avenger) => {
+  const { alias, description, capacites, films: movies } = avenger;
+
+  console.log(`Name: ${alias}, Description: ${description}, Movies: ${movies}`);
+});
+
+// console.log(
+//   "------------------------- Destructuration des propriétés suivantes: -------------------------"
+// );
 
 // ---------------------------------- Exercice 16 ----------------------------------
 
 // Créez une fonction getFlyingSuperheroes() qui prend un tableau de super-héros en parametre et renvoie un tableau de super-héros qui ont des capacités de vol.
 
-console.log(
-  "------------------------- Super-héros avec des capacités de vol: -------------------------"
-);
+function getFlyingSuperheroes(array) {
+  const AvengersWhoCanFly = array.filter((element) => element.capacites.vol);
+  return AvengersWhoCanFly;
+}
+
+console.log(getFlyingSuperheroes(avengers));
+
+// console.log(
+//   "------------------------- Super-héros avec des capacités de vol: -------------------------"
+// );
 
 // Affichez la liste des super-héros qui ont des capacités de vol en utilisant la fonction créée precedemment.
 // Affichez : 'ALIAS peut voler'
