@@ -496,9 +496,15 @@ console.log(
   "------------------------- Films dans lesquels chaque super-héros est apparu: -------------------------"
 );
 
-console.log(alias);
 avengers.forEach((avenger) => {
   const { alias, films: movies } = avenger;
+
+  let list = [];
+  list.push(movies);
+  const newArray = list.join(", ");
+
+  console.log(newArray);
+
   console.log(`${alias} starred in the following movies: ${movies}`);
 });
 
@@ -506,6 +512,12 @@ avengers.forEach((avenger) => {
 
 // Affichez la liste des super-héros qui ont des capacités de vol.
 // Affichez: 'ALIAS peut voler'
+
+for (let avenger of avengers) {
+  const {capacites: {vol}} = avenger
+  
+}
+
 console.log(
   "------------------------- Avengers qui peuvent voler: -------------------------"
 );
