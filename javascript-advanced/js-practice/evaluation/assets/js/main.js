@@ -216,6 +216,19 @@ fetch("https://api.chucknorris.io/jokes/random")
 
 // Faites une requête AJAX pour récupérer les données de l'API suivante: 'https://poetrydb.org/author'
 // Affichez le nombre d'auteurs présent et affichez le nom du premier auteur en console
+fetch("https://poetrydb.org/author")
+  .then((response) => {
+    return response.json();
+  })
+  .then((data) => {
+    // console.log(data);
+    // console.log(data.authors);
+    console.log(data.authors.length);
+    console.log(data.authors[0]);
+  })
+  .catch((error) => {
+    console.log(`something wrong has occured: ${error}`);
+  });
 
 /* ----------------------------------------------------------- */
 /*                  Tableau d'Objets Avengers                  */
@@ -492,9 +505,7 @@ const avengers = [
 
 // Affichez la liste des films dans lesquels chaque super-héros est apparu.
 // Affichez: 'ALIAS est apparu dans les films suivants: films'
-console.log(
-  "------------------------- Films dans lesquels chaque super-héros est apparu: -------------------------"
-);
+("------------------------- Films dans lesquels chaque super-héros est apparu: -------------------------");
 
 avengers.forEach((avenger) => {
   const { alias, films: movies } = avenger;
@@ -514,8 +525,21 @@ avengers.forEach((avenger) => {
 // Affichez: 'ALIAS peut voler'
 
 for (let avenger of avengers) {
+<<<<<<< HEAD:javascript-advanced/js-practice/evaluation SassId/assets/js/main.js
   const {capacites: {vol}} = avenger
   
+=======
+  const {
+    alias,
+    capacites: { vol },
+  } = avenger;
+  if (vol) {
+    let flyingAvengers = [ ]
+    flyingAvengers.push(avenger)
+    console.log(flyingAvengers);
+    console.log(`The Avengers who can fly are: ${alias}`);
+  }
+>>>>>>> 5d34428ab852f203def9747023f0e27e217e45b9:javascript-advanced/js-practice/evaluation/assets/js/main.js
 }
 
 console.log(

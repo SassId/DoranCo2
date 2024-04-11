@@ -90,7 +90,7 @@ console.log(message);
 
 // Exemple d'erreur silencieuse, utilisation de mots réservés
 var let = 'Hello World !';
-console.log(let);
+console.log(let); 
 
 // Liste de mots réservés en JavaScript
 

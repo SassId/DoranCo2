@@ -42,6 +42,8 @@ const acteurs = [
   "Charlize Theron",
 ];
 
+console.log(acteurs);
+
 //* Affichage des noms d'acteurs à l'aide de la boucle for, for...of, forEach
 
 //? Method forEach:
