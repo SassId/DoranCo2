@@ -655,12 +655,13 @@ function getFlyingSuperheroes(array) {
 console.log(getFlyingSuperheroes(avengers));
 
 // console.log(
-  //   "------------------------- Super-héros avec des capacités de vol: -------------------------"
-  // );
+//   "------------------------- Super-héros avec des capacités de vol: -------------------------"
+// );
 
-  // Affichez la liste des super-héros qui ont des capacités de vol en utilisant la fonction créée precedemment.
-  // Affichez : 'ALIAS peut voler'
- const AvengersWhoCanFly = 
+// Affichez la liste des super-héros qui ont des capacités de vol en utilisant la fonction créée precedemment.
+// Affichez : 'ALIAS peut voler'
+const AvengersWhoCanFly = console.log(getFlyingSuperheroes(avengers));
+AvengersWhoCanFly.join(', ');
 
 
 // ---------------------------------- Exercice 17 ----------------------------------
@@ -683,9 +684,9 @@ console.log(getFlyingSuperheroes(avengers));
 
 // Créez une fonction qui calcule la moyenne du nombre de films dans lesquels chaque super-héros a joué.
 
-console.log(
-  "------------------------- Moyenne du nombre de films dans lesquels chaque super-héros a joué: -------------------------"
-);
+// console.log(
+//   "------------------------- Moyenne du nombre de films dans lesquels chaque super-héros a joué: -------------------------"
+// );
 
 // Afficher : 'la moyenne du nombre de films dans lequel a joué un super héro est de :' (arrondir le nombre à 2 nombres après la virgule)
 
