@@ -655,11 +655,13 @@ function getFlyingSuperheroes(array) {
 console.log(getFlyingSuperheroes(avengers));
 
 // console.log(
-//   "------------------------- Super-héros avec des capacités de vol: -------------------------"
-// );
+  //   "------------------------- Super-héros avec des capacités de vol: -------------------------"
+  // );
 
-// Affichez la liste des super-héros qui ont des capacités de vol en utilisant la fonction créée precedemment.
-// Affichez : 'ALIAS peut voler'
+  // Affichez la liste des super-héros qui ont des capacités de vol en utilisant la fonction créée precedemment.
+  // Affichez : 'ALIAS peut voler'
+ const AvengersWhoCanFly = 
+
 
 // ---------------------------------- Exercice 17 ----------------------------------
 
