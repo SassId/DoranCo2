@@ -661,14 +661,15 @@ console.log(getFlyingSuperheroes(avengers));
 // Affichez la liste des super-héros qui ont des capacités de vol en utilisant la fonction créée precedemment.
 // Affichez : 'ALIAS peut voler'
 
-const AvengersWhoCanFly = (getFlyingSuperheroes(avengers));
-const flyList = []
-AvengersWhoCanFly.forEach(avenger => {
-flyList.push(avenger.nom)
-})
-flyList.join(', ')
+const AvengersWhoCanFly = getFlyingSuperheroes(avengers);
+const flyArray = [];
+AvengersWhoCanFly.forEach((avenger) => {
+  console.log(`${avenger.nom} can fly`);
+  flyArray.push(avenger.nom);
+});
+const flyList = flyArray.join(", ");
+// console.log(flyArray);
 console.log(flyList);
-
 
 // ---------------------------------- Exercice 17 ----------------------------------
 
@@ -677,6 +678,37 @@ console.log(flyList);
 // La description de chaque super-héros doit être dans une balise p.
 // La liste des films de chaque super-héros doit être dans une balise ul.
 // Chaque film doit être dans une balise li.
+
+const flyAvengersDiv = document.createElement("div");
+flyAvengersDiv.classList.add("super-hero");
+
+// Append the newly created div to the document
+document.body.append(flyAvengersDiv);
+
+AvengersWhoCanFly.forEach((avenger) => {
+  const flyAvengerName = document.createElement("h2");
+  flyAvengerName.textContent = avenger.nom;
+
+  const flyAvengerDescription = document.createElement("p");
+  flyAvengerDescription.textContent = avenger.description;
+
+  const flyAvengerMovies = document.createElement("ul");
+  // Iterate over the films array and create a list item for each movie
+  avenger.films.forEach((film) => {
+    const flyAvengerMoviesItem = document.createElement("li");
+    flyAvengerMoviesItem.textContent = film;
+    flyAvengerMovies.append(flyAvengerMoviesItem);
+  });
+
+  // Append the newly created elements to the flyAvengersDiv
+  flyAvengersDiv.append(
+    flyAvengerName,
+    flyAvengerDescription,
+    flyAvengerMovies
+  );
+});
+
+console.log(flyAvengersDiv);
 
 // ---------------------------------- Exercice 18 ----------------------------------
 
