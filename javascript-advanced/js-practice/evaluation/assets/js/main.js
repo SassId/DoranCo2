@@ -660,8 +660,14 @@ console.log(getFlyingSuperheroes(avengers));
 
 // Affichez la liste des super-héros qui ont des capacités de vol en utilisant la fonction créée precedemment.
 // Affichez : 'ALIAS peut voler'
-const AvengersWhoCanFly = console.log(getFlyingSuperheroes(avengers));
-AvengersWhoCanFly.join(', ');
+
+const AvengersWhoCanFly = (getFlyingSuperheroes(avengers));
+const flyList = []
+AvengersWhoCanFly.forEach(avenger => {
+flyList.push(avenger.nom)
+})
+flyList.join(', ')
+console.log(flyList);
 
 
 // ---------------------------------- Exercice 17 ----------------------------------
