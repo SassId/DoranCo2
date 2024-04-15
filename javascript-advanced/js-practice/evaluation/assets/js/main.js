@@ -722,6 +722,10 @@ console.log(flyAvengersDiv);
 // La description de chaque super-héros doit être dans une balise p.
 // La liste des films de chaque super-héros doit être dans une balise ul.
 
+function get5MoviesSuperHeroes(array) {
+  const 
+}
+
 // ---------------------------------- Exercice 19 ----------------------------------
 
 // Créez une fonction qui calcule la moyenne du nombre de films dans lesquels chaque super-héros a joué.
