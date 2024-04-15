@@ -682,8 +682,11 @@ console.log(flyList);
 const flyAvengersDiv = document.createElement("div");
 flyAvengersDiv.classList.add("super-hero");
 
-// Append the newly created div to the document
-document.body.append(flyAvengersDiv);
+// Access the right div
+const superHeroList = document.getElementById('super-heros-list')
+
+// Append the newly created div to the right div
+superHeroList.append(flyAvengersDiv);
 
 AvengersWhoCanFly.forEach((avenger) => {
   const flyAvengerName = document.createElement("h2");
@@ -693,6 +696,7 @@ AvengersWhoCanFly.forEach((avenger) => {
   flyAvengerDescription.textContent = avenger.description;
 
   const flyAvengerMovies = document.createElement("ul");
+
   // Iterate over the films array and create a list item for each movie
   avenger.films.forEach((film) => {
     const flyAvengerMoviesItem = document.createElement("li");
