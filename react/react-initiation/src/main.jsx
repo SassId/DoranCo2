@@ -58,11 +58,13 @@ function ContactForm() {
 ReactDOM.createRoot(document.getElementById('root')).render(
   <div>
     <Titre text='Created in JSX with React'></Titre>
+    {/* equals to */}
+    {/* {Titre({text: 'Created in JSX with React'})}  */}
     <p>{user.age > 18 ? "Legal" : "Mineur"}</p>
     {ContactForm()}
     {Button({label: 'Contact me'})}
     <Button label='Delete'></Button>
-  </div>
+     </div>
 )
 
 // TODO: Exercice
