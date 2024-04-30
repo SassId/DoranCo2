@@ -1,5 +1,5 @@
-import myClass from "./titre.module.css"
+import myClass from "./titre.module.css";
 
-export default function Titre({children}){
-return <h1>{children}</h1>
+export default function Titre({ children }) {
+  return <h1>{children}</h1>;
 }
