@@ -2,6 +2,9 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Titre from './components/ui-atoms/titre/titre'
+import Player from './components/ui-atoms/player/player'
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -16,6 +19,8 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
+      <Titre>React Class</Titre>
+      <Player></Player>
     </>
   )
 }
