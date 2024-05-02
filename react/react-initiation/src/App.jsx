@@ -5,6 +5,7 @@ import './App.css'
 import Titre from './components/ui-atoms/titre/titre'
 import Player from './components/ui-atoms/player/player'
 import Header from './components/containers-molecules/header/header'
+import User from './components/containers-molecules/user/user'
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
       <Titre>React Class</Titre>
       <Player></Player>
       <Header></Header>
+      <User></User>
     </>
   )
 }
