@@ -213,3 +213,30 @@ function Card({ children }) {
 <h1></h1>
 <p></p>
 </> */}
+
+// ! When you use the map function of an array, you have to specify a unique key for each element:
+// ! either a unique id if you plan on changing the position of the element in the newly returned array (map()) returns a new array
+// ! or by using the position parameter
+// ! like so
+const users = [
+  {
+    id: "1", 
+    firstname: "john",
+    lastname: "doe",
+  }, 
+
+  {
+    id: "2", 
+    firstname: "jane", 
+    lastname: "nom",
+  },
+];
+
+return (
+  {users.map((user, position) => {
+    <p key={position}> {user.firstname} {user.lastname} </p>
+  })}
+)
+return (
+  {users.map}
+)

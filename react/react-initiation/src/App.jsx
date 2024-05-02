@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Titre from './components/ui-atoms/titre/titre'
 import Player from './components/ui-atoms/player/player'
+import Header from './components/containers-molecules/header/header'
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
       </div>
       <Titre>React Class</Titre>
       <Player></Player>
+      <Header></Header>
     </>
   )
 }

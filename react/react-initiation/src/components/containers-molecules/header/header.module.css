@@ -1,0 +1,9 @@
+.headerContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
+    text-align: center;
+}
+
+.headerContainer h1, p, img {
+   padding: 20px;}
