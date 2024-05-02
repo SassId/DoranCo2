@@ -5,6 +5,10 @@
 
 import myClass from "./header.module.css";
 
+function AlertMe(){
+  alert('hey there');
+}
+
 export default function Header() {
   return (
     <div className={myClass.headerContainer}>
@@ -17,6 +21,7 @@ export default function Header() {
         src="https://cdn.mos.cms.futurecdn.net/xXp45gLeBTBt4jPuZcawUJ-970-80.jpg.webp"
         alt="full moon on black background"
       />
+      <button onClick={()=> {AlertMe()}} >Enter</button>
     </div>
   );
 }

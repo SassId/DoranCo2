@@ -232,11 +232,9 @@ const users = [
   },
 ];
 
-return (
-  {users.map((user, position) => {
+function User(){
+  return users.map((user, position) => {
     <p key={position}> {user.firstname} {user.lastname} </p>
-  })}
-)
-return (
-  {users.map}
-)
+  })
+}
+

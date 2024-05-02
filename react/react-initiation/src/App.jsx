@@ -6,9 +6,9 @@ import Titre from "./components/ui-atoms/titre/titre";
 import Player from "./components/ui-atoms/player/player";
 import Header from "./components/containers-molecules/header/header";
 import User from "./components/containers-molecules/user/User";
+import Routine from "./components/containers-molecules/routine/Routine";
 
 function App() {
-  const [count, setCount] = useState(0);
 
   return (
     <>
@@ -24,6 +24,7 @@ function App() {
       <Player></Player>
       <Header></Header>
       <User></User>
+      <Routine onclick></Routine>
     </>
   );
 }

@@ -5,7 +5,7 @@ export default function Hobbies(props) {
         return (
           <div key={hobby.id}>
             <h2>{hobby.title}</h2>
-            <p>{hobby.exp}</p>
+            <p>Experience: {hobby.exp}</p>
           </div>
         );
       })}
