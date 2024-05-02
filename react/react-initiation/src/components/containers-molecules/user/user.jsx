@@ -1,6 +1,6 @@
 // TODO: Exercice:
 // Créer un composant User.
-// Le composant comprendra 3 autres composants :
+// Le composant comprendra 4z autres composants :
 
 //     Avatar : un composant qui affiche une image circulaire.
 //     FullName: un composant contenant lui aussi deux composants :
@@ -8,6 +8,11 @@
 //             LastName: affiche un nom.
 //     Hobbies : un composant contenant une liste de passions/compétences.
 //     Contact : Un composant qui affiche l’email et le téléphone  accompagné d'icônes.
+
+import Avatar from "../../ui-atoms/avatar/Avatar";
+import FullName from "../../ui-atoms/fullName/FullName";
+import Hobbies from "../../ui-atoms/hobbies/Hobbies";
+import Contact from "../../ui-atoms/contact/Contact";
 
 export default function User() {
   const userFormDB = {
@@ -44,5 +49,18 @@ export default function User() {
     },
   };
 
-  return <div>user</div>;
+  return (
+    <div>
+      <Avatar
+        url={userFormDB.avatar}
+        style={{ borderRadius: "50%", width: "200px" }}
+      ></Avatar>
+      <FullName fullname={userFormDB.fullname}></FullName>
+      <Contact
+        email={userFormDB.contact.email}
+        tel={userFormDB.contact.tel}
+      ></Contact>
+      <Hobbies hobbies={userFormDB.hobbies}></Hobbies>
+    </div>
+  );
 }
