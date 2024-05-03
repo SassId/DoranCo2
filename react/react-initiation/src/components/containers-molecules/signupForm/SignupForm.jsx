@@ -6,9 +6,17 @@
 import { useState } from "react";
 
 export default function SignuForm() {
+  //1. Creér une variable d'état pour chaque input
   const [username, setUserName] = useState("");
+
+  // Créer une variable d'état pour un message d'état pour afficher un message d'erreur
+
+  const [usernameError, setusernameError] = useState('')
+
+  //2. Créer une fonction qui va changer la variable d'état pour chaque input
   function getUserName(e) {
     setUserName(e.target.value);
+    setusernameError('')
   }
 
   const [email, setEmail] = useState("");
@@ -20,12 +28,21 @@ export default function SignuForm() {
   function getPassword(e) {
     setPassword(e.target.value);
   }
-  
-  function displayUser() {
+
+  // Créer 
+
+  //3. Créer la fonction qui s'execute quand on clique sur le bouton
+  function displayUser(e) {
+    e.preventDefault()
+    if (username === '' || email === '' || password === '') {
+        setusernameError('please enter your name')
+        return;
+    }
     // alert(username + " " + email);
     alert(`salut ${username} ${email}`);
   }
 
+  //4. Lier les variables et les fonctions avec les éléments html
   return (
     <div>
       <form style={{ marginBlock: "30px" }}>
@@ -36,6 +53,7 @@ export default function SignuForm() {
           placeholder="enter your name"
           onChange={(e) => getUserName(e)}
         />
+        <p style={{color:'red'}}>{usernameError}</p>
         <label htmlFor="email">Email: </label>
         <input
           type="email"
@@ -50,8 +68,8 @@ export default function SignuForm() {
           placeholder="enter your password"
           onChange={(e) => getPassword(e)}
         />
+        <button onClick={displayUser}>Submit</button>
       </form>
-      <button onClick={displayUser}>Click</button>
     </div>
   );
 }
