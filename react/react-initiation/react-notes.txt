@@ -29,3 +29,12 @@ We determine the keys that object has.
 
 The keys' values are then determined in the opening tag of the component when i add it to the main app
 
+
+******************************************
+                Event Manager
+******************************************
+
+The functions mananging an event take as value a Reference to a function (the one with the setter).
+They don't take the execution of the function itself.
+
+When we use the reference of a function that has no parameter, we can simply write the reference to that function (just the name of it) without using the arrow function with the empty parenthesis.

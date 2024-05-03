@@ -58,7 +58,7 @@ export default function User() {
           margin: "20px",
           boxShadow: "5px 5px 10px gray",
           borderRadius: "20px",
-          backgroundColor: "royalblue",
+          backgroundColor: "royalblue"
         }}
       >
         <Avatar
@@ -66,7 +66,7 @@ export default function User() {
           style={{ borderRadius: "50%", width: "200px" }}
         ></Avatar>
         <FullName fullname={userFormDB.fullname}></FullName>
-        <Contact
+        <Contact style= {{border: 'solid red',}}
           email={userFormDB.contact.email}
           tel={userFormDB.contact.tel}
         ></Contact>

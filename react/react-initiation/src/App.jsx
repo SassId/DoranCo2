@@ -10,6 +10,7 @@ import Routine from "./components/containers-molecules/routine/Routine";
 import Counter from "./components/containers-molecules/counter/counter";
 import DisplayName from "./components/containers-molecules/displayName/displayName";
 import Menu from "./components/containers-molecules/menu/Menu";
+import SignuForm from "./components/containers-molecules/signupForm/SignupForm";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
       <Menu titre="Menu Déroulant">
         <h3>test</h3>
       </Menu>
+      <SignuForm></SignuForm>
     </>
   );
 }
