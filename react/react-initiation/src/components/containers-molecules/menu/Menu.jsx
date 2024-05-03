@@ -24,6 +24,9 @@ export default function Menu({ children, titre }) {
       <button onClick={() => openMenu()}>{isOpen ? "Less" : "More"}</button>
       <div>
         {isOpen ? children : null}</div>
+        {/* ternary functin without the 'else' part */}
+        {/* {isOpen && children}</div> */} 
+
       
     </div>
   );
