@@ -10,7 +10,6 @@
     - npm install
     - npm run dev
 
-// Why Vite?
 
 
 ------------------------------------------
@@ -33,7 +32,7 @@ it takes the initial value of the variable to change in parameter
                 Props
 ******************************************
 
-Each component has only ONE parameter 'props' which in an object
+Each component has only ONE parameter 'props' which is an object
 We determine the keys that object has.
 
 The keys' values are then determined in the opening tag of the component when i add it to the main app
@@ -82,3 +81,4 @@ BONUS:
 // Other Libraries:
      - Tailwind for css
      - Shadcn for components
+		 - React Three Fiber for 3D animations 
