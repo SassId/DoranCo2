@@ -10,7 +10,6 @@ export default function SignuForm() {
   const [username, setUserName] = useState("");
 
   // Créer une variable d'état pour un message d'état pour afficher un message d'erreur
-
   const [usernameError, setusernameError] = useState('')
 
   //2. Créer une fonction qui va changer la variable d'état pour chaque input
@@ -20,13 +19,17 @@ export default function SignuForm() {
   }
 
   const [email, setEmail] = useState("");
+  const [emailError, setEmailError] = useState('')
   function getEmail(e) {
     setEmail(e.target.value);
+    setEmailError('')
   }
 
   const [password, setPassword] = useState("");
+  const [passwordError, setPasswordError] = useState('')
   function getPassword(e) {
     setPassword(e.target.value);
+    setPasswordError('')
   }
 
   // Créer 
@@ -35,7 +38,9 @@ export default function SignuForm() {
   function displayUser(e) {
     e.preventDefault()
     if (username === '' || email === '' || password === '') {
-        setusernameError('please enter your name')
+        setusernameError('please enter your name');
+        setEmailError('please enter you email')
+        setPasswordError('please enter your password')
         return;
     }
     // alert(username + " " + email);
@@ -61,6 +66,7 @@ export default function SignuForm() {
           placeholder="enter your email"
           onChange={(e) => getEmail(e)}
         />
+        <p style={{color:'red'}}>{emailError}</p>
         <label htmlFor="password">Password: </label>
         <input
           type="password"
@@ -68,6 +74,7 @@ export default function SignuForm() {
           placeholder="enter your password"
           onChange={(e) => getPassword(e)}
         />
+        <p style={{color:'red'}}>{passwordError}</p>
         <button onClick={displayUser}>Submit</button>
       </form>
     </div>
