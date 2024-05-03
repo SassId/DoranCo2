@@ -1,0 +1,31 @@
+// How to install React:
+
+// Why Vite?
+
+
+------------------------------------------
+
+
+******************************************
+                States
+******************************************
+
+React re execute the component everytime the state is changed
+
+useState() is the State variable
+it takes the initial value of the variable to change in parameter
+(that value is just the initial value, it's not fixed)
+
+
+
+
+
+******************************************
+                Props
+******************************************
+
+Each component has only ONE parameter 'props' which in an object
+We determine the keys that object has.
+
+The keys' values are then determined in the opening tag of the component when i add it to the main app
+

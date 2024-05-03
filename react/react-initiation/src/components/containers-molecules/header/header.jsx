@@ -21,7 +21,7 @@ export default function Header() {
         src="https://cdn.mos.cms.futurecdn.net/xXp45gLeBTBt4jPuZcawUJ-970-80.jpg.webp"
         alt="full moon on black background"
       />
-      <button onClick={()=> {AlertMe()}} >Enter</button>
+      <button style={{width: "fit-content", margin: "auto", padding: "10px 20px"}} onClick={()=> {AlertMe()}} >Enter</button>
     </div>
   );
 }

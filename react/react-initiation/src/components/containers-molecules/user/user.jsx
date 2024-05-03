@@ -51,15 +51,26 @@ export default function User() {
 
   return (
     <div>
-      <Avatar
-        url={userFormDB.avatar}
-        style={{ borderRadius: "50%", width: "200px" }}
-      ></Avatar>
-      <FullName fullname={userFormDB.fullname}></FullName>
-      <Contact
-        email={userFormDB.contact.email}
-        tel={userFormDB.contact.tel}
-      ></Contact>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          margin: "20px",
+          boxShadow: "5px 5px 10px gray",
+          borderRadius: "20px",
+          backgroundColor: "royalblue",
+        }}
+      >
+        <Avatar
+          url={userFormDB.avatar}
+          style={{ borderRadius: "50%", width: "200px" }}
+        ></Avatar>
+        <FullName fullname={userFormDB.fullname}></FullName>
+        <Contact
+          email={userFormDB.contact.email}
+          tel={userFormDB.contact.tel}
+        ></Contact>
+      </div>
       <Hobbies hobbies={userFormDB.hobbies}></Hobbies>
     </div>
   );

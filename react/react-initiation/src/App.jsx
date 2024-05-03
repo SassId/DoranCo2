@@ -7,9 +7,11 @@ import Player from "./components/ui-atoms/player/player";
 import Header from "./components/containers-molecules/header/header";
 import User from "./components/containers-molecules/user/User";
 import Routine from "./components/containers-molecules/routine/Routine";
+import Counter from "./components/containers-molecules/counter/counter";
+import DisplayName from "./components/containers-molecules/displayName/displayName";
+import Menu from "./components/containers-molecules/menu/Menu";
 
 function App() {
-
   return (
     <>
       <div className="reactDiv">
@@ -25,6 +27,11 @@ function App() {
       <Header></Header>
       <User></User>
       <Routine onclick></Routine>
+      <Counter></Counter>
+      <DisplayName></DisplayName>
+      <Menu titre="Menu Déroulant">
+        <h3>test</h3>
+      </Menu>
     </>
   );
 }

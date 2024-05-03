@@ -9,5 +9,5 @@ export default function Player() {
   const score = 3800;
   const result = score > 500 ? "you win" : "you lose";
   const color = score > 500 ? "green" : "red";
-  return <p style={{ color: color }}>your score is {score}: {result}</p>;
+  return <p style={{color: color, textAlign: "center"}}>your score is {score}: {result}</p>;
 }
