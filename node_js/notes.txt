@@ -1,5 +1,27 @@
 When you want to close the server: ctrl + close
 
+Create the json package with npm init
 The "start" scipt lauches with npm start
 All the others need nmp run _name_
 
+
+
+*****************************************************************
+                            RAPPEL
+*****************************************************************
+
+Request Methods:
+
+ - get (get article)
+ - post (add article)
+ - put (update article)
+ - delete (delete article)
+
+ex: get .... /post?id (the /post is the url, the ? is for the query and the id is unique to the content)
+
+A middleware is a functin execution before all others
+
+The callback function after a request is calle an ender
+
+
+Ask about node module and how to not sync it
