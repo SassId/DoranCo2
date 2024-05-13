@@ -42,7 +42,7 @@ const inter = readline.createInterface({
 
 // inter.question("what's your name?", (name) => {
 //   console.log(name);
- 
+
 // });
 
 // Exercice
@@ -50,16 +50,29 @@ const inter = readline.createInterface({
 // Créer un fichier avec le nom donné
 
 // ! The writeFile method requires at least 2 parameters:
-    // ! - the relative path of the file as a string
-    // ! - the content of the file as a string
+// ! - the relative path of the file as a string
+// ! - the content of the file as a string
 
-inter.question("what is the name of the file?", (name)=> {
-    fs.writeFile("./" + name, 'yo',(err)=> { //concatenate to have the path and the user's input
-        if (err) {
-            console.log('failed to create file')
-        } else {
-            console.log('file succesfully created')
-        }
-    })
-    inter.close()
-})
+// inter.question("what is the name of the file?", (name)=> {
+//     fs.writeFile("./" + name, 'yo',(err)=> { //concatenate to have the path and the user's input
+//         if (err) {
+//             console.log('failed to create file')
+//         } else {
+//             console.log('file succesfully created')
+//         }
+//     })
+//     inter.close()
+// })
+
+// * Copy a folder and all the subfiles and subfolders
+// for example when you need to automatize the basic creation of a project's folder with index.html file and assets folder etc.
+
+inter.question("enter the name of the project", (projectName) => {
+  fs.cp("../figma", "./" + projectName, { recursive: true }, (err) => {
+    if (err) {
+      console.log("creation failed");
+    } else {
+      console.log("creation complete");
+    }
+  });
+});

@@ -1,0 +1,5 @@
+When you want to close the server: ctrl + close
+
+The "start" scipt lauches with npm start
+All the others need nmp run _name_
+
