@@ -1,0 +1,24 @@
+{
+    "todos": [
+      {
+        "id": 0,
+        "title": "Aller etudier HTML",
+        "date": "2024-05-05"
+      },
+      {
+        "id": 1,
+        "title": "Aller etudier CSS",
+        "date": "2024-05-06"
+      },
+      {
+        "id": 2,
+        "title": "Aller etudier React",
+        "date": "2024-05-06"
+      },
+      {
+        "id": 3,
+        "title": "Aller etudier Express",
+        "date": "2024-05-06"
+      }
+    ]
+  }

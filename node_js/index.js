@@ -45,6 +45,7 @@ const inter = readline.createInterface({
 
 // });
 
+// TODO:
 // Exercice
 // Utiliser readline pour demander a l'utilisateur d'entrer un nom.
 // Créer un fichier avec le nom donné

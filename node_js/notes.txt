@@ -4,6 +4,10 @@ Create the json package with npm init
 The "start" scipt lauches with npm start
 All the others need nmp run _name_
 
+Install nodemon as a dependency on every project:
+npm install -D nodemon
+
+
 
 
 *****************************************************************
@@ -19,9 +23,14 @@ Request Methods:
 
 ex: get .... /post?id (the /post is the url, the ? is for the query and the id is unique to the content)
 
-A middleware is a functin execution before all others
+A middleware is a function executing before all others
 
-The callback function after a request is calle an ender
+The callback function after a request is called a handler
 
+the res.end method only return text
 
-Ask about node module and how to not sync it
+the res.json return an object
+
+the toString() method changes the input into a toString
+
+the parse() method changes the input into a js object
