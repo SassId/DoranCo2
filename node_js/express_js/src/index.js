@@ -72,14 +72,15 @@ server.get("/api/todo", (req, res) => {
   const todoData = req.query;
   console.log(todoData);
 
-  // check if the id in the url doesn't exist
-  if (todoData.id === undefined) {
-    return res.status(404).json({ error: "page not found, sorry!" });
+  // check if the id in the url doesn't exist (if the todoData object is empty)
+  if (!todoData) {
+    // or if (todoData.id === undefined)
+    return res.status(400).json({ error: "ID required" });
   }
   // read the json file used as database
   fs.readFile("./src/data/todos.json", (err, data) => {
     if (err) {
-      res.json({ error: "something wrong has occured" });
+      res.status(500).json({ error: "something wrong has occured" });
       res.end("cannot read file");
       return;
     }
@@ -93,6 +94,12 @@ server.get("/api/todo", (req, res) => {
     // here, item is an object
     const filterData = todoItem.todos.filter((item) => item.id == todoData.id);
     console.log(filterData);
+    
+    // we can also use the find() method:
+    // const findData = todoItem.todos.find((item)=> {
+    //   return item.id == todoData.id
+    // })
+
     // Check if the array is empty
     if (filterData.length === 0) {
       res.status(404).json({ error: "page not found" });
