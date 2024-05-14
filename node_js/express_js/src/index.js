@@ -1,7 +1,8 @@
 import express from "express";
 import fs from "fs";
-import { postsRouter } from "./routes/posts-route";
-const server = express()
+import { postsRouter } from "./routes/posts-route.js";
+const server = express();
+server.use(express.json());
 
 // *Middleware used in all the requests:
 function displayInfo(req, res, next) {
@@ -13,12 +14,14 @@ function displayInfo(req, res, next) {
 server.use(displayInfo);
 
 // * Use other middlewares:
-server.use ('/api/posts', postsRouter)
+server.use("/api/posts", postsRouter);
 
 server.get("/api/posts", (req, res) => {
   console.log(req);
   res.end("Hello");
 });
+
+server.post("/api/posts", postsRouter);
 
 // TODO:
 // Exercice:
@@ -207,5 +210,35 @@ server.get("/api/todos", verifyId, (req, res) => {
   // content of the http method
 });
 
-
 // TODO:
+// Exercice:
+// Ajouter une todo a la liste
+// Ajouter un handler POST qui recoit dans corps de la requete: title et date
+// 1. Verifier si title et date est envoyé sinon retourner un erreur
+// 2. Generer un id aleatoire
+// 3. Ajouter la nouvelle tache dans le fichier todos.json
+// 4. Retourner la nouvelle tache ajoutée dans la réponse
+
+server.post("/api/todos", (req, rep) => {
+  const data = req.body;
+
+  if (!data.title || !data.date) {
+    return rep.status(400).json({ error: "Titre et date obligatoire" });
+  }
+
+  const dataTodos = fs.readFileSync("./src/data/todos.json");
+  const todosObject = JSON.parse(dataTodos.toString());
+  todosObject.todos.push({
+    id: Math.floor(Math.random() * 1000),
+    title: req.body.title,
+    date: req.body.date,
+  });
+
+  fs.writeFileSync("./src/data/todos.json", JSON.stringify(todosObject));
+
+  return rep.json({
+    message: "task added",
+  });
+});
+
+// TODO: add a body json in postman to finish the exercice
