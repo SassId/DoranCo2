@@ -23,7 +23,7 @@ Request Methods:
 
 ex: get .... /post?id (the /post is the url, the ? is for the query and the id is unique to the content)
 
-A middleware is a function executing before all others
+A middleware is a function executing before the main function (the main controller)
 
 The callback function after a request is called a handler
 
@@ -38,7 +38,7 @@ the parse() method changes the input into a js object
 
 BACKEND:
 
-- the server listen to a project
+- the server listens to a project
 - receives a request and sends a response
 - uses the methods (GET, POST, PUT, DELETE) and url of the request
 - returns html, json or whatever

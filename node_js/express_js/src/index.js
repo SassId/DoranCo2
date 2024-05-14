@@ -1,7 +1,19 @@
 import express from "express";
 import fs from "fs";
+import { postsRouter } from "./routes/posts-route";
+const server = express()
 
-const server = express();
+// *Middleware used in all the requests:
+function displayInfo(req, res, next) {
+  console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
+  next();
+}
+
+// * To use a middleware on all the request
+server.use(displayInfo);
+
+// * Use other middlewares:
+server.use ('/api/posts', postsRouter)
 
 server.get("/api/posts", (req, res) => {
   console.log(req);
@@ -59,58 +71,141 @@ server.get("/api/user", (req, res) => {
   res.json(data);
 });
 
+// // TODO:
+// // Exercice:
+// // Ajouter un handler pour l'url "/api/todo":
+// // /api/todo?id=2
+// // /api/todo?id=4
+// // Récuperer la liste des todos
+// // Si la todo n'existe pas , retourner un 404
+// // Sinon Retourner en JSON la todo avec l'id fournit
+
+// server.get("/api/todo", (req, res) => {
+//   const todoData = req.query;
+//   console.log(todoData);
+
+//   // check if the id in the url doesn't exist (if the todoData object is empty)
+//   if (!todoData) {
+//     // or if (todoData.id === undefined)
+//     return res.status(400).json({ error: "ID required" });
+//   }
+//   // read the json file used as database
+//   fs.readFile("./src/data/todos.json", (err, data) => {
+//     if (err) {
+//       res.status(500).json({ error: "something wrong has occured" });
+//       res.end("cannot read file");
+//       return;
+//     }
+//     // Changes the buffer obtained after reading the file into a string and then a js object
+//     const todoItem = JSON.parse(data.toString());
+//     console.log(todoItem);
+
+//     // we now have an object (todoItem) containing a key (todos) that is an array containing an object
+//     // Filter the array to match the condition
+
+//     // here, item is an object
+//     const filterData = todoItem.todos.filter((item) => item.id == todoData.id);
+//     console.log(filterData);
+
+//     // we can also use the find() method:
+//     // const findData = todoItem.todos.find((item)=> {
+//     //   return item.id == todoData.id
+//     // })
+
+//     // Check if the array is empty
+//     if (filterData.length === 0) {
+//       res.status(404).json({ error: "page not found" });
+//       return;
+//     }
+//     console.log(filterData[0]);
+//     // after the filter, we get a single value that is still an array
+//     return res.json(filterData[0]);
+//   });
+// });
+
 // TODO:
 // Exercice:
-// Ajouter un handler pour l'url "/api/todo":
+// Ajouter un handler pour l'url "/api/todo" avec la method DELETE:
 // /api/todo?id=2
 // /api/todo?id=4
 // Récuperer la liste des todos
 // Si la todo n'existe pas , retourner un 404
-// Sinon Retourner en JSON la todo avec l'id fournit
+// Sinon supprimer la todo du tableau
+// Ecrire dans le ficher la nouvelle liste
+// Retourner un message: Tache supprimée
 
-server.get("/api/todo", (req, res) => {
-  const todoData = req.query;
-  console.log(todoData);
-
-  // check if the id in the url doesn't exist (if the todoData object is empty)
-  if (!todoData) {
-    // or if (todoData.id === undefined)
+server.delete("/api/todo", (req, res) => {
+  const urlData = req.query;
+  console.log(urlData);
+  if (!urlData.id) {
     return res.status(400).json({ error: "ID required" });
   }
-  // read the json file used as database
+
   fs.readFile("./src/data/todos.json", (err, data) => {
     if (err) {
-      res.status(500).json({ error: "something wrong has occured" });
-      res.end("cannot read file");
-      return;
+      return res.status(500).json({ error: "something wrong has occured" });
     }
-    // Changes the buffer obtained after reading the file into a string and then a js object
-    const todoItem = JSON.parse(data.toString());
-    console.log(todoItem);
+    const todoList = JSON.parse(data.toString());
+    console.log("todoList", todoList);
 
-    // we now have an object (todoItem) containing a key (todos) that is an array containing an object
-    // Filter the array to match the condition
+    const findIndexToDelete = todoList.todos.findIndex((item) => {
+      return item.id == urlData.id;
+    });
+    console.log(findIndexToDelete);
 
-    // here, item is an object
-    const filterData = todoItem.todos.filter((item) => item.id == todoData.id);
-    console.log(filterData);
-    
-    // we can also use the find() method:
-    // const findData = todoItem.todos.find((item)=> {
-    //   return item.id == todoData.id
-    // })
-
-    // Check if the array is empty
-    if (filterData.length === 0) {
-      res.status(404).json({ error: "page not found" });
-      return;
+    if (findIndexToDelete == -1) {
+      // if there's no index found, the findIndex method return -1
+      return res.status(404).json({ error: "page not found" });
     }
-    console.log(filterData[0]);
-    // after the filter, we get a single value that is still an array
-    return res.json(filterData[0]);
+
+    todoList.todos.splice(findIndexToDelete, 1);
+    console.log(todoList.todos);
+    fs.writeFileSync("./src/data/todos.json", JSON.stringify(todoList));
+
+    return res.json("task deleted");
   });
 });
 
 server.listen(3005, function () {
   console.log("Server on port 3005");
 });
+
+//? Method Filter:
+
+// server.delete("/api/todo", (req, rep) => {
+//   const dataURL = req.query;
+
+//   if (!dataURL.id) {
+//     return rep.status(400).json({ error: "ID obligatoire" });
+//   }
+
+//   const contenu = fs.readFileSync("./src/data/todos.json");
+//   const contenuString = contenu.toString();
+//   const data = JSON.parse(contenuString);
+//   data.todos = data.todos.filter((todo) => todo.id != dataURL.id);
+//   fs.writeFileSync("./src/data/todos.json", JSON.stringify(data));
+
+//   return rep.json({ message: "Tache suprimmée" });
+// });
+
+// server.listen(3005, function () {
+//   console.log("Server on port 3005");
+// });
+
+// * Create a middleware to have it automatically check the url data (request) and have it change the buffer into a string then a js object:
+
+function verifyId(req, res, next) {
+  const dataUrl = req.query;
+  if (!data) {
+    return res.status(400).json({ error: "ID mandatory" });
+  }
+  next();
+}
+
+//* Then use it in the http method:
+server.get("/api/todos", verifyId, (req, res) => {
+  // content of the http method
+});
+
+
+// TODO:
