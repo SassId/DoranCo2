@@ -27,10 +27,18 @@ A middleware is a function executing before all others
 
 The callback function after a request is called a handler
 
-the res.end method only return text
+the res.end method only returns text
 
-the res.json return an object
+the res.json returns an object
 
 the toString() method changes the input into a toString
 
 the parse() method changes the input into a js object
+
+
+BACKEND:
+
+- the server listen to a project
+- receives a request and sends a response
+- uses the methods (GET, POST, PUT, DELETE) and url of the request
+- returns html, json or whatever
