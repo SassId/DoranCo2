@@ -1,4 +1,5 @@
 import express from "express";
+import { todolistModel } from "../database/todolist.js";
 
 export const todosRoute = express.Router();
 
@@ -10,7 +11,7 @@ export const todosRoute = express.Router();
 // Si pa title retourne 400 avec erreur
 // Sinon: retour message "ok"
 
-todosRoute.post("/", (req, res) => {
+todosRoute.post("/", async (req, res) => {
   const data = req.body; // at that point, data is a buffer (so we need to parse it but we do it with the native middleware we import in the index.js)
   console.log(data);
 
@@ -18,5 +19,15 @@ todosRoute.post("/", (req, res) => {
     return res.status(400).json({ error: "title is mandatory" });
   }
 
-  res.end("ok");
+  // create a new todo list based on the model we created in todolist.js
+  const newTodolist = new todolistModel({
+    title: data.title,
+    createdAt: new Date(),
+  });
+
+  // save the newTodolist in the DB:
+  const addedTodolist = await newTodolist.save();
+
+  // return the new todolist in json
+  res.json({ todo: addedTodolist });
 });
