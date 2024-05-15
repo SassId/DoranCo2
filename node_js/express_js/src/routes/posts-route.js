@@ -18,7 +18,6 @@ postsRouter.get("/", (req, res) => {
 });
 
 // * To have the request url like /api/posts/id instead of /api/posts?id=id
-
 postsRouter.get("/post/:id", (req, res) => {
   const id = req.params.id;
   const article = posts.find((post) => post.id == id);

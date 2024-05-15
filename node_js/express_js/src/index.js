@@ -1,6 +1,7 @@
 import express from "express";
 import fs from "fs";
 import { postsRouter } from "./routes/posts-route.js";
+import { title } from "process";
 const server = express();
 server.use(express.json());
 
@@ -151,9 +152,9 @@ server.delete("/api/todo", (req, res) => {
     const todoList = JSON.parse(data.toString());
     console.log("todoList", todoList);
 
-    const findIndexToDelete = todoList.todos.findIndex((item) => {
-      return item.id == urlData.id;
-    });
+    const findIndexToDelete = todoList.todos.findIndex(
+      (item) => item.id == urlData.id
+    );
     console.log(findIndexToDelete);
 
     if (findIndexToDelete == -1) {
@@ -167,10 +168,6 @@ server.delete("/api/todo", (req, res) => {
 
     return res.json("task deleted");
   });
-});
-
-server.listen(3005, function () {
-  console.log("Server on port 3005");
 });
 
 //? Method Filter:
@@ -221,6 +218,7 @@ server.get("/api/todos", verifyId, (req, res) => {
 
 server.post("/api/todos", (req, rep) => {
   const data = req.body;
+  console.log(data.title);
 
   if (!data.title || !data.date) {
     return rep.status(400).json({ error: "Titre et date obligatoire" });
@@ -229,7 +227,7 @@ server.post("/api/todos", (req, rep) => {
   const dataTodos = fs.readFileSync("./src/data/todos.json");
   const todosObject = JSON.parse(dataTodos.toString());
   todosObject.todos.push({
-    id: Math.floor(Math.random() * 1000),
+    id: crypto.randomUUID(),
     title: req.body.title,
     date: req.body.date,
   });
@@ -242,3 +240,82 @@ server.post("/api/todos", (req, rep) => {
 });
 
 // TODO: add a body json in postman to finish the exercice
+
+// TODO:
+// /api/todos/2
+// /api/todos/3
+// Exercice: Modifier une todo dans la liste
+// 0. Ajouter un handler PUT qui recoit dans corps de la requete: title et date
+// 1. Verifier si title et date est envoyé sinon retourner un erreur
+// 2. récuperer toutes les taches
+// 3. Mettre la tache à jour
+// 4. Retourner la tache mise à jour ajoutée dans la réponse
+
+// server.put("/api/todos", (req, res) => {
+//   const data = req.body;
+//   console.log(data);
+
+//   if (!data.title || !data.date) {
+//     return rep.status(400).json({ error: "title and date are mandatory" });
+//   }
+
+//   console.log("test");
+
+//   const todosData = fs.readFileSync("./src/data/todos.json");
+//   console.log(todosData);
+//   const todosObject = JSON.parse(todosData.toString());
+//   console.log(todosObject);
+
+//   const indexToMod = todosObject.todos.findIndex((item) => item.id == data.id);
+//   console.log(indexToMod);
+//   if (indexToMod == -1) {
+//     return res.status(404).json({error: 'page not found'})
+//   }
+
+//   todosObject.todos[indexToMod].title = data.title;
+
+//   fs.writeFileSync("./src/data/todos.json", JSON.stringify(todosObject));
+
+//   return res.json({
+//     message: "task updated",
+//   });
+// });
+
+// server.listen(3005, function () {
+//   console.log("Server on port 3005");
+// });
+
+server.put("/api/todos/:id", (req, res) => {
+  const id = req.params.id
+  const data = req.body;
+  console.log(data);
+
+  if (!data.title || !data.date) {
+    return rep.status(400).json({ error: "title and date are mandatory" });
+  }
+
+  console.log("test");
+
+  const todosData = fs.readFileSync("./src/data/todos.json");
+  console.log(todosData);
+  const todosObject = JSON.parse(todosData.toString());
+  console.log(todosObject);
+
+  const indexToMod = todosObject.todos.findIndex((item) => item.id == id);
+  console.log(indexToMod);
+  if (indexToMod == -1) {
+    return res.status(404).json({error: 'page not found'})
+  }
+
+  todosObject.todos[indexToMod].title = data.title;
+
+  fs.writeFileSync("./src/data/todos.json", JSON.stringify(todosObject));
+
+  return res.json({
+    message: "task updated",
+  });
+});
+
+server.listen(3005, function () {
+  console.log("Server on port 3005");
+});

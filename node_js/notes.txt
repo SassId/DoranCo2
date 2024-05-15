@@ -35,6 +35,7 @@ the toString() method changes the input into a toString
 
 the parse() method changes the input into a js object
 
+when you want to read a file with fs.readFile, you need to consider that the relative path to the json file starts from the package.json file
 
 BACKEND:
 
