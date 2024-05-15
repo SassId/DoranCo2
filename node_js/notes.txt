@@ -47,3 +47,8 @@ BACKEND:
 Node JS is an engine that interprets and execute JavaScript and changes it into C++ 
 
 Express is a Library of Functions
+
+// ROUTES
+
+a router is like a new server who deal with its associated urls
+so we can give it methods like .get .post etc.

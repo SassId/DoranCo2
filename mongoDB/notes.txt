@@ -10,3 +10,6 @@ There are 2 types of database:
     - document (NoSQL)
         - mongoDB
     They are json files (JavaScript Object Notation)
+
+    Schema: defines the structures of the database
+    Model: declares methods to interact with the DB
