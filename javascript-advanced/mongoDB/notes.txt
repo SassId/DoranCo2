@@ -1,0 +1,12 @@
+There are 2 types of database:
+
+    - relational (SQL) (Structured Query Language)
+        - MySQL
+        - Postres
+    Theses are like 50yo and are structured as tables
+    They're linked to each others in 1 to 1, 1 to many and many to many
+    (ex: 1 user to many posts; many likes to many posts, 1 user to 1 profile)
+
+    - document (NoSQL)
+        - mongoDB
+    They are json files (JavaScript Object Notation)
