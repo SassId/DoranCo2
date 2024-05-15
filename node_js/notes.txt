@@ -43,3 +43,7 @@ BACKEND:
 - receives a request and sends a response
 - uses the methods (GET, POST, PUT, DELETE) and url of the request
 - returns html, json or whatever
+
+Node JS is an engine that interprets and execute JavaScript and changes it into C++ 
+
+Express is a Library of Functions

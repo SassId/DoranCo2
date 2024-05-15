@@ -3,6 +3,8 @@ import fs from "fs";
 import { postsRouter } from "./routes/posts-route.js";
 import { title } from "process";
 const server = express();
+
+// * Middleware native to express that changes the buffers into js objects
 server.use(express.json());
 
 // *Middleware used in all the requests:
@@ -193,7 +195,6 @@ server.delete("/api/todo", (req, res) => {
 // });
 
 // * Create a middleware to have it automatically check the url data (request) and have it change the buffer into a string then a js object:
-
 function verifyId(req, res, next) {
   const dataUrl = req.query;
   if (!data) {
@@ -281,12 +282,8 @@ server.post("/api/todos", (req, rep) => {
 //   });
 // });
 
-// server.listen(3005, function () {
-//   console.log("Server on port 3005");
-// });
-
 server.put("/api/todos/:id", (req, res) => {
-  const id = req.params.id
+  const id = req.params.id;
   const data = req.body;
   console.log(data);
 
@@ -296,20 +293,24 @@ server.put("/api/todos/:id", (req, res) => {
 
   console.log("test");
 
-  const todosData = fs.readFileSync("./src/data/todos.json");
-  console.log(todosData);
-  const todosObject = JSON.parse(todosData.toString());
-  console.log(todosObject);
+  try {
+    const todosData = fs.readFileSync("./src/data/todos.json");
+    console.log(todosData);
+    const todosObject = JSON.parse(todosData.toString());
+    console.log(todosObject);
 
-  const indexToMod = todosObject.todos.findIndex((item) => item.id == id);
-  console.log(indexToMod);
-  if (indexToMod == -1) {
-    return res.status(404).json({error: 'page not found'})
+    const indexToMod = todosObject.todos.findIndex((item) => item.id == id);
+    console.log(indexToMod);
+    if (indexToMod == -1) {
+      return res.status(404).json({ error: "page not found" });
+    }
+
+    todosObject.todos[indexToMod].title = data.title;
+
+    fs.writeFileSync("./src/data/todos.json", JSON.stringify(todosObject));
+  } catch (err) {
+    return res.status(404).json({ error: "page not found" });
   }
-
-  todosObject.todos[indexToMod].title = data.title;
-
-  fs.writeFileSync("./src/data/todos.json", JSON.stringify(todosObject));
 
   return res.json({
     message: "task updated",
