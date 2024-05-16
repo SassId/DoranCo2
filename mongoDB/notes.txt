@@ -12,4 +12,9 @@ There are 2 types of database:
     They are json files (JavaScript Object Notation)
 
     Schema: defines the structures of the database
-    Model: declares methods to interact with the DB
+    Model: allows to interact with the DB by using its methods
+
+    In our case:
+
+    Client = Postman -->http---> Server = Express --->mongoose---> mongoDB
+    (and back)
