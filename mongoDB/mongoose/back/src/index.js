@@ -14,6 +14,13 @@ server.use(express.json());
 // we now indicate that we want to use the router we created to
 server.use("/api/todos", todosRoute);
 
+// Ajouter une sur l'url "/api/ping" method GET
+// Retourne json avec "pong"
+
+server.get("/api/ping", (req, res) => {
+  return res.json({ message: "pong" });
+});
+
 mongoose
   .connect(MONGODB_URL)
   .then(() => {
