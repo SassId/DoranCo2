@@ -123,14 +123,14 @@ todosRoute.put("/:id", async (req, res) => {
 // 4. La supprimer si elle existe
 // 5. Retourner un message.
 
-// todosRoute.delete("/:id", async (req, res) => {
-//   const todoId = req.params.id;
-//   const todo = await todolistModel.findById(todoId);
+todosRoute.delete("/:id", async (req, res) => {
+  const todoId = req.params.id;
+  const todo = await todolistModel.findByIdAndDelete(todoId);
 
-//   if (!todo) {
-//     return res.status(404).json("could not find list");
-//   }
-
+  if (!todo) {
+    return res.status(404).json("could not find list");
+  }
+});
 //   // const deletedTodo = await todolistModel.deleteOne({ _id: todoId });
 
 //   // or you can also do:

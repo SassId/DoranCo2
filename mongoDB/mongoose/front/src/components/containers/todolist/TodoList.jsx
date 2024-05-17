@@ -69,6 +69,25 @@ export default function TodoList() {
     getTodolist();
   }, []);
 
+  //   TODO:
+  // Exercice:
+  // 1. Ajouter un bouton supprimer pour chaque tache
+  // 2. Créer une fonction qui reçoit l'id de la tache
+  // 3. Utiliser fetch pour envoyer une requete DELETE a la back end
+  // 4. Lier cette fonction avec les bouton de chaque taches
+
+  async function handleDelete(id) {
+    // alert("handleDelete");
+    const response = await fetch("/api/todos/" + id, {
+      method: "DELETE",
+    });
+    console.log(response);
+
+    const newTodolist = todolist.filter((item) => item._id != id);
+    console.log(newTodolist);
+    setTodolist(newTodolist);
+  }
+
   return (
     <div>
       <input type="text" placeholder="type here" onChange={handleUserInput} />
@@ -78,7 +97,12 @@ export default function TodoList() {
       </p>
       <ul>
         {todolist.map((todo) => {
-          return <li key={todo._id}>{todo.title}</li>;
+          return (
+            <li key={todo._id}>
+              {todo.title}{" "}
+              <button onClick={() => handleDelete(todo._id)}>X</button>
+            </li>
+          );
         })}
       </ul>
     </div>
