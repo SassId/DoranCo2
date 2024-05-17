@@ -15,19 +15,15 @@ export default function Menu({ children, titre }) {
   const [isOpen, setIsOpen] = useState(false);
   function openMenu() {
     setIsOpen(!isOpen);
-    
   }
 
   return (
     <div>
       <h3>{titre}</h3>
       <button onClick={() => openMenu()}>{isOpen ? "Less" : "More"}</button>
-      <div>
-        {isOpen ? children : null}</div>
-        {/* ternary functin without the 'else' part */}
-        {/* {isOpen && children}</div> */} 
-
-      
+      <div>{isOpen ? children : null}</div>
+      {/* ternary functin without the 'else' part */}
+      {/* {isOpen && children}</div> */}
     </div>
   );
 }

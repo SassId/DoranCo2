@@ -18,3 +18,35 @@ There are 2 types of database:
 
     Client = Postman -->http---> Server = Express --->mongoose---> mongoDB
     (and back)
+
+    //OBJECTS CLASSES MODEL 
+
+Class = plan of construction of an object
+
+Object = instance of the class = prototype
+
+A static function can be used on the class 
+
+An instance function needs the instance to be called
+
+ex:
+
+class User = {
+    consctructor(id, name, age) {
+        this.id = id
+        this.name = name
+        this.age = age
+    }
+    displayName(){
+        console.log("this.name")
+    }
+}
+
+// useEffect()
+allows us to execute functions after the component has been executed
+we use it to make http requests in a asynchrone way (we call that a field effect)
+!! as we have to await fetch(), it has to be inside an async function 
+!! but the declaration of a react component has to be instantaneous 
+this fonction is executed only when the whole is refreshed.
+it takes 2 parameters : an arrow function and an empty array (array of dependencies)
+!! if we omit the array of dependencies, the function is executed infinitely
