@@ -52,3 +52,5 @@ Express is a Library of Functions
 
 a router is like a new server who deal with its associated urls
 so we can give it methods like .get .post etc.
+
+a route with parameter is a dynamic route 
