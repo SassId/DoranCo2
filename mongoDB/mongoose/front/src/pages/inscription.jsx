@@ -59,7 +59,7 @@ export default function Inscription() {
     message: "",
   });
 
-  async function handleSubmit() {
+  async function handleSubmit(e) {
     e.preventDefault();
     if (username == "" || !email.includes("@") || password.length < 6) {
       return;
