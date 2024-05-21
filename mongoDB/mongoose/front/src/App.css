@@ -24,10 +24,6 @@ nav a:hover {
   text-decoration: underline;
 }
 
-.form-div {
-  /* border: solid red; */
-}
-
 form {
   /* border: solid blue; */
   display: flex;

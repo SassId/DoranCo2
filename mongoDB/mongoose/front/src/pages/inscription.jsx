@@ -79,12 +79,20 @@ export default function Inscription() {
     });
 
     if (!response.ok) {
+      if (response.status === 401) {
+        return setFormMessage("this email is already used");
+      }
       console.log(response);
       return setFormMessage({
         success: false,
         message: "an error has occured, please try again later",
       });
     }
+
+    return setFormMessage({
+      success: true,
+      message: "Signup successful",
+    });
   }
 
   return (
