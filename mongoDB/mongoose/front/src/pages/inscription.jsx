@@ -1,5 +1,14 @@
 import { useState } from "react";
 
+// TODO:
+// Créer un formulaire avec:
+// input pour email - Erreur: Email incorrect !
+// input pour username - Minimum 1 caractères: Erreur: Username obligatoire !
+// input pour password - Minimum 6 caractères: Erreur: Mot de passe trop court !
+// input pour confirmer password - égale a password: Erreur: Les Mots de passe sont différent !
+// bouton pour valider le formulaire
+
+
 // When an input is linked to a state variable by the input's value, it's calle a controlled field (and thus a controlled form)
 export default function Inscription() {
   const [email, setEmail] = useState("");
@@ -155,10 +164,4 @@ export default function Inscription() {
   );
 }
 
-// TODO:
-// Créer un formulaire avec:
-// input pour email - Erreur: Email incorrect !
-// input pour username - Minimum 1 caractères: Erreur: Username obligatoire !
-// input pour password - Minimum 6 caractères: Erreur: Mot de passe trop court !
-// input pour confirmer password - égale a password: Erreur: Les Mots de passe sont différent !
-// bouton pour valider le formulaire
+

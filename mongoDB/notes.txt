@@ -81,3 +81,6 @@ On the profile page:
 2. Test if the token is valid (not expired and not modified by extern source)
 3. Get the user's data
 4. Return the data in .json
+
+!! the hasher transform a string into a compared
+    - we can't return to the string with a hash
