@@ -50,3 +50,34 @@ we use it to make http requests in a asynchrone way (we call that a field effect
 this fonction is executed only when the whole is refreshed.
 it takes 2 parameters : an arrow function and an empty array (array of dependencies)
 !! if we omit the array of dependencies, the function is executed infinitely
+
+// AUTHENTIFICATION 
+
+- par session -> Symfony
+- par token -> React
+
+Signup process:
+
+1. Check users input data (syntax, etc.)
+    1.1 if wrong, return erro 400: bad request
+2. Test if users already exists 
+    2.1 if so return error 401: invalid data
+3. Hash the password (with a crypting key that's present in the DB)
+4. Save email and password in the DB
+    4.1 return 200: signup successful
+
+Signin process:
+
+1. Check users input data (syntax, etc.)
+2. Get the user from the DB
+3. Test if the password is valid compared to the hash
+4. Create a token (email + password, crypted with a unique key) (meaning that you have to know the key to be able to modify the data (and only the DB knows it)) and returns 200: ok with an "access_token"
+    4.1 When the front end receives the info that the signin is ok, it saves the token in the cookies (or the local storage (this method can lead to vulnerabilities))
+    4.2 Redirects to the profile page
+
+On the profile page:
+
+1. Check if the token is there
+2. Test if the token is valid (not expired and not modified by extern source)
+3. Get the user's data
+4. Return the data in .json

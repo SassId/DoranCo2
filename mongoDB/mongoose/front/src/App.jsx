@@ -1,26 +1,36 @@
-import { useState, useEffect } from "react";
-import TodoList from "./components/containers/todolist/TodoList";
-
-// import "./App.css";
-
+import {useEffect }from "react";
+import "./App.css";
+import {BrowserRouter, Link, Route, Routes }from "react-router-dom";
+import Home from "./pages/home.jsx";
+import Inscription from "./pages/inscription.jsx";
+import Connexion from "./pages/connexion.jsx";
+import Profile from "./pages/profile.jsx";
 function App() {
-  // test if connexion in done
-  // useEffect(() => {
-  //   async function getPing() {
-  //     const response = await fetch("/api/ping");
-  //     const data = await response.json();
-  //     console.log(data);
-  //   }
-
-  //   getPing();
-  // }, []);
-
   return (
-    <div>
-      <h1>Hello, World</h1>
-      <TodoList></TodoList>
-    </div>
+    <BrowserRouter>
+      <nav>
+        <Link to={"/"}>Accueil</Link>
+        {
+          // La condition est a changer plus tard
+          true ?
+            <>
+              <Link to={"/inscription"}>Inscription</Link>
+              <Link to={"/connexion"}>Connexion</Link>
+            </> :
+            <Link to={"/profile"}>Profile</Link>
+        }
+      </nav>
+      <Routes>
+        <Route path="/" element={<Home />}/>
+        <Route path="/inscription" element={<Inscription />}/>
+        <Route path="/connexion" element={<Connexion />}/>
+        <Route path="/profile" element={<Profile />}/>
+      </Routes>
+    </BrowserRouter>
   );
 }
-
 export default App;
+
+// Créer un composant /components/TodoList.jsx
+// Il y'aura un input et un bouton
+// Quand on clique sur le bouton, afficher dans une alerte l'entrée de l'utilisateur
