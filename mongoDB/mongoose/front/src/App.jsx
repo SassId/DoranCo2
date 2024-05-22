@@ -1,10 +1,14 @@
-import { useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import "./App.css";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import Home from "./pages/home.jsx";
 import Inscription from "./pages/inscription.jsx";
 import Connexion from "./pages/connexion.jsx";
 import Profile from "./pages/profile.jsx";
+
+// * Creates a context to be able to send info from app directly to other component without having use the props cascade (import the info in every descending components)
+export const UserContext = createContext();
+
 function App() {
   const [user, setUser] = useState(null);
 
@@ -29,28 +33,30 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter>
-      <nav>
-        <Link to={"/"}>Accueil</Link>
-        {
-          // La condition est a changer plus tard
-          !user ? (
-            <>
-              <Link to={"/inscription"}>Inscription</Link>
-              <Link to={"/connexion"}>Connexion</Link>
-            </>
-          ) : (
-            <Link to={"/profile"}>Profile</Link>
-          )
-        }
-      </nav>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/inscription" element={<Inscription />} />
-        <Route path="/connexion" element={<Connexion />} />
-        <Route path="/profile" element={<Profile />} />
-      </Routes>
-    </BrowserRouter>
+    <UserContext.Provider value={{ user: user, setUser: setUser }}>
+      <BrowserRouter>
+        <nav>
+          <Link to={"/"}>Accueil</Link>
+          {
+            // La condition est a changer plus tard
+            !user ? (
+              <>
+                <Link to={"/inscription"}>Inscription</Link>
+                <Link to={"/connexion"}>Connexion</Link>
+              </>
+            ) : (
+              <Link to={"/profile"}>Profile</Link>
+            )
+          }
+        </nav>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/inscription" element={<Inscription />} />
+          <Route path="/connexion" element={<Connexion />} />
+          <Route path="/profile" element={<Profile />} />
+        </Routes>
+      </BrowserRouter>
+    </UserContext.Provider>
   );
 }
 export default App;
