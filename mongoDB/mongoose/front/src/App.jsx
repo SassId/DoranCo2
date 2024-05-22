@@ -32,6 +32,11 @@ function App() {
     getUser();
   }, []);
 
+  function handleLogout() {
+    localStorage.removeItem("access_token");
+    setUser(null);
+  }
+
   return (
     <UserContext.Provider value={{ user: user, setUser: setUser }}>
       <BrowserRouter>
@@ -45,7 +50,15 @@ function App() {
                 <Link to={"/connexion"}>Connexion</Link>
               </>
             ) : (
-              <Link to={"/profile"}>Profile</Link>
+              <>
+                <Link to={"/profile"}>Profile</Link>
+                <button
+                  style={{ backgroundColor: "lightblue" }}
+                  onClick={handleLogout}
+                >
+                  Log Out
+                </button>
+              </>
             )
           }
         </nav>
@@ -64,3 +77,9 @@ export default App;
 // Créer un composant /components/TodoList.jsx
 // Il y'aura un input et un bouton
 // Quand on clique sur le bouton, afficher dans une alerte l'entrée de l'utilisateur
+
+// TODO:
+// Implementer la déconnexion
+// Ajouter un bouton dans la navbar, qui quand on clique dessus:
+// Supprimer le token de localStorage
+// Mettre la variable d'état user a null
