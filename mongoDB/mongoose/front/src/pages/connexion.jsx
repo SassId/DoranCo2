@@ -61,7 +61,7 @@ export default function Connexion() {
       }
     }
 
-    return setFormMessage({ succes: true, message: "successful connexion" });
+    return setFormMessage({ success: true, message: "successful connexion" });
   }
 
   return (
