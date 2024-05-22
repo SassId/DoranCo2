@@ -84,3 +84,8 @@ On the profile page:
 
 !! the hasher transform a string into a compared
     - we can't return to the string with a hash
+
+
+// JWT (JSON WEB TOKEN)
+- It's a sort of authentification certificate thats contains informations to avoid having to recheck the password of a user
+- It can be stored in cookies or local storage

@@ -1,30 +1,54 @@
-import {useEffect }from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
-import {BrowserRouter, Link, Route, Routes }from "react-router-dom";
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import Home from "./pages/home.jsx";
 import Inscription from "./pages/inscription.jsx";
 import Connexion from "./pages/connexion.jsx";
 import Profile from "./pages/profile.jsx";
 function App() {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    async function getUser() {
+      const token = localStorage.getItem("access_token");
+      if (!token) {
+        return;
+      }
+      const response = await fetch("/api/users/me", {
+        headers: {
+          Authorization: "Bearer " + token,
+        },
+      });
+      if (!response.ok) {
+        return;
+      }
+      const { user } = await response.json();
+      setUser(user);
+    }
+    getUser();
+  }, []);
+
   return (
     <BrowserRouter>
       <nav>
         <Link to={"/"}>Accueil</Link>
         {
           // La condition est a changer plus tard
-          true ?
+          !user ? (
             <>
               <Link to={"/inscription"}>Inscription</Link>
               <Link to={"/connexion"}>Connexion</Link>
-            </> :
+            </>
+          ) : (
             <Link to={"/profile"}>Profile</Link>
+          )
         }
       </nav>
       <Routes>
-        <Route path="/" element={<Home />}/>
-        <Route path="/inscription" element={<Inscription />}/>
-        <Route path="/connexion" element={<Connexion />}/>
-        <Route path="/profile" element={<Profile />}/>
+        <Route path="/" element={<Home />} />
+        <Route path="/inscription" element={<Inscription />} />
+        <Route path="/connexion" element={<Connexion />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
     </BrowserRouter>
   );

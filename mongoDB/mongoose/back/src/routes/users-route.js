@@ -1,6 +1,7 @@
 import express from "express";
 import { UserModel } from "../database/user.js";
 import bcrypt from "bcrypt";
+import jsonwebtoken from "jsonwebtoken";
 
 export const usersRouter = express.Router();
 
@@ -53,6 +54,9 @@ usersRouter.post("/inscription", async (req, res) => {
 //     Verifier si le mot de passe est correcte (utiliser la methode compare de bcrypt)
 //     Retourner l'utilisateur dans la réponse
 
+//* Declare a variable for the jsonwebtoken:
+const SECRET_KEY = "azerty";
+
 usersRouter.post("/connexion", async (req, res) => {
   console.log(req.body);
 
@@ -71,7 +75,7 @@ usersRouter.post("/connexion", async (req, res) => {
     return res.status(401).json({ error: "this user doesn't exist" });
   }
 
-  // compare passwords
+  //* Compare passwords
 
   const isPasswordValid = await bcrypt.compare(
     password,
@@ -82,5 +86,26 @@ usersRouter.post("/connexion", async (req, res) => {
     return res.status(401).json({ error: "incorrect credentials" });
   }
 
-  return res.json({ user: userFromDB });
+  const access_token = jsonwebtoken.sign({ id: userFromDB._id }, SECRET_KEY);
+
+  return res.json({ user: userFromDB, access_token });
+});
+
+//  * Collect the data and verifies the token
+usersRouter.get("/me", async (req, res) => {
+  const access_token = req.headers.authorization;
+  console.log(req.headers.authorization);
+
+  // *Split the token and leave the 'bearer' part
+  const token = access_token.split(" ")[1];
+
+  const verifiedToken = jsonwebtoken.verify(token, SECRET_KEY);
+
+  if (!verifiedToken) {
+    return res.status(401).json({ error: "invalid token" });
+  }
+
+  const user = await UserModel.findById(verifiedToken.id);
+
+  return res.json({ user });
 });

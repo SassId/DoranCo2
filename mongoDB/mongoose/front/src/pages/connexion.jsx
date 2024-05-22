@@ -1,6 +1,10 @@
 import { useState } from "react";
 
+import { useNavigate } from "react-router-dom";
+
 export default function Connexion() {
+  const navigate = useNavigate();
+
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState("");
 
@@ -60,6 +64,15 @@ export default function Connexion() {
         });
       }
     }
+
+    // * Parse and convert JSON data into a JS object
+    const data = await response.json();
+
+    // * Storing the token:
+    localStorage.setItem("access_token", data.access_token);
+
+    // * Redirection to the desired page
+    navigate("/profile");
 
     return setFormMessage({ success: true, message: "successful connexion" });
   }
