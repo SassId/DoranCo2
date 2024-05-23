@@ -22,13 +22,17 @@ export default function Profile() {
       >
         {!user.avatarUrl ? (
           <img
-            style={{ borderRadius: "50%" }}
+            style={{
+              borderRadius: "50%",
+              width: "200px",
+              height: "200px",
+            }}
             src="/img/sbcf-default-avatar.webp"
             alt="default profile pic"
           />
         ) : (
           <img
-            style={{ borderRadius: "50%" }}
+            style={{ borderRadius: "50%", width: "200px", height: "200px" }}
             src={user.avatarUrl}
             alt="user profile pic"
           />
