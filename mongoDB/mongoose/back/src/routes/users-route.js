@@ -85,7 +85,7 @@ usersRouter.post("/connexion", async (req, res) => {
   if (!isPasswordValid) {
     return res.status(401).json({ error: "incorrect credentials" });
   }
-
+  // * Token creation
   const access_token = jsonwebtoken.sign({ id: userFromDB._id }, SECRET_KEY);
 
   return res.json({ user: userFromDB, access_token });
@@ -107,5 +107,38 @@ usersRouter.get("/me", async (req, res) => {
 
   const user = await UserModel.findById(verifiedToken.id);
 
+  return res.json({ user });
+});
+
+usersRouter.put("/me", async (req, res) => {
+  const { username, avatarUrl } = req.body;
+  const access_token = req.headers.authorization;
+  console.log(req.body);
+  if (!username) {
+    return res.status(400).json("username required");
+  }
+
+  if (!access_token) {
+    return res.status(401).json({ error: "access token required" });
+  }
+
+  const token = access_token.split(" ")[1];
+  const verifiedToken = jsonwebtoken.verify(token, SECRET_KEY);
+
+  if (!verifiedToken) {
+    return res.status(401).json({ error: "invalid token" });
+  }
+
+  // the .select allows to leave (-name) or get (name) the desired properties
+  const user = await UserModel.findById(verifiedToken.id).select(
+    "-hashedPassword"
+  );
+  user.username = username;
+  user.avatarUrl = avatarUrl;
+
+  await user.save();
+
+  // isolate the hashedPassword and gives us all the other key in "sendUser thanks to the spreadOperator
+  // const { hashedPassword, ...sendUser } = user;
   return res.json({ user });
 });

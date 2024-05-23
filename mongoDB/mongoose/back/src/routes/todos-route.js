@@ -203,7 +203,7 @@ todosRoute.delete("/:listId/todo/:todoId", async (req, res) => {
   const todolist = await todolistModel.findById(listId);
 
   if (!todolist) {
-    return res.status(404).json({ error: "couldn not find todo list" });
+    return res.status(404).json({ error: "could not find todo list" });
   }
 
   const todo = todolist.todos.id(todoId);

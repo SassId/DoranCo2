@@ -5,6 +5,7 @@ import Home from "./pages/home.jsx";
 import Inscription from "./pages/inscription.jsx";
 import Connexion from "./pages/connexion.jsx";
 import Profile from "./pages/profile.jsx";
+import EditProfile from "./pages/edit-profile.jsx";
 
 // * Creates a context to be able to send info from app directly to other component without having use the props cascade (import the info in every descending components)
 export const UserContext = createContext();
@@ -53,7 +54,7 @@ function App() {
               <>
                 <Link to={"/profile"}>Profile</Link>
                 <button
-                  style={{ backgroundColor: "lightblue" }}
+                  style={{ backgroundColor: "royalblue" }}
                   onClick={handleLogout}
                 >
                   Log Out
@@ -67,6 +68,7 @@ function App() {
           <Route path="/inscription" element={<Inscription />} />
           <Route path="/connexion" element={<Connexion />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/edit-profile" element={<EditProfile />} />
         </Routes>
       </BrowserRouter>
     </UserContext.Provider>
