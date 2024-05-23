@@ -1,5 +1,6 @@
 import express from "express";
 import { UserModel } from "../database/user.js";
+import { PostModel } from "../database/post.js";
 import bcrypt from "bcrypt";
 import jsonwebtoken from "jsonwebtoken";
 
@@ -110,6 +111,22 @@ usersRouter.get("/me", async (req, res) => {
   return res.json({ user });
 });
 
+// Etape 12  : Modification du profile
+// Implémenter la fonctionnalité permettant a l'utilisateur de changer ses données: username et avatar.
+// Dans le front:
+
+//     [v] Ajouter un formulaire pour modifier le username et l'avatar (Donne un URL vers une image)
+//     [v]  Lors de la soumission du formulaire, envoyer une requête PUT vers "/api/me"
+
+// Dans la back
+
+//     [ ] Ajouter la route PUT sur /api/me
+//     [ ] Récupérer les données du corps de la requête
+//     [ ] Valider les données sinon retourner 400
+//     [ ] Verifier le token de l'utilisateur sinon retourner 401
+//     [ ] Modifier l'utilisateur dans la base de données
+//     [ ] Retourner l'utilisateur dans la réponse
+
 usersRouter.put("/me", async (req, res) => {
   const { username, avatarUrl } = req.body;
   const access_token = req.headers.authorization;
@@ -141,4 +158,31 @@ usersRouter.put("/me", async (req, res) => {
   // isolate the hashedPassword and gives us all the other key in "sendUser thanks to the spreadOperator
   // const { hashedPassword, ...sendUser } = user;
   return res.json({ user });
+});
+
+// Etape 13  : Créer des posts
+// Implémenté la fonctionnalité permettant a l'utilisateur de créer des posts (title, description, content, imageUrl):  (method: POST - URL: `/api/posts)
+
+// Dans le back:
+
+//     [v] Créer un schema et model pour les posts: (id, userID, title, description, imageUrl)
+//     [ ] Ajouter la route POST /api/posts
+//     [ ] Récupérer les données dans le corps de la requête
+//     [ ] Valider les données sinon 400
+//     [ ] Verifier la validité tu token sinon 401
+//     [ ] Créer le post dans la base de données
+//     [ ] Retourner le nouveau post
+
+// Dans le front:
+
+//     [ ] Créer un formulaire avec messages d'erreurs. (title: obligatoire, description: obligatoire)
+//     [ ] Envoyer une requête avec les données et le token lors de la soumission du formulaire
+
+usersRouter.post("/me/posts", (req, res) => {
+  const data = req.body;
+  console.log(data);
+  if (!data) {
+    return res.status(400).json({ error: "bad request" });
+  }
+  return res.json("request done");
 });

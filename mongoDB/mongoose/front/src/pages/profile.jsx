@@ -17,7 +17,7 @@ export default function Profile() {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          gap: "40px",
+          // gap: "40px",
         }}
       >
         {!user.avatarUrl ? (
@@ -37,12 +37,14 @@ export default function Profile() {
             alt="user profile pic"
           />
         )}
-        <p>
+        <p style={{ fontSize: "20px" }}>{user.username}</p>
+        <p>{user.email}</p>
+        {/* <p>
           Hello {user.username}, <br />
           Here are your info: <br />
           Username: {user.username} <br />
           Email: {user.email} <br />
-        </p>
+        </p> */}
         <Link
           to={"/edit-profile"}
           style={{
@@ -56,6 +58,7 @@ export default function Profile() {
         >
           Edit Profile
         </Link>
+        <button>Create New Post</button>
       </div>
     </div>
   );
