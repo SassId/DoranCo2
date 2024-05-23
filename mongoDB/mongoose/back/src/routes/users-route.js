@@ -120,12 +120,12 @@ usersRouter.get("/me", async (req, res) => {
 
 // Dans la back
 
-//     [ ] Ajouter la route PUT sur /api/me
-//     [ ] Récupérer les données du corps de la requête
-//     [ ] Valider les données sinon retourner 400
-//     [ ] Verifier le token de l'utilisateur sinon retourner 401
-//     [ ] Modifier l'utilisateur dans la base de données
-//     [ ] Retourner l'utilisateur dans la réponse
+//     [v] Ajouter la route PUT sur /api/me
+//     [v] Récupérer les données du corps de la requête
+//     [v] Valider les données sinon retourner 400
+//     [v] Verifier le token de l'utilisateur sinon retourner 401
+//     [v] Modifier l'utilisateur dans la base de données
+//     [v] Retourner l'utilisateur dans la réponse
 
 usersRouter.put("/me", async (req, res) => {
   const { username, avatarUrl } = req.body;
@@ -166,9 +166,9 @@ usersRouter.put("/me", async (req, res) => {
 // Dans le back:
 
 //     [v] Créer un schema et model pour les posts: (id, userID, title, description, imageUrl)
-//     [ ] Ajouter la route POST /api/posts
-//     [ ] Récupérer les données dans le corps de la requête
-//     [ ] Valider les données sinon 400
+//     [v] Ajouter la route POST /api/posts
+//     [v] Récupérer les données dans le corps de la requête
+//     [v] Valider les données sinon 400
 //     [ ] Verifier la validité tu token sinon 401
 //     [ ] Créer le post dans la base de données
 //     [ ] Retourner le nouveau post
@@ -179,10 +179,24 @@ usersRouter.put("/me", async (req, res) => {
 //     [ ] Envoyer une requête avec les données et le token lors de la soumission du formulaire
 
 usersRouter.post("/me/posts", (req, res) => {
-  const data = req.body;
-  console.log(data);
-  if (!data) {
+  const { userID, title, description, imageUrl } = req.body;
+  console.log(req.body);
+  if (!req.body) {
     return res.status(400).json({ error: "bad request" });
   }
+
+  const access_token = req.header.authorization;
+  console.log(access_token);
+  if (!access_token) {
+    return res.status(401).json({ error: "access token required" });
+  }
+
+  const token = access_token.split(" ")[1];
+  const verifiedToken = jsonwebtoken.verify(token, SECRET_KEY);
+
+  if (!verifiedToken) {
+    return res.status(401).json({ error: "invalid token" });
+  }
+
   return res.json("request done");
 });

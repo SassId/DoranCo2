@@ -3,6 +3,11 @@ import { useNavigate } from "react-router-dom";
 import { UserContext } from "../App";
 import { Link } from "react-router-dom";
 
+// Etape 11  : Page de profile
+
+//     [ ] Afficher les données de l'utilisateur (stockés dans le contexte) dans la page de profil.
+//     [ ] Afficher conditionnellement une image avatar de l'utilisateur suivant si la propriété avatarUrl existe ou non. (Afficher une image par défaut si l'utilisateur n'a pas d'urll pour l'avatar)
+
 export default function Profile() {
   const navigate = useNavigate();
   const { user } = useContext(UserContext);
@@ -58,7 +63,7 @@ export default function Profile() {
         >
           Edit Profile
         </Link>
-        <button>Create New Post</button>
+        
       </div>
     </div>
   );
