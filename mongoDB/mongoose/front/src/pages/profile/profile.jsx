@@ -82,7 +82,14 @@ export default function Profile() {
         <div>
           {displayedPost.map((post) => {
             return (
-              <div>
+              <div
+                style={{
+                  border: "solid 1px gray",
+                  borderRadius: "10px",
+                  padding: "10px",
+                  margin: "10px",
+                }}
+              >
                 <p style={{ fontSize: "20px", color: "orange" }}>
                   {post.title}
                 </p>
