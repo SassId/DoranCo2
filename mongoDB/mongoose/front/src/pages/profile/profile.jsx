@@ -1,14 +1,35 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { UserContext } from "../App";
+
 import { Link } from "react-router-dom";
+
+import FormPost from "../../components/containers/form-post/FormPost.jsx";
+import { UserContext } from "../../App.jsx";
 
 // Etape 11  : Page de profile
 
-//     [ ] Afficher les données de l'utilisateur (stockés dans le contexte) dans la page de profil.
-//     [ ] Afficher conditionnellement une image avatar de l'utilisateur suivant si la propriété avatarUrl existe ou non. (Afficher une image par défaut si l'utilisateur n'a pas d'urll pour l'avatar)
+//     [v] Afficher les données de l'utilisateur (stockés dans le contexte) dans la page de profil.
+//     [v] Afficher conditionnellement une image avatar de l'utilisateur suivant si la propriété avatarUrl existe ou non. (Afficher une image par défaut si l'utilisateur n'a pas d'url pour l'avatar)
 
 export default function Profile() {
+  const [displayedPost, setDisplayedPost] = useState([]);
+
+  useEffect(() => {
+    async function getPosts() {
+      const token = localStorage.getItem("access_token");
+
+      const response = await fetch("/api/users/me/posts", {
+        headers: { Authorization: "Bearer " + token },
+      });
+
+      const postData = await response.json();
+      console.log(postData);
+      setDisplayedPost(postData.documents);
+    }
+    console.log(displayedPost);
+    getPosts();
+  }, []);
+
   const navigate = useNavigate();
   const { user } = useContext(UserContext);
   if (!user) {
@@ -44,12 +65,6 @@ export default function Profile() {
         )}
         <p style={{ fontSize: "20px" }}>{user.username}</p>
         <p>{user.email}</p>
-        {/* <p>
-          Hello {user.username}, <br />
-          Here are your info: <br />
-          Username: {user.username} <br />
-          Email: {user.email} <br />
-        </p> */}
         <Link
           to={"/edit-profile"}
           style={{
@@ -63,7 +78,21 @@ export default function Profile() {
         >
           Edit Profile
         </Link>
-        
+        <FormPost></FormPost>
+        <div>
+          {displayedPost.map((post) => {
+            return (
+              <div>
+                <p style={{ fontSize: "20px", color: "orange" }}>
+                  {post.title}
+                </p>
+                <p style={{ fontFamily: "sans-serif", color: "royalblue" }}>
+                  {post.description}
+                </p>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

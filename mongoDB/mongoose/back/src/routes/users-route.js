@@ -169,24 +169,24 @@ usersRouter.put("/me", async (req, res) => {
 //     [v] Ajouter la route POST /api/posts
 //     [v] Récupérer les données dans le corps de la requête
 //     [v] Valider les données sinon 400
-//     [ ] Verifier la validité tu token sinon 401
-//     [ ] Créer le post dans la base de données
-//     [ ] Retourner le nouveau post
+//     [v] Verifier la validité tu token sinon 401
+//     [v] Créer le post dans la base de données
+//     [v] Retourner le nouveau post
 
 // Dans le front:
 
 //     [ ] Créer un formulaire avec messages d'erreurs. (title: obligatoire, description: obligatoire)
 //     [ ] Envoyer une requête avec les données et le token lors de la soumission du formulaire
 
-usersRouter.post("/me/posts", (req, res) => {
-  const { userID, title, description, imageUrl } = req.body;
-  console.log(req.body);
+usersRouter.post("/me/posts", async (req, res) => {
+  const { title, description, imageUrl } = req.body;
+
   if (!req.body) {
     return res.status(400).json({ error: "bad request" });
   }
 
-  const access_token = req.header.authorization;
-  console.log(access_token);
+  const access_token = req.headers.authorization;
+
   if (!access_token) {
     return res.status(401).json({ error: "access token required" });
   }
@@ -198,5 +198,51 @@ usersRouter.post("/me/posts", (req, res) => {
     return res.status(401).json({ error: "invalid token" });
   }
 
-  return res.json("request done");
+  const newPost = new PostModel({
+    userID: verifiedToken.id,
+    title: title,
+    description: description,
+    imageUrl: imageUrl,
+  });
+  console.log("yoyoyoyoyoyoyoyoyoyoyoyoyoyoyoyoy!!!!!!!");
+  console.log(newPost);
+
+  const addedNewPost = await newPost.save();
+  console.log(addedNewPost);
+
+  return res.json({ post: addedNewPost });
+});
+
+// Etape 14  :  Afficher les posts de l'utilisateur
+// Dans le back:
+
+//     [v] Ajouter la route GET /api/me/posts
+//     [v] Récupérer et retourner les post dont userID est égal a l'identifiant de l'utilisateur récupérer dans le token
+
+// Dans la page de profile:
+
+//     [ ] Utiliser un useEffect pour Récupérer tous les posts de l'utilisateur (method: GET  - /api/users/me/posts ).
+//     [ ] Stocker les articles dans une variables d'état
+//     [ ] Utiliser la method map, pour afficher tous les articles
+
+usersRouter.get("/me/posts", async (req, res) => {
+  const access_token = req.headers.authorization;
+
+  if (!access_token) {
+    return res.status(401).json({ error: "access token required" });
+  }
+
+  const token = access_token.split(" ")[1];
+  console.log(access_token);
+  const verifiedToken = jsonwebtoken.verify(token, SECRET_KEY);
+
+  if (!verifiedToken) {
+    return res.status(401).json({ error: "invalid token" });
+  }
+
+  const allUserPosts = await PostModel.find({
+    userID: verifiedToken.id,
+  }).exec();
+
+  return res.json({ documents: allUserPosts });
 });

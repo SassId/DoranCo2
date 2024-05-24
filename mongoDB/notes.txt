@@ -89,3 +89,5 @@ On the profile page:
 // JWT (JSON WEB TOKEN)
 - It's a sort of authentification certificate thats contains informations to avoid having to recheck the password of a user
 - It can be stored in cookies or local storage
+
+
