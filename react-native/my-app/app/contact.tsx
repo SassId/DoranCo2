@@ -4,6 +4,7 @@ import { StyleSheet, Text, View, TextInput, Alert } from "react-native";
 import { contactStyle } from "../styles/contact";
 import Button from "@/components/Button/Button";
 import InputWithError from "@/components/InputWithError/InputWithErro";
+import TextArea from "@/components/TextArea/TextArea";
 
 export default function contact() {
   const [emailInput, setEmailInput] = useState("");
@@ -32,6 +33,15 @@ export default function contact() {
     }
   }
 
+  // Since in JS everything is an object, we can use the array as an object with the keys as indexed to create a dynamic function
+  // const [state, setState] = useState({ email: "", message: "" });
+  // function handleInput(key, text) {
+  //   setState({
+  //     ...state,
+  //     [key]: text,
+  //   });
+  // }
+
   function submit() {
     alert(messageInput);
   }
@@ -52,6 +62,12 @@ export default function contact() {
           action={(text) => handleMessage(text)}
           type="default"
         ></InputWithError>
+        <TextArea
+          placeholder="pleaser enter your message"
+          numberOfLines={10}
+          action={(text) => handleMessage(text)}
+          error={messageError}
+        ></TextArea>
 
         {/* <TextInput
           style={contactStyle.inputs}
@@ -66,8 +82,8 @@ export default function contact() {
           multiline={true}
           numberOfLines={5}
           onChangeText={handleMessage}
-        ></TextInput> */}
-        <Text>{messageError}</Text>
+        ></TextInput>
+        <Text>{messageError}</Text> */}
         <Button style={contactStyle} label="Submit" action={submit}></Button>
       </View>
     </View>
@@ -90,3 +106,10 @@ export default function contact() {
 // Le placeholder, action(fonction a lier avec le onChangeText), type (Le type de clavie), error (Le message d'erreure a afficher sous l'input)
 
 // Remplacer le composant input et son erreur dans contact.jsx
+
+// TODO:
+// Exercice:
+// Créer le composant TextArea (/components/TextArea/TextArea.jsx):
+// Le composant reçoit: placeholder, nombreLignes, error et action
+// Stylise le composant
+// Remplacer le composant textInput dans contact
