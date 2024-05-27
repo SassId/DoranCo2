@@ -7,3 +7,5 @@ export default function RootLayout() {
     </Stack>
   );
 }
+
+// * Expo uses the navigation by directory:
