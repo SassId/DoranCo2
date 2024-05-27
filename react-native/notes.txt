@@ -17,3 +17,16 @@ npx expo start
 Go to app.json
 
 - splash (screen) is the display pending during the app's loading when opening
+
+//FRESH start
+npm run reset-project
+
+//TSX Vs JSX
+In .tsx, we need to define each type of the props we use
+
+//BONUS
+the command rfc imports automatically the needed components from React
+
+//RESSOURCES:
+- https://reactnative.dev/
+- https://docs.expo.dev/ (course)
