@@ -15,7 +15,7 @@ export default function HomeScreen() {
 // *Create Classes
 const style = StyleSheet.create({
   container: {
-    backgroundColor: "purple",
+    backgroundColor: "slateblue",
   },
   title: {
     color: "white",
