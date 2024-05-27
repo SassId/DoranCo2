@@ -1,0 +1,14 @@
+//ABOUT
+
+React Native uses the framework Expo to turn JS into:
+    - html and css
+    - Android's Java
+    - Ios' Swift
+giving us abilities to create mobile apps.
+
+//LAUNCH
+
+npx create-expo-app@latest
+
+then go into my-app and
+npx expo start
