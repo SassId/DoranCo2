@@ -17,8 +17,8 @@ const Button = ({ action, label, style }: ButtonProps) => {
 const buttonStyle = StyleSheet.create({
   button: {
     backgroundColor: "slateblue",
-    padding: "10px",
-    borderRadius: "10px",
+    padding: 10,
+    borderRadius: 10,
   },
   label: {
     color: "white",

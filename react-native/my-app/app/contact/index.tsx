@@ -1,10 +1,11 @@
 import { useState } from "react";
 import React from "react";
 import { StyleSheet, Text, View, TextInput, Alert } from "react-native";
-import { contactStyle } from "../styles/contact";
+import { contactStyle } from "../../styles/contact";
 import Button from "@/components/Button/Button";
 import InputWithError from "@/components/InputWithError/InputWithErro";
 import TextArea from "@/components/TextArea/TextArea";
+import { Link } from "expo-router";
 
 export default function contact() {
   const [emailInput, setEmailInput] = useState("");
@@ -48,6 +49,7 @@ export default function contact() {
 
   return (
     <View>
+      <Link href={"/contact/info"}>Informations</Link>
       <Text style={contactStyle.title1}>Join Us Today !</Text>
       <View style={contactStyle.formWrapper}>
         <InputWithError

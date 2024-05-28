@@ -20,10 +20,23 @@ const TextArea = ({
         placeholder={placeholder}
         numberOfLines={numberOfLines}
         onChangeText={action}
+        style={TextAreaStyle.input}
       ></TextInput>
       <Text>{error}</Text>
     </View>
   );
 };
 
+const TextAreaStyle = StyleSheet.create({
+  input: {
+    borderStyle: "solid",
+    borderWidth: 1,
+    borderColor: "gray",
+    borderRadius: 10,
+    padding: 10,
+  },
+});
+
 export default TextArea;
+
+// TODO: add a stylesheet

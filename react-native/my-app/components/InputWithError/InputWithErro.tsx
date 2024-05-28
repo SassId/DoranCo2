@@ -43,5 +43,3 @@ const InputWithErrorStyle = StyleSheet.create({
 });
 
 export default InputWithError;
-
-// TODO: add a stylesheet
