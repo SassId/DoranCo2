@@ -32,6 +32,15 @@ React Native doesn't take dimension value as string but as numbers
 _layout.tsx allows to create and organize the navigation links and menu
     - you can have layouts inside layouts
 
+//IMAGES:
+you can use the React Native tag Image
+    - style it with a width and height 
+    - source={{uri: "url-name"}}
+
+If its a file in your assets/img folder:
+    - style it with a width and height 
+    - source={require("path")}
+
 //BONUS
 the command rfc imports automatically the needed components from React
 or rnf

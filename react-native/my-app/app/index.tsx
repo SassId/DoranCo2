@@ -1,4 +1,4 @@
-import { Text, View, StyleSheet } from "react-native";
+import { Text, View, StyleSheet, Image } from "react-native";
 import { Link } from "expo-router";
 
 export default function Index() {
@@ -14,6 +14,22 @@ export default function Index() {
       {/* <Link href={"/contact"}
       style={LinkStyle.button}>Contact Us</Link> */}
       <Text>Welcome</Text>
+      <Image
+        style={{
+          width: "80%",
+          height: 500,
+        }}
+        source={{
+          uri: "https://storage.googleapis.com/playnews-files/8611b8cf-1f37-43ce-83b9-0f342eed911f.webp",
+        }}
+      />
+      <Image
+        style={{
+          width: "50%",
+          height: 300,
+        }}
+        source={require("../assets/images/assassinscreed.bmp")}
+      />
       <Link href={"/authentification"}>Your Account</Link>
     </View>
   );

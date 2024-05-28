@@ -37,6 +37,13 @@ export default function RootLayout() {
             title: "Contact",
           }}
         />
+        <Drawer.Screen
+          name="authentification"
+          options={{
+            drawerLabel: "Account",
+            title: "Account",
+          }}
+        />
       </Drawer>
     </GestureHandlerRootView>
   );
