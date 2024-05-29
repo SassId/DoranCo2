@@ -6,6 +6,7 @@ import Button from "@/components/Button/Button";
 import { contactStyle } from "@/styles/contact";
 import PasswordInput from "@/components/PasswordInput/PasswordInput";
 import { UserContext } from "../_layout";
+import { Router } from "@react-navigation/native";
 
 export default function index() {
   const { user, setUser } = useContext(UserContext);
@@ -35,6 +36,7 @@ export default function index() {
 
   function submit() {
     setUser({ email: userInput.email.value });
+    
   }
   return (
     <View style={contactStyle.formWrapper}>
