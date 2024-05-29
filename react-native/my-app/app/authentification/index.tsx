@@ -4,6 +4,7 @@ import InputWithError from "@/components/InputWithError/InputWithErro";
 import { getEmailError, getPasswordError } from "@/utilities/validation";
 import Button from "@/components/Button/Button";
 import { contactStyle } from "@/styles/contact";
+import PasswordInput from "@/components/PasswordInput/PasswordInput";
 
 export default function index() {
   const [userInput, setUserInput] = useState({
@@ -46,6 +47,12 @@ export default function index() {
         action={(text) => handleInput("password", text)}
         type="default"
       ></InputWithError>
+      <Text>Test</Text>
+      <PasswordInput
+        placeholder="enter password"
+        action={(text) => handleInput("password", text)}
+        error={userInput.password.error}
+      ></PasswordInput>
       <Button style={contactStyle} label="Submit" action={submit}></Button>
     </View>
   );
