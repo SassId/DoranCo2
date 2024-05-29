@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { View, Text } from "react-native";
 import InputWithError from "@/components/InputWithError/InputWithErro";
 import { getEmailError, getPasswordError } from "@/utilities/validation";
 import Button from "@/components/Button/Button";
 import { contactStyle } from "@/styles/contact";
 import PasswordInput from "@/components/PasswordInput/PasswordInput";
+import { UserContext } from "../_layout";
 
 export default function index() {
+  const { user, setUser } = useContext(UserContext);
+
   const [userInput, setUserInput] = useState({
     email: { value: "", error: "" },
     password: { value: "", error: "" },
@@ -31,7 +34,7 @@ export default function index() {
   }
 
   function submit() {
-    alert(userInput.email.value);
+    setUser({ email: userInput.email.value });
   }
   return (
     <View style={contactStyle.formWrapper}>
@@ -57,4 +60,3 @@ export default function index() {
     </View>
   );
 }
-

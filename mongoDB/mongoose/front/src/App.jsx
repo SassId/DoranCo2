@@ -11,6 +11,7 @@ import EditProfile from "./pages/edit-profile.jsx";
 export const UserContext = createContext();
 
 function App() {
+  // at first, the user is not logged in so the useState is null
   const [user, setUser] = useState(null);
 
   useEffect(() => {
