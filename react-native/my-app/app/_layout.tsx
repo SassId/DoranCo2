@@ -54,3 +54,13 @@ export default function RootLayout() {
 // Stack Navigation (pages are loaded and displayed on top the previous one)
 // Drawer Navigation (translateX() nav)
 // Tab Navigation
+
+// TODO:
+// Exercice:
+// layout principale:
+// Créer un context
+// Ajouter une variable d'atat user et setUser
+// Ajouter le Provider avec les valeur user et setUser
+
+// Dans connexion (index);
+// Utiliser le contect pour mettre email dans la variable d'état user
