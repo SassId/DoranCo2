@@ -32,8 +32,6 @@ export default function SignuForm() {
     setPasswordError('')
   }
 
-  // Créer 
-
   //3. Créer la fonction qui s'execute quand on clique sur le bouton
   function displayUser(e) {
     e.preventDefault()
