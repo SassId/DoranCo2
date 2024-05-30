@@ -1,4 +1,3 @@
-import React from "react";
 import { Stack } from "expo-router";
 
 const profileLayout = () => {
@@ -13,6 +12,5 @@ const profileLayout = () => {
     </Stack>
   );
 };
-
 
 export default profileLayout;
