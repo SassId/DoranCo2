@@ -1,6 +1,10 @@
 import { useState } from "react";
 
+import { useNavigate } from "react-router-dom";
+
 export default function Connexion() {
+  const navigate = useNavigate();
+
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState("");
 
@@ -24,10 +28,16 @@ export default function Connexion() {
     setPasswordError("");
     setPassword(e.target.value);
 
-    if (password.length < 6) {
+    if (e.target.value.length < 6) {
       return setPasswordError("password must be at least 6 characters");
     }
   }
+
+  //   Display a message for successful or failed signin after submit
+  const [formMessage, setFormMessage] = useState({
+    success: false,
+    message: "",
+  });
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -40,17 +50,31 @@ export default function Connexion() {
       password: password,
     };
 
-    const response = await fetch("/api/users/connextion", {
+    const response = await fetch("/api/users/connexion", {
       method: "POST",
       body: JSON.stringify(user),
-      headers: { "Type-Content": "application/json" },
+      headers: { "Content-Type": "application/json" },
     });
 
     if (!response.ok) {
       if (response.status === 401) {
-        return setFormMessage("this email is already used");
+        return setFormMessage({
+          success: false,
+          message: "incorrect credentials",
+        });
       }
     }
+
+    // * Parse and convert JSON data into a JS object
+    const data = await response.json();
+
+    // * Storing the token:
+    localStorage.setItem("access_token", data.access_token);
+
+    // * Redirection to the desired page
+    navigate("/profile");
+
+    return setFormMessage({ success: true, message: "successful connexion" });
   }
 
   return (
@@ -81,6 +105,9 @@ export default function Connexion() {
         <button type="submit" onClick={handleSubmit}>
           Submit
         </button>
+        <p style={{ color: formMessage.success ? "green" : "red" }}>
+          {formMessage.message}
+        </p>
       </form>
     </div>
   );

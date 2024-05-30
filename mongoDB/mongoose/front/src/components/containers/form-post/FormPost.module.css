@@ -1,0 +1,30 @@
+.postForm {
+  /* border: solid orange; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 40%;
+  margin-block: 30px;
+  margin-inline: auto;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.212);
+}
+
+.postForm input {
+  width: 60%;
+  height: 30px;
+  outline: none;
+  /* border-radius: 10px; */
+}
+
+.postForm textarea {
+  width: 60%;
+}
+
+button {
+  padding: 5px;
+  background-color: orange;
+  border-radius: 5px;
+}

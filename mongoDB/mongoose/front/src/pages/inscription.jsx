@@ -8,7 +8,6 @@ import { useState } from "react";
 // input pour confirmer password - égale a password: Erreur: Les Mots de passe sont différent !
 // bouton pour valider le formulaire
 
-
 // When an input is linked to a state variable by the input's value, it's calle a controlled field (and thus a controlled form)
 export default function Inscription() {
   const [email, setEmail] = useState("");
@@ -145,15 +144,7 @@ export default function Inscription() {
           />
           <p>{confirmError}</p>
         </div>
-        <button
-          style={{
-            padding: "5px",
-            backgroundColor: "orange",
-            borderRadius: "5px",
-          }}
-          type="submit"
-          onClick={handleSubmit}
-        >
+        <button type="submit" onClick={handleSubmit}>
           Sign up
         </button>
         <p style={{ color: formMessage.success ? "green" : "red" }}>
@@ -163,5 +154,3 @@ export default function Inscription() {
     </div>
   );
 }
-
-

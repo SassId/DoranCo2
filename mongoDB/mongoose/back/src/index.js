@@ -17,7 +17,7 @@ server.use(express.json());
 server.use("/api/todos", todosRoute);
 
 // middleware to be able to CRUD on users
-server.use("api/users", usersRouter);
+server.use("/api/users", usersRouter);
 
 // Ajouter une sur l'url "/api/ping" method GET
 // Retourne json avec "pong"

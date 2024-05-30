@@ -1,0 +1,15 @@
+Reacts components can receive only 1 parameter that is an object
+
+The spread operator (...name) allows use to extract all the combos key:value of an object:
+    ex: 
+       const user = {
+             email: "samy@email.com",
+             password: "azert",
+             };
+
+const profile = {
+  name: "Djemai",
+  prenom: "samy",
+};
+
+const bigObject = { ...user, ...profile };

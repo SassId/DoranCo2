@@ -1,0 +1,54 @@
+//ABOUT
+
+React Native uses the framework Expo to turn JS into:
+    - html and css
+    - Android's Java
+    - Ios' Swift
+giving us abilities to create mobile apps.
+
+//LAUNCH
+
+npx create-expo-app@latest
+
+then go into my-app and
+npx expo start
+
+//SETTINGS
+Go to app.json
+
+- splash (screen) is the display pending during the app's loading when opening
+
+//FRESH start
+npm run reset-project
+
+//TSX Vs JSX
+In .tsx, we need to define the type of each props and parameters we use
+
+//IMPORTANT
+
+React Native doesn't accept one lined shorcuts for css rules
+React Native doesn't take dimension value as string but as numbers
+
+_layout.tsx allows to create and organize the navigation links and menu
+    - you can have layouts inside layouts
+
+//IMAGES:
+you can use the React Native tag Image
+    - style it with a width and height
+    - source={{uri: "url-name"}}
+
+If it's a file in your assets/img folder:
+    - style it with a width and height
+    - source={require("path")}
+
+//BONUS
+the command rfc imports automatically the needed components from React
+or rnf
+
+rfc = import react from 'react' with a export default function returning a basic div
+
+rnf
+
+//RESSOURCES:
+- https://reactnative.dev/
+- https://docs.expo.dev/ (course)
