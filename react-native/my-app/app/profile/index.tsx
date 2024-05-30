@@ -77,3 +77,5 @@ const userCard = StyleSheet.create({
 // 2. Fichier index.jsx: Utiliser le contexte pour afficher l'email de l'utilisateur
 // 3. Chercher dans la documentation comment rediriger l'utilisateur.
 // 4. Rediriger l'utilisateur vers la page de profile après la connexion
+
+
