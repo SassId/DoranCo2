@@ -38,7 +38,8 @@
     "expo-image": "~1.12.9",
     "expo-camera": "~15.0.10",
     "@react-native-community/slider": "4.5.2",
-    "expo-media-library": "~16.0.3"
+    "expo-media-library": "~16.0.3",
+    "react-native-maps": "1.14.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { UserContext } from "../_layout";
 import { Redirect, Link } from "expo-router";
 import { Entypo } from "@expo/vector-icons";
+import { Feather } from "@expo/vector-icons";
 
 export default function profile() {
   const user = useContext(UserContext);
@@ -20,14 +21,10 @@ export default function profile() {
       <Text style={userCard.userEmail}>{user.user.email}</Text>
       <View>
         <Link href={"/profile/camera"} style={userCard.link}>
-          <Entypo
-            name="camera"
-            size={24}
-            color="white"
-            style={{
-              borderRadius: "50%",
-            }}
-          />
+          <Entypo name="camera" size={24} color="white" />
+        </Link>
+        <Link href={"/profile/map"}>
+          <Feather name="map-pin" size={24} color="black" />
         </Link>
       </View>
     </View>
@@ -77,5 +74,3 @@ const userCard = StyleSheet.create({
 // 2. Fichier index.jsx: Utiliser le contexte pour afficher l'email de l'utilisateur
 // 3. Chercher dans la documentation comment rediriger l'utilisateur.
 // 4. Rediriger l'utilisateur vers la page de profile après la connexion
-
-
