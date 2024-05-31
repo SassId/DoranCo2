@@ -1,0 +1,3 @@
+// Using Shadcn Components:
+
+Shadcn uses TailwindCSS and RadixUI (nostyle components)(both are components libraries)
