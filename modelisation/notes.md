@@ -16,9 +16,26 @@ A ce stade, nous sommes dans l'orienté objet (nous plaçons les élément dans 
 
 _ex: objet Auteur = props1: id, props2: nom, props3:prénom, etc_
 
-### Merise v2
+### Merise II (v2)
 
 <u>Identification relative:</u>
 Elle intervient lorsque l'id d'une entité ne suffit pas à l'identifier de manière précise.
 
 _ex: un immeuble est identifié par son numéro de rue mais il faut également le nom où l'id de la rue pour le retrouver etc._
+
+<u>Heritage:</u>
+Il intervient lorsque plusieurs entités possèdent des propriétés similaires.
+On "tire" la nouvelle entité de la précédente et elle aura les mêmes attributs plus d'autres.
+
+- par disjonction: 
+l'entité parent est soit l'un, soit l'autre des enfants 
+<br>
+
+- par couverture:
+l'entité parent est forcément aussi l'un des enfant
+
+#### Passage du MCD au MLD
+
+Dans le MLD (modèle logique de données), les entités deviennent des relations.
+
+
