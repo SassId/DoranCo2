@@ -9,12 +9,11 @@ Il s'agit d'apprendre les codes de schématisation d'un besoin client pour le ca
 2. UML (unified modeling language)
    C'est un langage surtout utilisé au USA pour modéliser la solution numérique.
 
-## Merise
+## Merise = methode
 
 A partir du DD (dictionnaire de données) qui est la liste de toutes les types de données dont on va avoir besoin pour notre créer notre solution numérique, nous allons ensuite définir le MCD (modèle conceptuel de données)
-A ce stade, nous sommes dans l'orienté objet (nous plaçons les élément dans des objet avec un id unique et des propriétes).
+Conception **orientée relationel** avec **séparation des données et des traitements**.
 
-_ex: objet Auteur = props1: id, props2: nom, props3:prénom, etc_
 
 ### Merise II (v2)
 
@@ -43,4 +42,5 @@ Nous nous basons alors sur les cardinalités pour écrires les relations en appl
 
 **MCD: Entités - Relations - Cardinalités**
 
-## UML
+## UML =  langage
+On l'utilise pour la conception **orientée objet**.
