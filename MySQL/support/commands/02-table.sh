@@ -51,6 +51,8 @@
 
 # Supprimer une contrainte UNIQUE :
    ALTER TABLE nom_table DROP INDEX nom_contrainte;
+   or
+   ALTER TABLE movie DROP CONSTRAINT UNIQUE unique_title
 
 # Ajouter un index :
    ALTER TABLE nom_table ADD INDEX nom_index (colonne);

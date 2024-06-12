@@ -45,6 +45,7 @@ SHOW CREATE TABLE table_name;
 ```
 
 ### Delete a constraint:
+
 ```sql
 alter table movie drop constraint unique title
 ```
@@ -114,4 +115,6 @@ DROP TABLE test;
 
 ---
 
-
+```sql
+ALTER TABLE movie ADD CONSTRAINT fk_id_director FOREIGN KEY (id_director) REFERENCES director (id);
+```
