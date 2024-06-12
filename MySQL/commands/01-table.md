@@ -43,7 +43,14 @@ DESCRIBE table_name;
 ```sql
 SHOW CREATE TABLE table_name;
 ```
+
+### Delete a constraint:
+```sql
+alter table movie drop constraint unique title
+```
+
 ---
+
 TODO:
 Practice:
 
@@ -69,3 +76,42 @@ CREATE TABLE director(
     salary DECIMAL,
 )
 ```
+
+---
+
+TODO:
+Practice 2:
+
+[x] rename table film to "movie",
+[x] change the table "director" to add a column "country",
+[x] change the column "salary" to have DECIMAL(8,2),
+[x] change the table "movie" to add the constraint UNIQUE on the movie name,
+
+[x] create a table "test" with a column "id",
+[x] delete the table "test",
+
+_Solution:_
+
+```sql
+RENAME TABLE film TO movie;
+ALTER TABLE director
+ADD country VARCHAR(100);
+ALTER TABLE director
+MODIFY salary DECIMAL(8,2);
+ALTER TABLE movie
+ADD CONSTRAINT UNIQUE (title) ;
+```
+
+```sql
+CREATE TABLE test(
+    id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT
+);
+```
+
+```sql
+DROP TABLE test;
+```
+
+---
+
+
