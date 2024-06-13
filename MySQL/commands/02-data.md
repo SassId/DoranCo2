@@ -143,5 +143,39 @@ SELECT firstname, email FROM director WHERE lastname LIKE '%e%' AND country IN (
 ORDER BY email LIMIT 2
 ```
 
+---
+
+### Delete Data:
+
+```sql
+DELETE FROM table_name
+```
+_Attention: deletes all entries and irreversible_
+
+---
+
+
 SELECT firstname, email FROM director WHERE lastname LIKE '%e%' AND country IN ('france', 'usa') AND age>30
 ORDER BY email LIMIT 2 
+
+update director set country='fr' where id between 0 and 10
+
+update director set salary=1000000 where age < 20 or age between 40 and 70
+
+alter table director modify salary decimal(12,2)
+
+delete from director where country not like 'fr'
+
+___
+
+create database avengers_db;
+
+use avengers_db;
+
+create table figurine (
+    id int primary key auto_increment,
+    nom varchar(255),
+    super_pouvoir varchar(255),
+    annee_sortie date,
+    description varchar(255),
+);
