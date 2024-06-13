@@ -116,4 +116,4 @@ DROP TABLE test;
 ```sql
 ALTER TABLE movie ADD CONSTRAINT fk_id_director FOREIGN KEY (id_director) REFERENCES director (id);
 ```
-alter table figurine add constraint fk_id_weapons foreign key references weapons (id)
+
