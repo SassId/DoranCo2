@@ -179,3 +179,4 @@ create table figurine (
     annee_sortie date,
     description varchar(255),
 );
+

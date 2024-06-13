@@ -1,4 +1,4 @@
-Exercice avec une base de données pour des figurine Avengers :
+<!-- TODO: Exercice avec une base de données pour des figurine Avengers :
 
     Créez une base de données avec le nom avengers_db :
 
@@ -35,7 +35,7 @@ Exercice avec une base de données pour des figurine Avengers :
     Modifiez la description de "Black Panther" pour "Prince de Wakanda et protecteur de son peuple."
 
 
-    Supprimez la figurine Black Widow de la table "figurine" :
+    Supprimez la figurine Black Widow de la table "figurine" : -->
 
 create database avengers_db;
 
@@ -69,3 +69,36 @@ select * from figurine where super_pouvoir like '%force%'
 update figurine set description="Prince de Wakanda et protecteur de son peuple." where nom="Black Panther";
 
 delete from figurine where nom="Black Widow"
+
+
+    <!-- TODO: Créer la table "weapon" avec des colonnes telles que "id" (clé primaire), "nom", "description" : -->
+
+    create table weapon (
+        id int unsigned primary key auto_increment, 
+        name varchar (255), 
+        description varchar(255)
+    );
+
+    <!--   TODO:  Insérez des données dans la table "weapon" pour représenter des armes Avengers :
+
+('Marteau', 'Marteau magique de Thor.'),
+    ('Bouclier', 'Bouclier indestructible.'),
+    ('Arc et flèches', 'Arc et flèches de Hawkeye.'),
+    ('Armure', 'Armure spéciale conçue pour combattre Hulk.'),
+    ('Vibranium Claws', 'Griffes en vibranium indestructible .') -->
+
+    insert into weapons (name, description) values ('Bouclier', 'Bouclier indestructible.'),
+    ('Arc et flèches', 'Arc et flèches de Hawkeye.'),
+    ('Armure', 'Armure spéciale conçue pour combattre Hulk.'),
+    ('Vibranium Claws', 'Griffes en vibranium indestructible .');
+
+    <!-- TODO:     Modifier la table "figurine" pour ajouter une colonne "weapon_id" : -->
+
+alter table figurine add weapon_id varchar(255);
+
+<!-- TODO:     Modifier la table "figurine" pour ajouter une contrainte de clé étrangère avec la table "weapon" : -->
+
+alter table figurine add constraint fk_id_weapons foreign key (weapon_id) references weapons (id)
+
+
+
