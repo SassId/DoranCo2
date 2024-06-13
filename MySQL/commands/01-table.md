@@ -28,15 +28,16 @@ CREATE TABLE table_name (
 - _char: fixed size, faster_
 - _date: must be in the YYYY-MM-DD format so you'll probably need to transform the user input to match that format_
 
-
 ### Display Structure of a Table:
 
 ```sql
-DESCRIBE table_name;
+SHOW CREATE TABLE table_name;
 ```
 
+### Display Columns of a Table:
+
 ```sql
-SHOW CREATE TABLE table_name;
+DESCRIBE table_name;
 ```
 
 ### Delete a constraint:
@@ -109,6 +110,8 @@ DROP TABLE test;
 ```
 
 ---
+
+### Add a Foreign Key as a Constraint;
 
 ```sql
 ALTER TABLE movie ADD CONSTRAINT fk_id_director FOREIGN KEY (id_director) REFERENCES director (id);
