@@ -28,11 +28,6 @@ CREATE TABLE table_name (
 - _char: fixed size, faster_
 - _date: must be in the YYYY-MM-DD format so you'll probably need to transform the user input to match that format_
 
-### Display Tables:
-
-```sql
-SHOW TABLES;
-```
 
 ### Display Structure of a Table:
 
@@ -47,7 +42,7 @@ SHOW CREATE TABLE table_name;
 ### Delete a constraint:
 
 ```sql
-alter table movie drop constraint unique title
+ALTER TABLE table_name DROP CONSTRAINT UNIQUE unique_constraint_title
 ```
 
 ---
