@@ -98,7 +98,7 @@ alter table figurine add weapon_id varchar(255);
 
 <!-- TODO:     Modifier la table "figurine" pour ajouter une contrainte de clé étrangère avec la table "weapon" : -->
 
-alter table figurine add constraint fk_id_weapons foreign key (weapon_id) references weapons (id)
+alter table figurine add constraint fk_id_weapons foreign key (weapon_id) references weapon (id)
 
 
 
