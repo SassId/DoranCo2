@@ -1,13 +1,19 @@
 Créer la base de données school_db
 
+```sql
 create database school_db;
+```
 
 Utiliser la base de données
 
+```sql
 use school_db;
+```
+
 
 Créer la table "student" avec id, nom prenom, date_naissance, adresse, email
 
+```sql
 create table student (
     id int primary key auto_increment,
     nom varchar(255) not null,
@@ -16,18 +22,23 @@ create table student (
     adresse varchar(255),
     email varchar(255)
 );
+```
+
 
 Créer la table "subject" id, nom, description
 
+```sql
 create table subject (
     id int primary key auto_increment,
     nom varchar(255),
     description text
 );
+```
+
 
 Créer la table "note" avec id note et des clés étrangères pour student_id et subject_id
 
-
+```sql
 create table note (
     id int primary key auto_increment,
     note decimal(3,1),
@@ -36,13 +47,14 @@ create table note (
     foreign key (student_id) references student (id),
     foreign key (subject_id) references subject (id)
 );
+```
 
 Insérez des données dans les tables :
 
 -- Insertion des étudiants
 
+```sql
 insert into student (nom, prenom, date_naissance, adresse, email) values 
-
     ('Doe', 'John', '2000-01-01', '123 Main Street', 'john.doe@example.com'),
     ('Smith', 'Emma', '1999-03-15', '456 Elm Street', 'emma.smith@example.com'),
     ('Johnson', 'Michael', '2001-05-10', '789 Oak Street', 'michael.johnson@example.com'),
@@ -53,19 +65,22 @@ insert into student (nom, prenom, date_naissance, adresse, email) values
     ('Lewis', 'Noah', '1999-04-30', '852 Walnut Street', 'noah.lewis@example.com'),
     ('Walker', 'Mia', '2001-06-08', '369 Oakwood Street', 'mia.walker@example.com'),
     ('Hall', 'Elijah', '2002-08-16', '258 Cherry Street', 'elijah.hall@example.com');
+```
 
 -- Insertion des matières
 
-insert into subject (nom, description) values 
-
+```sql
+insert into subject (nom, description) values
     ('Mathématiques', 'Calcul et algèbre'),
     ('Sciences', 'Physique et chimie'),
     ('Histoire', 'Événements historiques'),
     ('Français', 'Grammaire et littérature'),
     ('Anglais', 'Conversation et grammaire');
+```
 
 -- Insertion des notes pour chaque étudiant (exemples)
 
+```sql
 insert into note (student_id, subject_id, note) values
     (1, 1, 15.5),
     (1, 2, 12.0),
@@ -77,12 +92,18 @@ insert into note (student_id, subject_id, note) values
     (4, 3, 11.5),
     (5, 4, 18.0),
     (5, 5, 16.5);
+```
 
----
+---r
 <!-- TODO -->
 Voici quelques exemples de requêtes SQL avec des conditions, des limites et du tri appliqués à la table "étudiant" :
 
 1. Sélectionner tous les étudiants dont le nom est "Doe" :
+
+```sql
+select * from student where 
+```
+
 
 2. Sélectionner tous les étudiants âgés de moins de 20 ans :
 
