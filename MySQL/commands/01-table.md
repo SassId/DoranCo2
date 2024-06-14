@@ -40,10 +40,29 @@ SHOW CREATE TABLE table_name;
 DESCRIBE table_name;
 ```
 
+### Alter the content of a Table:
+
+```sql
+ALTER TABLE table_name --alterations;
+```
+_i.e: ADD col_name to add a column_
+
+### Add a Foreign Key as a Constraint;
+
+```sql
+ALTER TABLE movie ADD CONSTRAINT fk_id_director FOREIGN KEY (id_director) REFERENCES director (id);
+```
+
 ### Delete a constraint:
 
 ```sql
 ALTER TABLE table_name DROP CONSTRAINT UNIQUE unique_constraint_title
+```
+
+### Join Tables:
+
+```sql
+SELECT col1_name, col2_name,.. FROM table1  JOIN table2 ON table1.columns = table2.column;
 ```
 
 ---
@@ -111,9 +130,5 @@ DROP TABLE test;
 
 ---
 
-### Add a Foreign Key as a Constraint;
 
-```sql
-ALTER TABLE movie ADD CONSTRAINT fk_id_director FOREIGN KEY (id_director) REFERENCES director (id);
-```
 
