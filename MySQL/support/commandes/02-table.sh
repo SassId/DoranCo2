@@ -1,4 +1,4 @@
-()# ? LDD : Langage de Définition de Données (DDL : Data Definition Language)
+# ? LDD : Langage de Définition de Données (DDL : Data Definition Language)
 # ? Le langage de définition de données (DDL) est utilisé pour définir la structure de la base de données.
 
 # Voici quelques-unes des principales commandes pour créer et modifier une base de données dans MySQL :

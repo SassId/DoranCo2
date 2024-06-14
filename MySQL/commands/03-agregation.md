@@ -40,7 +40,7 @@ select avg(note) from ville_notation;
 ```sql
 select avg(note), code_pays from ville_notation group by code_pays;
 ```
-
+---
 
 ```sql
 select * from ville_notation group by code_pays;
