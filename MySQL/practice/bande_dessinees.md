@@ -81,31 +81,25 @@ insert into bd (titre, id_auteur, id_editeur, annee_parution) values
     - Afficher toutes les bandes dessinées avec les informations complètes :
 
 ```sql
-select * from bd;
+select * from bd join auteur on id_auteur=auteur_id join editeur on id_editeur=editeur_id;
 ```
-
 
     - Afficher les bandes dessinées publiées par un éditeur spécifique (par exemple, "Casterman") :
 
-    ```sql
-select * from bd join editeur on id_editeur=editeur_id;
-
-
-
-select titre from bd where id_editeur=1;
-
+```sql
+select * from bd join auteur on id_auteur=auteur_id join editeur on id_editeur=editeur_id where nom='Casterman';
 ```
 
     - Afficher les bandes dessinées publiées après une certaine année (par exemple, après 1960) :
 
 ```sql
-select * from bd where annee_parution > 1960;
+select * from bd join auteur on id_auteur=auteur_id join editeur on id_editeur=editeur_id where annee_parution > 1960;
 ```
 
-    - Afficher les titres de bd avec leur auteur et leur éditeur:
+    - Afficher les titres de bd avec leur auteur et leur éditeur et l'année de parution:
 
 ```sql
-select titre, name, nom from bd join editeur on id_editeur=editeur_id join auteur on id_auteur=auteur_id;
+select titre, name, nom, annee_parution from bd join editeur on id_editeur=editeur_id join auteur on id_auteur=auteur_id;
 ```
 
 
