@@ -94,26 +94,50 @@ insert into note (student_id, subject_id, note) values
     (5, 5, 16.5);
 ```
 
----r
+---
+
 <!-- TODO -->
 Voici quelques exemples de requêtes SQL avec des conditions, des limites et du tri appliqués à la table "étudiant" :
 
 1. Sélectionner tous les étudiants dont le nom est "Doe" :
 
 ```sql
-select * from student where 
+select * from student where nom = 'doe';
 ```
-
 
 2. Sélectionner tous les étudiants âgés de moins de 20 ans :
 
+```sql
+select * from student where datediff(curdate(), date_naissance) < 20*365.25;
+```
+
+- _CURDATE() returns the current date._
+- _DATEDIFF(CURDATE(), date_naissance) calculates the difference in days between the current date and the student's date of birth._
+- _20 * 365.25 approximates 20 years in days, accounting for leap years._
+
 3. Sélectionner les 5 premiers étudiants dans l'ordre alphabétique des noms :
+
+```sql
+select * from student order by nom limit 5;
+```
 
 4. Sélectionner les étudiants par ordre décroissant de leur date de naissance :
 
+```sql
+select * from student order by date_naissance desc;
+```
+
 5. Sélectionner les étudiants dont l'adresse contient le mot "Street" et limiter les résultats à 3 :
 
+```sql
+select * from student where adresse like '%street%';
+```
+
 6. Sélectionner les étudiants dont le nom commence par "S" et trier les résultats par prénom :
+
+```sql
+select * from student where nom like 's%' order by prenom;
+```
 
 Ces exemples montrent comment appliquer des conditions, des limites et du tri dans vos requêtes SQL pour la table "student". N'hésitez pas à les ajuster en fonction de vos critères de recherche spécifiques.
 
@@ -123,7 +147,15 @@ Voici quelques exemples de requêtes SQL qui utilisent les fonctions MIN, MAX, C
 
 1. Sélectionner la note minimale, maximale et le nombre total de notes pour chaque matière :
 
+```sql
+select min(note), max(note), count(note), subject.nom from note join subject on note.subject_id = subject.id group by subject.nom;
+```
+
 2. Sélectionner les étudiants ayant une moyenne supérieure à 15 :
+
+```sql
+select student.*, subject.nom, avg(note) from student join note on student.id = note.student_id join subject on subject.id = note.subject_id group by note having avg(note) > 15;
+```
 
 3. Sélectionner le nombre d'étudiants ayant obtenu une note supérieure à 16 dans chaque matière :
 
