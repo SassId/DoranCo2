@@ -159,19 +159,37 @@ select student.*, subject.nom, avg(note) from student join note on student.id = 
 
 3. Sélectionner le nombre d'étudiants ayant obtenu une note supérieure à 16 dans chaque matière :
 
+```sql
+select count(student.id), subject.nom from student join note on student.id = note.student_id join subject on subject.id = note.subject_id where note > 16 group by subject.nom;
+```
+
 4. Sélectionner les matières ayant au moins cinq étudiants :
 
+```sql
+select subject.nom, count(student.id) from subject join note on subject.id = note.subject_id join student on student.id = note.student_id group by subject.nom having count(student.id) >= 5;
+```
+
 5. Sélectionner les étudiants ayant obtenu une note maximale dans chaque matière :
+
+```sql
+select student.*, max(note), subject.nom from student join note on student.id = note.student_id join subject on subject.id = note.subject_id group by subject.nom;
+```
+
+ 6. Bonus: Cette requête sélectionne les noms d'étudiants dont la date de naissance est postérieure au 1er janvier 2000, groupe les résultats par matière, filtre les groupes ayant plus de 2 étudiants, trie les résultats par nom et limite les résultats à 10:
+
+```sql
+
+```
 
 Ces exemples illustrent l'utilisation des fonctions MIN, MAX, COUNT, GROUP BY et HAVING pour effectuer des calculs et filtrer les données en fonction de certaines conditions.
 N'hésitez pas à les adapter en fonction de votre base de données et de vos besoins spécifiques.
 
 ---
 
-Cette requête sélectionne les noms d'étudiants dont la date de naissance est postérieure au 1er janvier 2000, groupe les résultats par nom, filtre les groupes ayant plus de 2 étudiants, trie les résultats par nom et limite les résultats à 10.
-
-
-
 ---
 
+select * from student join note on student.id = note.student_id;
 
+select * from student join note on student.id = note.student_id join subject on subject.id = note.subject_id;
+
+select student.nom, student.prenom, subject.nom, count(student.id) from student join note on student.id = note.student_id join subject on subject.id = note.subject_id where date_naissance > '2000-01-01' group by subject.nom having count(student.id) order by student.nom limit 10; 
