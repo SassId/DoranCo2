@@ -1,0 +1,1 @@
+nom_utilisateur, email, mot_de_passe, titre_anime, studio_production, annee_sortie, genre, description note,numero_episode, titre_episode, duree, date_sortie, commentaire_contenu, date_commentaire, progression

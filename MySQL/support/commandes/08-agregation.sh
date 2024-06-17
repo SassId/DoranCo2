@@ -43,3 +43,7 @@ FROM commandes
 GROUP BY city
 HAVING population >300000
 ORDER BY city;
+
+# FAIRE LA MOYENNE des notes sans compter les 1  par pays en excluant les moyenne inderieur à 2 trie par code pays
+
+

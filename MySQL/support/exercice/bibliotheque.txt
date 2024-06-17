@@ -1,0 +1,164 @@
+Voici un exercice de création d'une base de données pour gérer des livres avec des auteurs et des éditeurs :
+
+Créez la base de données "bibliotheque" :
+
+```sql
+    CREATE DATABASE bibliotheque;
+    USE bibliotheque;
+```
+
+Créez la table "auteurs" avec une clé primaire "id_auteur" :
+
+```sql
+    CREATE TABLE auteurs (
+        id_auteur INT PRIMARY KEY AUTO_INCREMENT,
+        nom VARCHAR(50) NOT NULL,
+        nationalite VARCHAR(50)
+    );
+```
+
+Créez la table "editeurs" avec une clé primaire "id_editeur" :
+
+```sql
+    CREATE TABLE editeurs (
+        id_editeur INT PRIMARY KEY AUTO_INCREMENT,
+        nom VARCHAR(50) NOT NULL,
+        adresse VARCHAR(100)
+    );
+```
+
+Créez la table "livres" avec les colonnes nécessaires, y compris les clés étrangères "id_auteur" et "id_editeur" :
+
+```sql
+    CREATE TABLE livres (
+        id_livre INT PRIMARY KEY AUTO_INCREMENT,
+        titre VARCHAR(100) NOT NULL,
+        annee_publication INT,
+        id_auteur INT,
+        id_editeur INT,
+        FOREIGN KEY (id_auteur) REFERENCES auteurs(id_auteur),
+        FOREIGN KEY (id_editeur) REFERENCES editeurs(id_editeur)
+    );
+```
+
+Insérez des données dans les tables :
+
+-- Table auteurs :
+
+```sql
+    INSERT INTO auteurs (nom, nationalite) VALUES
+    ('Hergé', 'Belge'),
+    ('René Goscinny', 'Français'),
+    ('Albert Uderzo', 'Français');
+```
+
+-- Table editeurs :
+
+```sql
+    INSERT INTO editeurs (nom, adresse) VALUES
+    ('Casterman', 'Bruxelles, Belgique'),
+    ('Dargaud', 'Paris, France'),
+    ('Lombard', 'Bruxelles, Belgique');
+```
+
+-- Table livres :
+
+```sql
+    INSERT INTO livres (titre, annee_publication, id_auteur, id_editeur) VALUES
+    ('Tintin au pays des Soviets', 1929, 1, 1),
+    ('Astérix le Gaulois', 1961, 2, 2),
+    ('Astérix et Cléopâtre', 1965, 2, 2),
+    ('Le Lotus bleu', 1936, 1, 1),
+    ('Astérix chez les Bretons', 1966, 2, 2),
+    ('Astérix chez les Romains', 1961, 2, 2),
+    ('Les Aventures de Tintin : Objectif Lune', 1953, 1, 1),
+    ('Astérix chez les Goths', 1963, 2, 2),
+    ('Astérix et les Normands', 1966, 2, 2),
+    ('Astérix et les Vikings', 1965, 3, 3);
+```
+
+Cet exercice crée une base de données "bibliotheque" avec trois tables : "auteurs", "editeurs" et "livresLes tables sont liées par des clés étrangères, et des données de démonstration sont insérées dans les tables.
+
+
+Exercice 1: Modifications de données
+
+Ajouter une nouvelle colonne "prix" de type DECIMAL à la table "livres" avec une valeur par défaut de 0 :
+
+```sql
+    ALTER TABLE livres
+    ADD COLUMN prix DECIMAL(8,2) DEFAULT 0;
+```
+
+
+Mettre à jour le prix du livre avec l'ID 1 pour le faire passer à 19.99 :
+
+```sql
+    UPDATE livres
+    SET prix = 19.99
+    WHERE id_livre = 1;
+```
+
+
+Supprimer le livre avec l'ID 3 de la table "livres" :
+
+```sql
+    DELETE FROM livres
+    WHERE id_livre = 3;
+```
+
+
+Exercice 2: Requêtes de sélection
+
+Sélectionner tous les livres avec leur titre et leur prix :
+
+```sql
+    SELECT titre, prix
+    FROM livres;
+```
+
+
+Sélectionner tous les livres publiés après l'année 2000 :
+
+```sql
+    SELECT *
+    FROM livres
+    WHERE annee_publication > 1960;
+```
+
+
+Sélectionner les auteurs distincts présents dans la table "livres" :
+
+```sql
+    SELECT DISTINCT id_auteur
+    FROM livres;
+```
+
+
+Exercice 3: Requêtes avec jointure
+
+Sélectionner tous les livres avec leur titre, nom de l'auteur et nom de l'éditeur :
+
+    SELECT livres.titre, auteurs.nom AS nom_auteur, editeurs.nom AS nom_editeur
+    FROM livres
+    JOIN auteurs ON livres.id_auteur = auteurs.id_auteur
+    JOIN editeurs ON livres.id_editeur = editeurs.id_editeur;
+
+
+Sélectionner les livres publiés par l'auteur avec l'ID 2 :
+
+    SELECT titre
+    FROM livres
+    WHERE id_auteur = 2;
+
+
+Sélectionner les livres publiés par l'éditeur avec l'ID 1 :
+
+    SELECT titre
+    FROM livres
+    WHERE id_editeur = 1;
+
+
+Ces exercices vous permettent de pratiquer les modifications de données et les requêtes de sélection courantes en SQL
+N'hésitez pas à les exécuter et à les expérimenter avec votre base de données pour vous familiariser davantage avec les différentes opérations.
+
+N'hésitez pas à me demander si vous avez des questions supplémentaires !

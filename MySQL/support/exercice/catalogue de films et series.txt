@@ -1,0 +1,50 @@
+Thème ludique : "Catalogue de films et séries"
+
+Voici une proposition de structure de base de données avec quelques tables pour ce thème :
+
+1. Table "Films":
+   - id_film (Clé primaire)
+   - titre
+   - réalisateur
+   - année_sortie
+   - genre
+   - durée
+   - note
+
+2. Table "Séries":
+   - id_serie (Clé primaire)
+   - titre
+   - créateur
+   - année_sortie
+   - genre
+   - nombre_saisons
+   - note
+
+3. Table "Acteurs":
+   - id_acteur (Clé primaire)
+   - nom
+   - date_naissance
+   - nationalité
+
+4. Table "Casting":
+   - id_casting (Clé primaire)
+   - id_film (Clé étrangère référençant la table "Films")
+   - id_serie (Clé étrangère référençant la table "Séries")
+   - id_acteur (Clé étrangère référençant la table "Acteurs")
+   - rôle
+
+5. Table "Utilisateurs":
+   - id_utilisateur (Clé primaire)
+   - nom_utilisateur
+   - email
+   - mot_de_passe
+
+6. Table "Favoris":
+   - id_favori (Clé primaire)
+   - id_utilisateur (Clé étrangère référençant la table "Utilisateurs")
+   - id_film (Clé étrangère référençant la table "Films")
+   - id_serie (Clé étrangère référençant la table "Séries")
+
+Ce thème de base de données permet de gérer un catalogue de films et de séries, avec des informations sur les films, les séries, les acteurs, les utilisateurs et leurs favoris.
+
+N'hésitez pas à personnaliser cette structure de base de données en ajoutant ou en modifiant des tables et des champs en fonction des fonctionnalités que vous souhaitez enseigner lors de votre cours de développement web.

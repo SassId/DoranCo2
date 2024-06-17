@@ -1,0 +1,97 @@
+Créer une base de donnees `library`
+CREATE DATABASE library;
+
+Utiliser la base de donnees `library`
+USE library;
+
+Créer une table `books` avec les colonnes suivantes :
+- id
+- title
+- isbn_10
+- author
+- price
+
+```sql
+CREATE TABLE books (
+    id int PRIMARY KEY AUTO_INCREMENT,
+    title varchar(255),
+    isbn_10 int NOT NULL UNIQUE,
+    author varchar(255),
+    price decimal(8,2)
+);
+```
+
+```sql
+INSERT INTO books (title, isbn_10, author, price) VALUES
+    ("Da Vinci Code", 2709626306, "Dan Brown", 20.5),
+    ("Inferno", 2909626306, "Dan Brown", 22.9),
+    ("Forteresse digitale", 2709626306, "Dan Brown", 20.5),
+    ("La jeune fille et la nuit", 2253237620, "Guillaume Musso", 21.9),
+    ("Tchoupi se brosse les dents", 2092589547, "Thierry Courtin", 5.7),
+    ("La Dernière Chasse", 2226439412, "Jean-Christophe Grangé", 22.9),
+    ("Le Signal", 2226319484, "Maxime Chattam", 23.9);
+```
+
+---------------------------------------
+
+1. Sélectionnez tous les livres dans la table "books" :
+
+```sql
+    SELECT * FROM books;
+```
+
+2. Sélectionnez le titre et l'auteur de tous les livres :
+
+```sql
+    SELECT title, author FROM books;
+```
+
+3. Sélectionnez les livres dont le prix est supérieur à 20 :
+
+```sql
+    SELECT * FROM books WHERE price > 20;
+```
+
+4. Sélectionnez les livres dont l'auteur est "Dan Brown" :
+
+```sql
+    SELECT * FROM books WHERE author = 'Dan Brown';
+```
+
+5. Sélectionnez les livres dont le titre contient le mot "la" (en ignorant la casse) :
+
+```sql
+    SELECT * FROM books WHERE title LIKE '%la%';
+```
+
+6. Sélectionnez les livres triés par prix, du moins cher au plus cher :
+
+```sql
+    SELECT * FROM books ORDER BY price ASC;
+```
+
+7. Sélectionnez le nombre total de livres dans la table "books" :
+
+```sql
+    SELECT COUNT(*) AS total_books FROM books;
+```
+
+8. Mettez à jour le prix du livre avec l'ID 1 pour le faire passer à 25.5 :
+
+```sql
+    UPDATE books SET price = 25.5 WHERE id = 1;
+```
+
+9. Supprimez le livre avec l'ID 3 de la table "books" :
+
+```sql
+    DELETE FROM books WHERE id = 3;
+```
+
+10. Sélectionnez le titre et le prix moyen de tous les livres :
+
+```sql
+    SELECT title, AVG(price) AS average_price FROM books GROUP BY title;
+```
+
+Ces exercices vous donneront une base pour pratiquer les requêtes SQL avec la base de données "library". N'hésitez pas à les adapter ou à en créer de nouveaux pour approfondir vos compétences en SQL.

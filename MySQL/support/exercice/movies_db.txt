@@ -1,0 +1,67 @@
+EXERCICE SQL
+
+Créer une base de données nommée "movies_db"
+
+    CREATE DATABASE movies_db;
+
+Sélectionnez la base de données nouvellement créée
+
+    USE movies_db;
+
+
+Créer une table nommée "movie" avec les champs suivants :
+
+    CREATE TABLE movie(
+        id int primary key auto_increment,
+        title varchar(255),
+        description text,
+        release_date date,
+        duration int,
+        rating int
+    );
+
+Créer une table nommée "actor" avec les champs suivants :
+
+    CREATE TABLE actor(
+        id int primary key auto_increment,
+        firstname varchar(255),
+        lastname varchar(255),
+        birthday date
+    );
+
+Créer une table nommée "movie_actor" avec les champs suivants :
+
+    CREATE TABLE movie_actor (
+        id int primary key auto_increment,
+        movie_id int,
+        actor_id int
+    );
+
+Ajouter une contrainte de clé étrangère sur le champ "movie_id" de la table "movie_actor" pour lier les deux tables
+
+Ajouter une contrainte de clé étrangère sur le champ "actor_id" de la table "movie_actor" pour lier les deux tables
+
+Créer une table nommée "director" avec les champs suivants :
+
+    CREATE TABLE director (
+        id int primary key auto_increment,
+        firstname varchar(255),
+        lastname varchar(255),
+        birthday date
+    );
+
+Modifier la table "movie" pour ajouter un champ "director_id" (int)
+
+Ajouter une contrainte de clé étrangère sur le champ "director_id" de la table "movie" pour lier les deux tables
+
+Ajouter un réalisateur dans la table "director" (prénom, nom, date de naissance)
+
+Ajouter un film dans la table "movie" (titre, description, date de sortie, durée, note, id du réalisateur)
+
+Ajouter un acteur dans la table "actor" (prénom, nom, date de naissance)
+
+Afficher tous les films avec le nom du réalisateur et le nom des acteurs
+
+Afficher tous les films avec le nom du réalisateur et le nom des acteurs, mais uniquement les films avec une note supérieure à 3
+
+Afficher tous les films avec le nom du réalisateur et le nom des acteurs, mais uniquement les films avec une note supérieure à 3 et une durée supérieure à 120 minutes

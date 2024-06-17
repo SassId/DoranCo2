@@ -5,32 +5,30 @@
 
 # Afficher les utilisateurs :
    SELECT user, host FROM mysql.user;
-   # Cette requête affiche la liste des utilisateurs présents dans la base de données.
 
 # Créer un utilisateur :
    CREATE USER 'nom_utilisateur'@'adresse_IP' IDENTIFIED BY 'mot_de_passe';
-   # Cette commande crée un nouvel utilisateur avec le nom spécifié, associé à une adresse IP ou un hôte.
-   # Le mot de passe est également spécifié.
+
+# Pour autoriser l'accès depuis n'importe quelle adresse IP :
+   CREATE USER 'nom_utilisateur'@'%' IDENTIFIED BY 'mot_de_passe';
+
+# Modifier le mot de passe d'un utilisateur :
+   ALTER USER 'nom_utilisateur'@'adresse_IP' IDENTIFIED BY 'nouveau_mot_de_passe';
 
 # Supprimer un utilisateur :
    DROP USER 'nom_utilisateur'@'adresse_IP';
-   # Cette commande supprime un utilisateur spécifié de la base de données.
 
 # Accorder tous les privilèges à un utilisateur :
    GRANT ALL PRIVILEGES ON nom_base_de_donnees.* TO 'nom_utilisateur'@'adresse_IP';
-   # Cette commande accorde tous les privilèges sur toutes les tables d'une base de données à un utilisateur.
 
 # Accorder des privilèges à un utilisateur :
    GRANT privilèges ON nom_base_de_donnees.table TO 'nom_utilisateur'@'adresse_IP';
-   # Cette commande accorde des privilèges spécifiques à un utilisateur sur une base de données ou une table spécifique.
 
-# Modifier le mot de passe d'un utilisateur :
-   SET PASSWORD FOR 'nom_utilisateur'@'adresse_IP' = 'nouveau_mot_de_passe';
-   # Cette commande permet de changer le mot de passe d'un utilisateur existant.
+# Révoquer tous les privilèges d'un utilisateur :
+   REVOKE ALL PRIVILEGES ON nom_base_de_donnees.table FROM 'nom_utilisateur'@'adresse_IP';
 
 # Révoquer des privilèges d'un utilisateur :
    REVOKE privilèges ON nom_base_de_donnees.table FROM 'nom_utilisateur'@'adresse_IP';
-   # Cette commande révoque les privilèges spécifiques d'un utilisateur sur une base de données ou une table.
 
 
 # Voici quelques exemples de privilèges couramment utilisés dans MySQL :
