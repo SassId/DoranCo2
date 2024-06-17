@@ -175,10 +175,10 @@ select subject.nom, count(student.id) from subject join note on subject.id = not
 select student.*, max(note), subject.nom from student join note on student.id = note.student_id join subject on subject.id = note.subject_id group by subject.nom;
 ```
 
- 6. Bonus: Cette requête sélectionne les noms d'étudiants dont la date de naissance est postérieure au 1er janvier 2000, groupe les résultats par matière, filtre les groupes ayant plus de 2 étudiants, trie les résultats par nom et limite les résultats à 10:
+ 6. Bonus: Cette requête sélectionne les nombre d'étudiants dont la date de naissance est postérieure au 1er janvier 2000, groupe les résultats par matière, filtre les groupes ayant plus de 2 étudiants, trie les résultats par nom de matiere et limite les résultats à 10:
 
 ```sql
-
+select count(student.id) from student join note on student.id = note.student_id join subject on subject.id = note.subject_id where date_naissance > '2000-01-01' group by subject.nom having count(student.id) > 2 order by subject.nom limit 10; 
 ```
 
 Ces exemples illustrent l'utilisation des fonctions MIN, MAX, COUNT, GROUP BY et HAVING pour effectuer des calculs et filtrer les données en fonction de certaines conditions.
@@ -186,10 +186,3 @@ N'hésitez pas à les adapter en fonction de votre base de données et de vos be
 
 ---
 
----
-
-select * from student join note on student.id = note.student_id;
-
-select * from student join note on student.id = note.student_id join subject on subject.id = note.subject_id;
-
-select student.nom, student.prenom, subject.nom, count(student.id) from student join note on student.id = note.student_id join subject on subject.id = note.subject_id where date_naissance > '2000-01-01' group by subject.nom having count(student.id) order by student.nom limit 10; 
