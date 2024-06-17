@@ -109,6 +109,8 @@ select * from student where nom = 'doe';
 
 ```sql
 select * from student where datediff(curdate(), date_naissance) < 20*365.25;
+or
+select * from student where date_naissance > date_sub(curdate(), interval 20 year)
 ```
 
 - _CURDATE() returns the current date._
@@ -130,7 +132,7 @@ select * from student order by date_naissance desc;
 5. Sélectionner les étudiants dont l'adresse contient le mot "Street" et limiter les résultats à 3 :
 
 ```sql
-select * from student where adresse like '%street%';
+select * from student where adresse like '%street%' limit 3;
 ```
 
 6. Sélectionner les étudiants dont le nom commence par "S" et trier les résultats par prénom :
