@@ -30,6 +30,9 @@
 # Révoquer des privilèges d'un utilisateur :
    REVOKE privilèges ON nom_base_de_donnees.table FROM 'nom_utilisateur'@'adresse_IP';
 
+# Show Privileges :
+SHOW GRANTS FOR 'nom_utilisateur'@'adresse_IP'
+
 
 # Voici quelques exemples de privilèges couramment utilisés dans MySQL :
    ALL PRIVILEGES : Révoque tous les privilèges, ce qui réduit l'utilisateur à un état sans privilèges sur la base de données ou la table spécifiée.
