@@ -216,12 +216,30 @@ select titre_anime, note from anime where note > 8 order by note desc limit 5;
 -   Affichez les utilisateurs et le nombre d'animes dans leurs listes de lecture, triés par nombre d'animes décroissant.
 
 ```sql
-
+select nom_utilisateur, count(id_anime) from utilisateur join liste_de_lecture on utilisateur.id_utilisateur = liste_de_lecture.id_utilisateur group by liste_de_lecture.id_utilisateur order by count(id_anime) desc;
 ```
 
 -   Affichez les 3 épisodes les plus longs avec le nom de l'anime et la durée de l'épisode.
+
+```sql
+select titre_anime, titre_episode, duree from episode join anime on episode.id_anime = anime.id_anime order by duree desc limit 3;
+```
+
 -   Affichez les utilisateurs ayant laissé au moins 5 commentaires, triés par nombre de commentaires décroissant.
+
+```sql
+select nom_utilisateur from utilisateur join commentaire on utilisateur.id_utilisateur = commentaire.id_utilisateur having count(id_commentaire) >= 5 order by count(id_commentaire) desc;
+```
+
+
 -   Affichez les animes et leur nombre total d'épisodes diffusés après 2020, triés par nombre d'épisodes décroissant.
+
+```sql
+select titre_anime, count(titre_episode) from anime join episode on anime.id_anime = episode.id_anime where episode.date_sortie like '2020%' order by count(titre_episode) desc;
+```
+```sql
+select titre_anime, count(id_episode) from anime join episode on anime.id_anime = episode.id_anime where episode.date_sortie > '2000-01-01' group by anime.id_anime order by count(titre_episode) desc;
+```
 
 ## Exercice
 
