@@ -184,7 +184,7 @@ CREATE TABLE Commentaire (
 -   Affichez les titres des animes qui appartiennent au genre "Action".
 
 ```sql
-    select * from anime where genre = 'action';
+    select titre_anime from anime where genre = 'action';
 ```
 
 -   Affichez le nombre total d'épisodes pour chaque anime.
@@ -228,17 +228,14 @@ select titre_anime, titre_episode, duree from episode join anime on episode.id_a
 -   Affichez les utilisateurs ayant laissé au moins 5 commentaires, triés par nombre de commentaires décroissant.
 
 ```sql
-select nom_utilisateur from utilisateur join commentaire on utilisateur.id_utilisateur = commentaire.id_utilisateur having count(id_commentaire) >= 5 order by count(id_commentaire) desc;
+select nom_utilisateur from utilisateur join commentaire on utilisateur.id_utilisateur = commentaire.id_utilisateur group by id_utilisateur having count(id_commentaire) >= 5 order by count(id_commentaire) desc;
 ```
 
 
 -   Affichez les animes et leur nombre total d'épisodes diffusés après 2020, triés par nombre d'épisodes décroissant.
 
 ```sql
-select titre_anime, count(titre_episode) from anime join episode on anime.id_anime = episode.id_anime where episode.date_sortie like '2020%' order by count(titre_episode) desc;
-```
-```sql
-select titre_anime, count(id_episode) from anime join episode on anime.id_anime = episode.id_anime where episode.date_sortie > '2000-01-01' group by anime.id_anime order by count(titre_episode) desc;
+select titre_anime, count(id_episode) from anime join episode on anime.id_anime = episode.id_anime where episode.date_sortie > '20-01-01' group by anime.id_anime order by count(titre_episode) desc;
 ```
 
 ## Exercice
