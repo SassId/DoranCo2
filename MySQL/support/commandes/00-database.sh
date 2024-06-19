@@ -22,10 +22,11 @@
    USE nom_bdd;
 
 # Suppression d'une base de données :
-   DROP DATABASE nom_bdd;
+   DROP DATABASE nom_db;
 
 # Sauvergarde de la base de données :
-   mysqldump -u nom_utilisateur -p nom_bdd > db.sql
+   mysqldump -u nom_utilisateur -p nom_db > db.sql
+# ! commande à executer hors de mysql
 
 # * Ce ne sont là que quelques-unes des commandes de base pour MySQL.
 # * Il existe de nombreuses autres fonctionnalités et commandes avancées disponibles pour interagir avec une base de données MySQL.
