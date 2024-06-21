@@ -4,7 +4,7 @@ function App() {
 
   return (
     <div>
-      <h1>Russian Roulette</h1>
+      <h1>🔫Russian Roulette</h1>
     </div>
   )
    
