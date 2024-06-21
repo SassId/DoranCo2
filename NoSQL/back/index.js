@@ -1,6 +1,6 @@
 import express from "express";
 import mongoose from "mongoose";
-import { createUser } from "./database/users.js";
+import { createUser, getAllUsers } from "./database/users.js";
 
 const app = express();
 const port = 3000;
@@ -33,6 +33,11 @@ app.post("/api/users", async (req, res) => {
   const newUser = await createUser(firstname, lastname);
   // return a response of success
   return res.json({ message: "pending" });
+});
+
+app.get("/api/users", async (req, res) => {
+  const users = await getAllUsers();
+  return rep.json(users);
 });
 
 app.listen(port, () => {

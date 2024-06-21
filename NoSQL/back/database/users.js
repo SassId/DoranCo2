@@ -11,3 +11,8 @@ export async function createUser(firstname, lastname) {
   const newUser = new UsersModel({ firstname, lastname });
   newUser.save();
 }
+
+export async function getAllUsers() {
+  const users = UsersModel.find();
+  return users;
+}
