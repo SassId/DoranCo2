@@ -9,7 +9,7 @@ const UsersModel = mongoose.model("users", UsersSchema);
 
 export async function createUser(firstname, lastname) {
   const newUser = new UsersModel({ firstname, lastname });
-  newUser.save();
+  return await newUser.save();
 }
 
 export async function getAllUsers() {

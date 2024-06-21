@@ -32,12 +32,12 @@ app.post("/api/users", async (req, res) => {
   // rec the new user in mongodb
   const newUser = await createUser(firstname, lastname);
   // return a response of success
-  return res.json({ message: "pending" });
+  return res.json(newUser);
 });
 
 app.get("/api/users", async (req, res) => {
   const users = await getAllUsers();
-  return rep.json(users);
+  return res.json(users);
 });
 
 app.listen(port, () => {

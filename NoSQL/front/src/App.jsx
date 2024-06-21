@@ -1,16 +1,18 @@
 import "./App.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import UsersList from "./components/UserForm";
 import UserForm from "./components/UserForm";
 
 function App() {
+  const [users, setUsers] = useState([]);
+
   useEffect(() => {
-    async function getPong() {
-      const response = await fetch("/api/ping");
+    async function getUsers() {
+      const response = await fetch("/api/users");
       const data = await response.json();
-      console.log(data);
+      setUsers(data);
     }
-    getPong();
+    getUsers();
   }, []);
 
   async function addUser(firstname, lastname) {
@@ -23,12 +25,20 @@ function App() {
       },
     });
     console.log(response);
+    const data = await response.json();
+    setUsers([...users, data]);
   }
 
   return (
     <div>
       <h1>🔫Russian Roulette</h1>
       <UserForm onSubmit={addUser}></UserForm>
+      {users.map((user) => (
+        <div key={user._id}>
+          <p>{user.firstname}</p>
+          <p>{user.lastname}</p>
+        </div>
+      ))}
     </div>
   );
 }
