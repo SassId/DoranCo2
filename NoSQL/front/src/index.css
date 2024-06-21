@@ -12,3 +12,8 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.inputError {
+  color: red;
+  font-size: 0.8em;
+}
