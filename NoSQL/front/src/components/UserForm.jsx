@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function UserForm() {
+export default function UserForm({ onSubmit }) {
   const [firstname, setFirstame] = useState("");
   const [firstnameError, setFirstameError] = useState("");
 
@@ -19,7 +19,7 @@ export default function UserForm() {
 
   async function submitForm() {
     if (firstname !== "" && lastname !== "") {
-      alert(firstname + " " + lastname);
+      onSubmit(firstname, lastname);
       return;
     }
 

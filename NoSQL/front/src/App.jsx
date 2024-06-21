@@ -13,10 +13,22 @@ function App() {
     getPong();
   }, []);
 
+  async function addUser(firstname, lastname) {
+    const user = { firstname, lastname };
+    const response = await fetch("/api/users", {
+      method: "POST",
+      body: JSON.stringify(user),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    console.log(response);
+  }
+
   return (
     <div>
       <h1>🔫Russian Roulette</h1>
-      <UserForm></UserForm>
+      <UserForm onSubmit={addUser}></UserForm>
     </div>
   );
 }
