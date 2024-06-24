@@ -280,6 +280,12 @@
     echo str_replace('Jack', 'Joe', $message);
     echo '<br>';
 
+    // * To lowercase:
+    echo strtolower($message);
+
+    // * To uppercase:
+    echo strtoupper($message);
+
     ?>
 
 
