@@ -1,0 +1,6 @@
+2 pages : contact, home
+same header and footer
+organize with cut and include to avoid repeat
+make the meta title different:
+    - Welcome to the Contact page
+    - Welcome to the Home page

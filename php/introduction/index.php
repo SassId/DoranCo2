@@ -282,11 +282,62 @@
 
     // * To lowercase:
     echo strtolower($message);
+    echo '<br>';
+
 
     // * To uppercase:
     echo strtoupper($message);
+    echo '<br>';
 
+    //  * PHP into HTML:
+    $vehicules = ['motorbike', 'car', "boat", 'jet'];
+
+    echo '<select name="" id="">';
+    foreach ($vehicules as $vehicule) {
+        echo '<option value="' . $vehicule . '">' . $vehicule . '</option>';
+    };
+    echo '</select>';
+
+    echo '<br>'
     ?>
+
+    <!-- alternative: -->
+    <select name="" id="">
+        <?php foreach ($vehicules as $vehicule) { ?>
+            <option value="<?php echo $vehicule; ?>"><?php echo $vehicule; ?></option>
+        <?php } ?>
+    </select>
+    <br>
+
+    <!-- short version: -->
+    <select name="" id="">
+        <?php foreach ($vehicules as $vehicule) { ?>
+            <option value="<?= $vehicule; ?>"><?= $vehicule; ?></option>
+        <?php } ?>
+    </select>
+
+    <h2>File Inclusions</h2>
+    <?php
+    include './include.php';
+    require './include.php';
+
+    echo $doranco
+    ?>
+
+    <h2>$_GET</h2>
+
+    <?php
+    $firstname = 'roo';
+    $firstname = urlencode($firstname);
+
+    $lastname = 'rogers';
+    $lastname = urlencode($lastname);
+
+    $address = '225 cypress pond road';
+    $address = urlencode($address);
+    ?>
+
+    <a href="./get.php?firstname=<?= $firstname ?>&lastname=<?= $lastname ?>&address=<?= $address ?>">Go to Get</a>
 
 
 </body>
