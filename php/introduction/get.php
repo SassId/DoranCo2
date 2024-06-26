@@ -14,6 +14,7 @@
     < <!-- <?= var_dump($_GET); ?> -->
 
         <?php
+        // ! isset checks if the variable exists
         if (isset($_GET['firstname']) && isset($_GET['lastname']) && isset($_GET['address'])) {
             $firstname = urldecode($_GET['firstname']);
             $firstname = htmlspecialchars($nom);

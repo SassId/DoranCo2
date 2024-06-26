@@ -257,9 +257,6 @@
     $description = "Indiana Jones reçoit la visite surprise de sa filleule Helena Shaw, qui est à la recherche d'un artefact rare que son père a confié à Indiana par le passé : le fameux cadran d'Archimède, une relique qui aurait le pouvoir de localiser les fissures temporelles.";
 
     // *Trims a string with parameters (start, end, addon):
-
-
-
     $extract = mb_strimwidth($description, 0, 100, '...');
     echo $extract;
     echo '<br>';
