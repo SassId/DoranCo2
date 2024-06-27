@@ -1,17 +1,52 @@
-<!-- CREER UNE BASE DE DONNEE library_db -->
-<!-- CREER UNE TABLE book -->
-<!-- id, nom, description, annee_parution, id_auteur(clé etrangere) -->
+<?php
+include_once './src/repository/book.php';
+?>
 
-<!-- CREER UNE TABLE author -->
-<!-- id, nom, prenom, pays_origine, date_naissance -->
+<!DOCTYPE html>
+<html lang="en">
 
-<!-- INSERER DES DONNEE -->
-<!-- 10 livres et 4 auteurs -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Library</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
 
-<!-- AFFICHER LES LIVRES AVEC LEURS AUTEURS -->
+<body>
+    <main>
+        <h1>📙Digital Library📙</h1>
 
-SELECT title, firstname, lastname FROM book JOIN author ON id_author = author.id;
+        <!-- <pre>
+        <?php
+        var_dump($books);
 
-<!-- AFFICHER LE NOMBRE DE LIVRES ECRIT PAR CHAQUE AUTEUR -->
+        // or
+        print_r($books)
+        ?>
+    </pre> -->
 
-select count(book.id), firstname, lastname from book join author on id_author = author.id group by lastname;
+        <!-- Display all the book in a div with:
+ book title : h2
+ book description: p
+ book publication date: p -->
+        <div class="container">
+            <?php foreach ($books as $book) { ?>
+                <div class="card">
+                    <h2><?= $book['title'] ?></h2>
+                    <p><?= mb_strimwidth($book['description'], 0, 50, '...') ?></p>
+                    <p><?= $book['date_of_publication'] ?></p>
+                    <?php $bookID = $book['id'] ?>
+                    <a href="./views/details.php?id=<?= $bookID ?>">Details</a>
+                </div>
+            <?php } ?>
+        </div>
+
+        <!-- <pre>
+        <?php print_r($book) ?>
+        </pre> -->
+
+
+    </main>
+</body>
+
+</html>

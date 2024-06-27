@@ -336,6 +336,49 @@
 
     <a href="./get.php?firstname=<?= $firstname ?>&lastname=<?= $lastname ?>&address=<?= $address ?>">Go to Get</a>
 
+    <h2>Object Oriented</h2>
+
+    <?php
+
+    class Hero
+    {
+        public $alias;
+        public $health = 100;
+
+
+        public function regenarate()
+        {
+            $this->health = $this->health + 10;
+        }
+    }
+
+    $batman = new Hero();
+
+    debug($batman);
+
+    echo $batman->alias = 'Batman';
+    echo '<br>';
+    echo $batman->health;
+    echo '<br>';
+
+    $batman->regenarate();
+
+    debug($batman);
+
+    $superman = new Hero('f');
+
+    $superman->alias = 'Superman';
+    $superman->regenarate();
+    $superman->regenarate();
+
+    // or
+    // only possible if health property is not private
+    // $superman->health = 120;
+
+
+    debug($superman)
+
+    ?>
 
 </body>
 
