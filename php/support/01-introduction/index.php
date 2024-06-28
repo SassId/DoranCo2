@@ -115,9 +115,9 @@
 
     // Déclarer 3 variables contenant : bleu, blanc, rouge
     // Afficher bleu-blanc-rouge (avec les tirets) en mettant le texte de chaque couleur dans des variables.
-    $blue = 'Bleu';
+    $blue  = 'Bleu';
     $white = 'Blanc';
-    $red = 'Rouge';
+    $red   = 'Rouge';
 
     echo $blue . '-' . $white . '-' . $red . '<br>';
     echo "$blue-$white-$red <br>";
@@ -126,12 +126,16 @@
 
 
     /* --------------------------------- */
-    echo '<h2>Les constantes et les constantes magiques</h2>';
+    echo '<h2>Les constantes</h2>';
     /* --------------------------------- */
 
     // Une constante permet de sauvegarder une valeur sauf que celle-ci ne peut pas être modifiée
     // Utile pour conserver les parametres de la base de donnée
     // Par convention, une constante se déclare toujours en majuscule
+
+    /* --------------------------------- */
+    echo '<h3>Déclaration de constantes</h3>';
+    /* --------------------------------- */
     define("CAPITAL", "Paris");
     const PAYS = 'France';
     echo CAPITAL;
@@ -139,13 +143,18 @@
     echo PAYS;
     echo '<br>';
 
-    // Les constantes predefinies :
+    /* --------------------------------- */
+    echo '<h3>Les constantes prédéfinies</h3>';
+    /* --------------------------------- */
     echo 'Version de PHP : ' . PHP_VERSION . '<br>'; // Affiche la version de PHP
     echo 'Système d\'exploitation du serveur : ' . PHP_OS . '<br>'; // Affiche le système d'exploitation du serveur
 
-    echo PHP_INT_MAX . '<br>'; // Affiche la valeur maximale d'un entier
-    echo PHP_INT_MIN . '<br>'; // Affiche la valeur minimale d'un entier
+    echo 'La valeur maximal que peut contenir un entier : ' . PHP_INT_MAX . '<br>'; // Affiche la valeur maximale d'un entier
+    echo 'La valeur minimal que peut contenir un entier : ' . PHP_INT_MIN . '<br>'; // Affiche la valeur minimale d'un entier
 
+    /* --------------------------------- */
+    echo '<h3>Les constantes magiques</h3>';
+    /* --------------------------------- */
     // Les constantes magiques sont des constantes prédéfinies dans le langage qui changent de valeur en fonction du contexte
     echo 'Chemin du fichier courant : ' . __FILE__ . '<br>'; // Affiche le chemin complet vers le fichier courant
     echo 'Numero de la ligne de code : ' . __LINE__ . '<br>'; // Affiche le numéro de la ligne courante
@@ -164,8 +173,7 @@
     // Ces valeurs peuvent être de n'importe quel type et possèdent un indice par défaut dont la numérotation commence à 0.
 
     $liste = ['France', 'Italie', 'Espagne', 'Portugal'];
-    echo $liste[3];
-    print $liste[3] . '<br>';
+    echo $liste[3] . '<br>';
 
     echo '<pre>';
     var_dump($liste); // Affiche le contenu du tableau avec le type des valeurs
@@ -179,40 +187,31 @@
 
     // Autre façon de déclarer un tableau ARRAY :
     $liste2 = array('France', 'Italie', 'Espagne', 'Portugal');
-    echo $liste2[0];
 
     $liste2[] = 'Algerie'; // Les [] vides permettent d'ajouter une valeur à la fin du tableau
     echo '<pre>';
     var_dump($liste2);
     echo '</pre>';
 
-    echo '<br>';
-
-    echo '<pre>';
-    print_r($liste2);
-    echo '</pre>';
-
     /* --------------------------------- */
     echo '<h3>Les tableaux associatifs</h3>';
     /* --------------------------------- */
 
-    $user = [
-        'prenom' => 'Rachid',
-        'nom' => 'EDJEKOUANE',
-        'age' => 40,
-        'telephone' => '06 56 87 45 36'
-    ];
+    $user = ['prenom' => 'Rachid', 'nom' => 'EDJEKOUANE', 'age' => 40, 'telephone' => '06 56 87 45 36'];
 
-    // Bonjour je m'appelle rachid edjekouane, j'ai 40 ans et mon numéro de téléphone est le  : 06 56 87 45 36
+    echo '<pre>';
+    var_dump($user);
+    echo '</pre>';
+
     echo 'Bonjour, je m\'appelle ' . $user['prenom'] . ' ' . $user['nom'] . ', j\'ai ' . $user['age'] . ' ans et mon numéro de téléphone est le : ' . $user['telephone'];
 
     /* --------------------------------- */
-    echo '<h3>implode()</h3>';
+    echo '<h3>La fonction implode()</h3>';
     /* --------------------------------- */
 
     // implode() permet de transformer un tableau en chaine de caractères.
     $animals = ['chien', 'chat', 'oiseau', 'lapin', 'hamster'];
-    echo implode(' ', $animals);
+    echo 'Mes animaux péférés : ' . implode(' ', $animals);
 
 
     /* --------------------------------- */
@@ -421,13 +420,14 @@
 
 
     // ---------------------------------
-    echo '<h3>la boucle foreach()</h3>';
+    echo '<h3>Boucle foreach()</h3>';
     // ---------------------------------
     foreach ($animals as $animal) {
         echo $animal . '<br>';
     }
 
     $voiture = ['couleur' => 'jaune', 'modele' => 'bmw', 'annee' => 2018];
+
     foreach ($voiture as $key => $prop) {
         echo $key . ' : ' . $prop . '<br>';
     }
@@ -549,16 +549,16 @@
     echo '<h3>$_GET[]</h3>';
     /* --------------------------------- */
 
-    // $_GET :
-    var_dump($_GET); // $_GET : Contient les informations envoyées en paramètre dans l'URL
+    // $_GET est une superglobale qui permet de récupérer des informations envoyées en paramètre dans l'URL
+    var_dump($_GET);
 
 
     /* --------------------------------- */
     echo '<h3>$_POST[]</h3>';
     /* --------------------------------- */
 
-    // $_POST
-    var_dump($_POST); // $_POST : Contient des informations envoyées en paramètre dans le corps de la requête HTTP
+    // $_POST est une superglobale qui permet de récupérer des informations envoyées en paramètre dans le corps de la requête HTTP
+    var_dump($_POST);
 
 
     /* --------------------------------- */
@@ -612,7 +612,6 @@
 
     // require 'inclus.php'; // Le fichier est obligatoire pour le fonctionnement du site. Si le fichier n'est pas trouvé, require génère une erreur fatale et stoppe l'exécution du code.
     // include 'inclus.php'; // Le fichier est facultatif pour le fonctionnement du site. Si le fichier n'est pas trouvé, include génère une erreur de type warning et poursuit l'exécution du code.
-
     include './include.inc.php';
     require './include.inc.php';
 
@@ -633,7 +632,7 @@
 
     class Hero
     {
-        public $pseudo = 'Tintin'; // Propriété "pseudo"
+        public $pseudo; // Propriété "pseudo"
         private $vie = 100; // Propriété "vie"
 
         public function regenerer() // Méthode "regenerer"
@@ -643,12 +642,15 @@
     }
 
     $hero = new Hero();
+    $hero->pseudo = 'Batman';
 
     echo $hero->pseudo;
-    // echo $hero->vie;
+    // echo $hero->vie; // Erreur : la propriété est privée
+    $hero->regenerer();
 
     // $hero2 est un objet de la classe "Hero". C'est une instance de la classe "Hero".
     $hero2 = new Hero();
+    $hero->pseudo = 'Superman';
 
     ?>
 
