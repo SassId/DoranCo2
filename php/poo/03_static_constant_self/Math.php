@@ -26,33 +26,74 @@ Testez chaque méthode statique de la classe Mathematique pour vous assurer qu'e
 
 class Math
 {
+    /**
+     * @param float $x
+     * @param float $y
+     * 
+     * @return float
+     */
     public static function add(float $x, float $y): float
     {
         return $x + $y;
     }
 
-    public static function divide(float $x, float $y): float
-    {
-        
-        return $x / $y;
-    }
-
+    
+    /**
+     * @param float $x
+     * @param float $y
+     * 
+     * @return float
+     */
     public static function substract(float $x, float $y): float
     {
         return $x - $y;
     }
+    
+    /**
+     * @param float $x
+     * @param float $y
+     * 
+     * @return [type]
+     */
+    public static function divide(float $x, float $y): float | string
+    {
+        // if(self::isNull($y)) {
 
+        // return "can't divide by zero";
+        // }
+        //  return $x / $y;
+
+        if(self::isNull($y)) {
+            return $x / $y;
+        }
+        return "can't divide by zero";
+    }
+    /**
+     * @param float $x
+     * @param float $y
+     * 
+     * @return float
+     */
     public static function multiply(float $x, float $y): float
     {
         return $x * $y;
     }
 
-    private static function isNull(float $x)
+    
+    /**
+     * @param float $x
+     * 
+     * @return bool
+     */
+    private static function isNull(float $x):bool
     {
-        if ($x == 0) {
-            return false;
-        }
+        // if ($x == 0) {
+        //     return true;
+        // }
 
-        return true;
+        // return false;
+
+        // or
+        return $x != 0;
     }
 }
