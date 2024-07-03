@@ -2,6 +2,7 @@
 
 require_once './Article.php';
 require_once './Conserve.php';
+require_once './Aliment.php';
 
 $article = new Article("Chaise", 49.99);
 
@@ -23,3 +24,8 @@ $boiteConserve->setListExcipient(['E876', 'E4554']);
 echo $boiteConserve->displayExcipient();
 echo '<br>';
 echo $boiteConserve->displayProduct();
+echo '<br>';
+
+$cheese = new Aliment('fromage de chèvre', 12.99, '12-12-2025');
+
+echo $cheese->displayProduct();

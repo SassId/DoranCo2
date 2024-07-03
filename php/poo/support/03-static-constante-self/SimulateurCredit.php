@@ -10,7 +10,7 @@ class SimulateurCredit
     /**
      * @var float
      */
-    private static float $quotient = 0.2;
+    public static float $quotient = 0.2;
 
     /**
      * @param int $pret

@@ -252,3 +252,16 @@ unset($naruto);
 
 // Une constante est une valeur qui ne peut pas être modifiée.
 // Une constante est statique.
+
+/*------------------------------------*\
+    # HÉRITAGE
+\*------------------------------------*/
+
+// L'héritage permet de créer une classe enfant qui hérite des propriétés et des méthodes d'une classe parent.
+// L'héritage permet de créer une classe enfant qui peut avoir des propriétés et des méthodes supplémentaires.
+
+/*------------------------------------*\
+    # POLYMORPHISME
+\*------------------------------------*/
+
+// Le polymorphisme permet de redéfinir une méthode dans une classe enfant.
