@@ -47,15 +47,7 @@ class Books
      * @var string
      */
     public string $title;
-
-    /**
-     * @var string
-     */
     public string $author;
-
-    /**
-     * @var int
-     */
     public int $yearOfPublication = 1900;
 
     /**
@@ -140,27 +132,6 @@ class Manga
      */
     private string $author;
 
-    public function __construct($titre, $auteur)
-    {
-        $this->title = $titre;
-        $this->author = $auteur;
-    }
-
-    public function __destruct()
-    {
-        echo 'la variable a été detruite';
-    }
-
-    private static function hello()
-    {
-        return 'salut';
-    }
-
-    public function bonjour()
-    {
-        return  self::hello() . 'tout le monde';
-    }
-
     /**
      * @return string
      */
@@ -208,16 +179,11 @@ class Manga
     }
 }
 
-$naruto = new Manga('dragon ball', 'yamamoto');
-$naruto->setTitle("naruto");
-$naruto->setAuthor("Masashi Kishimoto");
-echo $naruto->read();
-echo $naruto->bonjour();
-
-
+$Naruto = new Manga();
+$Naruto->setTitle("Naruto");
+$Naruto->setAuthor("Masashi Kishimoto");
 echo '<br>';
-echo '<br>';
-unset($naruto);
+echo $Naruto->read();
 
 /*------------------------------------*\
     # GETTER | # SETTER
