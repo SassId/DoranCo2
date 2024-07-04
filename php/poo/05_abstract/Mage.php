@@ -1,8 +1,9 @@
 <?php
 
 require_once './Player.php';
+require_once '../06_interface/Healing.php';
 
-class Mage extends Player
+class Mage extends Player implements Healing
 {
     /**
      * @var int
@@ -46,5 +47,14 @@ class Mage extends Player
         parent::hit();
         parent::hit();
         parent::hit();
+    }
+
+    public function revive(): void
+    {
+    }
+
+    public function feed(int $food): int
+    {
+        return $n;
     }
 }
