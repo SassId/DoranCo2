@@ -1,5 +1,12 @@
 <?php
 
+// Une classe abstraite est une classe qui ne peut pas être instanciée
+// Une classe abstraite peut contenir des méthodes abstraites
+// Elle sert de modèle à d'autres classes qui en hériteront
+
+// Une méthode abstraite est une méthode qui n'a pas de contenu
+// Lorsqu'une classe hérite d'une classe abstrainte, elle doit obligatoirement redéfinir les méthodes abstraites de la classe mère
+
 abstract class Player
 {
     /**
@@ -94,8 +101,5 @@ abstract class Player
         return $this;
     }
 
-    public function hit(): void
-    {
-        $this->life = $this->life - 10;
-    }
+    abstract protected function hit();
 }
