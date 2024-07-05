@@ -67,15 +67,20 @@ Enfin, créer une instance de 'User' et démarrer les véhicules 'Peugeot' et 'R
 
 <?php
 
+require_once './Utils/Autoloader.php';
+
+use App\Utils\Autoloader;
 use App\Entity\Peugeot;
 use App\Entity\Renault;
 use App\Entity\User;
 
-require_once './Utility/Engine.php';
-require_once './Abstract/Vehicule.php';
-require_once './Entity/User.php';
-require_once './Entity/Peugeot.php';
-require_once './Entity/Renault.php';
+Autoloader::autoload();
+
+// require_once './Utility/Engine.php';
+// require_once './Abstract/Vehicule.php';
+// require_once './Entity/User.php';
+// require_once './Entity/Peugeot.php';
+// require_once './Entity/Renault.php';
 
 $voiture1 = new Renault();
 $voiture2 = new Peugeot();
@@ -115,3 +120,5 @@ echo '<br>';
 
 echo $voiture2->accident($user2, false);
 echo '<br>';
+
+
