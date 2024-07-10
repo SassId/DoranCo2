@@ -1,0 +1,9 @@
+# Active le moteur de réécriture d'URL
+RewriteEngine On
+
+# Condition de réécriture : vérifie si la requête ne correspond pas à un fichier physique existant
+RewriteCond %{REQUEST_FILENAME} !-f
+
+
+# Règle de réécriture : redirige toutes les requêtes vers public/index.php en ajoutant l'URL demandée en paramètre
+RewriteRule ^(.*)$ public/index.php?url=$1 [QSA,L]
