@@ -8,8 +8,8 @@ use App\Core\Database;
 use App\Core\Router;
 
 Autoloader::autoload();
-Database::initConnection();
 
+Database::initConnection();
 // $pdo = Database::getConnexion();
 
 $router = new Router();
