@@ -1,2 +1,74 @@
-body {
+/* Style général du formulaire */
+form {
+    background: linear-gradient(135deg, rgb(174, 0, 255), #4a90e2);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    margin: auto;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+/* Style des divs contenant les champs du formulaire */
+form div {
+    margin-bottom: 15px;
+}
+
+/* Style des labels */
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+/* Style des champs input */
+form input[type="email"],
+form input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 0;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 16px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+/* Effets hover et focus sur les champs input */
+form input[type="email"]:hover,
+form input[type="password"]:hover,
+form input[type="email"]:focus,
+form input[type="password"]:focus {
+    background: rgba(255, 255, 255, 0.2);
+    outline: none;
+    transform: scale(1.05);
+}
+
+/* Style du bouton submit */
+form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #e28e4a;
+    color: #fff;
+    font-size: 18px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+/* Effets hover et active sur le bouton submit */
+form input[type="submit"]:hover {
+    background: #35bd72;
+    transform: translateY(-3px);
+}
+
+form input[type="submit"]:active {
+    background: #2a5f9e;
+    transform: translateY(1px);
 }

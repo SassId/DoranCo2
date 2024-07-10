@@ -53,7 +53,7 @@ class Router
     public function execute()
     {
         $requestUri = $_SERVER['REQUEST_URI'];
-        $requestUri = str_replace('/car-location', '', $requestUri);
+        $requestUri = str_replace('/car_location-main', '', $requestUri);
 
         foreach ($this->routes as $key => $closure) {
             if (preg_match($key, $requestUri, $matches)) {
