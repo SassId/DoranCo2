@@ -20,6 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         header('Location: ../../view/add-book.php');
         exit();
+
     } else if (empty($_POST['title']) || empty($_POST['description']) || empty($_POST['date_of_publication'])) {
         $_SESSION['message'] = 'tous les champs sont requis';
         header('Location: ../../view/add-book.php');

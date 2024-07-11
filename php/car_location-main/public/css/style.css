@@ -37,7 +37,8 @@ form label {
 
 /* Style des champs input */
 form input[type="email"],
-form input[type="password"] {
+form input[type="password"],
+form input[type="text"] {
     width: calc(100% - 20px);
     padding: 10px;
     margin: 0;
@@ -53,7 +54,8 @@ form input[type="password"] {
 form input[type="email"]:hover,
 form input[type="password"]:hover,
 form input[type="email"]:focus,
-form input[type="password"]:focus {
+form input[type="password"]:focus,
+form input[type="text"]:focus {
     background: rgba(255, 255, 255, 0.2);
     outline: none;
     transform: scale(1.05);

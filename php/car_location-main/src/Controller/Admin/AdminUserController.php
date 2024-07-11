@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Controller\Admin\AbstractAdminController;
+use App\Core\Session;
 use App\Repository\UserRepository;
 
 class AdminUserController extends AbstractAdminController
@@ -19,10 +20,28 @@ class AdminUserController extends AbstractAdminController
     {
         $users = new UserRepository();
         $user = $users->getUserById($param['id']);
-        echo '<pre>';
-        var_dump($user);
-        echo '</pre>';
 
         $this->render('user-update-form', ['user'  => $user]);
+    }
+
+    public function processUpdate()
+    {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+            $session = new Session();
+            echo '<pre>';
+            echo var_dump($_POST);
+            echo '</pre>';
+
+            if (!isset($_POST['nouveau-pseudo']) || !isset($_POST['nouvel-email']) || empty($_POST['nouveau-pseudo']) || empty($_POST['nouveau-email']) ) {
+
+                $_SESSION['message'] = 'tous les champs sont requis';
+
+                // header('Location: '. SITE_NAME .'/');
+                exit();
+            }
+
+
+        }
     }
 }
