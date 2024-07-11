@@ -2,11 +2,12 @@
 
 namespace App\Core;
 
-use App\Controller\CarController;
-use App\Controller\UserController;
-use App\Controller\ContactController;
-use App\Controller\HomeController;
-use App\Controller\AdminController;
+use App\Controller\Front\CarController;
+use App\Controller\Front\UserController;
+use App\Controller\Front\ContactController;
+use App\Controller\Front\HomeController;
+use App\Controller\Admin\AdminController;
+use App\Controller\Admin\AdminUserController;
 
 class Router
 {
@@ -41,10 +42,19 @@ class Router
             $this->currentController->showContactForm();
         });
 
-        $this->add_route('/dashboard', function () {
-            echo 'coucou';
-            // $this->currentController = new AdminController();
-            // $this->currentController->index();
+        $this->add_route('/admin/dashboard', function () {
+            $this->currentController = new AdminController();
+            $this->currentController->index();
+        });
+
+        $this->add_route('/admin/dashboard/users', function () {
+            $this->currentController = new AdminUserController();
+            $this->currentController->showUsers();
+        });
+
+        $this->add_route('/admin/dashboard/users/modifier/{id}', function($param) {
+            $this->currentController = new AdminUserController();
+            $this->currentController->showUserUpdateForm($param);
         });
     }
 
