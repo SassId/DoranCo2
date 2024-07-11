@@ -6,6 +6,7 @@ use App\Controller\CarController;
 use App\Controller\UserController;
 use App\Controller\ContactController;
 use App\Controller\HomeController;
+use App\Controller\AdminController;
 
 class Router
 {
@@ -38,6 +39,12 @@ class Router
         $this->add_route('/contact', function () {
             $this->currentController = new ContactController();
             $this->currentController->showContactForm();
+        });
+
+        $this->add_route('/dashboard', function () {
+            echo 'coucou';
+            // $this->currentController = new AdminController();
+            // $this->currentController->index();
         });
     }
 
