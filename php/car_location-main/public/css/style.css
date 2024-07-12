@@ -1,53 +1,50 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
 
 /* *HEADER */
 
-
-
 /* Style général du formulaire */
 form {
-    background: linear-gradient(135deg, rgb(174, 0, 255), #4a90e2);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    max-width: 400px;
-    margin: 20px auto;
-    color: #fff;
-    font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, rgb(174, 0, 255), #4a90e2);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  margin: 20px auto;
+  color: #fff;
+  font-family: Arial, sans-serif;
 }
 
 /* Style des divs contenant les champs du formulaire */
 form div {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 /* Style des labels */
 form label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    font-size: 14px;
-    text-transform: uppercase;
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
 }
 
 /* Style des champs input */
 form input[type="email"],
 form input[type="password"],
 form input[type="text"] {
-    width: calc(100% - 20px);
-    padding: 10px;
-    margin: 0;
-    border: none;
-    border-radius: 5px;
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
-    font-size: 16px;
-    transition: background 0.3s, transform 0.3s;
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin: 0;
+  border: none;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 16px;
+  transition: background 0.3s, transform 0.3s;
 }
 
 /* Effets hover et focus sur les champs input */
@@ -56,124 +53,139 @@ form input[type="password"]:hover,
 form input[type="email"]:focus,
 form input[type="password"]:focus,
 form input[type="text"]:focus {
-    background: rgba(255, 255, 255, 0.2);
-    outline: none;
-    transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.2);
+  outline: none;
+  transform: scale(1.05);
 }
 
 /* Style du bouton submit */
 form input[type="submit"] {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background: #e28e4a;
-    color: #fff;
-    font-size: 18px;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.3s;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #e28e4a;
+  color: #fff;
+  font-size: 18px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
 }
 
 /* Effets hover et active sur le bouton submit */
 form input[type="submit"]:hover {
-    background: #35bd72;
-    /* transform: translateY(-3px); */
+  background: #35bd72;
+  /* transform: translateY(-3px); */
 }
 
 form input[type="submit"]:active {
-    background: #2a5f9e;
-    transform: translateY(1px);
+  background: #2a5f9e;
+  transform: translateY(1px);
 }
 
+/* Style pour aligner les boutons radio sur la même ligne */
+.radio-group {
+  display: flex;
+  align-items: center;
+}
+
+.radio-group label {
+  margin-right: 10px;
+  font-weight: normal;
+  text-transform: none;
+}
+
+.radio-group input[type="radio"] {
+  margin-right: 5px;
+}
 
 /* *DASHBOARD USERS */
 /* Style général du main */
 main {
-    padding: 20px;
-    /* background: linear-gradient(135deg, #ff7e5f, #feb47b); */
-    font-family: Arial, sans-serif;
+  padding: 20px;
+  /* background: linear-gradient(135deg, #ff7e5f, #feb47b); */
+  font-family: Arial, sans-serif;
 }
 
 /* Conteneur de la table */
 .table-container {
-    overflow-x: auto;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
+  overflow-x: auto;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
 }
 
 /* Style de la table */
 table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    font-size: 18px;
-    min-width: 400px;
-    background-color: #fff;
-    border-radius: 10px;
-    overflow: hidden;
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 18px;
+  min-width: 400px;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 /* Style de l'entête de la table */
 table thead {
-    background-color: #6a11cb;
-    color: #fff;
-    text-align: left;
-    font-weight: bold;
+  background-color: #6a11cb;
+  color: #fff;
+  text-align: left;
+  font-weight: bold;
 }
 
 table thead td {
-    padding: 12px 15px;
+  padding: 12px 15px;
 }
 
 /* Style des lignes et cellules du corps de la table */
 table tbody tr {
-    border-bottom: 1px solid #dddddd;
-    transition: background-color 0.3s;
+  border-bottom: 1px solid #dddddd;
+  transition: background-color 0.3s;
 }
 
 table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
+  background-color: #f3f3f3;
 }
 
 table tbody tr:hover {
-    background-color: #f1f1f1;
-    transform: scale(1.01);
-    transition: transform 0.3s, background-color 0.3s;
+  background-color: #f1f1f1;
+  transform: scale(1.01);
+  transition: transform 0.3s, background-color 0.3s;
 }
 
 table tbody td {
-    padding: 12px 15px;
-    color: #333;
+  padding: 12px 15px;
+  color: #333;
 }
 
 /* Animation 3D pour les lignes de la table */
 table tbody tr:hover {
-    background-color: #e1e1e1;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    transform: translateZ(10px);
+  background-color: #e1e1e1;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transform: translateZ(10px);
 }
 
 /* Style des cellules */
 table td {
-    padding: 10px;
-    transition: background-color 0.3s;
+  padding: 10px;
+  transition: background-color 0.3s;
 }
 
 /* Effet de transition et survol pour les cellules */
 table td:hover {
-    background-color: #ddd;
+  background-color: #ddd;
 }
 
 /* Style des cellules de la première colonne */
 table tbody tr td:first-child {
-    font-weight: bold;
-    color: #6a11cb;
+  font-weight: bold;
+  color: #6a11cb;
 }
 
 /* Style des cellules de la dernière colonne */
 table tbody tr td:last-child {
-    text-transform: uppercase;
-    font-size: 14px;
-    letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1px;
 }

@@ -33,15 +33,43 @@ class AdminUserController extends AbstractAdminController
             echo var_dump($_POST);
             echo '</pre>';
 
-            if (!isset($_POST['nouveau-pseudo']) || !isset($_POST['nouvel-email']) || empty($_POST['nouveau-pseudo']) || empty($_POST['nouveau-email']) ) {
+            if (
+                !isset($_POST['nouveau-pseudo']) ||
+                !isset($_POST['nouvel-email']) ||
+                !isset($_POST['statut']) ||
+                empty($_POST['nouveau-pseudo']) ||
+                empty($_POST['nouvel-email']) ||
+                empty($_POST['statut'])
+            ) {
 
-                $_SESSION['message'] = 'tous les champs sont requis';
-
-                // header('Location: '. SITE_NAME .'/');
+                $session->setFlashMessage('tous les champs sont requis', 'danger');
+                header('Location: ' . SITE_NAME . '/admin/dashboard/users/modifier/' . $_POST['user-id']);
                 exit();
+            } else {
+
+                $newEmail = trim($_POST['nouvel-email']);
+                $newPseudo = trim($_POST['nouveau-pseudo']);
+                $id = $_POST['user-id'];
+                $statut = $_POST['statut'];
+
+                $statut = ($statut == "true") ? true : false;
+
+                $repo = new UserRepository();
+                $isRequestSuccessful = $repo->updateUser($id, $newPseudo, $newEmail, $statut);
+
+                if ($isRequestSuccessful) {
+                    $session->setFlashMessage('modification enregristrées', "success");
+                    header('Location: '.SITE_NAME. '/admin/dashboard/users');
+                    exit();
+                } else {
+                    $session->setFlashMessage('la requête a rencontré un problème');
+                    header('Location: '.SITE_NAME. '/admin/dashboard/users/modifier/' . $_POST['user-id']);
+                }
             }
+        } else {
 
-
+            header('Location: ' . SITE_NAME . '/dashboard');
+            exit();
         }
     }
 }

@@ -14,8 +14,21 @@
         <input type="text" id="ancien-email" name="ancien-email" value="<?= $user['email'] ?>">
     </div>
     <div>
-    <label for="nouvel-email">Nouvel E-mail</label>
-    <input type="text" id="nouvel-email" name="nouvel-email">
+        <label for="nouvel-email">Nouvel E-mail</label>
+        <input type="text" id="nouvel-email" name="nouvel-email">
+    </div>
+    <div>
+        <label for="user-id">User Id</label>
+        <input type="text" name="user-id" id="user-id" value="<?= $user['id'] ?>" disabled>
+        <input type="text" name="user-id" id="user-id" value="<?= $user['id'] ?>" hidden>
+    </div>
+    <div class="radio-group">
+        <label>Statut :</label>
+        <input type="radio" id="admin" name="status" value="true" <?php ($user['statut'] ? "checked" : "")?>>
+        <label for="admin">Admin</label>
+
+        <input type="radio" id="user" name="status" value="false">
+        <label for="user">User</label>
     </div>
     <input type="submit">
 

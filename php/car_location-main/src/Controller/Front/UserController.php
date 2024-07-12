@@ -20,8 +20,9 @@ class UserController extends AbstractController
             $session = new Session();
 
             if (!isset($_POST['email']) || !isset($_POST['pswd']) || empty($_POST['email']) || empty($_POST['pswd'])) {
+                echo "caca";
                 $session->setFlashMessage('tous les champs sont requis', 'danger');
-                header('Location: ' . SITE_NAME . '/connexion');
+                header('Location: ' . SITE_NAME . '/admin/dashboard/users');
                 exit();
             } else {
 
