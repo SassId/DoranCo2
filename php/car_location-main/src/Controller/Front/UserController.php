@@ -45,7 +45,8 @@ class UserController extends AbstractController
                 // }
 
                 if ($user['mot_de_passe'] === $pswd) {
-                    $session->setFlashMessage('bienvenue à vous', 'success');
+                    $session->createSession($user);
+                    $session->setFlashMessage('Vous êtes connecté(e), bienvenue à vous', 'success');
                     header('Location: ' . SITE_NAME . '/');
                     exit();
                 }
@@ -53,5 +54,20 @@ class UserController extends AbstractController
         } else {
             header('Location:' . SITE_NAME . '.connexion');
         }
+    }
+
+    public function disconnect()
+    {
+
+        // first, start a session:
+        session_start();
+
+        // remove all session variables
+        session_unset();
+
+        // destroy the session
+        session_destroy();
+
+        header('Location: ' . SITE_NAME . '/connexion');
     }
 }

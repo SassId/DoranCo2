@@ -23,8 +23,23 @@ $session = new Session();
         <a href="<?= SITE_NAME; ?>/">CAR RENTAL</a>
         <a href="<?= SITE_NAME; ?>/">accueil</a>
         <a href="<?= SITE_NAME; ?>/contact">contact</a>
-        <a href="<?= SITE_NAME; ?>/connexion">connexion</a>
-        <a href="<?= SITE_NAME; ?>/admin/dashboard">dashboard</a>
+        <?php
+        if (isset($_SESSION['LOGGED_ID'])) { ?>
+            <a href="<?= SITE_NAME; ?>/deconnexion">deconnexion</a>
+
+        <?php } else { ?>
+            <a href="<?= SITE_NAME; ?>/connexion">connexion</a>
+
+        <?php }
+        ?>
+
+        <?php
+        if (isset($_SESSION['LOGGED_ADMIN']) && $_SESSION['LOGGED_ADMIN']) { ?>
+
+            <a href="<?= SITE_NAME; ?>/admin/dashboard">dashboard</a>
+        <?php }
+        ?>
+
     </header>
 
 

@@ -29,9 +29,9 @@ class AdminUserController extends AbstractAdminController
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             $session = new Session();
-            echo '<pre>';
-            echo var_dump($_POST);
-            echo '</pre>';
+            // echo '<pre>';
+            // echo var_dump($_POST);
+            // echo '</pre>';
 
             if (
                 !isset($_POST['nouveau-pseudo']) ||
@@ -45,6 +45,7 @@ class AdminUserController extends AbstractAdminController
                 $session->setFlashMessage('tous les champs sont requis', 'danger');
                 header('Location: ' . SITE_NAME . '/admin/dashboard/users/modifier/' . $_POST['user-id']);
                 exit();
+                
             } else {
 
                 $newEmail = trim($_POST['nouvel-email']);
@@ -54,16 +55,24 @@ class AdminUserController extends AbstractAdminController
 
                 $statut = ($statut == "true") ? true : false;
 
+                echo '<pre>';
+                echo var_dump($_POST);
+                echo '</pre>';
+
                 $repo = new UserRepository();
                 $isRequestSuccessful = $repo->updateUser($id, $newPseudo, $newEmail, $statut);
 
+
+
                 if ($isRequestSuccessful) {
-                    $session->setFlashMessage('modification enregristrées', "success");
-                    header('Location: '.SITE_NAME. '/admin/dashboard/users');
-                    exit();
+
+                    echo "youpi";
+                    // $session->setFlashMessage('modification enregristrées', "success");
+                    // header('Location: '.SITE_NAME. '/admin/dashboard/users');
+                    // exit();
                 } else {
                     $session->setFlashMessage('la requête a rencontré un problème');
-                    header('Location: '.SITE_NAME. '/admin/dashboard/users/modifier/' . $_POST['user-id']);
+                    header('Location: ' . SITE_NAME . '/admin/dashboard/users/modifier/' . $_POST['user-id']);
                 }
             }
         } else {

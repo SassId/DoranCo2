@@ -27,4 +27,13 @@ class Session
             unset($_SESSION['message']);
         }
     }
+
+    public function createSession(array $array)
+    {
+        $_SESSION['LOGGED_USERNAME'] = $array['pseudo'];
+        $_SESSION['LOGGED_ID'] = $array['id'];
+        if ($array['statut']) {
+            $_SESSION['LOGGED_ADMIN'] = true;
+        }
+    }
 }

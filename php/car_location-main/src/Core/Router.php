@@ -8,6 +8,7 @@ use App\Controller\Front\ContactController;
 use App\Controller\Front\HomeController;
 use App\Controller\Admin\AdminController;
 use App\Controller\Admin\AdminUserController;
+use App\Controller\Admin\AdminCarController;
 
 class Router
 {
@@ -32,6 +33,11 @@ class Router
             $this->currentController->showConnexionForm();
         });
 
+        $this->add_route('/deconnexion', function () {
+            $this->currentController = new UserController();
+            $this->currentController->disconnect();
+        });
+
         $this->add_route('/connecter', function () {
             $this->currentController = new UserController();
             $this->currentController->processLogin();
@@ -52,16 +58,21 @@ class Router
             $this->currentController->showUsers();
         });
 
-        $this->add_route('/admin/dashboard/users/modifier/{id}', function($param) {
+        $this->add_route('/admin/dashboard/users/modifier/{id}', function ($param) {
             $this->currentController = new AdminUserController();
             $this->currentController->showUserUpdateForm($param);
         });
 
-        $this->add_route('/update', function() {
+        $this->add_route('/update', function () {
             $this->currentController = new AdminUserController();
             $this->currentController->processUpdate();
         });
 
+        $this->add_route('/admin/dashboard/cars', function () {
+            $this->currentController = new AdminCarController();
+            $this->currentController->showCars();
+            // todo: code the showCars method
+        });
     }
 
     private function add_route(string $route, callable $closure)
