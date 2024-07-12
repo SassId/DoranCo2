@@ -20,11 +20,14 @@ $session = new Session();
 
 <body>
     <header>
-        <a href="<?= SITE_NAME; ?>/">CAR RENTAL</a>
+        <nav class="navbar bg-body-tertiary">
+           <a href="<?= SITE_NAME; ?>/">CAR RENTAL</a>
         <a href="<?= SITE_NAME; ?>/">accueil</a>
         <a href="<?= SITE_NAME; ?>/contact">contact</a>
         <a href="<?= SITE_NAME; ?>/connexion">connexion</a>
-        <a href="<?= SITE_NAME; ?>/admin/dashboard">dashboard</a>
+        <a href="<?= SITE_NAME; ?>/admin/dashboard">dashboard</a> 
+        </nav>
+        
 
     </header>
 

@@ -20,7 +20,8 @@ $session = new Session();
 
 <body>
     <header>
-        <a href="<?= SITE_NAME; ?>/">CAR RENTAL</a>
+        <nav class="navbar bg-body-tertiary ">
+          <a href="<?= SITE_NAME; ?>/">CAR RENTAL</a>
         <a href="<?= SITE_NAME; ?>/">accueil</a>
         <a href="<?= SITE_NAME; ?>/contact">contact</a>
         <?php
@@ -38,7 +39,9 @@ $session = new Session();
 
             <a href="<?= SITE_NAME; ?>/admin/dashboard">dashboard</a>
         <?php }
-        ?>
+        ?>  
+        </nav>
+        
 
     </header>
 
