@@ -37,6 +37,6 @@ class UserRepository extends AbstractRepository
         $stmt->bindParam(':pseudo', $pseudo, \PDO::PARAM_STR);
         $stmt->bindParam(':email', $email, \PDO::PARAM_STR);
         $stmt->bindParam(':statut', $statut, \PDO::PARAM_STR);
-        $stmt->execute();
+        return $stmt->execute();
     }
 }

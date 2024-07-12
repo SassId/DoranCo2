@@ -32,20 +32,19 @@ class AdminUserController extends AbstractAdminController
             // echo '<pre>';
             // echo var_dump($_POST);
             // echo '</pre>';
+            // die;
 
             if (
                 !isset($_POST['nouveau-pseudo']) ||
                 !isset($_POST['nouvel-email']) ||
                 !isset($_POST['statut']) ||
                 empty($_POST['nouveau-pseudo']) ||
-                empty($_POST['nouvel-email']) ||
-                empty($_POST['statut'])
+                empty($_POST['nouvel-email'])
             ) {
 
                 $session->setFlashMessage('tous les champs sont requis', 'danger');
                 header('Location: ' . SITE_NAME . '/admin/dashboard/users/modifier/' . $_POST['user-id']);
                 exit();
-                
             } else {
 
                 $newEmail = trim($_POST['nouvel-email']);
@@ -66,10 +65,9 @@ class AdminUserController extends AbstractAdminController
 
                 if ($isRequestSuccessful) {
 
-                    echo "youpi";
-                    // $session->setFlashMessage('modification enregristrées', "success");
-                    // header('Location: '.SITE_NAME. '/admin/dashboard/users');
-                    // exit();
+                    $session->setFlashMessage('modification enregristrées', "success");
+                    header('Location: '.SITE_NAME. '/admin/dashboard/users');
+                    exit();
                 } else {
                     $session->setFlashMessage('la requête a rencontré un problème');
                     header('Location: ' . SITE_NAME . '/admin/dashboard/users/modifier/' . $_POST['user-id']);
