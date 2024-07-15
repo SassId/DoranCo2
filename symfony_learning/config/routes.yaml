@@ -3,3 +3,8 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+
+# another way to create a route:
+home_list:
+    path: /list
+    controller: App\Controller\HomeController::list
