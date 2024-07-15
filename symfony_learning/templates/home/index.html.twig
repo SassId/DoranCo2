@@ -1,0 +1,34 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Home Page
+{% endblock %}
+
+{% block body %}
+
+
+	{# <pre>
+	{{ dump(animals) }}
+	</pre> #}
+
+	<main class="p-2 m-2">
+
+		<h1>Home Page Title</h1>
+
+		<h2>Hi, my name is
+			{{name}}
+			{{key}}
+			!</h2>
+
+		<p>There are
+			{{animals | join(', ') | upper }}
+			in my backyard !</p>
+
+		<ul>
+			{% for animal in animals %}
+				<li>{{ animal }}</li>
+			{% endfor %}
+		</ul>
+
+
+	</main>
+{% endblock %}
