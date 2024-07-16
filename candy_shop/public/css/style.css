@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* *HEADER */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  height: 50px;
+  background-color: orange;
+  padding: 20px;
+}
+
+nav a {
+  color: blueviolet;
+  font-weight: bold;
+  font-size: 20px;
+  transition: text-decoration ease 2s;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  flex-grow: 1;
+  margin: 50px;
+}
+
+h1 {
+  text-align: center;
+}
+
+/* *FOOTER */
+
+.copyright {
+  text-align: center;
+}
