@@ -3,12 +3,15 @@
 {% block title %}Home Page
 {% endblock %}
 
+{% block stylesheets %}
+<link rel="stylesheet" href={{asset('css/style.css')}}>
+{% endblock %}
+
 {% block body %}
-
-
+	
 	{# <pre>
-	{{ dump(animals) }}
-	</pre> #}
+			{{ dump(animals) }}
+			</pre> #}
 
 	<main class="p-2 m-2">
 
@@ -28,7 +31,6 @@
 				<li>{{ animal }}</li>
 			{% endfor %}
 		</ul>
-
 
 	</main>
 {% endblock %}
