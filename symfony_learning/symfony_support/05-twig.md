@@ -83,6 +83,24 @@ Pour les formulaires, utilisez la fonction `form_start()` :
 {{ form_start(form) }}
 ```
 
+## app
+
+L'objet `app` vous permet d'accéder à l'application Symfony dans vos modèles Twig. Vous pouvez utiliser `app` pour accéder à des services, des paramètres et d'autres fonctionnalités de Symfony.
+
+Par exemple, pour accéder à un paramètre dans un modèle Twig, utilisez :
+
+```twig
+{{ app.parameter_name }}
+```
+
+Pour accéder à un service dans un modèle Twig, utilisez :
+
+```twig
+{{ app.service_name.method() }}
+```
+
+
+
 Twig offre de nombreuses fonctionnalités pour rendre vos modèles plus dynamiques et interactifs. Consultez la [documentation officielle de Twig](https://twig.symfony.com/doc/3.x/) pour en savoir plus sur ses fonctionnalités et sa syntaxe.
 
 ---
