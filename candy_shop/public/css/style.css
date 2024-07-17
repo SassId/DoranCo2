@@ -20,9 +20,9 @@ nav {
   align-items: center;
   justify-content: center;
   gap: 100px;
-  height: 50px;
-  background-color: orange;
-  padding: 20px;
+  min-height: 50px;
+  background-color: rgb(252, 181, 51);
+  padding: 10px;
 }
 
 nav a {
@@ -34,6 +34,12 @@ nav a {
 
 nav a:hover {
   text-decoration: underline;
+}
+
+nav img {
+  width: 60px;
+  height: 60px;
+  border-radius: 20%;
 }
 
 main {
