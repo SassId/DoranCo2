@@ -80,7 +80,7 @@ Les repositories représentent les requêtes de SELECT affiliées aux entités. 
 
 ## 8. Type ou FormType
 
-Les types ou FormTypes génèrent des formulaires en lien avec une entité, chaque propriété de l'entité représentant un input généré par le type. On peut y définir les contraintes aussi, mais ils servent surtout à personnaliser les inputs pour gérer le type d'input, les labels, et les attributs (placeholder, class, id, ...).
+Les Types ou FormTypes génèrent des formulaires en lien avec une entité, chaque propriété de l'entité représentant un input généré par le type. On peut y définir les contraintes aussi, mais ils servent surtout à personnaliser les inputs pour gérer le type d'input, les labels, et les attributs (placeholder, class, id, ...).
 
 ## 9. YAML
 

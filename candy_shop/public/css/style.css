@@ -19,7 +19,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 50px;
+  gap: 100px;
   height: 50px;
   background-color: orange;
   padding: 20px;
