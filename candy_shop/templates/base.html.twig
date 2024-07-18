@@ -10,6 +10,7 @@
 		<link rel="stylesheet" href={{asset('css/style.css')}}>
 
 		{% block javascripts %}
+            {% block importmap %}{{ importmap('app') }}{% endblock %}
 			{% block importmap %}
 				{{ importmap('app') }}
 			{% endblock %}
