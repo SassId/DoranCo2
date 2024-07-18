@@ -4,15 +4,26 @@
   box-sizing: border-box;
 }
 
-a {
-  text-decoration: none;
-}
-
+/* *GENERAL */
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
+
+a {
+  text-decoration: none;
+}
+
+/* *COMPONENTS */
+
+/* input[type="submit"] {
+  background-color: royalblue;
+  padding: 5px;
+  min-width: 50px;
+  border: none;
+  border-radius: 7px;
+} */
 
 /* *HEADER */
 nav {
