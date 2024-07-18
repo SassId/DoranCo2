@@ -5,6 +5,16 @@
 
 {% block body %}
 	<main>
+
 		<h1>Update a Category</h1>
-	</main>
-{% endblock %}
+		{# {{form(form)}} #}
+
+			{# * we can reorder the fields of the form: #}
+			{{form_start(form)}}
+			{# {{form_row(form.description)}} #}
+			{{form_rest(form)}}
+			<input type="submit" value="Save Changes">
+			{{form_end(form)}}
+
+		</main>
+	{% endblock %}
