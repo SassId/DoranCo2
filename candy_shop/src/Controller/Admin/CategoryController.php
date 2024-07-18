@@ -8,7 +8,6 @@ use App\Repository\CategoryRepository;
 use DateTimeImmutable;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\BrowserKit\Request as BrowserKitRequest;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
@@ -25,25 +24,32 @@ class CategoryController extends AbstractController
     }
 
     #[Route('/', name: 'index')]
-    public function index(): Response
+    public function index(CategoryRepository $repository): Response
     {
-        return $this->render('admin/category/index.html.twig');
+        $categories = $repository->findAll();
+        return $this->render('admin/category/index.html.twig', [
+            'categories' => $categories
+        ]);
     }
 
     #[Route('/create', name: 'create')]
-    public function create(EntityManagerInterface $em): Response
+    public function create(EntityManagerInterface $em, Request $request): Response
     {
         $category = new Category;
-        $category->setName('Bubble Gum')
-            ->setSlug('bubble-gum')
-            ->setDescription('chew on this and smile')
-            ->setCreatedAt(new DateTimeImmutable())
-            ->setUpdatedAt(new DateTimeImmutable());
+        $form = $this->createForm(CategoryType::class, $category);
+        $form->handleRequest($request);
 
-        $em->persist($category);
-        $em->flush();
+        if ($form->isSubmitted() && $form->isValid()) {
+            $category->setCreatedAt(new DateTimeImmutable());
+            $em->persist($category);
+            $em->flush();
+            $this->addFlash('success', 'Your new category has been created !');
+            return $this->redirectToRoute('admin_category_index');
+        }
 
-        return $this->render('admin/category/create.html.twig');
+        return $this->render('admin/category/create.html.twig', [
+            'form' => $form
+        ]);
     }
 
     #[Route('/update/{id}', name: 'update', requirements: ['id' => Requirement::DIGITS])]
@@ -55,14 +61,10 @@ class CategoryController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $category->setUpdatedAt(new DateTimeImmutable());
             $this->em->flush();
-            $this->addFlash('succes', 'Your changes have been saved');
-            
-            // return $this->redirectToRoute('admin_category_index');
-        }
+            $this->addFlash('success', 'Your changes have been saved !');
 
-        // $category = $repository->find($id);
-        // $category->setDescription('Chew on this baby !');
-        // $em->flush();
+            return $this->redirectToRoute('admin_category_index');
+        }
 
         return $this->render('admin/category/update.html.twig', [
             'form' => $form

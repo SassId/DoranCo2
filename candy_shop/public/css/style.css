@@ -17,14 +17,13 @@ a {
 
 /* *COMPONENTS */
 
-input[type="submit"] {
-  /* background-color: rgb(87, 156, 247); */
+/* input[type="submit"] {
   background-color: royalblue;
   padding: 5px;
   min-width: 50px;
   border: none;
   border-radius: 7px;
-}
+} */
 
 /* *HEADER */
 nav {

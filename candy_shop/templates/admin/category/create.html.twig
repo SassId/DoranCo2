@@ -6,5 +6,9 @@
 {% block body %}
 	<main>
 		<h1>Create a Category</h1>
+		{{form_start(form)}}
+		{{form_rest(form)}}
+		<input type="submit" value="Save Changes" class="btn btn-primary">
+		{{form_end(form)}}
 	</main>
 {% endblock %}
