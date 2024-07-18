@@ -14,6 +14,13 @@ use Symfony\Component\Routing\Requirement\Requirement;
 #[Route('/admin/category', 'admin_category_')]
 class CategoryController extends AbstractController
 {
+
+    private $em;
+public function __construct(EntityManagerInterface $em)
+{
+    $this->em = $em;
+}
+
     #[Route('/', name: 'index')]
     public function index(): Response
     {
@@ -37,22 +44,22 @@ class CategoryController extends AbstractController
     }
 
     #[Route('/update/{id}', name: 'update', requirements: ['id' => Requirement::DIGITS])]
-    public function update($id, CategoryRepository $repository, EntityManagerInterface $em ): Response
+    public function update($id, CategoryRepository $repository, EntityManagerInterface $em): Response
     {
-    $category = $repository->find($id);
-    $category->setDescription('Chew on this baby !');
-    $em->flush();
+        $category = $repository->find($id);
+        $category->setDescription('Chew on this baby !');
+        $em->flush();
 
         return $this->render('admin/category/update.html.twig');
     }
 
     #[Route('/delete/{id}', name: 'delete', requirements: ['id' => Requirement::DIGITS])]
-    public function delete($id, CategoryRepository $repository, EntityManagerInterface $em ): Response
+    public function delete($id, CategoryRepository $repository, EntityManagerInterface $em): Response
     {
-    $category = $repository->find($id);
-    $em->remove($category);
-    $em->flush();
+        $category = $repository->find($id);
+        $em->remove($category);
+        $em->flush();
 
-        return $this->render('admin/category/delete.html.twig');
+        return $this->redirectToRoute('admin_category_index');
     }
 }
