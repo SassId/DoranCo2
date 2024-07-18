@@ -78,6 +78,7 @@ class CategoryController extends AbstractController
         $category = $repository->find($id);
         $em->remove($category);
         $em->flush();
+        $this->addFlash('success', 'Your category has been deleted !');
 
         return $this->redirectToRoute('admin_category_index');
     }

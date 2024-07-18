@@ -14,5 +14,31 @@
 		</pre> #}
 		<h1>Manage Articles</h1>
 		<a class="btn btn-success m-auto" href={{path('admin_article_create')}}>Create</a>
+		<table class="table  table-striped">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Description</th>
+					<th>Created At</th>
+					<th>Updated At</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for candy in candies %}
+					<tr>
+						<td>{{candy.name}}</td>
+						<td>{{candy.description}}</td>
+						<td>{{candy.createdAt|date('d/m/Y')}}</td>
+						<td>{{candy.updatedAt|date('d/m/Y')}}</td>
+						<td>
+							<a class="btn btn-warning" href={{path('admin_article_update', {'id': candy.id} )}}>Modify</a>
+						</td>
+						<td>
+							<a class="btn btn-danger" href={{path('admin_article_delete', {'id': candy.id} )}}>Delete</a>
+						</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
 	</main>
 {% endblock %}

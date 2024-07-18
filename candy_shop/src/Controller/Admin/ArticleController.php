@@ -46,7 +46,7 @@ class ArticleController extends AbstractController
             $candy->setCreatedAt(new DateTimeImmutable());
             $this->em->persist($candy);
             $this->em->flush();
-            $this->addFlash('success', 'Your new article has been created');
+            $this->addFlash('success', 'Your new article has been created !');
             return $this->redirectToRoute('admin_article_index');
         }
 
@@ -56,43 +56,29 @@ class ArticleController extends AbstractController
     }
 
     #[Route('/update/{id}', name: 'update', requirements: ['id' => Requirement::DIGITS])]
-    public function update($id, CandyRepository $repository, EntityManagerInterface $em): Response // example of DI (Dependency Injection made possible without instancing the object)
+    public function update(Candy $candy, Request $request): Response // example of DI (Dependency Injection made possible without instancing the object)
     {
-        // * Many ways to collect entries from the database:
-
-        // ? find() (takes the id as parameter and collects the right entry)
-        // $candy = $repository->find($id);
-
-        // ? findAll() (collects all entries)
-        // $candy = $repository->findAll();
-
-        // ? findBy() (collects entries meeting conditions defined in the parameters)
-        // $candy = $repository->findBy();
-
-        // ? findOneBy (collects the one entry meeting conditions defined in the parameters)
-        // $candy = $repository->findOneBy([
-        //     'slug' => 'lollipop',
-        //     'name' => 'lollipop'
-        // ]);
-
-        // $candy = $repository->find($id);
-        $candy = $this->candyRepository->find($id);
-        // ! dd($candy); now this returned an object filled with info from the db, this is called Hydration
-        $candy->setName('Sugar Cane')
-            ->setUpdatedAt(new DateTimeImmutable());
-
-        $em->flush();
-
-        return $this->render('admin/article/update.html.twig');
+        $form = $this->createForm(CandyType::class, $candy);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid())
+        {
+            $candy->setUpdatedAt(new DateTimeImmutable());
+            $this->em->flush();
+            $this->addFlash('success', 'Your changes have been saved !');
+            return $this->redirectToRoute('admin_article_index');
+        }
+        return $this->render('admin/article/update.html.twig', [
+            'form' => $form
+        ]);
     }
 
     #[Route('/delete/{id}', name: 'delete', requirements: ['id' => Requirement::DIGITS])]
-    public function delete($id, CandyRepository $repository, Candy $candy): Response
+    public function delete(Candy $candy): Response
     {
-        // $candy = $repository->find($id); // since we passed the $candy in the parameter, this line become obsolete
-        $this->em->remove($candy);
-        $this->em->flush();
+       $this->em->remove($candy);
+       $this->em->flush();
+       $this->addFlash('success', 'Your article has been deleted !');
 
-        return $this->render('admin/article/delete.html.twig');
+        return $this->redirectToRoute('admin_article_index');
     }
 }
