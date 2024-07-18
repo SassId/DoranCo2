@@ -8,8 +8,9 @@
 {% endblock %}
 
 {% block body %}
-	<main>
-		<h1>Admin Categories</h1>
+	<main class="d-flex flex-column gap-5">
+		<h1>Manage Categories</h1>
+			<a class="btn btn-success m-auto" href={{path('admin_category_create')}}>Create</a>
 		<table class="table  table-striped">
 			<thead>
 				<tr>
@@ -26,6 +27,12 @@
 						<td>{{category.description}}</td>
 						<td>{{category.createdAt|date('d/m/Y')}}</td>
 						<td>{{category.updatedAt|date('d/m/Y')}}</td>
+						<td>
+							<a class="btn btn-warning" href={{path('admin_category_update', {'id': category.id} )}}>Modify</a>
+						</td>
+						<td>
+							<a class="btn btn-danger" href={{path('admin_category_delete', {'id': category.id} )}}>Delete</a>
+						</td>
 					</tr>
 				{% endfor %}
 			</tbody>

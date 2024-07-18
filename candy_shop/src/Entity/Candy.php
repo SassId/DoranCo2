@@ -23,7 +23,10 @@ class Candy
     #[ORM\Column]
     private ?\DateTimeImmutable $createdAt = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(nullable: true)]
+    private ?\DateTimeImmutable $updatedAt = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $slug = null;
 
     public function getId(): ?int
@@ -75,6 +78,20 @@ class Candy
     public function setSlug(string $slug): static
     {
         $this->slug = $slug;
+
+        return $this;
+    }
+
+
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
+    }
+
+
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
 
         return $this;
     }

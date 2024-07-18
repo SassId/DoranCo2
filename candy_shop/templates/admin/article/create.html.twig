@@ -1,11 +1,18 @@
 {% extends "base.html.twig" %}
 
 {% block stylesheets %}
-<link rel="stylesheet" href={{asset('css/admin_article.css')}}>
+	<link rel="stylesheet" href={{asset('css/admin_article.css')}}>
 {% endblock %}
 
 {% block body %}
-<main>
-<h1>Create New Article</h1>
-</main>
+	<main>
+		{# <pre>
+    {{ dump(form) }}
+</pre> #}
+		<h1>Create New Article</h1>
+        {{form_start(form)}}
+        {{form_rest(form)}}
+        <input type="submit" value="Save" class="btn btn-primary">
+        {{form_end(form)}}
+	</main>
 {% endblock %}

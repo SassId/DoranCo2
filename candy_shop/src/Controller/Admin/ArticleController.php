@@ -3,44 +3,56 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Candy;
+use App\Form\CandyType;
 use App\Repository\CandyRepository;
 use DateTimeImmutable;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\Routing\Requirement\Requirement;
 
-#[Route('/admin/article', 'admin_article_')]
+#[Route('/admin/article', name: 'admin_article_')]
 class ArticleController extends AbstractController
 {
-    public function __construct(private EntityManagerInterface $em, private CandyRepository $candyRepository)
+    private $em;
+    private $candyRepository;
+
+    public function __construct(EntityManagerInterface $em,  CandyRepository $candyRepository)
     {
         $this->em = $em;
         $this->candyRepository = $candyRepository;
     }
 
-    #[Route('/', name: 'index')]
+    #[Route('/home', name: 'index')]
     public function index(): Response
     {
-        return $this->render('admin/article/index.html.twig');
+        $candies = $this->candyRepository->findAll();
+        return $this->render('admin/article/index.html.twig', [
+            'candies' => $candies
+        ]);
     }
 
     #[Route('/create', name: 'create')]
-    public function create(EntityManagerInterface $em): Response
+    public function create(Request $request): Response
     {
-        $candy = new Candy();
-        $candy->setName('Lollipop')
-            ->setSlug('lollipop')
-            ->setDescription('yummy!')
-            ->setCreatedAt(new DateTimeImmutable());
-        // dd($candy);
-        // dd($em);
+        $candy = new Candy;
+        $form = $this->createForm(CandyType::class, $candy);
+        $form->handleRequest($request);
 
-        $em->persist($candy); //allows doctrine to acknowledge the object
-        $em->flush(); // Flush the entity to save it to the database
+        if ($form->isSubmitted() && $form->isValid())
+        {
+            $candy->setCreatedAt(new DateTimeImmutable());
+            $this->em->persist($candy);
+            $this->em->flush();
+            $this->addFlash('success', 'Your new article has been created');
+            return $this->redirectToRoute('admin_article_index');
+        }
 
-        return $this->render('admin/article/create.html.twig');
+        return $this->render('admin/article/create.html.twig', [
+            'form' => $form
+        ]);
     }
 
     #[Route('/update/{id}', name: 'update', requirements: ['id' => Requirement::DIGITS])]

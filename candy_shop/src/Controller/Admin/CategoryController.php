@@ -13,11 +13,11 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\Routing\Requirement\Requirement;
 
-#[Route('/admin/category', 'admin_category_')]
+#[Route('/admin/category', name: 'admin_category_')]
 class CategoryController extends AbstractController
 {
-
     private $em;
+
     public function __construct(EntityManagerInterface $em)
     {
         $this->em = $em;

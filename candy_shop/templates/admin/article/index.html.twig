@@ -1,13 +1,18 @@
 {% extends "base.html.twig" %}
 
 {% block stylesheets %}
-<link rel="stylesheet" href={{asset('css/article.css')}}>
+	<link rel="stylesheet" href={{asset('css/article.css')}}>
 {% endblock %}
 
-{% block title %}Articles Page{% endblock %}
+{% block title %}Articles Page
+{% endblock %}
 
 {% block body %}
-<main>
-<h1>Our Products</h1>
-</main>
+	<main class="d-flex flex-column gap-5">
+		{# <pre>
+		    {{ dump(candies) }}
+		</pre> #}
+		<h1>Manage Articles</h1>
+		<a class="btn btn-success m-auto" href={{path('admin_article_create')}}>Create</a>
+	</main>
 {% endblock %}
