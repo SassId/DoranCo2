@@ -18,9 +18,10 @@ class CategoryType extends AbstractType
             // * we can add parameters like:
             // ->add('name', PasswordType::class, [
             // 'label' => 'nom: '
-            // 'required' => false])
-            // 'emtpy_data' => '' // this indicates what happens if the field is empty (for example when we specified in the db that the property isn't nullable)
-
+            // 'required' => false,                
+            // 'emtpy_data' => '', // this indicates what happens if the field is empty (for example when we specified in the db that the property isn't nullable)
+            // 'constraints => [
+            // new Assert\NotBlank(message: '')])
             // ->add('slug')
             ->add('description')
             // ->add('createdAt', null, [
@@ -29,7 +30,7 @@ class CategoryType extends AbstractType
             // ->add('updatedAt', null, [
             //     'widget' => 'single_text',
             // ])
-            ;
+        ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void

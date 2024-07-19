@@ -6,6 +6,7 @@ use App\Repository\CandyRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Webmozart\Assert\Assert as AssertAssert;
 
 #[ORM\Entity(repositoryClass: CandyRepository::class)]
 class Candy
@@ -16,12 +17,15 @@ class Candy
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    #[Assert\NotBlank()]
+    // #[Assert\NotBlank(message: 'The field {{ label }} cannot be blank')]
+    // #[Assert\Sequentially([
+    //     new Assert\NotBlank(message: 'The field {{ label }} cannot be blank'),
+    //     new Assert\Length(min: 10)
+    // ])]
     private string $name = '';
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
-    #[Assert\NotBlank()]
-
+    #[Assert\NotBlank(message: 'The field {{ label }} cannot be blank')]
     private ?string $description = null;
 
     #[ORM\Column]
