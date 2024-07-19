@@ -12,6 +12,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\Routing\Requirement\Requirement;
+use Symfony\Component\String\Slugger\AsciiSlugger;
+use Symfony\Component\String\Slugger\SluggerInterface;
 
 #[Route('/admin/article', name: 'admin_article_')]
 class ArticleController extends AbstractController
@@ -35,15 +37,16 @@ class ArticleController extends AbstractController
     }
 
     #[Route('/create', name: 'create')]
-    public function create(Request $request): Response
+    public function create(Request $request, SluggerInterface $slugger): Response
     {
         $candy = new Candy;
         $form = $this->createForm(CandyType::class, $candy);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid())
-        {
+        if ($form->isSubmitted() && $form->isValid()) {
             $candy->setCreatedAt(new DateTimeImmutable());
+            $slug = $slugger->slug($candy->getName())->lower();
+            $candy->setSlug($slug);
             $this->em->persist($candy);
             $this->em->flush();
             $this->addFlash('success', 'Your new article has been created !');
@@ -56,13 +59,14 @@ class ArticleController extends AbstractController
     }
 
     #[Route('/update/{id}', name: 'update', requirements: ['id' => Requirement::DIGITS])]
-    public function update(Candy $candy, Request $request): Response // example of DI (Dependency Injection made possible without instancing the object)
+    public function update(Candy $candy, Request $request, SluggerInterface $slugger): Response // example of DI (Dependency Injection made possible without instancing the object)
     {
         $form = $this->createForm(CandyType::class, $candy);
         $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid())
-        {
+        if ($form->isSubmitted() && $form->isValid()) {
             $candy->setUpdatedAt(new DateTimeImmutable());
+            $slug = $slugger->slug($candy->getName())->lower();
+            $candy->setSlug($slug);
             $this->em->flush();
             $this->addFlash('success', 'Your changes have been saved !');
             return $this->redirectToRoute('admin_article_index');
@@ -75,9 +79,9 @@ class ArticleController extends AbstractController
     #[Route('/delete/{id}', name: 'delete', requirements: ['id' => Requirement::DIGITS])]
     public function delete(Candy $candy): Response
     {
-       $this->em->remove($candy);
-       $this->em->flush();
-       $this->addFlash('success', 'Your article has been deleted !');
+        $this->em->remove($candy);
+        $this->em->flush();
+        $this->addFlash('success', 'Your article has been deleted !');
 
         return $this->redirectToRoute('admin_article_index');
     }

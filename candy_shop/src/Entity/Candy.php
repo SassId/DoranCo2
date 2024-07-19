@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\CandyRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: CandyRepository::class)]
 class Candy
@@ -15,9 +16,12 @@ class Candy
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank()]
     private string $name = '';
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
+    #[Assert\NotBlank()]
+
     private ?string $description = null;
 
     #[ORM\Column]
