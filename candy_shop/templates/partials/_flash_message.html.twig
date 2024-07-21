@@ -1,5 +1,7 @@
+{% block javascripts %}{% endblock %}
+
 {% for type, messages in app.flashes %}
-    <div class="alert alert-{{type}}" >
+    <div id="flash-message" class="alert alert-{{type}}" >
     {{messages|join('. ')}}
     </div>
 {% endfor %}
