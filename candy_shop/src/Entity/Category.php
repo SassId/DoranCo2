@@ -3,10 +3,13 @@
 namespace App\Entity;
 
 use App\Repository\CategoryRepository;
+use DateTimeImmutable;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 #[ORM\Entity(repositoryClass: CategoryRepository::class)]
+#[UniqueEntity(fields: ['name', 'slug'], message: 'this name is already used')]
 class Category
 {
     #[ORM\Id]
@@ -28,6 +31,18 @@ class Category
 
     #[ORM\Column(nullable: true)]
     private ?\DateTimeImmutable $updatedAt = null;
+
+    #[ORM\PrePersist] // attribute that triggers the function before the persist()
+    public function setCreatedAtValue()
+    {
+        $this->createdAt = new DateTimeImmutable();
+    }
+
+    #[ORM\PreUpdate]
+    public function setUpdatedAtValue()
+    {
+        $this-> updatedAt = new DateTimeImmutable();
+    }
 
     public function getId(): ?int
     {

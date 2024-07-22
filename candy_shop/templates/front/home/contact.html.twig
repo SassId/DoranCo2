@@ -5,6 +5,9 @@
 {% block body %}
 <main>
 <h1>Contact Us</h1>
-{{form(form)}}
+{{form_start(form)}}
+{{form_rest(form)}}
+<input type="submit" value="Send" class="btn btn-primary">
+{{form_end(form)}}
 </main>
 {% endblock %}

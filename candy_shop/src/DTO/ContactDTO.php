@@ -13,6 +13,8 @@ class ContactDTO
 
     private string $message;
 
+    private string $service;
+
 
     /**
      * Get the value of name
@@ -70,6 +72,26 @@ class ContactDTO
     public function setMessage($message)
     {
         $this->message = $message;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of service
+     */ 
+    public function getService()
+    {
+        return $this->service;
+    }
+
+    /**
+     * Set the value of service
+     *
+     * @return  self
+     */ 
+    public function setService($service)
+    {
+        $this->service = $service;
 
         return $this;
     }

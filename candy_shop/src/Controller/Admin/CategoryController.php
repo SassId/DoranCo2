@@ -40,7 +40,7 @@ class CategoryController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $category->setCreatedAt(new DateTimeImmutable());
+            // $category->setCreatedAt(new DateTimeImmutable()); 
             $em->persist($category);
             $em->flush();
             $this->addFlash('success', 'Your new category has been created !');
