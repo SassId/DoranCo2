@@ -1,0 +1,14 @@
+{% extends "admin/base.html.twig" %}
+
+{% block title %}Editer une Recette{% endblock %}
+
+{% block body %}
+<main class="d-flex flex-column gap-5 align-items-center">
+<h1>Editer une Recette</h1>
+{{form_start(form)}}
+{{form_rest(form)}}
+<input type="submit" value="Modifier" class="btn btn-primary">
+{{form_end(form)}}
+
+</main>
+{% endblock %}

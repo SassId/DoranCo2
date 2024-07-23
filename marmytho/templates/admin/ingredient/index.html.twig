@@ -1,0 +1,43 @@
+{% extends "admin/base.html.twig" %}
+
+{% block title %}
+	Admin Home Page
+{% endblock %}
+
+{% block body %}
+	<main class="d-flex flex-column gap-5 align-items-center">
+		<h1>Gerer les Ingrédients</h1>
+		<a class="btn btn-primary" href={{path('admin_ingredient_create')}}>Créer</a>
+		<table class="table table-striped table-bordered w-75">
+			<thead class="table-dark">
+				<tr>
+					<th>Titre</th>
+					<th>Prix</th>
+					<th>Date de Création</th>
+					<th colspan="2">Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for ingredient in ingredients %}
+					<tr>
+						<td>
+							<a href={{path('admin_ingredient_show', {'id': ingredient.id})}}>{{ingredient.name}}</a>
+						</td>
+						<td>{{ingredient.price}}</td>
+						<td>{{ingredient.createdAt|date('d/m/Y')}}</td>
+						<td>
+							<a class="btn btn-warning" href={{path('admin_ingredient_update', {'id': ingredient.id})}}>Editer</a>
+						</td>
+						<td>
+							<form action={{path('admin_ingredient_delete', {'id': ingredient.id})}} method="POST">
+							<input type="hidden" name="_method" value="DELETE">
+								<button type="submit" class="btn btn-danger">Supprimer</button>
+							</form>
+						</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</main>
+
+{% endblock %}
