@@ -13,7 +13,7 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: RecipeRepository::class)]
-#[UniqueEntity(fields: ['name', 'slug'], message: 'ce nom est déjà utilisé')]
+// #[UniqueEntity(fields: ['name', 'slug'], message: 'ce nom est déjà utilisé')]
 #[ORM\HasLifecycleCallbacks]
 class Recipe
 {

@@ -8,7 +8,11 @@
 <h1>{{recipe.name}}</h1>
 <h2>Temps de Prépartion: {{recipe.duration}} minutes</h2>
 <h3>Pour {{recipe.numberOfPlates}} personnes</h3>
-<p>{{recipe.description}}</p>
+<h4>Liste des Ingrégient: {{recipe.ingredients}} </h4>
+{# <p>{{recipe.description}}</p> #}
+<pre>
+    {{ dump(recipe) }}
+</pre>
 </div>
 </main>
 {% endblock %}

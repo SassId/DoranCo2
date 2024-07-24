@@ -2,9 +2,12 @@
 
 namespace App\Form;
 
+use App\Entity\Ingredient;
 use App\Entity\Recipe;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Event\PreSubmitEvent;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\RangeType;
@@ -47,23 +50,22 @@ class RecipeType extends AbstractType
             ->add('price', IntegerType::class, [
                 'label' => 'Prix (en euros)'
             ])
-            ->add('isFavorite', ChoiceType::class, [
-                'label' => 'Favoris',
-                'choices' => [
-                    'Yes' => true,
-                    'No' => false,
-                ],
+            ->add('isFavorite', CheckboxType::class, [
+                'label' => 'Favori'
+            ])
+            ->add('ingredients', EntityType::class, [
+                'class' => Ingredient::class,
+                'choice_label' => 'name',
+                'multiple' => true,
                 'expanded' => true,
-                'multiple' => false,
-                'required' => true,
             ])
             ->addEventListener(FormEvents::PRE_SUBMIT, $this->autoSlug(...));
     }
     public function autoSlug(PreSubmitEvent $event)
     {
-        dd($event);
+        // dd($event);
         $data = $event->getData();
-        dd($data);
+        // dd($data);
         if (empty($data['slug'])) {
             $slugger = new AsciiSlugger();
             $slug = strtolower($slugger->slug($data['name']));

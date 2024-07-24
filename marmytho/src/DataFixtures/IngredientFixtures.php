@@ -19,15 +19,18 @@ class IngredientFixtures extends Fixture
 
     public function load(ObjectManager $manager): void
     {
-        for ($i = 0; $i < 100; $i++) {
+
+        $faker = \Faker\Factory::create();
+$faker->addProvider(new \FakerRestaurant\Provider\fr_FR\Restaurant($faker));
+        for ($i = 0; $i < 50; $i++) {
             $ingredient = new Ingredient();
-            $ingredient->setName('ingredient ' . $i);
+            $ingredient->setName($faker->vegetableName());
             $slug = $this->slugger->slug($ingredient->getName())->lower();
             $ingredient->setSlug($slug);
             $ingredient->setPrice(mt_rand(5, 1000) / 10);
-            // $ingredient->setCreatedAt(new DateTimeImmutable());
 
             $manager->persist($ingredient);
+            $this->addReference('INGREDIENT'. $i, $ingredient);
         }
 
         $manager->flush();
