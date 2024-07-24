@@ -7,7 +7,12 @@
 }
 
 /* *GENERAL */
-
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 a {
     text-decoration: none;
 }
@@ -16,3 +21,7 @@ a:hover {
     text-decoration: underline;
 }
 
+/* *MAIN */
+main {
+    flex: 1;
+}

@@ -44,7 +44,7 @@ class RecipeController extends AbstractController
             $file = $form->get('thumbnailFile')->getData();
 
             if ($file) {
-                $fileDir = $this->getParameter('kernel.project_dir') . '/public/img/thumbnail';
+                $fileDir = $this->getParameter('kernel.project_dir') . '/public/img/thumbnails';
                 $fileName = $recipe->getSlug() . '.' . $file->getClientOriginalExtension();
                 $file->move($fileDir, $fileName);
                 $recipe->setFileName($fileName);

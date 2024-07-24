@@ -1,0 +1,29 @@
+{% extends "admin/base.html.twig" %}
+
+{% block title %}Accueil Admin
+{% endblock %}
+
+{% block body %}
+	<main class="container  d-flex flex-column justify-content-center">
+		<section class="d-flex justify-content-center gap-5 m">
+			<div class="card custom-card border-info mb-3 w-50">
+				<div class="card-header">Gestion</div>
+				<div class="card-body">
+					<h4 class="card-title text-center">Gérer les Ingrédients</h4>
+					<a href={{path('admin_ingredient_index')}}>
+						<img class="img-thumbnail mx-auto d-block" src={{asset('img/icons/ingredients.png')}} alt="icone ingrédients">
+					</a>
+				</div>
+			</div>
+			<div class="card border-info mb-3 w-50">
+				<div class="card-header">Gestion</div>
+				<div class="card-body">
+					<h4 class="card-title text-center">Gérer les Recettes</h4>
+					<a href={{path('admin_recipe_index')}}>
+						<img class="img-thumbnail mx-auto d-block" src={{asset('img/icons/livre-de-recettes.png')}} alt="icone livre de recettes">
+					</a>
+				</div>
+			</div>
+		</section>
+	</main>
+{% endblock %}
