@@ -13,7 +13,7 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: RecipeRepository::class)]
-// #[UniqueEntity(fields: ['name', 'slug'], message: 'ce nom est déjà utilisé')]
+#[UniqueEntity(fields: ['name', 'slug'], message: 'ce nom est déjà utilisé')]
 #[ORM\HasLifecycleCallbacks]
 class Recipe
 {
@@ -74,6 +74,9 @@ class Recipe
 
     #[ORM\Column(nullable: true)]
     private ?bool $isFavorite = false;
+
+    #[ORM\Column(nullable: true)]
+    private ?string $fileName;
 
     #[ORM\Column]
     private ?\DateTimeImmutable $createdAt = null;
@@ -250,6 +253,18 @@ class Recipe
     public function removeIngredient(Ingredient $ingredient): static
     {
         $this->ingredients->removeElement($ingredient);
+
+        return $this;
+    }
+
+    public function getFileName()
+    {
+        return $this->fileName;
+    }
+
+    public function setFileName($fileName)
+    {
+        $this->fileName = $fileName;
 
         return $this;
     }

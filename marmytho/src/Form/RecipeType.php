@@ -9,6 +9,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Event\PreSubmitEvent;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\RangeType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -30,10 +31,12 @@ class RecipeType extends AbstractType
                 'required' => false
             ])
             ->add('duration', IntegerType::class, [
-                'label' => 'Temps de Préparation (en minutes)'
+                'label' => 'Temps de Préparation (en minutes)',
+                'required' => false
             ])
             ->add('numberOfPlates', IntegerType::class, [
-                'label' => 'Nombre de Couverts'
+                'label' => 'Nombre de Couverts',
+                'required' => false
             ])
             ->add('difficulty', RangeType::class, [
                 'label' => 'Niveau de Difficulté',
@@ -45,32 +48,43 @@ class RecipeType extends AbstractType
                 ],
             ])
             ->add('description', TextareaType::class, [
-                'label' => 'Etapes à Suivre'
+                'label' => 'Etapes à Suivre',
+                'required' => false
             ])
             ->add('price', IntegerType::class, [
-                'label' => 'Prix (en euros)'
+                'label' => 'Prix (en euros)',
+                'required' => false
             ])
             ->add('isFavorite', CheckboxType::class, [
-                'label' => 'Favori'
+                'label' => 'Favori',
+                'required' => false
+
             ])
             ->add('ingredients', EntityType::class, [
                 'class' => Ingredient::class,
                 'choice_label' => 'name',
                 'multiple' => true,
-                'expanded' => true,
+                // 'expanded' => true,
+                'required' => false
+            ])
+            ->add('thumbnailFile', FileType::class, [
+                'label' => 'ajouter une image',
+                'mapped' => false,
+                'required' => false
             ])
             ->addEventListener(FormEvents::PRE_SUBMIT, $this->autoSlug(...));
     }
+
     public function autoSlug(PreSubmitEvent $event)
     {
-        // dd($event);
         $data = $event->getData();
-        // dd($data);
         if (empty($data['slug'])) {
             $slugger = new AsciiSlugger();
-            $slug = strtolower($slugger->slug($data['name']));
+            $slug = $slugger->slug($data['name'])->lower();
             $data['slug'] = $slug;
         }
+
+        $event->setData($data);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

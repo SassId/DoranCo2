@@ -39,9 +39,16 @@ class RecipeController extends AbstractController
         $recipe = new Recipe();
         $form = $this->createForm(RecipeType::class, $recipe);
         $form->handleRequest($request);
+
         if ($form->isSubmitted() && $form->isValid()) {
-            // $slug = $slugger->slug($recipe->getName())->lower();
-            // $recipe->setSlug($slug);
+            $file = $form->get('thumbnailFile')->getData();
+
+            if ($file) {
+                $fileDir = $this->getParameter('kernel.project_dir') . '/public/img/thumbnail';
+                $fileName = $recipe->getSlug() . '.' . $file->getClientOriginalExtension();
+                $file->move($fileDir, $fileName);
+                $recipe->setFileName($fileName);
+            }
 
             $em->persist($recipe);
             $em->flush();
@@ -70,7 +77,7 @@ class RecipeController extends AbstractController
         ]);
     }
 
-    #[Route('/supprimer/{id}', name: 'delete', methods:['DELETE'])]
+    #[Route('/supprimer/{id}', name: 'delete', methods: ['DELETE'])]
     public function delete(Recipe $recipe, EntityManagerInterface $em)
     {
         $em->remove($recipe);
@@ -78,5 +85,6 @@ class RecipeController extends AbstractController
 
         return $this->redirectToRoute('admin_recipe_index');
     }
-
 }
+
+// TODO: add flash messages

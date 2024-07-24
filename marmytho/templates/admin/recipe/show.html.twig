@@ -1,18 +1,26 @@
 {% extends "admin/base.html.twig" %}
 
-{% block title %}{{recipe.name}}{% endblock %}
+{% block title %}
+	{{recipe.name}}
+{% endblock %}
 
 {% block body %}
-<main>
-<div class="container-fluid">
-<h1>{{recipe.name}}</h1>
-<h2>Temps de Prépartion: {{recipe.duration}} minutes</h2>
-<h3>Pour {{recipe.numberOfPlates}} personnes</h3>
-<h4>Liste des Ingrégient: {{recipe.ingredients}} </h4>
-{# <p>{{recipe.description}}</p> #}
-<pre>
-    {{ dump(recipe) }}
-</pre>
-</div>
-</main>
+	<main>
+		<div class="container-fluid">
+			<h1>{{recipe.name}}</h1>
+			<h2>Temps de Prépartion:
+				{{recipe.duration}}
+				minutes</h2>
+			<h3>Pour
+				{{recipe.numberOfPlates}}
+				personnes</h3>
+			<h4>Liste des Ingrégient:</h4>
+			<ul>
+				{% for ingredient in recipe.ingredients %}
+					<li>{{ingredient.name}}</li>
+			{% endfor %}
+				</ul>
+			<p>{{recipe.description}}</p>
+		</div>
+	</main>
 {% endblock %}
