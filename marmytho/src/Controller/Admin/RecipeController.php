@@ -10,9 +10,12 @@ use Symfony\Component\Routing\Attribute\Route;
 use App\Repository\RecipeRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 use Symfony\Component\String\Slugger\SluggerInterface;
 
 #[Route('admin/recette', name: 'admin_recipe_')]
+// #[IsGranted()]
+// #[IsGranted('IS_AUTHENTICATED')]
 class RecipeController extends AbstractController
 {
     #[Route('/', name: 'index', methods: ['GET'])]
@@ -52,6 +55,7 @@ class RecipeController extends AbstractController
 
             $em->persist($recipe);
             $em->flush();
+            $this->addFlash('success', 'votre recette a bien été ajoutée');
 
             return $this->redirectToRoute('admin_recipe_index');
         }
@@ -77,6 +81,8 @@ class RecipeController extends AbstractController
             }
 
             $em->flush();
+            $this->addFlash('success', 'votre recette a bien été modifiée');
+
 
             return $this->redirectToRoute('admin_recipe_index');
         }
@@ -91,10 +97,12 @@ class RecipeController extends AbstractController
     {
         $em->remove($recipe);
         $em->flush();
+        $this->addFlash('success', 'votre recette a bien été suprrimée');
+
 
         return $this->redirectToRoute('admin_recipe_index');
     }
 }
 
-// TODO: add flash messages
-// TODO: add constraints to filetype
+// TODO: change route paths to french (inside controller and index page with button links ;)
+// TODO: add unique to fixtures on ingredients

@@ -11,6 +11,7 @@
 			<thead class="table-dark">
 				<tr>
 					<th>Titre</th>
+					<th>Etapes</th>
 					<th colspan="2">Actions</th>
 				</tr>
 			</thead>
@@ -20,6 +21,7 @@
 						<td>
 							<a href={{path('admin_recipe_show', {'slug': recipe.slug} )}}>{{recipe.name}}</a>
 						</td>
+						<td>{{recipe.description}}</td>
 						<td>
 							<a class="btn btn-warning" href={{path('admin_recipe_edit', {'slug': recipe.slug} )}}>Editer</a>
 						</td>

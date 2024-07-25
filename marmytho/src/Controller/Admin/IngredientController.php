@@ -25,7 +25,7 @@ class IngredientController extends AbstractController
         ]);
     }
 
-    #[Route('/details/{id}', name: 'show')]
+    #[Route('/details/{slug}', name: 'show')]
     public function show(Ingredient $ingredient)
     {
         return $this->render('admin/ingredient/show.html.twig', [
@@ -33,14 +33,22 @@ class IngredientController extends AbstractController
         ]);
     }
 
-    #[Route('/create', name: 'create', methods: ['GET', 'POST'])]
+    #[Route('/ajouter', name: 'create', methods: ['GET', 'POST'])]
     public function create(EntityManagerInterface $em, Request $request): Response
     {
         $ingredient = new Ingredient();
         $form = $this->createForm(IngredientType::class, $ingredient);
         $form->handleRequest($request);
+
         if ($form->isSubmitted() && $form->isValid()) {
-            
+            $file = $form->get('thumbnail')->getData();
+
+            if ($file) {
+                $fileDir = $this->getParameter('kernel.project_dir') . '/public/img/thumbnails';
+                $fileName = $ingredient->getSlug() . '.' . $file->getClientOriginalExtension();
+                $file->move($fileDir, $fileName);
+            }
+
             $em->persist($ingredient);
             $em->flush();
             $this->addFlash('success', 'Votre ingrédient à bien été ajouté !');
@@ -53,12 +61,20 @@ class IngredientController extends AbstractController
         ]);
     }
 
-    #[Route('/update/{id}', name: 'update', methods: ['GET', 'POST'])]
+    #[Route('/update/{slug}', name: 'update', methods: ['GET', 'POST'])]
     public function update(EntityManagerInterface $em, Request $request, Ingredient $ingredient): Response
     {
         $form = $this->createForm(IngredientType::class, $ingredient);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
+            $file = $form->get('thumbnail')->getData();
+
+            if ($file) {
+                $fileDir = $this->getParameter('kernel.project_dir') . '/public/img/thumbnails';
+                $fileName = $ingredient->getSlug() . '.' . $file->getClientOriginalExtension();
+                $file->move($fileDir, $fileName);
+                $ingredient->setFileName($fileName);
+            }
             $em->flush();
             $this->addFlash('success', 'Votre ingrédient à bien été modifié !');
 
@@ -75,6 +91,7 @@ class IngredientController extends AbstractController
     {
         $em->remove($ingredient);
         $em->flush();
+        $this->addFlash('success', "Votre ingrédient à bien été supprimé");
 
         return $this->redirectToRoute('admin_ingredient_index');
     }

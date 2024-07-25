@@ -5,9 +5,10 @@
 {% endblock %}
 
 {% block body %}
-	<main>
-		<div class="container-fluid">
+	<main class="d-flex flex-column align-items-center gap-2">
+		<div class="container d-flex flex-column gap-2 my-3">
 			<h1>{{ingredient.name}}</h1>
+			<img src={{asset('img/thumbnails/' ~ ingredient.fileName)}} alt="image de {{ingredient.name}}">
             <h2>Prix : {{ingredient.price}} € le kilo</h2>
 		</div>
 	</main>
