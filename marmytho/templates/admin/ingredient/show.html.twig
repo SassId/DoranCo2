@@ -1,9 +1,14 @@
 {% extends "admin/base.html.twig" %}
 
-{% block title %}Détails de Recette{% endblock %}
+{% block title %}
+	{{ingredient.name}}
+{% endblock %}
 
 {% block body %}
-<main>
-</main>
-
+	<main>
+		<div class="container-fluid">
+			<h1>{{ingredient.name}}</h1>
+            <h2>Prix : {{ingredient.price}} € le kilo</h2>
+		</div>
+	</main>
 {% endblock %}

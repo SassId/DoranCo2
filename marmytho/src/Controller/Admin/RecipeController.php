@@ -25,7 +25,7 @@ class RecipeController extends AbstractController
         ]);
     }
 
-    #[Route('/details/{id}', name: 'show', methods: ['GET'])]
+    #[Route('/details/{slug}', name: 'show', methods: ['GET'])]
     public function show(Recipe $recipe)
     {
         return $this->render('admin/recipe/show.html.twig', [
@@ -61,12 +61,21 @@ class RecipeController extends AbstractController
         ]);
     }
 
-    #[Route('/editer/{id}', name: 'edit')]
-    public function edit(EntityManagerInterface $em, Request $request, SluggerInterface $slugger, Recipe $recipe)
+    #[Route('/editer/{slug}', name: 'edit')]
+    public function edit(EntityManagerInterface $em, Request $request, Recipe $recipe)
     {
         $form = $this->createForm(RecipeType::class, $recipe);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
+            $file = $form->get('thumbnailFile')->getData();
+
+            if ($file) {
+                $fileDir = $this->getParameter('kernel.project_dir') . '/public/img/thumbnails';
+                $fileName = $recipe->getSlug() . '.' . $file->getClientOriginalExtension();
+                $file->move($fileDir, $fileName);
+                $recipe->setFileName($fileName);
+            }
+
             $em->flush();
 
             return $this->redirectToRoute('admin_recipe_index');
@@ -88,3 +97,4 @@ class RecipeController extends AbstractController
 }
 
 // TODO: add flash messages
+// TODO: add constraints to filetype

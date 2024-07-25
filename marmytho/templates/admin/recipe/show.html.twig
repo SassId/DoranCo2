@@ -5,9 +5,10 @@
 {% endblock %}
 
 {% block body %}
-	<main>
-		<div class="container-fluid">
+	<main class="d-flex flex-column align-items-center gap-2" >
+		<div class="container d-flex flex-column gap-2 my-3">
 			<h1>{{recipe.name}}</h1>
+			<img src={{asset('img/thumbnails/' ~ recipe.fileName)}} alt="image de {{recipe.name}}">
 			<h2>Temps de Prépartion:
 				{{recipe.duration}}
 				minutes</h2>

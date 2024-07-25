@@ -40,6 +40,7 @@ class IngredientController extends AbstractController
         $form = $this->createForm(IngredientType::class, $ingredient);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
+            
             $em->persist($ingredient);
             $em->flush();
             $this->addFlash('success', 'Votre ingrédient à bien été ajouté !');

@@ -14,8 +14,7 @@ class IngredientType extends AbstractType
     {
         $builder
             ->add('name')
-            ->add('price', NumberType::class)
-        ;
+            ->add('price', NumberType::class);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
