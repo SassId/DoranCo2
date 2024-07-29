@@ -1,0 +1,19 @@
+{% extends "front/base.html.twig" %}
+
+{% block title %}
+	{{parent()}}Home
+{% endblock %}
+
+{% block body %}
+	<main>
+		<h1>Welcome to Lumi Design</h1>
+		{% for product in products %}
+			<div></div>
+			<img src={{product.image}} alt="">
+			<h2>{{product.name}}</h2>
+			<h3>{{product.price}}</h3>
+			<p>{{product.description}}</p>
+
+		{% endfor %}
+	</main>
+{% endblock %}

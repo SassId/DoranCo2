@@ -40,15 +40,16 @@ class RecipeFixtures extends Fixture implements DependentFixtureInterface
             $recipe->setPrice($faker->randomFloat(2, 1, 100));
             $recipe->setFavorite($faker->boolean());
             // $ingredient = new Ingredient();
-            for ($j = 0; $j < mt_rand(0,7); $j++)
-            $recipe->addIngredient($this->getReference('INGREDIENT'. mt_rand(0,49)));
+            for ($j = 0; $j < mt_rand(0, 7); $j++) {
+                $recipe->addIngredient($this->getReference('INGREDIENT' . mt_rand(0, 49)));
+            }
 
             $manager->persist($recipe);
         }
 
         $manager->flush();
     }
-    
+
     public function getDependencies()
     {
         return [IngredientFixtures::class];

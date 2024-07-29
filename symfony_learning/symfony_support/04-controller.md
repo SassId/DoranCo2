@@ -1,5 +1,24 @@
 # Controller (MVC)
 
+<br>
+
+<center>
+<img src="https://symfony.com/logos/symfony_black_03.png" width="100">
+</center>
+
+<br>
+
+> Les contrôleurs interprètent les requêtes HTTP effectuées via l'URL et renvoient les informations demandées par l'utilisateur à Twig, qui est la Vue.
+
+## Sommaire
+
+-   [Introduction](#introduction)
+-   [Route](#route)
+-   [Return](#return)
+-   [Variables](#variables)
+-   [Route dynamique](#route-dynamique)
+-   [ParamConverter](#paramconverter)
+
 ## Introduction
 
 -   Les contrôleurs sont des classes qui contiennent des méthodes qui correspondent à des routes.
@@ -61,3 +80,29 @@ public function article($id)
     ]);
 }
 ```
+
+## ParamConverter
+
+-   Le ParamConverter est un mécanisme qui permet de convertir automatiquement un paramètre de route en objet.
+-   Le ParamConverter est activé par défaut dans Symfony.
+
+```php
+#[Route("/article/{id}", name="article")]
+public function article(Article $article)
+{
+    return $this->render('article/article.html.twig', [
+        'article' => $article
+    ]);
+}
+```
+
+Pour pouvoir utiliser le ParamConverter avec les autres champs que l'`id`, par exemple le slug, il faut configurer dans le fichier `config/packages/doctrine.yaml`
+
+```yaml
+controller_resolver:
+    auto_mapping: true:
+```
+
+---
+
+[🏠 Retour au sommaire](#)

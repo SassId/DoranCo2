@@ -1,4 +1,14 @@
-# AbstractTypes
+# Formulaires Symfony
+
+<br>
+
+<center>
+<img src="https://symfony.com/logos/symfony_black_03.png" width="100">
+</center>
+
+<br>
+
+> Les formulaires sont un élément essentiel de toute application web. Ils permettent aux utilisateurs d'interagir avec l'application en saisissant des données et en soumettant des requêtes. Symfony propose un composant de formulaire puissant qui facilite la création et la gestion de formulaires dans vos applications.
 
 ## Sommaire
 
@@ -90,21 +100,19 @@ Voici une liste des principaux paramètres que l'on peut passer dans le tableau 
 
 4. `data`: Définit la valeur par défaut du champ
 
-5. `mapped`: Indique si le champ doit être lié à une propriété de l'objet sous-jacent
+5. `empty_data`: Définit la valeur à utiliser si le champ est vide
+6.
+7. `mapped`: Indique si le champ doit être lié à une propriété de l'objet sous-jacent
 
-6. `constraints`: Permet d'ajouter des contraintes de validation spécifiques au champ (ex: `new NotBlank()`)
+8. `constraints`: Permet d'ajouter des contraintes de validation spécifiques au champ (ex: `new NotBlank()`)
 
-7. `placeholder`: Ajoute une option vide au début de la liste pour les champs de type choix
+9. `placeholder`: Ajoute une option vide au début de la liste pour les champs de type choix
 
-8. `expanded`: Pour les champs de type choix, affiche les options sous forme de boutons radio ou cases à cocher
+10. `expanded`: Pour les champs de type choix, affiche les options sous forme de boutons radio ou cases à cocher
 
-9. `disabled`: Désactive le champ
+11. `disabled`: Désactive le champ
 
-10. `help`: Ajoute un texte d'aide sous le champ
-
-11. `row_attr`: Permet d'ajouter des attributs HTML à la ligne du formulaire contenant le champ
-
-12. `empty_data`: Définit la valeur à utiliser si le champ est vide
+12. `help`: Ajoute un texte d'aide sous le champ
 
 13. `invalid_message`: Personnalise le message d'erreur en cas de validation échouée
 
@@ -166,6 +174,17 @@ Twig permet de personnaliser l'affichage du formulaire en utilisant des thèmes.
 {{ form_end(form) }}
 ```
 
+## Configuration du thème
+
+Après avoir ajouter Bootstrap Css à votre projet, vous pouvez configurer le thème du formulaire pour qu'il utilise Bootstrap ou Tailwind CSS.
+
+Configurez Bootstrap ou Tailwind CSS pour les formulaires dans le fichier `config/packages/twig.yaml` :
+
+```yaml
+twig:
+    form_themes: ['bootstrap_5_layout.html.twig']
+```
+
 ## Validation
 
 La validation des données du formulaire se fait automatiquement grâce aux contraintes de validation définies dans les entités.
@@ -195,4 +214,4 @@ Les AbstractTypes sont des classes abstraites qui permettent de définir des for
 
 ---
 
-[Retour au sommaire](#)
+[🏠 Retour au sommaire](#)

@@ -1,0 +1,16 @@
+/* *RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* *GENERAL */
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    transform: scale(1.2);
+}
+

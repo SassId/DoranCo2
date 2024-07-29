@@ -1,6 +1,26 @@
 # Twig
 
-Twig est un moteur de template pour PHP. Il est utilisé pour générer des pages HTML dynamiques à partir de modèles. Symfony utilise Twig par défaut pour les vues.
+<br>
+
+<center>
+<img src="https://symfony.com/logos/symfony_black_03.png" width="100">
+</center>
+
+<br>
+
+> Twig est un moteur de template pour PHP. Il est utilisé pour générer des pages HTML dynamiques à partir de modèles. Symfony utilise Twig par défaut pour les vues.
+
+## Sommaire
+
+-   [Installation](#installation)
+-   [Syntaxe de base](#syntaxe-de-base)
+-   [Utilisation](#utilisation)
+    -   [Variables](#variables)
+    -   [Structures de contrôle](#structures-de-contrôle)
+-   [Assets (CSS, JS, Images)](#assets-css-js-images)
+-   [Liens et formulaires](#liens-et-formulaires)
+-   [app](#app)
+-   [Conclusion](#conclusion)
 
 ## Installation
 
@@ -14,14 +34,16 @@ composer require twig
 
 Twig utilise des balises pour afficher des variables, des structures de contrôle et des filtres. Voici quelques exemples de syntaxe Twig :
 
--   Commentaire : `{# Commentaire #}`
--   Héritage : `{% extends 'base.html.twig' %}`
--   Bloc : `{% block content %} ... {% endblock %}`
--   Inclure un fichier : `{% include 'file.html.twig' %}`
--   Structure de contrôle `for` : `{% for item in items %} ... {% endfor %}`
--   Structure de contrôle `if` : `{% if condition %} ... {% endif %}`
--   Afficher une variable : `{{ variable }}`
--   Filtre : `{{ variable|filter }}`
+-   Balises de commentaire : `{# Commentaire #}`
+-   Les structures de contrôle :
+    -   Héritage : `{% extends 'base.html.twig' %}`
+    -   Bloc : `{% block content %} ... {% endblock %}`
+    -   Inclure un fichier : `{% include 'file.html.twig' %}`
+    -   Structure de contrôle `for` : `{% for item in items %} ... {% endfor %}`
+    -   Structure de contrôle `if` : `{% if condition %} ... {% endif %}`
+-   Affichage des variables :
+    -   Afficher une variable : `{{ variable }}`
+    -   Filtre : `{{ variable|filter }}`
 
 ## Utilisation
 
@@ -48,7 +70,7 @@ Vous pouvez également utiliser des structures de contrôle comme les boucles `f
 Et un exemple de condition `if` :
 
 ```twig
-{% if is_logged_in %}
+{% if is_granted('IS_AUTHENTICATED') %}
     <p>Welcome, {{ user.name }}!</p>
 {% else %}
     <p>Please log in to continue.</p>
@@ -89,20 +111,44 @@ L'objet `app` vous permet d'accéder à l'application Symfony dans vos modèles 
 
 Par exemple, pour accéder à un paramètre dans un modèle Twig, utilisez :
 
-```twig
-{{ app.parameter_name }}
-```
-
-Pour accéder à un service dans un modèle Twig, utilisez :
+-   Pour accéder à la requête actuelle :
 
 ```twig
-{{ app.service_name.method() }}
+{{ app.request}}
 ```
 
+-   Pour accéder à l'utilisateur actuel :
 
+```twig
+{{ app.user }}
+```
+
+-   Pour accéder à la session actuelle :
+
+```twig
+{{ app.session }}
+```
+
+-   Pour acceder à la Session Flash :
+
+```twig
+{{ app.flashes }}
+```
 
 Twig offre de nombreuses fonctionnalités pour rendre vos modèles plus dynamiques et interactifs. Consultez la [documentation officielle de Twig](https://twig.symfony.com/doc/3.x/) pour en savoir plus sur ses fonctionnalités et sa syntaxe.
 
+## Conclusion
+
+Twig est un moteur de template puissant qui facilite la création de vues dynamiques dans Symfony. En utilisant Twig, vous pouvez générer des pages HTML interactives et attrayantes pour votre application Symfony.
+
 ---
 
-[Haut de page](#)
+**🔗 Liens Utiles :**
+
+-   [Documentation officielle de Twig](https://twig.symfony.com/doc/3.x/)
+-   [Symfony avec Twig](https://symfony.com/doc/current/templating.html)
+-   [Comment Customiser les formulaires avec Twig](https://symfony.com/doc/current/form/form_customization.html)
+
+---
+
+[🏠 Retour au sommaire](#)

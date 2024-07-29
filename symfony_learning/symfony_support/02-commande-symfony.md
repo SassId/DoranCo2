@@ -8,6 +8,8 @@
 
 <br>
 
+> Symfony fourni de nombreuses commandes pour gérer votre application. Nous pouvons les exécuter en utilisant la commande `php bin/console` ou `symfony console`. Voici quelques commandes utiles pour travailler avec Symfony.
+
 ## Sommaire
 
 -   [1. Installation de Symfony](#1-installation-de-symfony)

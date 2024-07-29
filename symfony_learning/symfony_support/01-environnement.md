@@ -8,6 +8,8 @@
 
 <br>
 
+> Afin de travailler efficacement avec Symfony, il est recommandé de configurer votre environnement de travail pour une productivité maximale. Voici quelques outils et extensions utiles pour développer des applications Symfony dans Visual Studio Code.
+
 ## Sommaire
 
 -   [1. Extensions VS Code](#1-extensions-vs-code)
@@ -79,4 +81,6 @@ Symfony CLI est un outil de développement pratique qui permet de créer, exécu
 
 Pour installer Symfony CLI, suivez les instructions sur le site officiel de Symfony : [Installation de Symfony CLI](https://symfony.com/download)
 
-[Haut de page](#)
+---
+
+[🏠 Retour au sommaire](#)

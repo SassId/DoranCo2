@@ -8,6 +8,8 @@
 
 <br>
 
+> Vue d'ensemble de la logique de Symfony, y compris la création de contrôleurs, la gestion des bases de données, la création de formulaires, etc.
+
 ## Sommaire
 
 -   [1. Création d'un Contrôleur et d'une Vue](#1-création-dun-contrôleur-et-dune-vue)
@@ -260,4 +262,6 @@ Pour les formulaires, utilisez la fonction `form_start()` :
 {{ form_start(form) }}
 ```
 
-[Haut de page](#)
+---
+
+[🏠 Retour au sommaire](#)

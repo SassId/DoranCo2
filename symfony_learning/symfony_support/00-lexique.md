@@ -111,4 +111,4 @@ Un événement est un objet qui représente un événement déclenché par une a
 
 ---
 
-[Haut de page](#)
+[🏠 Retour au sommaire](#)
