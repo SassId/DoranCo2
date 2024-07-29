@@ -11,7 +11,7 @@
 			<thead class="table-dark">
 				<tr>
 					<th>Titre</th>
-					<th>Miniature</th>
+					<th>Etapes</th>
 					<th colspan="2">Actions</th>
 				</tr>
 			</thead>
@@ -19,11 +19,11 @@
 				{% for recipe in recipes %}
 					<tr>
 						<td>
-							<a href={{path('admin_recipe_show', {'id': recipe.id} )}}>{{recipe.name}}</a>
+							<a href={{path('admin_recipe_show', {'slug': recipe.slug} )}}>{{recipe.name}}</a>
 						</td>
-						<td><img src={{asset('img/thumbnails/' ~ recipe.fileName)}} alt="image de {{recipe.name}}"></td>
+						<td>{{recipe.description}}</td>
 						<td>
-							<a class="btn btn-warning" href={{path('admin_recipe_edit', {'id': recipe.id} )}}>Editer</a>
+							<a class="btn btn-warning" href={{path('admin_recipe_edit', {'slug': recipe.slug} )}}>Editer</a>
 						</td>
 						<td>
 							<form action={{path('admin_recipe_delete', {'id': recipe.id} )}} method="POST">

@@ -21,12 +21,12 @@
 				{% for ingredient in ingredients %}
 					<tr>
 						<td>
-							<a href={{path('admin_ingredient_show', {'id': ingredient.id})}}>{{ingredient.name}}</a>
+							<a href={{path('admin_ingredient_show', {'slug': ingredient.slug})}}>{{ingredient.name}}</a>
 						</td>
 						<td>{{ingredient.price}}</td>
 						<td>{{ingredient.createdAt|date('d/m/Y')}}</td>
 						<td>
-							<a class="btn btn-warning" href={{path('admin_ingredient_update', {'id': ingredient.id})}}>Editer</a>
+							<a class="btn btn-warning" href={{path('admin_ingredient_update', {'slug': ingredient.slug})}}>Editer</a>
 						</td>
 						<td>
 							<form action={{path('admin_ingredient_delete', {'id': ingredient.id})}} method="POST">

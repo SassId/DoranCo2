@@ -21,16 +21,16 @@ class IngredientFixtures extends Fixture
     {
 
         $faker = \Faker\Factory::create();
-$faker->addProvider(new \FakerRestaurant\Provider\fr_FR\Restaurant($faker));
+        $faker->addProvider(new \FakerRestaurant\Provider\fr_FR\Restaurant($faker));
         for ($i = 0; $i < 50; $i++) {
             $ingredient = new Ingredient();
-            $ingredient->setName($faker->vegetableName());
+            $ingredient->setName($faker->vegetableName() . $i);
             $slug = $this->slugger->slug($ingredient->getName())->lower();
             $ingredient->setSlug($slug);
             $ingredient->setPrice(mt_rand(5, 1000) / 10);
 
             $manager->persist($ingredient);
-            $this->addReference('INGREDIENT'. $i, $ingredient);
+            $this->addReference('INGREDIENT' . $i, $ingredient);
         }
 
         $manager->flush();

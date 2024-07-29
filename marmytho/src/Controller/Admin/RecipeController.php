@@ -10,9 +10,12 @@ use Symfony\Component\Routing\Attribute\Route;
 use App\Repository\RecipeRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 use Symfony\Component\String\Slugger\SluggerInterface;
 
 #[Route('admin/recette', name: 'admin_recipe_')]
+// #[IsGranted()]
+// #[IsGranted('IS_AUTHENTICATED')]
 class RecipeController extends AbstractController
 {
     #[Route('/', name: 'index', methods: ['GET'])]
@@ -25,7 +28,7 @@ class RecipeController extends AbstractController
         ]);
     }
 
-    #[Route('/details/{id}', name: 'show', methods: ['GET'])]
+    #[Route('/details/{slug}', name: 'show', methods: ['GET'])]
     public function show(Recipe $recipe)
     {
         return $this->render('admin/recipe/show.html.twig', [
@@ -52,6 +55,7 @@ class RecipeController extends AbstractController
 
             $em->persist($recipe);
             $em->flush();
+            $this->addFlash('success', 'votre recette a bien été ajoutée');
 
             return $this->redirectToRoute('admin_recipe_index');
         }
@@ -61,13 +65,24 @@ class RecipeController extends AbstractController
         ]);
     }
 
-    #[Route('/editer/{id}', name: 'edit')]
-    public function edit(EntityManagerInterface $em, Request $request, SluggerInterface $slugger, Recipe $recipe)
+    #[Route('/editer/{slug}', name: 'edit')]
+    public function edit(EntityManagerInterface $em, Request $request, Recipe $recipe)
     {
         $form = $this->createForm(RecipeType::class, $recipe);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
+            $file = $form->get('thumbnailFile')->getData();
+
+            if ($file) {
+                $fileDir = $this->getParameter('kernel.project_dir') . '/public/img/thumbnails';
+                $fileName = $recipe->getSlug() . '.' . $file->getClientOriginalExtension();
+                $file->move($fileDir, $fileName);
+                $recipe->setFileName($fileName);
+            }
+
             $em->flush();
+            $this->addFlash('success', 'votre recette a bien été modifiée');
+
 
             return $this->redirectToRoute('admin_recipe_index');
         }
@@ -82,9 +97,12 @@ class RecipeController extends AbstractController
     {
         $em->remove($recipe);
         $em->flush();
+        $this->addFlash('success', 'votre recette a bien été suprrimée');
+
 
         return $this->redirectToRoute('admin_recipe_index');
     }
 }
 
-// TODO: add flash messages
+// TODO: change route paths to french (inside controller and index page with button links ;)
+// TODO: add unique to fixtures on ingredients

@@ -30,7 +30,7 @@ class RecipeFixtures extends Fixture implements DependentFixtureInterface
 
         for ($i = 0; $i < 50; $i++) {
             $recipe = new Recipe();
-            $recipe->setName($faker->foodName());
+            $recipe->setName($faker->foodName().$i);
             $slug = $this->slugger->slug($recipe->getName())->lower();
             $recipe->setSlug($slug);
             $recipe->setDescription($faker->text($maxNbChars = 200));
