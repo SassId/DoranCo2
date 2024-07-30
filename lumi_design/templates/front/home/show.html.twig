@@ -1,0 +1,15 @@
+{% extends "front/base.html.twig" %}
+
+{% block title %}
+{{parent()}}Details
+{% endblock %}
+
+{% block body %}
+<main>
+<pre>
+    {{ dump(product.name) }}
+</pre>
+
+</main>
+
+{% endblock %}

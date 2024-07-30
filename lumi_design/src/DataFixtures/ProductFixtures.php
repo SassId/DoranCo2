@@ -30,7 +30,7 @@ class ProductFixtures extends Fixture implements DependentFixtureInterface
                 ->setDescription($this->faker->text(100))
                 ->setPrice($this->faker->randomFloat(2, 1, 100))
                 ->setStock($this->faker->numberBetween(0, 50))
-                ->setImage($this->faker->imageUrl(width: 100, height: 100))
+                ->setImage($this->faker->imageUrl(width: 500, height: 500))
                 ->setUpdatedAt(DateTimeImmutable::createFromMutable($this->faker->dateTimeBetween('-3 months')));
             // $slug = $this->slugger->slug($product->getName())->lower();
             // $product->setSlug($slug);

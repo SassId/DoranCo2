@@ -7,13 +7,23 @@
 {% block body %}
 	<main>
 		<h1>Welcome to Lumi Design</h1>
-		{% for product in products %}
-			<div></div>
-			<img src={{product.image}} alt="">
-			<h2>{{product.name}}</h2>
-			<h3>{{product.price}}</h3>
-			<p>{{product.description}}</p>
-
-		{% endfor %}
+		<div class="d-flex flex-wrap justify-content-around gap-5">
+			{% for product in products %}
+				<div class="card" style="width: 18rem;">
+					<img src={{product.image}} class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 class="card-title">{{product.name}}</h5>
+						<p>{{ product.description | slice(0, 100) }}
+							{% if product.description|length > 100 %}...
+							{% endif %}
+						</p>
+						<a href={{path('front_home_show', {'id' : product.id})}} class="btn btn-primary">See More</a>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+		<div class="navigation mt-4">
+			{{ knp_pagination_render(products) }}
+		</div>
 	</main>
 {% endblock %}
