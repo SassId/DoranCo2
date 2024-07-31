@@ -31,6 +31,28 @@ class ProductRepository extends ServiceEntityRepository
         );
     }
 
+    public function paginateProductsOrderedByUpdatedAt(int $page): PaginationInterface
+    {
+        return $this->paginator->paginate(
+            $this->createQueryBuilder('p')
+            ->orderBy('p.updatedAt', 'DESC'),
+            $page,
+            10
+        );
+    }
+
+
+    public function findWithCategory(string $slug): ?Product
+    {
+        return $this->createQueryBuilder('p')
+            ->leftJoin('p.category', 'c')
+            ->addSelect('c')
+            ->andWhere('p.slug = :slug')
+            ->setParameter('slug', $slug)
+            ->getQuery()
+            ->getOneOrNullResult();
+    }
+
     //    /**
     //     * @return Product[] Returns an array of Product objects
     //     */

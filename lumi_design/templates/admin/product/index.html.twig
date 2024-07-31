@@ -1,7 +1,7 @@
 {% extends "admin/base.html.twig" %}
 
 {% block title %}
-	{{parent()}}Admin - Product
+	{{parent()}}Product
 {% endblock %}
 
 {% block body %}
@@ -10,13 +10,14 @@
             {{ dump(products) }}
         </pre> #}
 		<h1 class="text-center">Gérer les Produits</h1>
-		<a class="btn btn-success m-auto" href="">Ajouter un Produit</a>
+		<a class="btn btn-success m-auto" href={{path('admin_product_create')}}>Ajouter un Produit</a>
 		<table class="table table-striped">
 			<thead>
 				<tr>
-					<th>ID</th>
-					<th>Nom</th>
-					<th>Date de Création</th>
+					<th>{{knp_pagination_sortable(products, 'ID', 'p.id')}}</th>
+					<th>{{knp_pagination_sortable(products, 'nom', 'p.name')}}</th>
+					<th>{{knp_pagination_sortable(products, 'date de création', 'p.createdAt')}}</th>
+					<th>{{knp_pagination_sortable(products, 'date de mise à jour', 'p.updatedAt')}}</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -25,6 +26,7 @@
 						<td>{{p.id}}</td>
 						<td>{{p.name}}</td>
 						<td>{{p.createdAt|date('d/m/y')}}</td>
+						<td>{{p.updatedAt|date('d/m/y')}}</td>
 						<td>
 							<a class="btn btn-warning" href="">Modifier</a>
 						</td>

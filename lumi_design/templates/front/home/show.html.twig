@@ -1,15 +1,43 @@
 {% extends "front/base.html.twig" %}
 
 {% block title %}
-{{parent()}}Details
+	{{parent()}}Details
 {% endblock %}
 
 {% block body %}
-<main>
-<pre>
-    {{ dump(product.name) }}
-</pre>
+	<main>
+		{# <pre>
+		    {{ dump(product.name) }}
+		</pre>
+		
+		{% if product is not null %}
+		<div>
+		<h1>{{product.name}}</h1>
+		<p>{{product.description}}</p>
+		<p>Prix: ${{product.price}}</p>
+		<p>Category: {{product.category.name}}</p>
+		</div>
+		{% endif %} #}
 
-</main>
+		{% if product is not null %}
+			{# <pre>
+    {{ dump(product) }}
+</pre> #}
+			<div>
+			<img src={{asset('img/thumbnails/' ~ product.image)}} alt="image de {{product.name}}">
+				<h1>{{product.name}}</h1>
+				<p>{{product.description}}</p>
+				<p>Prix: ${{product.price}}</p>
+				<p>Category:
+					{{product.category.name ? product.category.name : ''}}</p>
+				{# equals to #}
+				<p>Category:
+					{{ product.category.name ?? 'N/A'}}</p>
+			</div>
+
+		{% endif %}
+
+
+	</main>
 
 {% endblock %}

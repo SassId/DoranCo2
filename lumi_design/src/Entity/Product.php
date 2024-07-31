@@ -7,12 +7,14 @@ use DateTimeImmutable;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
-
-
+use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\Validator\Constraints as Assert;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 #[ORM\Entity(repositoryClass: ProductRepository::class)]
-#[UniqueEntity(fields: ['name'], message: 'This product name is already in use.')]
+#[UniqueEntity(fields: ['name'], message: 'Ce nom existe')]
 #[ORM\HasLifecycleCallbacks]
+#[Vich\Uploadable]
 
 class Product
 {
@@ -22,7 +24,14 @@ class Product
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 50)]
+    #[Assert\NotBlank(message: 'Le nom ne peut pas être vide')]
+    #[Assert\Length(
+        min: 2,
+        max: 50,
+        minMessage: 'Le nom doit comporter au moins {{ limit }} caractères',
+        maxMessage: 'Le nom ne peut pas excéder {{ limit }} caractères'
+    )]
     private ?string $name = null;
 
     #[ORM\Column(length: 255)]
@@ -34,8 +43,20 @@ class Product
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $image = null;
 
+    #[Vich\UploadableField(mapping: 'products', fileNameProperty: 'image')]
+    private ?File $thumbnail = null;
+
     #[ORM\Column(type: Types::DECIMAL, precision: 7, scale: 2, nullable: true)]
-    private ?float $price = null;
+    private ?string $price = null;
+
+    #[ORM\Column(type:Types::INTEGER)]
+    #[Assert\NotBlank(message: 'Le stock ne peut pas être vide')]
+    #[Assert\Range(
+        min: 1,
+        max: 1000,
+        notInRangeMessage: 'Le stock ne peut pas excéder {limit}'
+    )]
+    private ?int $stock = null;
 
     #[ORM\Column]
     private ?\DateTimeImmutable $createdAt = null;
@@ -68,9 +89,6 @@ class Product
     public function preUpdate()
     {
     }
-
-    #[ORM\Column]
-    private ?int $stock = null;
 
     public function getId(): ?int
     {
@@ -181,6 +199,26 @@ class Product
     public function setStock(int $stock): static
     {
         $this->stock = $stock;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of thumbnail
+     */ 
+    public function getThumbnail()
+    {
+        return $this->thumbnail;
+    }
+
+    /**
+     * Set the value of thumbnail
+     *
+     * @return  self
+     */ 
+    public function setThumbnail($thumbnail)
+    {
+        $this->thumbnail = $thumbnail;
 
         return $this;
     }
