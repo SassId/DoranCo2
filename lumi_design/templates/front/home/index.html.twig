@@ -10,7 +10,7 @@
 		<div class="d-flex flex-wrap justify-content-around gap-5">
 			{% for product in products %}
 				<div class="card" style="width: 18rem;">
-					<img src={{product.image}} class="card-img-top" alt="...">
+					<img src={{product.image starts with 'http' ? product.image : asset('img/products/' ~ product.image) }} class="card-img-top" alt="image de {{product.image}}">
 					<div class="card-body">
 						<h5 class="card-title">{{product.name}}</h5>
 						<p>{{ product.description | slice(0, 100) }}
