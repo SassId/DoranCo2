@@ -24,14 +24,17 @@
 				{% for p in products %}
 					<tr>
 						<td>{{p.id}}</td>
-						<td>{{p.name}}</td>
+						<td><a href={{path('admin_product_show', {'slug': p.slug})}}>{{p.name}}</a></td>
 						<td>{{p.createdAt|date('d/m/y')}}</td>
 						<td>{{p.updatedAt|date('d/m/y')}}</td>
 						<td>
-							<a class="btn btn-warning" href="">Modifier</a>
+							<a class="btn btn-warning" href={{path('admin_product_edit', {'slug': p.slug})}}>Modifier</a>
 						</td>
 						<td>
-							<a class="btn btn-danger" href="">Supprimer</a>
+							<form action={{path('admin_product_delete', {'id': p.id})}} method="POST">
+							<input type="hidden" name="_method" value="DELETE">
+								<button type="submit" class="btn btn-danger">Supprimer</button>
+							</form>
 						</td>
 					</tr>
 				{% endfor %}

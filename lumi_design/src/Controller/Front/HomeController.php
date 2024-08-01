@@ -15,7 +15,7 @@ class HomeController extends AbstractController
     #[Route('/', name: 'index', methods: ['GET'])]
     public function index(ProductRepository $respository, Request $request): Response
     {
-        $pagination = $respository->paginateProductsOrderedByUpdatedAt(
+        $pagination = $respository-> paginateProductsOrderedByUpdatedAt(
             $request->query->getInt('page', 1)
         );
 
@@ -33,20 +33,4 @@ class HomeController extends AbstractController
         ]);
     }
 
-    // // * Pagination Method:
-    // #[Route('/', name: 'index')]
-    // public function index(ProductRepository $respository, Request $request): Response
-    // {
-    //     $page = $request->query->getInt('page', 1);
-
-    //     $products = $respository->paginateProducts($request);
-    //     $maxPage = ceil($products->count() / 5); //ceil() rounds to superior after comma
-    //     return $this->render('front/home/index.html.twig', [
-    //         'products' => $products,
-    //         'maxPage' => $maxPage, 
-    //         'page' => $page
-    //     ]);
-
-
-    // }
 }

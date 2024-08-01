@@ -1,13 +1,13 @@
 {% extends "admin/base.html.twig" %}
 
-{% block title %}{{parent()}}Produits{% endblock %}
+{% block title %}{{parent()}}Catégories{% endblock %}
 
 {% block body %}
 <main class="d-flex flex-column gap-5 align-items-center">
-<h1>Ajouter un nouveau Produit</h1>
+<h1>Modifier une Catégorie</h1>
 {{form_start(form)}}
 {{form_rest(form)}}
-<input type="submit" value="Créer" class="btn btn-primary">
+<input type="submit" value="Modifier" class="btn btn-primary">
 {{form_end(form)}}
 </main>
 {% endblock %}

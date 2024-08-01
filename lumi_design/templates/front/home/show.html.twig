@@ -5,26 +5,13 @@
 {% endblock %}
 
 {% block body %}
-	<main>
-		{# <pre>
-		    {{ dump(product.name) }}
-		</pre>
-		
-		{% if product is not null %}
-		<div>
-		<h1>{{product.name}}</h1>
-		<p>{{product.description}}</p>
-		<p>Prix: ${{product.price}}</p>
-		<p>Category: {{product.category.name}}</p>
-		</div>
-		{% endif %} #}
-
+	<main class="container border rounded my-5 py-3">
 		{% if product is not null %}
 			{# <pre>
     {{ dump(product) }}
 </pre> #}
 			<div>
-			<img src={{asset('img/products/' ~ product.image)}} alt="image de {{product.name}}">
+			<img src={{product.image starts with 'http' ? product.image : asset('img/products/' ~ product.image) }} alt="image de {{product.name}}">
 				<h1>{{product.name}}</h1>
 				<p>{{product.description}}</p>
 				<p>Prix: ${{product.price}}</p>

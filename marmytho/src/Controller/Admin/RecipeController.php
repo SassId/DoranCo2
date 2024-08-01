@@ -97,7 +97,7 @@ class RecipeController extends AbstractController
     {
         $em->remove($recipe);
         $em->flush();
-        $this->addFlash('success', 'votre recette a bien été suprrimée');
+        $this->addFlash('success', 'votre recette a bien été suprimée');
 
 
         return $this->redirectToRoute('admin_recipe_index');

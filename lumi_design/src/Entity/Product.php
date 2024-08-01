@@ -49,7 +49,7 @@ class Product
     #[ORM\Column(type: Types::DECIMAL, precision: 7, scale: 2, nullable: true)]
     private ?string $price = null;
 
-    #[ORM\Column(type:Types::INTEGER)]
+    #[ORM\Column(type: Types::INTEGER)]
     #[Assert\NotBlank(message: 'Le stock ne peut pas être vide')]
     #[Assert\Range(
         min: 1,
@@ -205,7 +205,7 @@ class Product
 
     /**
      * Get the value of thumbnail
-     */ 
+     */
     public function getThumbnail()
     {
         return $this->thumbnail;
@@ -215,11 +215,22 @@ class Product
      * Set the value of thumbnail
      *
      * @return  self
-     */ 
-    public function setThumbnail($thumbnail)
+     */
+    // public function setThumbnail($thumbnail)
+    // {
+    //     $this->thumbnail = $thumbnail;
+
+    //     return $this;
+    // }
+
+    public function setThumbnail(?File $thumbnail = null): void
     {
         $this->thumbnail = $thumbnail;
 
-        return $this;
+        if (null !== $thumbnail) {
+            // It is required that at least one field changes if you are using doctrine
+            // otherwise the event listeners won't be called and the file is lost
+            $this->updatedAt = new \DateTimeImmutable();
+        }
     }
 }

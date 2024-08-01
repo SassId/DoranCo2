@@ -6,7 +6,7 @@ use App\Entity\Product;
 use App\Form\ProductType;
 use App\Repository\ProductRepository;
 use Doctrine\ORM\EntityManagerInterface;
-use Faker\Core\Uuid;
+// use Faker\Core\Uuid;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -30,6 +30,14 @@ class ProductController extends AbstractController
         );
         return $this->render('admin/product/index.html.twig', [
             'products' => $pagination
+        ]);
+    }
+
+    #[Route('/details/{slug}', name: 'show')]
+    public function show(?Product $product)
+    {
+        return $this->render('admin/product/show.html.twig', [
+            'product' => $product
         ]);
     }
 
@@ -61,4 +69,37 @@ class ProductController extends AbstractController
             'form' => $form
         ]);
     }
+
+    #[Route('/modifier/{slug}', name: 'edit', methods: ['GET', 'POST'])]
+    public function edit(EntityManagerInterface $em, Request $request, Product $product): Response
+    {
+
+        $form = $this->createForm(ProductType::class, $product);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $em->flush();
+            $this->addFlash('success', 'Votre produit à bien été modifié !');
+
+            return $this->redirectToRoute('admin_product_index');
+        }
+
+        return $this->render('admin/product/edit.html.twig', [
+            'form' => $form
+        ]);
+    }
+
+    #[Route('/supprimer/{id}', name: 'delete', methods: ['DELETE'])]
+    public function delete(Product $product, EntityManagerInterface $em)
+    {
+        $em->remove($product);
+        $em->flush();
+        $this->addFlash('success', 'votre produit a bien été suprimé');
+
+
+        return $this->redirectToRoute('admin_product_index');
+    }
+
+
 }
