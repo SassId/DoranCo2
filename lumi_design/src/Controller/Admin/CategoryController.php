@@ -11,22 +11,37 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
-#[Route('admin/category', name:'admin.category.')]
+#[Route('admin/category', name: 'admin.category.')]
 class CategoryController extends AbstractController
 {
-private CategoryRepository $repository;
+    private CategoryRepository $repository;
 
-public function __construct(CategoryRepository $repository)
-{
-    $this->repository = $repository;
-}
+    public function __construct(CategoryRepository $repository)
+    {
+        $this->repository = $repository;
+    }
 
     #[Route('/', name: 'index')]
-    public function index(Request $request): Response
+    public function index(Request $request, EntityManagerInterface $em): Response
     {
+        $category = new Category();
+
+        $form = $this->createForm(CategoryType::class, $category);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em->persist($category);
+            $em->flush();
+            $this->addFlash('success', 'Votre catégorie à bien été ajoutée');
+
+            return $this->redirectToRoute('admin.category.index');
+        }
+
+
         $pagination = $this->repository->paginateProductsOrderedByName($request->query->getInt('page', 1));
         return $this->render('admin/category/index.html.twig', [
             'categories' => $pagination,
+            'form' => $form
         ]);
     }
 
@@ -83,10 +98,9 @@ public function __construct(CategoryRepository $repository)
     {
         $em->remove($category);
         $em->flush();
-        $this->addFlash('success', 'votre produit a bien été suprimé');
+        $this->addFlash('success', 'votre catégorie a bien été suprimée');
 
 
         return $this->redirectToRoute('admin.category.index');
     }
-
 }

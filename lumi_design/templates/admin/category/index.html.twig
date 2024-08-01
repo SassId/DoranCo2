@@ -9,6 +9,12 @@
 	<main class="d-flex flex-column justify-content-center gap-5">
 		<h1 class="text-center">Gérer les Catégories</h1>
 		<a class="btn btn-success m-auto" href={{path('admin.category.create')}}>Ajouter une Catégorie</a>
+		<div class="container border rounded p-3">
+			{{form_start(form)}}
+			{{form_rest(form)}}
+			<input type="submit" value="Ajouter" class="btn btn-warning">
+			{{form_end(form)}}
+		</div>
 		<table class="table table-striped">
 			<thead>
 				<tr>
@@ -25,10 +31,10 @@
 							{{c.name}}
 						</td>
 						<td>
-							<a class="btn btn-warning" href={{path('admin.category.edit', {'id' : c.id})}}>Modifier</a>
+							<a class="btn btn-warning" href={{path('admin.category.edit', {'id' : c.id} )}}>Modifier</a>
 						</td>
 						<td>
-							<form action={{path('admin.category.delete', {'id': c.id})}}  method="POST">
+							<form action={{path('admin.category.delete', {'id': c.id} )}} method="POST">
 								<input type="hidden" name="_method" value="DELETE">
 								<button type="submit" class="btn btn-danger">Supprimer</button>
 							</form>
