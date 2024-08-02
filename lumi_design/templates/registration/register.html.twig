@@ -1,0 +1,59 @@
+{% extends "front/base.html.twig" %}
+
+{% block title %}
+	{{parent()}}
+	Inscription
+{% endblock %}
+
+{% block body %}
+	{% for flash_error in app.flashes('verify_email_error') %}
+		<div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+	{% endfor %}
+	<main class="d-flex flex-column justify-content-center align-items-center gap-3 ">
+		<h1 class="text-center my-2">Inscrivez-vous</h1>
+		{{ form_errors(registrationForm) }}
+		{{ form_start(registrationForm) }}
+		{{ form_row(registrationForm.email) }}
+		{{ form_row(registrationForm.plainPassword) }}
+		<div class="form-group">
+			{{ form_widget(registrationForm.agreeTerms, {
+                label: '<a href="' ~ path("terms_conditions") ~ '">' ~ "Accepter les Conditions"|trans ~ '</a>',
+                label_html: true
+            }) }}
+			<label>
+				<a href="{{ path('terms_conditions') }}" target="_blank">
+					{{ form_label(registrationForm.agreeTerms, {
+                        label_html: true
+                    }) }}
+				</a>
+			</label>
+		</div>
+		<button type="submit" value="Enregistrer" class="btn btn-primary">Register</button>
+		{{ form_end(registrationForm) }}
+	</main>
+
+
+	{# {{ form_start(registrationForm) }}
+				<div class="form-group">
+					{{ form_label(registrationForm.email) }}
+					{{ form_widget(registrationForm.email) }}
+					{{ form_errors(registrationForm.email) }}
+				</div>
+				<div class="form-group">
+					{{ form_label(registrationForm.plainPassword) }}
+					{{ form_widget(registrationForm.plainPassword) }}
+					{{ form_errors(registrationForm.plainPassword) }}
+				</div>
+				<div class="form-group">
+					<label>
+						<a href="{{ path('terms_conditions') }}" target="_blank">
+							{{ form_label(registrationForm.agreeTerms) }}
+						</a>
+					</label>
+					{{ form_widget(registrationForm.agreeTerms) }}
+					{{ form_errors(registrationForm.agreeTerms) }}
+				</div>
+				<button type="submit" class="btn btn-primary">Enregistrer</button>
+				{{ form_end(registrationForm) }} #}
+
+{% endblock %}

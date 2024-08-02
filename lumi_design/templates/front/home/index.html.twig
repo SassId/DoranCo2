@@ -6,7 +6,8 @@
 
 {% block body %}
 	<main>
-		<h1>Welcome to Lumi Design</h1>
+		<h1 class="text-center my-5">Bienvenue sur Lumi Design</h1>
+	{% include "front/partials/_hero-section.html.twig" %}
 		<div class="d-flex flex-wrap justify-content-around gap-5">
 			{% for product in products %}
 				<div class="card" style="width: 18rem;">

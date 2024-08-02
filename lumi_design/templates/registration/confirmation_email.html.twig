@@ -1,0 +1,15 @@
+<main class="d-flex flex-column justify-content-center gap-5">
+<h1>Bonjour {{user.firstName ?? 'Vous'}} ! Veuillez confirmer votre adresse e-mail !</h1>
+
+<p>
+    Veuillez confirmer votre adresse e-mail en cliquant sur le lien suivant : <br><br>
+    <a href="{{ signedUrl|raw }}">Confirmer mon e-mail</a>.
+    Ce lien expirera dans {{ expiresAtMessageKey|trans(expiresAtMessageData, 'VerifyEmailBundle') }}.
+</p>
+
+<p>
+    Cordialement !
+</p>
+</main>
+
+

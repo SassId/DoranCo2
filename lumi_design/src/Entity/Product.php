@@ -66,6 +66,7 @@ class Product
 
     #[ORM\ManyToOne(inversedBy: 'products', cascade: ['remove'])]
     #[ORM\JoinColumn(nullable: false)]
+    // #[ORM\JoinColumn(onDelete: 'SET NULL')]
     private ?Category $category = null;
 
     #[ORM\PrePersist]

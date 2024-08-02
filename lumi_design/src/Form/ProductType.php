@@ -13,6 +13,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\File;
+use Symfony\UX\Dropzone\Form\DropzoneType;
 
 class ProductType extends AbstractType
 {
@@ -37,7 +38,7 @@ class ProductType extends AbstractType
                 'choice_label' => 'name',
                 'label' => 'Catégorie'
             ])
-            ->add('thumbnail', FileType::class, [
+            ->add('thumbnail', DropzoneType::class, [
                 'label' => "Importer une image",
                 // 'mapped' => false,
                 'required' => false,

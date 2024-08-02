@@ -15,7 +15,7 @@ class HomeController extends AbstractController
     #[Route('/', name: 'index', methods: ['GET'])]
     public function index(ProductRepository $respository, Request $request): Response
     {
-        $pagination = $respository-> paginateProductsOrderedByUpdatedAt(
+        $pagination = $respository->paginateProductsOrderedByUpdatedAt(
             $request->query->getInt('page', 1)
         );
 
@@ -32,5 +32,4 @@ class HomeController extends AbstractController
             'product' => $product
         ]);
     }
-
 }
