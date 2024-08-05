@@ -40,7 +40,7 @@ final class UserFactory extends PersistentProxyObjectFactory
             'isVerified' => self::faker()->boolean(),
             'password' => 'cacacapi',
             // or
-            // 'password' => $this->userPasswordHasher->hassPassword(new User, 'password')
+            // 'password' => $this->userPasswordHasher->hassPassword(new User, 'cacacapi')
             'roles' => self::faker()->randomElement([['ROLE_USER'], ['ROLE_ADMIN']]),
         ];
     }

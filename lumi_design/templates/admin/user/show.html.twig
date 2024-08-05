@@ -1,0 +1,38 @@
+{% extends "admin/base.html.twig" %}
+
+{% block title %}
+	{{parent()}}Utilisateurs - Details
+{% endblock %}
+
+{% block body %}
+	<main class="container border rounded my-5 py-3">
+		{% if user is not null %}
+			<div>
+				<h1>{{user.firstName ~ ' ' ~ user.lastName}}</h1>
+				<h2>ID:
+					{{user.id}}</h2>
+				<p>{{user.email}}</p>
+				<p>{{user.address}}</p>
+				<p>{{user.zipCode}}</p>
+				<p>{{user.city}}</p>
+				<p>{{user.phoneNumber}}</p>
+				<p>Rôle:
+					{{ 'admin' in user.roles ? "Administrateur" : "Utilisateur" }}</p>
+				<p>Date de Création:
+					{{user.createdAt|date('d/m/y')}}
+				</p>
+				<div class="d-flex justify-content-around">
+					<a class="btn btn-warning" href={{path('admin_user_edit', {'id': user.id} )}}>Modifier</a>
+					<form action={{path('admin_user_delete', {'id': user.id} )}} method="POST">
+						<input type="hidden" name="_method" value="DELETE">
+						<button type="submit" class="btn btn-danger">Supprimer</button>
+					</form>
+				</div>
+			</div>
+
+		{% endif %}
+
+
+	</main>
+
+{% endblock %}

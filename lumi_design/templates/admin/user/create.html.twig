@@ -1,0 +1,20 @@
+{% extends "admin/base.html.twig" %}
+
+{% block title %}
+	{{parent()}}
+	Création Administrateur
+{% endblock %}
+
+{% block body %}
+	{% for flash_error in app.flashes('verify_email_error') %}
+		<div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+	{% endfor %}
+	<main class="d-flex flex-column justify-content-center align-items-center gap-3 ">
+		{{form_start(form)}}
+		{{form_rest(form)}}
+		<button type="submit" value="Enregistrer" class="btn btn-primary">Enregistrer</button>
+		{{form_end(form)}}
+
+
+	</main>
+{% endblock %}

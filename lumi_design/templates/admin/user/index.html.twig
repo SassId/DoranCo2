@@ -1,0 +1,57 @@
+{% extends "admin/base.html.twig" %}
+
+{% block title %}
+	{{parent()}}
+	Utilisateurs
+{% endblock %}
+
+{% block body %}
+	<main class="d-flex flex-column justify-content-center gap-5">
+		<h1 class="text-center">Gérer les Utilisateurs</h1>
+		<a class="btn btn-success m-auto" href={{path('admin_user_create')}}>Ajouter un Utilisateur</a>
+		{# <div class="container border rounded p-3">
+					{{form_start(form)}}
+					{{form_rest(form)}}
+					<input type="submit" value="Ajouter" class="btn btn-warning">
+					{{form_end(form)}}
+				</div> #}
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>{{knp_pagination_sortable(users, 'ID', 'u.id')}}</th>
+					<th>{{knp_pagination_sortable(users, 'nom', 'u.firstName')}}</th>
+					<th>{{knp_pagination_sortable(users, 'prenom', 'u.lastName')}}</th>
+					<th>{{knp_pagination_sortable(users, 'email', 'u.email')}}</th>
+					{# <th>{{knp_pagination_sortable(users, 'email', 'u.email')}}</th> #}
+				</tr>
+			</thead>
+			<tbody>
+				{% for u in users %}
+					<tr>
+						<td>{{u.id}}</td>
+						<td>
+							{# <a href={{path('admin.category.show', {'id' : c.id})}}>{{c.name}}</a> #}
+							{{u.firstName}}
+						</td>
+						<td>{{u.lastName}}</td>
+						<td>
+							<a href={{path('admin_user_show', {'id': u.id})}}>{{u.email}}</a>
+						</td>
+						<td>
+							<a class="btn btn-warning" href={{path('admin_user_edit', {'id': u.id})}}>Modifier</a>
+						</td>
+						<td>
+							<form action="method="POST"">
+								<input type="hidden" name="_method" value="DELETE">
+								<button type="submit" class="btn btn-danger">Supprimer</button>
+							</form>
+						</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+		<div class="navigation mt-4">
+			{{ knp_pagination_render(users) }}
+		</div>
+	</main>
+{% endblock %}

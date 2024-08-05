@@ -15,6 +15,7 @@ class HomeController extends AbstractController
     #[Route('/', name: 'index', methods: ['GET'])]
     public function index(ProductRepository $respository, Request $request): Response
     {
+        // dd($this->getUser());
         $pagination = $respository->paginateProductsOrderedByUpdatedAt(
             $request->query->getInt('page', 1)
         );

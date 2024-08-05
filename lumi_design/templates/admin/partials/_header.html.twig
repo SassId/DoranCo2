@@ -11,11 +11,28 @@
 						<a class="nav-link active" aria-current="page" href="#">Accueil Admin</a>
 					</li>
 					<li class="nav-item">
+							<a class="nav-link" href={{path('admin_dashboard_index')}}>Dashboard</a>
+						</li>
+					<li class="nav-item">
 						<a class="nav-link" href={{path('admin_product_index')}}>Produits</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href={{path('admin.category.index')}}>Catégories</a>
 					</li>
+					<li class="nav-item">
+						<a class="nav-link" href={{path('admin_user_index')}}>Utilisateurs</a>
+					</li>
+					{% if is_granted('ROLE_SUPER_ADMIN') %}
+					<li class="nav-item">
+						<a class="nav-link" href={{path('admin_user_create')}}>Créer un Admin</a>
+					</li>
+					{% endif %}
+					
+					{% if is_granted('IS_AUTHENTICATED') %}
+						<li class="nav-item">
+							<a class="nav-link" href={{path('app_logout')}}>Déconnexion</a>
+						</li>
+					{% endif %}
 					{# <li class="nav-item">
 										          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
 										        </li> #}
