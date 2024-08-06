@@ -5,26 +5,27 @@
 {% endblock %}
 
 {% block body %}
-	<main class="container border rounded my-5 py-3">
+	<main class="container my-5">
+				<a class="btn btn-primary m-auto my-3" href="">Retour à la liste</a>
 		{% if product is not null %}
-			{# <pre>
-    {{ dump(product) }}
-</pre> #}
-			<div>
-			<img src={{product.image starts with 'http' ? product.image : asset('img/products/' ~ product.image) }} alt="image de {{product.name}}">
-				<h1>{{product.name}}</h1>
-				<p>{{product.description}}</p>
-				<p>Prix: ${{product.price}}</p>
-				<p>Category:
-					{{product.category.name ? product.category.name : ''}}</p>
-				{# equals to #}
-				<p>Category:
-					{{ product.category.name ?? 'N/A'}}</p>
+			<div class="border rounded py-3">
+				<div>
+					<img class="w-25" src={{product.image starts with 'http' ? product.image : asset('img/products/' ~ product.image) }} alt="image de {{product.name}}">
+					<h1>{{product.name}}</h1>
+					<p>{{product.description}}</p>
+					<p>Prix: ${{product.price}}</p>
+					<p>Category:
+						{{product.category.name ? product.category.name : ''}}</p>
+					{# equals to #}
+					{# <p>Category:												{{ product.category.name ?? 'N/A'}}</p> #}
+					{% if product.stock > 0 %}
+						<a class="btn btn-primary" href={{path('front_cart_add', {'id': product.id} )}}>Ajouter au panier</a>
+					{% else %}
+						<a class="btn btn-primary disabled" href="">Indisponible</a>
+					{% endif %}
+				</div>
 			</div>
-
 		{% endif %}
-
-
 	</main>
 
 {% endblock %}

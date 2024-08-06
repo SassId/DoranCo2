@@ -1,5 +1,5 @@
 <header>
-	<nav class="navbar navbar-expand-lg bg-success" style="">
+	<nav class="navbar navbar-expand-lg bg-success">
 		<div class="container-fluid">
 			<a class="navbar-brand" href={{path('front_home_index')}}>Lumi Design</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,15 +27,11 @@
 						<a class="nav-link" href={{path('admin_user_create')}}>Créer un Admin</a>
 					</li>
 					{% endif %}
-					
 					{% if is_granted('IS_AUTHENTICATED') %}
 						<li class="nav-item">
 							<a class="nav-link" href={{path('app_logout')}}>Déconnexion</a>
 						</li>
 					{% endif %}
-					{# <li class="nav-item">
-										          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-										        </li> #}
 				</ul>
 			</div>
 		</div>

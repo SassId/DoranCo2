@@ -1,0 +1,46 @@
+{% extends "front/base.html.twig" %}
+
+{% block title %}
+{{parent()}} Panier
+{% endblock %}
+
+{% block body %}
+<main>
+<h1 class="text-center">Votre Panier</h1>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+    <td>Produit</td>
+    <td>Prix</td>
+    <td>Quantité</td>
+    <td>Total</td>
+    <td>Actions</td>
+    </tr>
+    </thead>
+    <tbody>
+    {% for cd in cartData %}
+        <tr>
+        <td>{{cd.product.name}}</td>
+        <td>{{cd.product.price}}</td>
+        <td>{{cd.quantity}}</td>
+        <td>{{cd.subtotal}}</td>
+        <td>
+        <a class="btn btn-success" href={{path('front_cart_increase', {'id': cd.product.id})}}>+</a>
+        <a class="btn btn-warning" href={{path('front_cart_decrease', {'id': cd.product.id})}}>-</a>
+        <a class="btn btn-danger" href={{path('front_cart_remove', {'id': cd.product.id})}}>Supprimer</a>
+        </td>
+        </tr>
+    {% endfor %}
+     <tr>
+        <td colspan="3" class="text-right"><strong>Prix Total:</strong></td>
+        <td><strong>{{ totalPrice }}</strong></td>
+        {% if cartData is not empty %}
+        <td><a class="btn btn-danger" href={{path('front_cart_empty-cart')}}>Vider le Panier</a></td>
+        {% endif %}
+    </tr>
+    </tbody>
+</table>
+<a class="btn btn-primary my-5" href="">Commander</a>
+</main>
+{% endblock %}
