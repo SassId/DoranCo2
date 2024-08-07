@@ -12,6 +12,8 @@ use Symfony\Component\String\Slugger\SluggerInterface;
 
 class ProductFixtures extends Fixture implements DependentFixtureInterface
 {
+    public const PRODUCT_REFERENCE = 'PRODUCT_';
+
     private $slugger;
     private $faker;
     public function __construct(SluggerInterface $slugger)
@@ -35,6 +37,8 @@ class ProductFixtures extends Fixture implements DependentFixtureInterface
             // $slug = $this->slugger->slug($product->getName())->lower();
             // $product->setSlug($slug);
             $product->setCategory($this->getReference('CATEGORY' . mt_rand(0, 4)));
+
+            // $this->addReference(self::PRODUCT_REFERENCE . $i, $product);
 
             $manager->persist($product);
         }

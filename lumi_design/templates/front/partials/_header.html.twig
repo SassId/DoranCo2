@@ -18,9 +18,6 @@
 							<a class="nav-link" href={{path('admin_dashboard_index')}}>Dashboard</a>
 						</li>
 					{% endif %}
-					<li class="nav-item">
-						<a class="nav-link" href={{path('register')}}>Inscription</a>
-					</li>
 					{% if not is_granted('IS_AUTHENTICATED') %}
 						<li class="nav-item">
 							<a class="nav-link" href={{path('register')}}>Inscription</a>
@@ -29,6 +26,9 @@
 							<a class="nav-link" href={{path('app_login')}}>Connexion</a>
 						</li>
 					{% else %}
+						<li class="nav-item">
+							<a class="nav-link" href={{path('front_orders_index')}}>Mes Commandes</a>
+						</li>
 						<li class="nav-item">
 							<a class="nav-link" href={{path('app_logout')}}>Déconnexion</a>
 						</li>

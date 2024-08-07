@@ -10,22 +10,22 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20240802101540 extends AbstractMigration
+final class Version20240807093126 extends AbstractMigration
 {
     public function getDescription(): string
     {
-        return 'updated zip code colum';
+        return 'added col status in orders';
     }
 
     public function up(Schema $schema): void
     {
         // this up() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE user CHANGE zip_code zip_code VARCHAR(10) DEFAULT NULL');
+        $this->addSql('ALTER TABLE orders ADD status VARCHAR(255) NOT NULL');
     }
 
     public function down(Schema $schema): void
     {
         // this down() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE user CHANGE zip_code zip_code VARCHAR(10) NOT NULL');
+        $this->addSql('ALTER TABLE orders DROP status');
     }
 }

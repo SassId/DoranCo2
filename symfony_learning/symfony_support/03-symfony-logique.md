@@ -1,4 +1,4 @@
-# Logique de Symfony
+# 🚀 **[Symfony](https://symfony.com/)** | Logique : Vue d'ensemble
 
 <br>
 
@@ -133,6 +133,7 @@ Pour afficher des données provenant de la base de données, vous devez accéder
 ```php
 public function maMethod(NomEntiteRepository $repository)
 {
+    $repository->findAll();
 }
 ```
 
@@ -150,7 +151,7 @@ public function afficheDonnees(NomDeVotreEntiteRepository $repository)
 {
     $donnees = $repository->findAll();
 
-    return $this->render('nomducontrollerenminuscule/nomdufichierdeaffichage.html.twig', [
+    return $this->render('nomcontroller/nomdufichierd.html.twig', [
         'donnees' => $donnees
     ]);
 }
@@ -212,6 +213,7 @@ public function updateDonnee(NomDeVotreEntite $entite, EntityManagerInterface $m
     $manager->flush();
 
     // Ajoutez un message Flash et redirigez l'utilisateur vers une autre page
+    $this->addFlash('success', 'Données mises à jour avec succès !');
     return $this->redirectToRoute('route_de_redirection');
 }
 ```
@@ -229,7 +231,7 @@ public function deleteDonnee(NomDeVotreEntite $entite, EntityManagerInterface $m
     $manager->remove($entite);
     $manager->flush();
 
-    // Ajoutez un message Flash et redirigez l'utilisateur vers une autre page
+    $this->addFlash('danger', 'Données supprimées avec succès !');
     return $this->redirectToRoute('route_de_redirection');
 }
 ```

@@ -1,4 +1,4 @@
-# Controller (MVC)
+# 🚀 **[Symfony](https://symfony.com/)** | Controller : Gestion des Requêtes HTTP
 
 <br>
 
@@ -35,9 +35,10 @@ php bin/console make:controller NomDuController
 
 -   Les routes sont définies avec l'annotation `#[Route()]`.
 -   Les routes sont définies avec un chemin et un nom.
+-   Les routes sont définies avec des méthodes HTTP autorisées.
 
 ```php
-#[Route("/", name="home_index")]
+#[Route("/", name="home_index", methods: ["GET"])]
 ```
 
 ## Return
@@ -47,7 +48,7 @@ php bin/console make:controller NomDuController
 -   Les méthodes des contrôleurs doivent contenir un `return $this->render('nomducontrollerenminuscule/nomdufichiertwig.html.twig', []);` pour afficher une vue.
 
 ```php
-#[Route("/", name="home")]
+#[Route("/", name="home", methods: ["GET"])]
 public function home()
 {
     return $this->render('nom_controller_minuscule/nom_fichier.html.twig', []);
@@ -84,7 +85,7 @@ public function article($id)
 ## ParamConverter
 
 -   Le ParamConverter est un mécanisme qui permet de convertir automatiquement un paramètre de route en objet.
--   Le ParamConverter est activé par défaut dans Symfony.
+-   Le ParamConverter est activé par défaut dans Symfony pour les `id`.
 
 ```php
 #[Route("/article/{id}", name="article")]

@@ -2,12 +2,17 @@
 
 namespace App\Entity;
 
+use App\Enum\OrdersStatus;
 use App\Repository\OrdersRepository;
+use DateTimeImmutable;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\HasLifecycleCallbacks;
+use Symfony\Component\Routing\Attribute\Route;
 
 #[ORM\Entity(repositoryClass: OrdersRepository::class)]
+#[HasLifecycleCallbacks]
 class Orders
 {
     #[ORM\Id]
@@ -28,11 +33,20 @@ class Orders
     #[ORM\JoinColumn(nullable: false)]
     private ?User $customer = null;
 
+    #[ORM\Column(type: 'string', enumType: OrdersStatus::class)]
+    private OrdersStatus $status = OrdersStatus::PENDING;
+
     /**
      * @var Collection<int, OrderItem>
      */
     #[ORM\OneToMany(targetEntity: OrderItem::class, mappedBy: 'orders', orphanRemoval: true)]
     private Collection $orderItems;
+
+    #[ORM\PrePersist]
+    public function setCreatedAtValue():void
+    {
+        $this->createdAt = new DateTimeImmutable();
+    }
 
     public function __construct()
     {
@@ -118,6 +132,26 @@ class Orders
                 $orderItem->setOrders(null);
             }
         }
+
+        return $this;
+    }
+
+    /**
+     * Get the value of status
+     */ 
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * Set the value of status
+     *
+     * @return  self
+     */ 
+    public function setStatus($status)
+    {
+        $this->status = $status;
 
         return $this;
     }

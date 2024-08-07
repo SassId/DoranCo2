@@ -2,13 +2,14 @@
 
 namespace App\Factory;
 
-use App\Entity\Product;
+use App\Entity\Orders;
+use App\Enum\OrdersStatus;
 use Zenstruck\Foundry\Persistence\PersistentProxyObjectFactory;
 
 /**
- * @extends PersistentProxyObjectFactory<Product>
+ * @extends PersistentProxyObjectFactory<Orders>
  */
-final class ProductFactory extends PersistentProxyObjectFactory
+final class OrdersFactory extends PersistentProxyObjectFactory
 {
     /**
      * @see https://symfony.com/bundles/ZenstruckFoundryBundle/current/index.html#factories-as-services
@@ -17,12 +18,11 @@ final class ProductFactory extends PersistentProxyObjectFactory
      */
     public function __construct()
     {
-        self::faker()->addProvider(new \Smknstd\FakerPicsumImages\FakerPicsumImagesProvider(self::faker()));
     }
 
     public static function class(): string
     {
-        return Product::class;
+        return Orders::class;
     }
 
     /**
@@ -33,13 +33,10 @@ final class ProductFactory extends PersistentProxyObjectFactory
     protected function defaults(): array|callable
     {
         return [
-            'category' => CategoryFactory::new(),
-            'createdAt' => \DateTimeImmutable::createFromMutable(self::faker()->dateTime()),
-            'name' => self::faker()->unique()->text(10),
-            'slug' => self::faker()->text(255),
-            'stock' => self::faker()->randomNumber(),
-            'image' => self::faker()->imageUrl(width: 500, height: 500),
-            'category' => CategoryFactory::new(),
+            'createdAt' => \DateTimeImmutable::createFromMutable(self::faker()->dateTimeBetween()),
+            'customer' => UserFactory::new(),
+            'orderNumber' => strtoupper(self::faker()->bothify('?###?#####')),
+            'status' => self::faker()->randomElement(OrdersStatus::cases()),
         ];
     }
 
@@ -49,7 +46,7 @@ final class ProductFactory extends PersistentProxyObjectFactory
     protected function initialize(): static
     {
         return $this
-            // ->afterInstantiate(function(Product $product): void {})
+            // ->afterInstantiate(function(Orders $orders): void {})
         ;
     }
 }

@@ -1,0 +1,31 @@
+{% extends "front/base.html.twig" %}
+
+{% block title %}
+{{parent()}} Récapitulatif Commande
+{% endblock %}
+
+{% block body %}
+<main class="container my-5">
+    <h1 class="text-center">Confirmez votre Commande</h1>
+    {# <pre>
+        {{ dump(orders) }}
+    </pre> #}
+        <table class="table table-striped">
+        <thead>
+        <tr>
+        <th>{{knp_pagination_sortable(orders, 'Numéro de Commande', 'o.orderNumber')}}</th>
+        </tr>
+        </thead>
+        <tbody>
+    {% for o in orders %}
+        <tr>
+        <td>{{o.orderNumber}}</td>
+        </tr>
+    {% endfor %}
+        </tbody>
+        </table>
+        <div class="navigation mt-4">
+			{{ knp_pagination_render(orders) }}
+		</div>
+</main>
+{% endblock %}

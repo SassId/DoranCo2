@@ -1,4 +1,4 @@
-# Doctrine ORM
+# 🚀 **[Symfony](https://symfony.com/)** | Doctrine ORM : Manipuler des objets PHP comme s'ils étaient des lignes de base de données
 
 <br>
 
@@ -43,23 +43,15 @@ Pour configurer Doctrine, vous devez ajouter les informations de connexion à la
 DATABASE_URL=mysql://db_user:db_password@db_host:db_port/db_name
 ```
 
-Ensuite, vous devez configurer Doctrine dans le fichier `config/packages/doctrine.yaml` :
+Ensuite, vous pouvez configurer Doctrine dans le fichier `config/packages/doctrine.yaml` :
+
+Pour pouvoir utiliser le slug dans les URL, modifiez le fichier `config/packages/doctrine.yaml` pour mettre `auto_mapping` à `true` :
 
 ```yaml
-# config/packages/doctrine.yaml
 doctrine:
-    dbal:
-        url: '%env(resolve:DATABASE_URL)%'
-        driver: 'pdo_mysql'
-        server_version: '5.7'
-        charset: utf8mb4
-        default_table_options:
-            charset: utf8mb4
-            collate: utf8mb4_unicode_ci
     orm:
-        auto_generate_proxy_classes: true
-        naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
-        auto_mapping: true
+        controller_resolver:
+            auto_mapping: true
 ```
 
 ## Entités
@@ -79,6 +71,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 
 #[ORM\Entity(repositoryClass: ProductRepository::class)]
+// Nous pouvons ajouter des méthodes de cycle de vie pour mettre à jour les dates de création et de mise à jour, en utilisant les annotations ORM
 #[ORM\HasLifecycleCallbacks]
 // Nous pouvons préciser que certaines propriétés de l'entité sont UNIQUE
 #[UniqueEntity(fields: ['name'])]
@@ -90,6 +83,7 @@ class Product
     private int $id;
 
     #[ORM\Column(length: 255)]
+    // Nous pouvons ajouter des contraintes de validation
     #[Assert\NotBlank]
     #[Assert\Length(min: 3, max: 255)]
     private string $name;
@@ -103,6 +97,7 @@ class Product
     #[ORM\Column(type: 'datetime_immutable')]
     private \DateTimeImmutable $updatedAt;
 
+    // Nous pouvons ajouter des méthodes de cycle de vie pour mettre à jour les dates de création et de mise à jour
     #[PrePersist]
     public function setCreatedAtValue(): void
     {

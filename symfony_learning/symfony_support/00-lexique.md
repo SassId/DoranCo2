@@ -1,4 +1,4 @@
-# Symfony
+# 🚀 **[Symfony](https://symfony.com/)** | Lexique et concepts
 
 <br>
 
@@ -8,7 +8,7 @@
 
 <br>
 
-> Symfony est un framework PHP qui permet de développer des applications web. Il fournit des fonctionnalités de base telles que le moteur de templates, la gestion des formulaires, la gestion des traductions, etc. En outre, Symfony permet de développer des applications web plus complexes comme des API REST, des applications websockets, des applications web en temps réel, etc.
+> 🚀 **[Symfony](https://symfony.com/)** est un framework PHP qui permet de développer des applications web. Il fournit des fonctionnalités de base telles que le moteur de templates, la gestion des formulaires, la gestion des traductions, etc. En outre, Symfony permet de développer des applications web plus complexes comme des API REST, des applications websockets, des applications web en temps réel, etc.
 
 ## Sommaire
 

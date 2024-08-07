@@ -1,4 +1,4 @@
-# Environnement de Travail Symfony
+# 🚀 **[Symfony](https://symfony.com/)** | Environnement de Travail avec Visual Studio Code
 
 <br>
 
@@ -8,7 +8,7 @@
 
 <br>
 
-> Afin de travailler efficacement avec Symfony, il est recommandé de configurer votre environnement de travail pour une productivité maximale. Voici quelques outils et extensions utiles pour développer des applications Symfony dans Visual Studio Code.
+> Afin de travailler efficacement avec 🚀 **[Symfony](https://symfony.com/)**, il est recommandé de configurer votre environnement de travail pour une productivité maximale. Voici quelques outils et extensions utiles pour développer des applications Symfony dans Visual Studio Code.
 
 ## Sommaire
 
@@ -66,6 +66,12 @@ sudo apt install composer
 ### 3.2. Utilisation de Composer
 
 Composer utilise un fichier `composer.json` pour définir les dépendances du projet. Pour créer un nouveau projet Symfony, utilisez la commande suivante dans le terminal :
+
+```bash
+composer create-project symfony/skeleton my_project_name
+cd my_project_directory
+composer require webapp
+```
 
 Pour installer une bibliothèque comme le bundle FrameworkBundle, utilisez la commande suivante dans le terminal :
 
