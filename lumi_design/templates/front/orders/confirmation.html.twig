@@ -1,0 +1,20 @@
+{% extends "front/base.html.twig" %}
+
+{% block title %}
+	{{parent()}}
+	Confirmation de Commande
+{% endblock %}
+
+{% block body %}
+	<main class="container my-5">
+		<h1 class="text-center">Confirmation de votre Commande</h1>
+		<div>
+        <p>{{orders.id}}</p>
+        </div>
+		<h2 class="my-5 text-center">Tout est bon ?</h2>
+        <div class="d-flex gap-5 justify-content-center">
+        <a class="btn btn-success" href={{path('front_orders_pay', {'id': orders.id})}}>Payer</a>
+		<a class="btn btn-info" href={{path('front_cart_index')}}>Retour au Panier</a>
+        </div>
+	</main>
+{% endblock %}

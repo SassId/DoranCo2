@@ -8,18 +8,22 @@ use Symfony\Component\HttpFoundation\Session\Session;
 
 class CartService
 {
+    private const CART = 'cart';
+    private $session;
+
     public function __construct(private ProductRepository $repository, private RequestStack $requestStack)
     {
+        $this->session = $this->requestStack->getSession();;
     }
 
-    private function getSession()
+    public function getCart()
     {
-        return $this->requestStack->getSession();
+        return $this->session->get(self::CART, []);
     }
 
     public function getCartContent(): array
     {
-        $cart = $this->getSession()->get('cart', []);
+        $cart = $this->session->get(self::CART, []);
         $cartData = [];
         $totalPrice = 0;
 
@@ -49,19 +53,19 @@ class CartService
 
     public function addProduct(int $id)
     {
-        $cart = $this->getSession()->get('cart', []);
+        $cart = $this->session->get(self::CART, []);
         if (!isset($cart[$id])) {
             $cart[$id] = 1;
         } else {
             $cart[$id]++;
         }
 
-        $this->getSession()->set('cart', $cart);
+        $this->session->set(self::CART, $cart);
     }
 
     public function decreaseProductQuantity(int $id)
     {
-        $cart = $this->getSession()->get('cart', []);
+        $cart = $this->session->get(self::CART, []);
         if (isset($cart[$id])) {
             if ($cart[$id] > 1) {
                 $cart[$id]--;
@@ -70,21 +74,21 @@ class CartService
             }
         }
 
-        $this->getSession()->set('cart', $cart);
+        $this->session->set(self::CART, $cart);
     }
 
     public function removeProduct(int $id)
     {
-        $cart = $this->getSession()->get('cart', []);
+        $cart = $this->session->get(self::CART, []);
         if (isset($cart[$id])){
             unset($cart[$id]);
         }
 
-        $this->getSession()->set('cart', $cart);
+        $this->session->set(self::CART, $cart);
     }
 
     public function emptyCart()
     {
-        $this->getSession()->remove('cart');
+        $this->session->remove(self::CART);
     }
 }

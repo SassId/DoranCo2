@@ -6,7 +6,7 @@
 
 {% block body %}
 <main class="container my-5">
-    <h1 class="text-center">Confirmez votre Commande</h1>
+    <h1 class="text-center">Mes Dernières Commandes</h1>
     {# <pre>
         {{ dump(orders) }}
     </pre> #}
@@ -14,12 +14,14 @@
         <thead>
         <tr>
         <th>{{knp_pagination_sortable(orders, 'Numéro de Commande', 'o.orderNumber')}}</th>
+        <th>{{knp_pagination_sortable(orders, 'Date de commande', 'o.createdAt')}}</th>
         </tr>
         </thead>
         <tbody>
     {% for o in orders %}
         <tr>
         <td>{{o.orderNumber}}</td>
+        <td>{{o.createdAt|date('d/m/y H:i:s')}}</td>
         </tr>
     {% endfor %}
         </tbody>

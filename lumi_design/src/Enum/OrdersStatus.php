@@ -8,7 +8,7 @@ enum OrdersStatus: string
     case PAYMENT_PENDING = 'en attente de paiement';
     case UNPAID = 'non payé';
     case PAID = 'payé';
-    case PROCESSING = 'en préparation';
+    case PROCESSING = 'en cours de préparation';
     case SHIPPED = 'envoyé';
     case CANCELED = 'annulé';
     case DELIVERED = 'livré';

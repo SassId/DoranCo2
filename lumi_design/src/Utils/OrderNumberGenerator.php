@@ -9,6 +9,6 @@ class OrderNumberGenerator
     public static function generateOrderNumber(): string
     {
         $faker = FakerFactory::create();
-        return strtoupper($faker->bothify('?###?#####'));
+        return strtoupper($faker->unique->bothify('?###?#####'));
     }
 }

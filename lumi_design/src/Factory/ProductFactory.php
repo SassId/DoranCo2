@@ -40,6 +40,7 @@ final class ProductFactory extends PersistentProxyObjectFactory
             'stock' => self::faker()->randomNumber(),
             'image' => self::faker()->imageUrl(width: 500, height: 500),
             'category' => CategoryFactory::new(),
+            'price' => self::faker()->randomFloat(2, 10, 100)
         ];
     }
 
