@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facture</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header img {
+            max-width: 150px;
+        }
+        .header h1 {
+            text-align: right;
+            margin: 0;
+        }
+        .invoice-details, .customer-details {
+            margin-bottom: 20px;
+        }
+        .invoice-details p, .customer-details p {
+            margin: 0;
+            padding: 0;
+        }
+        .invoice-details {
+            display: flex;
+            justify-content: space-between;
+        }
+        .invoice-details div, .customer-details div {
+            width: 48%;
+        }
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        .table th, .table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        .table th {
+            background-color: #f4f4f4;
+        }
+        .total {
+            text-align: right;
+            font-weight: bold;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="https://via.placeholder.com/150x50?text=Logo+Entreprise" alt="Logo de l'Entreprise">
+            <h1>Facture</h1>
+        </div>
+        <div class="invoice-details">
+            <div>
+                <p><strong>Numéro de Facture:</strong> [Numéro de Facture]</p>
+                <p><strong>Date:</strong> [Date]</p>
+            </div>
+            <div>
+                <p><strong>Date d'échéance:</strong> [Date d'échéance]</p>
+            </div>
+        </div>
+        <div class="customer-details">
+            <h2>Facturé à:</h2>
+            <p><strong>[Nom du client]</strong></p>
+            <p>[Adresse du client]</p>
+            <p>[Ville, État, Code postal]</p>
+            <p>[Pays]</p>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Description</th>
+                    <th>Quantité</th>
+                    <th>Prix Unitaire</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Example row for each item -->
+                <tr>
+                    <td>[Description de l'article]</td>
+                    <td>[Quantité]</td>
+                    <td>[Prix Unitaire]€</td>
+                    <td>[Total]€</td>
+                </tr>
+                <!-- Repeat rows as necessary -->
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3" class="total">Sous-total</td>
+                    <td>[Sous-total]€</td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="total">Taxe ([Taux de taxe]%)</td>
+                    <td>[Taxe]€</td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="total">Total</td>
+                    <td>[Total]€</td>
+                </tr>
+            </tfoot>
+        </table>
+        <div class="footer">
+            <p>Merci pour votre achat !</p>
+            <p>Pour toute question, veuillez nous contacter à <a href="mailto:support@example.com">support@example.com</a></p>
+        </div>
+    </div>
+</body>
+</html>

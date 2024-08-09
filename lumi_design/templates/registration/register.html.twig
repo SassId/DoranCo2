@@ -9,7 +9,7 @@
 	{% for flash_error in app.flashes('verify_email_error') %}
 		<div class="alert alert-danger" role="alert">{{ flash_error }}</div>
 	{% endfor %}
-	<main class="d-flex flex-column justify-content-center align-items-center gap-3 ">
+	<main class="d-flex flex-column justify-content-center align-items-center gap-3">
 		<h1 class="text-center my-2">Inscrivez-vous</h1>
 		{{ form_errors(registrationForm) }}
 		{{ form_start(registrationForm) }}

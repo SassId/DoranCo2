@@ -7,6 +7,7 @@ use App\Repository\OrdersRepository;
 use DateTimeImmutable;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\HasLifecycleCallbacks;
 use Symfony\Component\Routing\Attribute\Route;
@@ -36,11 +37,15 @@ class Orders
     #[ORM\Column(type: 'string', enumType: OrdersStatus::class)]
     private OrdersStatus $status = OrdersStatus::PENDING;
 
+
     /**
      * @var Collection<int, OrderItem>
      */
     #[ORM\OneToMany(targetEntity: OrderItem::class, mappedBy: 'orders', orphanRemoval: true, cascade: ['persist'])]
     private Collection $orderItems;
+
+    #[ORM\Column(type: Types::DECIMAL, precision: 10, scale: 2, nullable: true)]
+    private ?string $total = null;
 
     #[ORM\PrePersist]
     public function setCreatedAtValue():void
@@ -152,6 +157,18 @@ class Orders
     public function setStatus($status)
     {
         $this->status = $status;
+
+        return $this;
+    }
+
+    public function getTotal(): ?string
+    {
+        return $this->total;
+    }
+
+    public function setTotal(?string $total): static
+    {
+        $this->total = $total;
 
         return $this;
     }

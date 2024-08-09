@@ -38,7 +38,7 @@ final class UserFactory extends PersistentProxyObjectFactory
             'createdAt' => \DateTimeImmutable::createFromMutable(self::faker()->dateTime()),
             'email' => self::faker()->unique()->safeEmail(),
             'isVerified' => self::faker()->boolean(),
-            'password' => 'cacacapi',
+            'password' => '123456',
             // or
             // 'password' => $this->userPasswordHasher->hassPassword(new User, 'cacacapi')
             'roles' => self::faker()->randomElement([['ROLE_USER'], ['ROLE_ADMIN']]),

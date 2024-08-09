@@ -8,8 +8,12 @@ use App\Repository\OrdersRepository;
 use App\Repository\ProductRepository;
 use App\Security\EmailVerifier;
 use App\Service\CartService;
+use App\Service\EmailService;
+use App\Service\InvoiceService;
 use App\Service\OrdersService;
+use DateTimeImmutable;
 use Doctrine\ORM\EntityManagerInterface;
+use Dompdf\Dompdf;
 use PHPStan\PhpDocParser\Ast\Type\ThisTypeNode;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -72,37 +76,45 @@ class OrdersController extends AbstractController
         ]);
     }
 
-    #[Route(path: '/confirmation/{id}', name: 'confirmation', methods: ['GET'])]
-    public function confirmation(Orders $orders)
+    #[Route(path: '/confirmation/{id}', name: 'confirmation', methods: ['GET'], requirements: ['id' => Requirement::POSITIVE_INT])]
+    public function confirmation($id, OrdersRepository $repository): Response
     {
+        $order = $repository->findOrderWithRelations($id);
+
         return $this->render('front/orders/confirmation.html.twig', [
-            'orders' => $orders
+            'order' => $order
         ]);
     }
 
-    #[Route(path: '/payer/{id}', name: 'pay', methods: ['GET'])]
-    public function pay(Orders $orders, EntityManagerInterface $em, MailerInterface $mailer)
+    #[Route(path: '/payer/{id}', name: 'pay', methods: ['GET'], requirements: ['id' => Requirement::POSITIVE_INT])]
+    public function pay(int $id, OrdersRepository $repository, EntityManagerInterface $em,EmailService $emailService, InvoiceService $invoiceService)
     {
-        $orders->setStatus(OrdersStatus::PAID);
+        $payment = true;
 
+        if (!$payment) {
+            return $this->redirectToRoute('front_orders_confirmation');
+        }
+
+        $order = $repository->findOrderWithRelations($id);
+        // dd($order);
+        $order->setStatus(OrdersStatus::PAID);
+        $order->setPaidAt(new DateTimeImmutable());
         $em->flush();
 
-        $user = $orders->getCustomer();
-        $email = (new TemplatedEmail())
-            ->from(new Address('lumidesign@support.com', 'LumiDesign')) 
-            ->to($user->getEmail())
-            ->subject('Votre commande est' . OrdersStatus::PROCESSING->value)
-            ->html($this->renderView('emails/order_confirmation.html.twig', [
-                'order' => $orders,
-                'user' => $user
-            ]));
+        $emailService->sendOrderConfirmationEmail($order);
 
-        $mailer->send($email);
+        
+        $pdf = $invoiceService->generateInvoice($order);
+        // dd($pdf);
 
+        $invoiceService->saveInvoice($pdf, $order);
+        
         $this->addFlash('success', 'Votre commande à bien été prise en compte et un email de confirmation a été envoyé.');
 
-        return $this->render('front/orders/confirmation.html.twig', [
-            'orders' => $orders
-        ]);
+        // return $this->render('front/orders/confirmation.html.twig', [
+        //     'order' => $order
+        // ]);
+
+        return $this->redirectToRoute('front_home_index');
     }
 }

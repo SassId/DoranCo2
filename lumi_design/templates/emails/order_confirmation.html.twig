@@ -1,9 +1,120 @@
-<main class="d-flex flex-column justify-content-center gap-5">
-<h1>Bonjour {{user.firstName}}</h1>
-<h2>Merci pour votre achat</h2>
-<p>
-    Cordialement !
-</p>
-</main>
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+				margin: 0;
+				padding: 0;
+				background-color: #f4f4f4;
+			}
+			.container {
+				width: 100%;
+				max-width: 600px;
+				margin: 0 auto;
+				background-color: #ffffff;
+				padding: 20px;
+				border-radius: 8px;
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			}
+			.header {
+				text-align: center;
+				padding: 10px 0;
+				background-color: #007bff;
+				color: #ffffff;
+				border-radius: 8px 8px 0 0;
+			}
+			.content {
+				padding: 20px;
+				color: #333333;
+			}
+			.footer {
+				text-align: center;
+				padding: 10px 0;
+				background-color: #f4f4f4;
+				color: #777777;
+				font-size: 12px;
+				border-radius: 0 0 8px 8px;
+			}
+			.order-details {
+				margin-top: 20px;
+				padding: 15px;
+				background-color: #f8f9fa;
+				border-radius: 8px;
+			}
+			.order-details th,
+			.order-details td {
+				padding: 8px;
+				text-align: left;
+				border-bottom: 1px solid #dddddd;
+			}
+			.button {
+				display: inline-block;
+				margin-top: 20px;
+				padding: 10px 20px;
+				background-color: #007bff;
+				color: #ffffff;
+				text-decoration: none;
+				border-radius: 5px;
+			}
+			.button:hover {
+				background-color: #0056b3;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="header">
+				<h1>Confirmation de Commande</h1>
+			</div>
+			<div class="content">
+				<p>Bonjour
+					{{order.customer.firstName ?? 'Vous'}},</p>
+				<p>Merci d'avoir passé votre commande avec nous ! Votre commande a été confirmée et sera traitée sous peu.</p>
 
+				<div class="order-details">
+					<h2>Détails de la Commande</h2>
+                    <p>Commande numéro: {{order.orderNumber}}</p>
+					<table width="100%">
+						<thead>
+							<tr>
+								<th>Produit</th>
+								<th>Quantité</th>
+								<th>Prix</th>
+							</tr>
+						</thead>
+						<tbody>
+                        {% for o in order.orderItems %}
+                          <tr>
+							<td>{{o.product.name}}</td>
+							<td>{{o.quantity}}</td>
+							<td>{{o.price}}€</td>
+						</tr>
+                        {% endfor %}
+                        </tbody>
+						<tr>
+							<td colspan="2">
+								<strong>Total</strong>
+							</td>
+							<td>
+								<strong>{{order.total}}</strong>
+							</td>
+						</tr>
+					</table>
+				</div>
 
+				<p>Vous pouvez consulter votre commande et le statut de livraison en vous connectant à votre compte.</p>
+
+				<a href="https://127.0.0.1:8000/commandes/" class="button">Voir ma commande</a>
+
+				<p>Merci de votre confiance,</p>
+				<p>L'équipe de LumiDesign</p>
+			</div>
+			<div class="footer">
+				<p>&copy; 2024 LumiDesign. Tous droits réservés.</p>
+			</div>
+		</div>
+	</body>
+</html>
