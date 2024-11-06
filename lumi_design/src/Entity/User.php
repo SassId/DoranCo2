@@ -174,7 +174,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * Get the value of lastName
-     */ 
+     */
     public function getLastName()
     {
         return $this->lastName;
@@ -184,7 +184,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * Set the value of lastName
      *
      * @return  self
-     */ 
+     */
     public function setLastName($lastName)
     {
         $this->lastName = $lastName;
@@ -194,7 +194,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * Get the value of firstName
-     */ 
+     */
     public function getFirstName()
     {
         return $this->firstName;
@@ -204,7 +204,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * Set the value of firstName
      *
      * @return  self
-     */ 
+     */
     public function setFirstName($firstName)
     {
         $this->firstName = $firstName;
@@ -214,7 +214,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * Get the value of address
-     */ 
+     */
     public function getAddress()
     {
         return $this->address;
@@ -224,7 +224,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * Set the value of address
      *
      * @return  self
-     */ 
+     */
     public function setAddress($address)
     {
         $this->address = $address;
@@ -234,7 +234,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * Get the value of zipCode
-     */ 
+     */
     public function getZipCode()
     {
         return $this->zipCode;
@@ -244,7 +244,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * Set the value of zipCode
      *
      * @return  self
-     */ 
+     */
     public function setZipCode($zipCode)
     {
         $this->zipCode = $zipCode;
@@ -254,7 +254,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * Get the value of city
-     */ 
+     */
     public function getCity()
     {
         return $this->city;
@@ -264,7 +264,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * Set the value of city
      *
      * @return  self
-     */ 
+     */
     public function setCity($city)
     {
         $this->city = $city;
@@ -274,7 +274,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * Get the value of phoneNumber
-     */ 
+     */
     public function getPhoneNumber()
     {
         return $this->phoneNumber;
@@ -284,7 +284,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * Set the value of phoneNumber
      *
      * @return  self
-     */ 
+     */
     public function setPhoneNumber($phoneNumber)
     {
         $this->phoneNumber = $phoneNumber;

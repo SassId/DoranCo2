@@ -31,5 +31,3 @@ echo '<br>';
 
 echo $lion->sleep();
 echo '<br>';
-
-
